@@ -6,7 +6,7 @@
 
 ## Mục Lục
 
-- [HomePage](/www/ecosystem.html)
+- [HomePage](https://tienthien196.github.io/ecosys.portfolioBNJ)
 - HardWare (Update soon)
 - Computer Science
   - 1\. [Computer Architecture](/CSLIist/Architecture/ComputerArchitecture.md)
