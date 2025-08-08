@@ -2,7 +2,7 @@
 
 > Mô tả ngắn gọn về dự án – slogan hoặc mục tiêu.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Godot](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/user/repo)](https://github.com/user/repo/stargazers)
 
 ---
