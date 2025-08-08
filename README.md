@@ -6,7 +6,7 @@
 
 ## Mục Lục
 
-- [HomePage](/index2.html)
+- [HomePage](/www/ecosystem.html)
 - HardWare (Update soon)
 - Computer Science
   - 1\. [Computer Architecture](/CSLIist/Architecture/ComputerArchitecture.md)
