@@ -15,9 +15,10 @@
 
 ***Cả hai*** hoặc ___Cả hai___
 
-
 <!-- Gạch ngang (Strikethrough) -->
 ~~Gạch ngang~~
+
+
 <!-- Dòng ngang (Horizontal Rule) -->
 ---
 hoặc
@@ -80,7 +81,7 @@ print("Hello, World!")
 
 <!-- Tạo anchor (liên kết nội bộ) -->
 ## Mục lục
-- [Giới thiệu](#giới-thiệu)
+- [Giới thiệu](#giới-xthiệu)
 - [Cài đặt](#cài-đặt)
 
 ## Giới thiệu
