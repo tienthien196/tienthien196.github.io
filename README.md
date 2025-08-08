@@ -10,7 +10,7 @@
 - Computer Science
   - 1\. [Computer Architecture](/CSLIist/Architecture/ComputerArchitecture.md)
   - 2\. [Computer Network](/CSLIist/Network/ComputerNetwork.md)
-  - 3\. [Software](/CSLIist/Software/)
+  - 3\. Software
     - [System Software](/CSLIist/Software/SysTem/SystemSoftware.md)
       - 1\. [OperatorSystem](/CSLIist/Software/SysTem/OperatorSystem.md)
       - 2\. [Compiler](/CSLIist/Software/SysTem/Compiler.md)
