@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Security: A Comprehensive Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .code-font {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .nav-link {
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #3b82f6;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .nav-link.active {
+      color: #3b82f6;
+    }
+    
+    .nav-link.active:after {
+      width: 100%;
+    }
+    
+    .check-item {
+      transition: all 0.2s ease;
+    }
+    
+    .check-item:hover {
+      transform: translateX(5px);
+    }
+    
+    .section-header {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .section-header:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      transition: width 0.5s ease;
+    }
+    
+    .section-header:hover:after {
+      width: 100%;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .tool-badge {
+      background: linear-gradient(45deg, #1e40af, #3730a3);
+      transition: all 0.3s ease;
+    }
+    
+    .tool-badge:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 15px -3px rgba(30, 64, 175, 0.3);
+    }
+    
+    .threat-card {
+      border-left: 4px solid #ef4444;
+    }
+    
+    .concept-card {
+      border-left: 4px solid #3b82f6;
+    }
+    
+    .technique-card {
+      border-left: 4px solid #10b981;
+    }
+    
+    .checklist-item {
+      background: linear-gradient(90deg, #1e293b, #334155);
+    }
+    
+    .sidebar-link {
+      transition: all 0.3s ease;
+    }
+    
+    .sidebar-link:hover {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      transform: translateX(5px);
+    }
+    
+    .sidebar-link.active {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      font-weight: 600;
+    }
+    
+    .anchor-link {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .anchor-link:hover {
+      opacity: 1;
+    }
+    
+    h2:hover .anchor-link, h3:hover .anchor-link {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-gray-100">
+  <div class="container mx-auto px-4 py-8 max-w-7xl">
+    <!-- Header -->
+    <header class="text-center mb-12 fade-in">
+      <div class="flex items-center justify-center mb-4">
+        <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mr-4 shadow-2xl">
+          <i class="fas fa-shield-alt text-white text-3xl"></i>
+        </div>
+        <div class="text-left">
+          <h1 class="text-5xl md:text-6xl font-bold gradient-text">Cyber Security</h1>
+          <p class="text-xl text-gray-300">A Comprehensive Guide</p>
+        </div>
+      </div>
+      <p class="text-lg text-gray-300 mb-6 italic">Tài liệu này được xây dựng để cung cấp một cái nhìn toàn diện về An ninh mạng (Cyber Security), từ các khái niệm cơ bản đến các kỹ thuật nâng cao, phục vụ mục đích lưu trữ và tham khảo cho các dự án IT.</p>
+      <div class="w-32 h-1 bg-gradient-to-r from-red-500 to-pink-600 mx-auto rounded-full"></div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Sidebar -->
+      <nav class="lg:w-64 flex-shrink-0">
+        <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 sticky top-8">
+          <h3 class="text-lg font-semibold text-red-400 mb-4 flex items-center">
+            <i class="fas fa-list-ul mr-2"></i>
+            Mục Lục
+          </h3>
+          <div class="space-y-2">
+            <a href="#gioi-thieu" class="sidebar-link block px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300">Giới thiệu</a>
+            <a href="#khai-niem" class="sidebar-link block px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300">Khái niệm cốt lõi</a>
+            <a href="#mui-de-doa" class="sidebar-link block px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300">Mối đe dọa</a>
+            <a href="#ky-thuat-cong-cu" class="sidebar-link block px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300">Kỹ thuật & Công cụ</a>
+            <a href="#checklist" class="sidebar-link block px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300">Checklist học tập</a>
+            <a href="#cong-cu-de-xuat" class="sidebar-link block px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300">Công cụ đề xuất</a>
+            <a href="#kinh-nghiem" class="sidebar-link block px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300">Kinh nghiệm thực hành</a>
+            <a href="#tai-lieu" class="sidebar-link block px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all duration-300">Tài liệu tham khảo</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="flex-1">
+        <div class="space-y-10">
+          <!-- Introduction Section -->
+          <section id="gioi-thieu" class="fade-in">
+            <div class="flex items-start mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg mr-4">
+                <i class="fas fa-info-circle text-white"></i>
+              </div>
+              <div>
+                <h2 class="text-3xl font-bold mb-4 section-header flex items-center">
+                  Giới thiệu về Cyber Security
+                  <a href="#gioi-thieu" class="anchor-link ml-2 opacity-0">
+                    <i class="fas fa-link text-sm text-gray-400 hover:text-red-400"></i>
+                  </a>
+                </h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-red-500 to-pink-600 mb-6"></div>
+              </div>
+            </div>
+            
+            <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 shadow-2xl card-hover">
+              <p class="text-gray-300 mb-6 leading-relaxed">An ninh mạng (Cyber Security) là lĩnh vực tập trung vào việc bảo vệ hệ thống máy tính, mạng, dữ liệu, và ứng dụng khỏi các mối đe dọa như truy cập trái phép, tấn công mạng, hoặc mất dữ liệu. Trong bối cảnh <strong class="text-blue-400">Application Software</strong>, an ninh mạng bao gồm các phần mềm và công cụ được thiết kế để phát hiện, ngăn chặn, và xử lý các vấn đề bảo mật, từ phần mềm diệt virus đến các công cụ kiểm tra lỗ hổng.</p>
+              
+              <div class="grid md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-slate-900/50 rounded-xl p-6 border-l-4 border-red-500">
+                  <h3 class="font-bold text-red-400 mb-4 flex items-center">
+                    <i class="fas fa-bullseye mr-2"></i>
+                    Mục đích chính
+                  </h3>
+                  <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-start">
+                      <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                      <span>Đảm bảo tính bảo mật (Confidentiality), toàn vẹn (Integrity), và sẵn sàng (Availability) của dữ liệu và hệ thống.</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                      <span>Phát hiện và phản ứng nhanh với các cuộc tấn công mạng.</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                      <span>Bảo vệ ứng dụng khỏi các lỗ hổng như SQL Injection, XSS.</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div class="bg-slate-900/50 rounded-xl p-6 border-l-4 border-blue-500">
+                  <h3 class="font-bold text-blue-400 mb-4 flex items-center">
+                    <i class="fas fa-cogs mr-2"></i>
+                    Ứng dụng thực tế
+                  </h3>
+                  <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-start">
+                      <i class="fas fa-dot-circle text-blue-500 mt-1 mr-3"></i>
+                      <span>Phần mềm diệt virus như Kaspersky, Malwarebytes.</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-dot-circle text-blue-500 mt-1 mr-3"></i>
+                      <span>Công cụ kiểm tra bảo mật web như Burp Suite.</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-dot-circle text-blue-500 mt-1 mr-3"></i>
+                      <span>Hệ thống IDS/IPS như Snort để giám sát mạng.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Core Concepts Section -->
+          <section id="khai-niem" class="fade-in">
+            <div class="flex items-start mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg mr-4">
+                <i class="fas fa-atom text-white"></i>
+              </div>
+              <div>
+                <h2 class="text-3xl font-bold mb-4 section-header flex items-center">
+                  Các khái niệm cốt lõi
+                  <a href="#khai-niem" class="anchor-link ml-2 opacity-0">
+                    <i class="fas fa-link text-sm text-gray-400 hover:text-blue-400"></i>
+                  </a>
+                </h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-600 mb-6"></div>
+              </div>
+            </div>
+
+            <!-- CIA Triad -->
+            <div class="mb-6 card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl concept-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-lock text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-blue-400 mb-3">Confidentiality, Integrity, Availability (CIA Triad)</h3>
+                    <p class="text-gray-300 mb-4"><strong>Mô tả:</strong> Bộ ba CIA là nền tảng của an ninh mạng.</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-4">
+                      <div class="bg-slate-900/50 rounded-lg p-4 border border-slate-600">
+                        <h4 class="font-semibold text-cyan-400 mb-2">Confidentiality</h4>
+                        <p class="text-sm text-gray-300">Đảm bảo dữ liệu chỉ được truy cập bởi người có quyền.</p>
+                      </div>
+                      <div class="bg-slate-900/50 rounded-lg p-4 border border-slate-600">
+                        <h4 class="font-semibold text-cyan-400 mb-2">Integrity</h4>
+                        <p class="text-sm text-gray-300">Đảm bảo dữ liệu không bị thay đổi trái phép.</p>
+                      </div>
+                      <div class="bg-slate-900/50 rounded-lg p-4 border border-slate-600">
+                        <h4 class="font-semibold text-cyan-400 mb-2">Availability</h4>
+                        <p class="text-sm text-gray-300">Đảm bảo hệ thống và dữ liệu luôn sẵn sàng khi cần.</p>
+                      </div>
+                    </div>
+                    
+                    <div class="bg-slate-900/50 rounded-xl p-5 border-l-4 border-blue-500">
+                      <h4 class="font-semibold text-cyan-400 mb-3 flex items-center">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Ví dụ thực tế
+                      </h4>
+                      <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Sử dụng HTTPS để mã hóa dữ liệu (Confidentiality).</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Kiểm tra checksum để phát hiện thay đổi file (Integrity).</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Load balancer để duy trì uptime server (Availability).</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Authentication and Authorization -->
+            <div class="mb-6 card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl concept-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-fingerprint text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-purple-400 mb-3">Authentication and Authorization</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-pink-400 mb-3 flex items-center">
+                          <i class="fas fa-user-check mr-2"></i>
+                          Authentication
+                        </h4>
+                        <p class="text-gray-300 text-sm mb-3">Xác minh danh tính của người dùng hoặc hệ thống.</p>
+                        <div class="space-y-2">
+                          <p class="text-xs text-gray-300"><strong>Công nghệ:</strong> Password, Multi-Factor Authentication (MFA), Biometrics.</p>
+                          <p class="text-xs text-gray-300"><strong>Ví dụ:</strong> Đăng nhập bằng OAuth 2.0.</p>
+                        </div>
+                      </div>
+                      
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-pink-400 mb-3 flex items-center">
+                          <i class="fas fa-user-shield mr-2"></i>
+                          Authorization
+                        </h4>
+                        <p class="text-gray-300 text-sm mb-3">Quyết định quyền truy cập của người dùng.</p>
+                        <div class="space-y-2">
+                          <p class="text-xs text-gray-300"><strong>Công nghệ:</strong> Role-Based Access Control (RBAC), Access Control Lists (ACL).</p>
+                          <p class="text-xs text-gray-300"><strong>Ví dụ:</strong> Chỉ admin có quyền sửa cơ sở dữ liệu.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Encryption -->
+            <div class="mb-6 card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl concept-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-key text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-green-400 mb-3">Encryption</h3>
+                    <p class="text-gray-300 mb-4"><strong>Mô tả:</strong> Mã hóa dữ liệu để ngăn chặn truy cập trái phép.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-teal-400 mb-3 flex items-center">
+                          <i class="fas fa-lock text-sm mr-2"></i>
+                          Symmetric Encryption
+                        </h4>
+                        <p class="text-sm text-gray-300">Sử dụng một khóa (AES, DES).</p>
+                      </div>
+                      
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-teal-400 mb-3 flex items-center">
+                          <i class="fas fa-lock-open text-sm mr-2"></i>
+                          Asymmetric Encryption
+                        </h4>
+                        <p class="text-sm text-gray-300">Sử dụng cặp khóa công khai/riêng tư (RSA, ECC).</p>
+                      </div>
+                    </div>
+                    
+                    <div class="bg-slate-900/50 rounded-xl p-5 border-l-4 border-green-500">
+                      <h4 class="font-semibold text-teal-400 mb-3 flex items-center">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Ví dụ thực tế
+                      </h4>
+                      <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Mã hóa dữ liệu trên ổ cứng bằng BitLocker (AES).</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Sử dụng SSL/TLS cho kết nối HTTPS.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vulnerability and Exploit -->
+            <div class="card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl concept-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-bug text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-orange-400 mb-3">Vulnerability and Exploit</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-red-400 mb-3 flex items-center">
+                          <i class="fas fa-exclamation-triangle mr-2"></i>
+                          Vulnerability
+                        </h4>
+                        <p class="text-gray-300 text-sm mb-3">Lỗ hổng trong hệ thống hoặc ứng dụng có thể bị khai thác.</p>
+                        <p class="text-xs text-gray-300"><strong>Ví dụ:</strong> Lỗ hổng XSS trong ứng dụng web.</p>
+                      </div>
+                      
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-red-400 mb-3 flex items-center">
+                          <i class="fas fa-skull-crossbones mr-2"></i>
+                          Exploit
+                        </h4>
+                        <p class="text-gray-300 text-sm mb-3">Mã hoặc kỹ thuật lợi dụng lỗ hổng để tấn công.</p>
+                        <p class="text-xs text-gray-300"><strong>Ví dụ:</strong> Script khai thác SQL Injection để truy cập cơ sở dữ liệu.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Threats Section -->
+          <section id="mui-de-doa" class="fade-in">
+            <div class="flex items-start mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-red-600 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg mr-4">
+                <i class="fas fa-skull text-white"></i>
+              </div>
+              <div>
+                <h2 class="text-3xl font-bold mb-4 section-header flex items-center">
+                  Các loại mối đe dọa an ninh mạng
+                  <a href="#mui-de-doa" class="anchor-link ml-2 opacity-0">
+                    <i class="fas fa-link text-sm text-gray-400 hover:text-red-400"></i>
+                  </a>
+                </h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-red-600 to-orange-600 mb-6"></div>
+              </div>
+            </div>
+
+            <!-- Malware -->
+            <div class="mb-6 card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl threat-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-virus text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-red-400 mb-3">Malware</h3>
+                    <p class="text-gray-300 mb-4"><strong>Mô tả:</strong> Phần mềm độc hại như virus, ransomware, spyware, hoặc trojan.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-orange-400 mb-3 flex items-center">
+                          <i class="fas fa-exclamation-triangle mr-2"></i>
+                          Cách lây nhiễm
+                        </h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                          <li class="flex items-center"><i class="fas fa-dot-circle text-orange-500 mr-2 text-xs"></i> Email</li>
+                          <li class="flex items-center"><i class="fas fa-dot-circle text-orange-500 mr-2 text-xs"></i> Tải xuống phần mềm</li>
+                          <li class="flex items-center"><i class="fas fa-dot-circle text-orange-500 mr-2 text-xs"></i> Lỗ hổng ứng dụng</li>
+                        </ul>
+                      </div>
+                      
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-orange-400 mb-3 flex items-center">
+                          <i class="fas fa-lightbulb mr-2"></i>
+                          Ví dụ thực tế
+                        </h4>
+                        <p class="text-sm text-gray-300">Ransomware WannaCry mã hóa dữ liệu và đòi tiền chuộc.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phishing -->
+            <div class="mb-6 card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl threat-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-fish text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-yellow-400 mb-3">Phishing</h3>
+                    <p class="text-gray-300 mb-4"><strong>Mô tả:</strong> Tấn công lừa đảo để đánh cắp thông tin nhạy cảm (mật khẩu, thẻ tín dụng).</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-orange-400 mb-3 flex items-center">
+                          <i class="fas fa-exclamation-triangle mr-2"></i>
+                          Kỹ thuật
+                        </h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                          <li class="flex items-center"><i class="fas fa-dot-circle text-orange-500 mr-2 text-xs"></i> Email giả mạo</li>
+                          <li class="flex items-center"><i class="fas fa-dot-circle text-orange-500 mr-2 text-xs"></i> Website giả</li>
+                        </ul>
+                      </div>
+                      
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-orange-400 mb-3 flex items-center">
+                          <i class="fas fa-lightbulb mr-2"></i>
+                          Ví dụ thực tế
+                        </h4>
+                        <p class="text-sm text-gray-300">Email giả mạo từ "ngân hàng" yêu cầu nhập thông tin đăng nhập.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- DDoS Attacks -->
+            <div class="mb-6 card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl threat-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-bolt text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-purple-400 mb-3">DDoS Attacks</h3>
+                    <p class="text-gray-300 mb-4"><strong>Mô tả:</strong> Tấn công từ chối dịch vụ phân tán, làm quá tải hệ thống để ngăn người dùng truy cập.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-red-400 mb-3 flex items-center">
+                          <i class="fas fa-exclamation-triangle mr-2"></i>
+                          Kỹ thuật
+                        </h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                          <li class="flex items-center"><i class="fas fa-dot-circle text-red-500 mr-2 text-xs"></i> Botnet</li>
+                          <li class="flex items-center"><i class="fas fa-dot-circle text-red-500 mr-2 text-xs"></i> Flood HTTP</li>
+                          <li class="flex items-center"><i class="fas fa-dot-circle text-red-500 mr-2 text-xs"></i> SYN flood</li>
+                        </ul>
+                      </div>
+                      
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-red-400 mb-3 flex items-center">
+                          <i class="fas fa-lightbulb mr-2"></i>
+                          Ví dụ thực tế
+                        </h4>
+                        <p class="text-sm text-gray-300">Tấn công DDoS vào website của một công ty thương mại điện tử.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SQL Injection and XSS -->
+            <div class="card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl threat-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-code text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-pink-400 mb-3">SQL Injection and XSS</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-purple-400 mb-3 flex items-center">
+                          <i class="fas fa-database mr-2"></i>
+                          SQL Injection
+                        </h4>
+                        <p class="text-gray-300 text-sm mb-3">Chèn mã SQL độc hại để thao túng cơ sở dữ liệu.</p>
+                        <p class="text-xs text-gray-300"><strong>Ví dụ:</strong> Chèn <code class="bg-slate-800 px-2 py-1 rounded text-xs">SELECT * FROM users WHERE id=1; DROP TABLE users;</code> vào form đăng nhập.</p>
+                      </div>
+                      
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-purple-400 mb-3 flex items-center">
+                          <i class="fas fa-browser mr-2"></i>
+                          XSS (Cross-Site Scripting)
+                        </h4>
+                        <p class="text-gray-300 text-sm mb-3">Chèn mã JavaScript độc hại vào website.</p>
+                        <p class="text-xs text-gray-300"><strong>Ví dụ:</strong> Chèn <code class="bg-slate-800 px-2 py-1 rounded text-xs"><script>alert('Hacked');</script></code> để hiển thị popup trên website.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Techniques and Tools Section -->
+          <section id="ky-thuat-cong-cu" class="fade-in">
+            <div class="flex items-start mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg mr-4">
+                <i class="fas fa-tools text-white"></i>
+              </div>
+              <div>
+                <h2 class="text-3xl font-bold mb-4 section-header flex items-center">
+                  Các kỹ thuật và công cụ bảo mật
+                  <a href="#ky-thuat-cong-cu" class="anchor-link ml-2 opacity-0">
+                    <i class="fas fa-link text-sm text-gray-400 hover:text-green-400"></i>
+                  </a>
+                </h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-green-500 to-teal-600 mb-6"></div>
+              </div>
+            </div>
+
+            <!-- IDS/IPS -->
+            <div class="mb-6 card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl technique-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-eye text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-teal-400 mb-3">Intrusion Detection/Prevention Systems (IDS/IPS)</h3>
+                    <p class="text-gray-300 mb-4"><strong>Mô tả:</strong> Hệ thống phát hiện (IDS) và ngăn chặn (IPS) các hành vi xâm nhập trái phép.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-4">
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-cyan-400 mb-3 flex items-center">
+                          <i class="fas fa-search mr-2"></i>
+                          IDS
+                        </h4>
+                        <p class="text-sm text-gray-300">Giám sát lưu lượng mạng, phát hiện hành vi bất thường.</p>
+                      </div>
+                      
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-cyan-400 mb-3 flex items-center">
+                          <i class="fas fa-shield-alt mr-2"></i>
+                          IPS
+                        </h4>
+                        <p class="text-sm text-gray-300">Chặn các gói tin độc hại trước khi đến đích.</p>
+                      </div>
+                    </div>
+                    
+                    <div class="bg-slate-900/50 rounded-xl p-5 border-l-4 border-teal-500">
+                      <h4 class="font-semibold text-cyan-400 mb-3 flex items-center">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Ví dụ thực tế
+                      </h4>
+                      <p class="text-gray-300">Snort, Suricata để giám sát và bảo vệ mạng.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Penetration Testing -->
+            <div class="mb-6 card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl technique-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-vial text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-blue-400 mb-3">Penetration Testing</h3>
+                    <p class="text-gray-300 mb-4"><strong>Mô tả:</strong> Kiểm tra thâm nhập để tìm và sửa lỗ hổng trong hệ thống hoặc ứng dụng.</p>
+                    
+                    <div class="bg-slate-900/50 rounded-xl p-5 border-l-4 border-blue-500 mb-4">
+                      <h4 class="font-semibold text-indigo-400 mb-3 flex items-center">
+                        <i class="fas fa-list-ul mr-2"></i>
+                        Kỹ thuật
+                      </h4>
+                      <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-dot-circle text-indigo-500 mr-2 text-xs"></i> <strong>Network Scanning:</strong> Tìm cổng mở và dịch vụ.</li>
+                        <li class="flex items-center"><i class="fas fa-dot-circle text-indigo-500 mr-2 text-xs"></i> <strong>Web Application Testing:</strong> Kiểm tra XSS, SQL Injection.</li>
+                        <li class="flex items-center"><i class="fas fa-dot-circle text-indigo-500 mr-2 text-xs"></i> <strong>Social Engineering:</strong> Mô phỏng tấn công phishing.</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-slate-900/50 rounded-xl p-5 border-l-4 border-blue-500">
+                      <h4 class="font-semibold text-indigo-400 mb-3 flex items-center">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Ví dụ thực tế
+                      </h4>
+                      <p class="text-gray-300">Sử dụng Metasploit để kiểm tra lỗ hổng trên server.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SIEM -->
+            <div class="mb-6 card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl technique-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-chart-line text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-purple-400 mb-3">Security Information and Event Management (SIEM)</h3>
+                    <p class="text-gray-300 mb-4"><strong>Mô tả:</strong> Hệ thống thu thập và phân tích log để phát hiện và phản ứng với sự cố bảo mật.</p>
+                    
+                    <div class="bg-slate-900/50 rounded-xl p-5 border-l-4 border-purple-500 mb-4">
+                      <h4 class="font-semibold text-pink-400 mb-3 flex items-center">
+                        <i class="fas fa-cogs mr-2"></i>
+                        Chức năng chính
+                      </h4>
+                      <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-dot-circle text-pink-500 mr-2 text-xs"></i> Thu thập log từ nhiều nguồn (server, firewall, ứng dụng).</li>
+                        <li class="flex items-center"><i class="fas fa-dot-circle text-pink-500 mr-2 text-xs"></i> Phân tích thời gian thực để phát hiện mối đe dọa.</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-slate-900/50 rounded-xl p-5 border-l-4 border-purple-500">
+                      <h4 class="font-semibold text-pink-400 mb-3 flex items-center">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Ví dụ thực tế
+                      </h4>
+                      <p class="text-gray-300">Splunk, ELK Stack để giám sát log.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Firewalls and Endpoint Protection -->
+            <div class="card-hover">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl technique-card">
+                <div class="flex items-start">
+                  <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                    <i class="fas fa-fire text-white text-sm"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-orange-400 mb-3">Firewalls and Endpoint Protection</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-red-400 mb-3 flex items-center">
+                          <i class="fas fa-firewall mr-2"></i>
+                          Firewalls
+                        </h4>
+                        <p class="text-gray-300 text-sm mb-3">Kiểm soát lưu lượng mạng dựa trên quy tắc.</p>
+                        <p class="text-xs text-gray-300"><strong>Ví dụ:</strong> pfSense, iptables trên Linux.</p>
+                      </div>
+                      
+                      <div class="bg-slate-900/50 rounded-xl p-5 border border-slate-600">
+                        <h4 class="font-semibold text-red-400 mb-3 flex items-center">
+                          <i class="fas fa-shield-virus mr-2"></i>
+                          Endpoint Protection
+                        </h4>
+                        <p class="text-gray-300 text-sm mb-3">Bảo vệ thiết bị đầu cuối (PC, mobile) khỏi malware.</p>
+                        <p class="text-xs text-gray-300"><strong>Ví dụ:</strong> CrowdStrike, Windows Defender.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Checklist Section -->
+          <section id="checklist" class="fade-in">
+            <div class="flex items-start mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg mr-4">
+                <i class="fas fa-check-double text-white"></i>
+              </div>
+              <div>
+                <h2 class="text-3xl font-bold mb-4 section-header flex items-center">
+                  Checklist học tập và nghiên cứu
+                  <a href="#checklist" class="anchor-link ml-2 opacity-0">
+                    <i class="fas fa-link text-sm text-gray-400 hover:text-blue-400"></i>
+                  </a>
+                </h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mb-6"></div>
+              </div>
+            </div>
+            
+            <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 shadow-2xl">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="space-y-4">
+                  <div class="flex items-start checklist-item p-4 rounded-xl border border-slate-600">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Hiểu rõ bộ ba CIA và vai trò trong an ninh mạng.</span>
+                  </div>
+                  <div class="flex items-start checklist-item p-4 rounded-xl border border-slate-600">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Nắm vững các khái niệm: Authentication, Authorization, Encryption.</span>
+                  </div>
+                  <div class="flex items-start checklist-item p-4 rounded-xl border border-slate-600">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Tìm hiểu các mối đe dọa: Malware, Phishing, DDoS, SQL Injection, XSS.</span>
+                  </div>
+                  <div class="flex items-start checklist-item p-4 rounded-xl border border-slate-600">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Nghiên cứu các công cụ bảo mật: Wireshark, Metasploit, Burp Suite.</span>
+                  </div>
+                  <div class="flex items-start checklist-item p-4 rounded-xl border border-slate-600">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Thực hành kiểm tra lỗ hổng trên môi trường thử nghiệm như Hack The Box.</span>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-start checklist-item p-4 rounded-xl border border-slate-600">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Đọc sách <em class="text-gray-200">Hacking: The Art of Exploitation</em> của Jon Erickson.</span>
+                  </div>
+                  <div class="flex items-start checklist-item p-4 rounded-xl border border-slate-600">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Tìm hiểu về IDS/IPS và cách cấu hình Snort.</span>
+                  </div>
+                  <div class="flex items-start checklist-item p-4 rounded-xl border border-slate-600">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Thực hành sử dụng Kali Linux để kiểm tra bảo mật.</span>
+                  </div>
+                  <div class="flex items-start checklist-item p-4 rounded-xl border border-slate-600">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Nghiên cứu về mã hóa: AES, RSA, và SSL/TLS.</span>
+                  </div>
+                  <div class="flex items-start checklist-item p-4 rounded-xl border border-slate-600">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                    <span>Tìm hiểu về SIEM với Splunk hoặc ELK Stack.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tools Section -->
+          <section id="cong-cu-de-xuat" class="fade-in">
+            <div class="flex items-start mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg mr-4">
+                <i class="fas fa-toolbox text-white"></i>
+              </div>
+              <div>
+                <h2 class="text-3xl font-bold mb-4 section-header flex items-center">
+                  Công cụ đề xuất
+                  <a href="#cong-cu-de-xuat" class="anchor-link ml-2 opacity-0">
+                    <i class="fas fa-link text-sm text-gray-400 hover:text-purple-400"></i>
+                  </a>
+                </h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mb-6"></div>
+              </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Wireshark -->
+              <div class="tool-badge card-hover p-6 rounded-2xl border border-slate-600">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-water text-white"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-blue-400">Wireshark</h3>
+                </div>
+                <p class="text-gray-300 text-sm">Phân tích gói tin mạng để phát hiện lưu lượng bất thường.</p>
+              </div>
+              
+              <!-- Metasploit -->
+              <div class="tool-badge card-hover p-6 rounded-2xl border border-slate-600">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-bomb text-white"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-red-400">Metasploit</h3>
+                </div>
+                <p class="text-gray-300 text-sm">Framework kiểm tra thâm nhập.</p>
+              </div>
+              
+              <!-- Burp Suite -->
+              <div class="tool-badge card-hover p-6 rounded-2xl border border-slate-600">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-spider text-white"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-green-400">Burp Suite</h3>
+                </div>
+                <p class="text-gray-300 text-sm">Công cụ kiểm tra bảo mật ứng dụng web.</p>
+              </div>
+              
+              <!-- Kali Linux -->
+              <div class="tool-badge card-hover p-6 rounded-2xl border border-slate-600">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-gray-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fab fa-linux text-white"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-400">Kali Linux</h3>
+                </div>
+                <p class="text-gray-300 text-sm">Hệ điều hành tích hợp công cụ bảo mật.</p>
+              </div>
+              
+              <!-- Nmap -->
+              <div class="tool-badge card-hover p-6 rounded-2xl border border-slate-600">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-radar text-white"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-orange-400">Nmap</h3>
+                </div>
+                <p class="text-gray-300 text-sm">Quét mạng để tìm cổng mở và dịch vụ.</p>
+              </div>
+              
+              <!-- Snort -->
+              <div class="tool-badge card-hover p-6 rounded-2xl border border-slate-600">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-eye-dropper text-white"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-teal-400">Snort</h3>
+                </div>
+                <p class="text-gray-300 text-sm">IDS/IPS mã nguồn mở.</p>
+              </div>
+              
+              <!-- Splunk -->
+              <div class="tool-badge card-hover p-6 rounded-2xl border border-slate-600">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-chart-pie text-white"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-purple-400">Splunk</h3>
+                </div>
+                <p class="text-gray-300 text-sm">Hệ thống SIEM để phân tích log.</p>
+              </div>
+              
+              <!-- OWASP ZAP -->
+              <div class="tool-badge card-hover p-6 rounded-2xl border border-slate-600">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-shield-alt text-white"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-yellow-400">OWASP ZAP</h3>
+                </div>
+                <p class="text-gray-300 text-sm">Kiểm tra lỗ hổng web (XSS, SQL Injection).</p>
+              </div>
+              
+              <!-- Hashcat -->
+              <div class="tool-badge card-hover p-6 rounded-2xl border border-slate-600">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-hashtag text-white"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-pink-400">Hashcat</h3>
+                </div>
+                <p class="text-gray-300 text-sm">Công cụ bẻ khóa mật khẩu.</p>
+              </div>
+              
+              <!-- OpenSSL -->
+              <div class="tool-badge card-hover p-6 rounded-2xl border border-slate-600">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-lock text-white"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-blue-400">OpenSSL</h3>
+                </div>
+                <p class="text-gray-300 text-sm">Công cụ mã hóa và quản lý chứng chỉ SSL.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Practical Experience Section -->
+          <section id="kinh-nghiem" class="fade-in">
+            <div class="flex items-start mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg mr-4">
+                <i class="fas fa-hands-helping text-white"></i>
+              </div>
+              <div>
+                <h2 class="text-3xl font-bold mb-4 section-header flex items-center">
+                  Kinh nghiệm thực hành
+                  <a href="#kinh-nghiem" class="anchor-link ml-2 opacity-0">
+                    <i class="fas fa-link text-sm text-gray-400 hover:text-green-400"></i>
+                  </a>
+                </h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-green-600 to-emerald-600 mb-6"></div>
+              </div>
+            </div>
+            
+            <div class="space-y-6">
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl card-hover">
+                <div class="flex items-start">
+                  <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1 text-sm font-bold">1</div>
+                  <div>
+                    <h3 class="text-xl font-bold text-blue-400 mb-3">Phân tích lưu lượng mạng</h3>
+                    <ul class="space-y-2 text-gray-300">
+                      <li class="flex items-center"><i class="fas fa-caret-right text-blue-500 mr-2 text-sm"></i> Sử dụng Wireshark để bắt và phân tích gói tin HTTP/HTTPS.</li>
+                      <li class="flex items-center"><i class="fas fa-caret-right text-blue-500 mr-2 text-sm"></i> Phát hiện các gói tin bất thường trong mạng nội bộ.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl card-hover">
+                <div class="flex items-start">
+                  <div class="w-8 h-8 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1 text-sm font-bold">2</div>
+                  <div>
+                    <h3 class="text-xl font-bold text-green-400 mb-3">Kiểm tra thâm nhập</h3>
+                    <ul class="space-y-2 text-gray-300">
+                      <li class="flex items-center"><i class="fas fa-caret-right text-green-500 mr-2 text-sm"></i> Sử dụng Metasploit để kiểm tra lỗ hổng trên máy ảo (Metasploitable).</li>
+                      <li class="flex items-center"><i class="fas fa-caret-right text-green-500 mr-2 text-sm"></i> Thực hành kiểm tra XSS và SQL Injection với OWASP ZAP.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl card-hover">
+                <div class="flex items-start">
+                  <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1 text-sm font-bold">3</div>
+                  <div>
+                    <h3 class="text-xl font-bold text-purple-400 mb-3">Cấu hình bảo mật</h3>
+                    <ul class="space-y-2 text-gray-300">
+                      <li class="flex items-center"><i class="fas fa-caret-right text-purple-500 mr-2 text-sm"></i> Cài đặt và cấu hình firewall với pfSense hoặc iptables.</li>
+                      <li class="flex items-center"><i class="fas fa-caret-right text-purple-500 mr-2 text-sm"></i> Thiết lập VPN với OpenVPN để mã hóa kết nối.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl card-hover">
+                <div class="flex items-start">
+                  <div class="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1 text-sm font-bold">4</div>
+                  <div>
+                    <h3 class="text-xl font-bold text-orange-400 mb-3">Giám sát và phân tích log</h3>
+                    <ul class="space-y-2 text-gray-300">
+                      <li class="flex items-center"><i class="fas fa-caret-right text-orange-500 mr-2 text-sm"></i> Sử dụng ELK Stack để thu thập và phân tích log từ server.</li>
+                      <li class="flex items-center"><i class="fas fa-caret-right text-orange-500 mr-2 text-sm"></i> Cấu hình Snort để phát hiện xâm nhập mạng.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl card-hover">
+                <div class="flex items-start">
+                  <div class="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1 text-sm font-bold">5</div>
+                  <div>
+                    <h3 class="text-xl font-bold text-cyan-400 mb-3">Dự án thực tế</h3>
+                    <ul class="space-y-2 text-gray-300">
+                      <li class="flex items-center"><i class="fas fa-caret-right text-cyan-500 mr-2 text-sm"></i> Xây dựng một hệ thống giám sát bảo mật với Snort và Splunk.</li>
+                      <li class="flex items-center"><i class="fas fa-caret-right text-cyan-500 mr-2 text-sm"></i> Thực hiện pentest trên ứng dụng web tự phát triển để tìm lỗ hổng.</li>
+                      <li class="flex items-center"><i class="fas fa-caret-right text-cyan-500 mr-2 text-sm"></i> Tạo một script Python để tự động quét lỗ hổng với Nmap.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- References Section -->
+          <section id="tai-lieu" class="fade-in">
+            <div class="flex items-start mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg mr-4">
+                <i class="fas fa-book text-white"></i>
+              </div>
+              <div>
+                <h2 class="text-3xl font-bold mb-4 section-header flex items-center">
+                  Tài liệu tham khảo
+                  <a href="#tai-lieu" class="anchor-link ml-2 opacity-0">
+                    <i class="fas fa-link text-sm text-gray-400 hover:text-indigo-400"></i>
+                  </a>
+                </h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mb-6"></div>
+              </div>
+            </div>
+            
+            <div class="space-y-8">
+              <!-- Books -->
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl card-hover">
+                <h3 class="text-xl font-bold text-indigo-400 mb-4 flex items-center">
+                  <i class="fas fa-book-open mr-3"></i>
+                  Sách
+                </h3>
+                <div class="space-y-3">
+                  <div class="flex items-start border-l-4 border-indigo-500 pl-4">
+                    <i class="fas fa-book text-indigo-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">*Hacking: The Art of Exploitation* bởi Jon Erickson.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start border-l-4 border-indigo-500 pl-4">
+                    <i class="fas fa-book text-indigo-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">*The Web Application Hacker's Handbook* bởi Dafydd Stuttard và Marcus Pinto.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start border-l-4 border-indigo-500 pl-4">
+                    <i class="fas fa-book text-indigo-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">*Network Security Essentials* bởi William Stallings.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start border-l-4 border-indigo-500 pl-4">
+                    <i class="fas fa-book text-indigo-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">*Practical Malware Analysis* bởi Michael Sikorski và Andrew Honig.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Online Courses -->
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl card-hover">
+                <h3 class="text-xl font-bold text-purple-400 mb-4 flex items-center">
+                  <i class="fas fa-laptop-code mr-3"></i>
+                  Khóa học trực tuyến
+                </h3>
+                <div class="space-y-3">
+                  <div class="flex items-start border-l-4 border-purple-500 pl-4">
+                    <i class="fas fa-graduation-cap text-purple-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">Udemy: *The Complete Cyber Security Course* bởi Nathan House.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start border-l-4 border-purple-500 pl-4">
+                    <i class="fas fa-graduation-cap text-purple-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">Coursera: *Cybersecurity Specialization* bởi University of Maryland.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start border-l-4 border-purple-500 pl-4">
+                    <i class="fas fa-graduation-cap text-purple-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">TryHackMe: Các bài thực hành bảo mật thực tế.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Websites -->
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl card-hover">
+                <h3 class="text-xl font-bold text-blue-400 mb-4 flex items-center">
+                  <i class="fas fa-globe mr-3"></i>
+                  Website
+                </h3>
+                <div class="space-y-3">
+                  <div class="flex items-start border-l-4 border-blue-500 pl-4">
+                    <i class="fas fa-link text-blue-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">OWASP: <a href="https://owasp.org/" class="text-blue-300 hover:underline">https://owasp.org/</a></p>
+                    </div>
+                  </div>
+                  <div class="flex items-start border-l-4 border-blue-500 pl-4">
+                    <i class="fas fa-link text-blue-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">NIST Cybersecurity Framework: <a href="https://www.nist.gov/cyberframework" class="text-blue-300 hover:underline">https://www.nist.gov/cyberframework</a></p>
+                    </div>
+                  </div>
+                  <div class="flex items-start border-l-4 border-blue-500 pl-4">
+                    <i class="fas fa-link text-blue-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">Metasploit Documentation: <a href="https://docs.metasploit.com/" class="text-blue-300 hover:underline">https://docs.metasploit.com/</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Community Resources -->
+              <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl card-hover">
+                <h3 class="text-xl font-bold text-green-400 mb-4 flex items-center">
+                  <i class="fas fa-users mr-3"></i>
+                  Tài nguyên cộng đồng
+                </h3>
+                <div class="space-y-3">
+                  <div class="flex items-start border-l-4 border-green-500 pl-4">
+                    <i class="fab fa-stack-overflow text-green-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">Stack Overflow: Câu hỏi và trả lời về an ninh mạng.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start border-l-4 border-green-500 pl-4">
+                    <i class="fab fa-reddit text-green-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">Reddit: r/cybersecurity, r/netsec.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start border-l-4 border-green-500 pl-4">
+                    <i class="fas fa-vial text-green-400 mt-1 mr-3 text-sm"></i>
+                    <div>
+                      <p class="text-gray-200 font-medium">Hack The Box: <a href="https://www.hackthebox.com/" class="text-blue-300 hover:underline">https://www.hackthebox.com/</a> (môi trường thực hành pentest).</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Note Section -->
+          <section class="fade-in">
+            <div class="bg-gradient-to-r from-amber-900/30 to-orange-900/30 backdrop-blur-sm rounded-2xl p-6 border border-amber-800/50 shadow-2xl">
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                  <i class="fas fa-lightbulb text-white"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-amber-400 mb-3">Lưu ý</h3>
+                  <p class="text-gray-300">Tài liệu này sẽ được cập nhật liên tục để bổ sung các khái niệm mới, công cụ, và kinh nghiệm thực tế. Nếu bạn có đề xuất hoặc cần thêm chi tiết, hãy liên hệ với <strong class="text-blue-400">@author</strong>!</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-16 pt-8 border-t border-slate-700">
+      <div class="flex items-center justify-center mb-4">
+        <i class="fas fa-shield-alt text-red-500 mr-2 pulse"></i>
+        <span class="text-gray-400">Bảo vệ hệ thống, Bảo vệ tương lai</span>
+      </div>
+      <p class="text-sm text-gray-500">© 2024 Cyber Security Guide. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 100,
+              behavior: 'smooth'
+            });
+            
+            // Update active state in sidebar
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+              link.classList.remove('active');
+            });
+            this.classList.add('active');
+          }
+        });
+      });
+
+      // Initialize active state
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('a[href="#gioi-thieu"]').classList.add('active');
+        
+        // Add scroll spy functionality
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.sidebar-link');
+        
+        window.addEventListener('scroll', function() {
+          let current = '';
+          
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop) {
+              current = section.getAttribute('id');
+            }
+          });
+          
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+              link.classList.add('active');
+            }
+          });
+        });
+      });
+    </script>
+  </div>
+</body>
+</html>

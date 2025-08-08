@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artificial Intelligence - AI Guide</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --bg: #0a120a;
+      --text: #e0f0e0;
+      --accent: #00cc66;
+      --accent-glow: #00cc6633;
+      --sidebar-bg: #0d1a0d;
+      --card-bg: #122212;
+      --border: #2a4d2a;
+      --hover: #00aa55;
+      --radius: 12px;
+      --transition: all 0.3s ease;
+      --font: 'Segoe UI', system-ui, sans-serif;
+      --shadow: 0 10px 30px rgba(0, 100, 0, 0.4);
+      --glow: 0 0 15px rgba(0, 204, 102, 0.6);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      width: 280px;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      padding: 20px 0;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+      transition: var(--transition);
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .sidebar-header {
+      text-align: center;
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+
+    .sidebar-header h3 {
+      font-size: 1.4rem;
+      background: linear-gradient(90deg, var(--accent), #4caf50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0 15px;
+    }
+
+    .sidebar li {
+      margin: 8px 0;
+    }
+
+    .sidebar a {
+      display: block;
+      color: var(--text);
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background: var(--accent-glow);
+      color: var(--accent);
+      box-shadow: var(--glow);
+    }
+
+    .sidebar a.active {
+      font-weight: 600;
+    }
+
+    .sidebar .nested {
+      margin-left: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .main {
+      flex: 1;
+      margin-left: 280px;
+      padding: 40px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent), #4caf50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .author {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    /* ===== SEARCH BAR ===== */
+    .search-box {
+      max-width: 500px;
+      margin: 30px auto;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 20px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      border-radius: 50px;
+      font-size: 1rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent);
+      box-shadow: var(--glow);
+    }
+
+    .search-box i {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent);
+    }
+
+    /* ===== CONTENT ===== */
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 35px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    h2, h3, h4 {
+      color: var(--accent);
+      margin: 35px 0 18px;
+      border-left: 5px solid var(--accent);
+      padding-left: 15px;
+      position: relative;
+    }
+
+    h2::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--accent-glow);
+      border-radius: 5px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 50px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+    }
+
+    p, ul, ol {
+      margin: 12px 0;
+    }
+
+    ul li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 8px;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    .checklist li {
+      list-style: none;
+      margin: 10px 0;
+      opacity: 0.95;
+    }
+
+    .checklist input[type="checkbox"] {
+      accent-color: var(--accent);
+      transform: scale(1.3);
+      margin-right: 12px;
+    }
+
+    .note {
+      background: rgba(0, 204, 102, 0.1);
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .note::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+      animation: pulse 2s infinite;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      margin: 5px;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: white;
+      box-shadow: var(--glow);
+    }
+
+    .controls {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content > * {
+      opacity: 0;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .content > *:not(hr):not(.divider) {
+      animation-delay: calc(var(--i) * 0.1s);
+    }
+
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #777;
+      font-size: 0.9rem;
+      padding: 20px;
+    }
+
+    footer i {
+      color: var(--accent);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .main {
+        margin-left: 0;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .content {
+        padding: 20px;
+      }
+    }
+
+    /* ===== THEME TOGGLE ===== */
+    .theme-toggle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--glow);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h3>AI Guide</h3>
+    </div>
+    <ul id="sidebar-nav">
+      <li><a href="#gioi-thieu-ve-ai"><i class="fas fa-robot"></i> Giới thiệu về AI</a></li>
+      <li><a href="#ly-thuyet"><i class="fas fa-brain"></i> Lý thuyết cốt lõi</a>
+        <ul class="nested">
+          <li><a href="#các-loại-ai">Các loại AI</a></li>
+          <li><a href="#machine-learning">Machine Learning</a></li>
+          <li><a href="#deep-learning">Deep Learning</a></li>
+          <li><a href="#nlp">NLP</a></li>
+          <li><a href="#computer-vision">Computer Vision</a></li>
+          <li><a href="#reinforcement-learning">Reinforcement Learning</a></li>
+        </ul>
+      </li>
+      <li><a href="#ky-thuat"><i class="fas fa-cogs"></i> Kỹ thuật phát triển AI</a></li>
+      <li><a href="#thuat-ngu"><i class="fas fa-keyboard"></i> Thuật ngữ quan trọng</a></li>
+      <li><a href="#thu-thuat"><i class="fas fa-lightbulb"></i> Thủ thuật thực tế</a></li>
+      <li><a href="#checklist"><i class="fas fa-check-square"></i> Checklist học tập</a></li>
+      <li><a href="#cong-cu"><i class="fas fa-toolbox"></i> Công cụ đề xuất</a></li>
+      <li><a href="#kinh-nghiem"><i class="fas fa-flask"></i> Kinh nghiệm thực hành</a></li>
+      <li><a href="#tai-lieu"><i class="fas fa-book"></i> Tài liệu tham khảo</a></li>
+    </ul>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <header>
+      <h1>Artificial Intelligence (AI): A Comprehensive Guide</h1>
+      <p class="author">Tài liệu này được xây dựng để cung cấp một cái nhìn toàn diện về Trí tuệ nhân tạo (Artificial Intelligence - AI), từ lý thuyết, kỹ thuật, thuật ngữ, đến các thủ thuật và ứng dụng thực tế, phục vụ mục đích lưu trữ và tham khảo cho các dự án IT.</p>
+    </header>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Tìm kiếm trong tài liệu..." />
+      <i class="fas fa-search"></i>
+    </div>
+
+    <div class="controls">
+      <button class="btn" onclick="expandAll()">Mở rộng tất cả</button>
+      <button class="btn" onclick="collapseAll()">Thu gọn</button>
+    </div>
+
+    <div class="content" id="content">
+
+      <h2 id="gioi-thieu-ve-ai">Giới thiệu về AI</h2>
+      <p><strong>Trí tuệ nhân tạo (Artificial Intelligence - AI)</strong> là lĩnh vực khoa học máy tính tập trung vào việc tạo ra các hệ thống hoặc máy móc có khả năng thực hiện các tác vụ thông minh, tương tự như con người, chẳng hạn như học hỏi, suy luận, nhận diện hình ảnh, hiểu ngôn ngữ, hoặc ra quyết định. AI là một phần quan trọng của <strong>Application Software</strong>, được ứng dụng trong nhiều lĩnh vực từ y tế, tài chính, đến giải trí.</p>
+      <p><strong>Mục đích chính</strong>:</p>
+      <ul>
+        <li>Tự động hóa các tác vụ phức tạp, giảm thiểu sự can thiệp của con người.</li>
+        <li>Phân tích và khai thác dữ liệu lớn để đưa ra quyết định thông minh.</li>
+        <li>Tăng cường trải nghiệm người dùng qua các ứng dụng như chatbot, gợi ý nội dung.</li>
+      </ul>
+      <p><strong>Ứng dụng thực tế</strong>:</p>
+      <ul>
+        <li>Hệ thống gợi ý của Netflix sử dụng AI để cá nhân hóa nội dung.</li>
+        <li>Xe tự lái của Tesla sử dụng AI để nhận diện vật thể và ra quyết định.</li>
+        <li>Chatbot như Grok (xAI) để trả lời câu hỏi phức tạp.</li>
+      </ul>
+
+      <hr class="divider">
+
+      <h2 id="ly-thuyet">Lý thuyết cốt lõi</h2>
+
+      <h3 id="các-loại-ai">Các loại AI</h3>
+      <ul>
+        <li><strong>Narrow AI (ANI)</strong>: AI chuyên biệt, chỉ thực hiện một nhiệm vụ cụ thể. Ví dụ: Nhận diện khuôn mặt trong Google Photos.</li>
+        <li><strong>General AI (AGI)</strong>: AI có khả năng thực hiện mọi tác vụ trí tuệ như con người (chưa đạt được).</li>
+        <li><strong>Super AI (ASI)</strong>: AI vượt qua trí tuệ con người (khái niệm tương lai).</li>
+      </ul>
+
+      <h3 id="machine-learning">Machine Learning</h3>
+      <p><strong>Mô tả</strong>: Một nhánh của AI, cho phép máy học từ dữ liệu mà không cần lập trình chi tiết.</p>
+      <ul>
+        <li><strong>Supervised Learning</strong>: Học từ dữ liệu có nhãn. Ví dụ: Phân loại email spam/non-spam.</li>
+        <li><strong>Unsupervised Learning</strong>: Tìm mẫu trong dữ liệu không nhãn. Ví dụ: Phân cụm khách hàng.</li>
+        <li><strong>Reinforcement Learning</strong>: Học qua thử và sai dựa trên phần thưởng. Ví dụ: AI chơi cờ vua (AlphaGo).</li>
+      </ul>
+
+      <h3 id="deep-learning">Deep Learning</h3>
+      <p><strong>Mô tả</strong>: Sử dụng mạng nơ-ron nhân tạo để mô phỏng cách bộ não hoạt động.</p>
+      <ul>
+        <li><strong>Neural Networks</strong>: Các lớp nơ-ron xử lý dữ liệu.</li>
+        <li><strong>CNN</strong>: Dùng cho hình ảnh (ví dụ: nhận diện X-quang).</li>
+        <li><strong>RNN</strong>: Dùng cho dữ liệu tuần tự (text, speech).</li>
+      </ul>
+
+      <h3 id="nlp">Natural Language Processing (NLP)</h3>
+      <p><strong>Mô tả</strong>: Xử lý và hiểu ngôn ngữ tự nhiên.</p>
+      <ul>
+        <li><strong>Tokenization</strong>: Chia văn bản thành token.</li>
+        <li><strong>Word Embeddings</strong>: Biểu diễn từ dưới dạng vector (Word2Vec, GloVe).</li>
+        <li><strong>Transformers</strong>: Mô hình hiện đại (BERT, GPT).</li>
+      </ul>
+
+      <h3 id="computer-vision">Computer Vision</h3>
+      <p><strong>Mô tả</strong>: Cho phép máy tính hiểu và phân tích hình ảnh hoặc video.</p>
+      <ul>
+        <li><strong>Image Classification</strong>: Phân loại hình ảnh (cat vs. dog).</li>
+        <li><strong>Object Detection</strong>: Phát hiện và định vị vật thể (YOLO).</li>
+        <li><strong>Image Segmentation</strong>: Phân vùng hình ảnh (U-Net).</li>
+      </ul>
+
+      <h3 id="reinforcement-learning">Reinforcement Learning</h3>
+      <p><strong>Mô tả</strong>: AI học qua thử nghiệm, tối ưu hóa hành động dựa trên phần thưởng.</p>
+      <ul>
+        <li><strong>Agent</strong>: Thực thể ra quyết định.</li>
+        <li><strong>Environment</strong>: Không gian mà agent tương tác.</li>
+        <li><strong>Reward Function</strong>: Đánh giá hành động.</li>
+      </ul>
+
+      <hr class="divider">
+
+      <h2 id="ky-thuat">Kỹ thuật và công cụ phát triển AI</h2>
+      <h3>Data Preprocessing</h3>
+      <p>Chuẩn bị dữ liệu thô: cleaning, normalization, augmentation.</p>
+      <h3>Model Training and Evaluation</h3>
+      <p>Training, validation, metrics: Accuracy, Precision, F1-Score.</p>
+      <h3>Hyperparameter Tuning</h3>
+      <p>Grid Search, Random Search, Bayesian Optimization.</p>
+      <h3>Deployment and Scaling</h3>
+      <p>Sử dụng Docker, AWS SageMaker, TensorFlow Serving.</p>
+
+      <hr class="divider">
+
+      <h2 id="thuat-ngu">Thuật ngữ quan trọng</h2>
+      <ul>
+        <li><strong>Overfitting</strong>: Mô hình học quá tốt trên tập huấn luyện.</li>
+        <li><strong>Underfitting</strong>: Mô hình không học đủ.</li>
+        <li><strong>Gradient Descent</strong>: Tối ưu hóa loss function.</li>
+        <li><strong>Backpropagation</strong>: Cập nhật trọng số.</li>
+        <li><strong>Transfer Learning</strong>: Tái sử dụng mô hình đã huấn luyện.</li>
+      </ul>
+
+      <hr class="divider">
+
+      <h2 id="thu-thuat">Thủ thuật và kinh nghiệm thực tế</h2>
+      <h3>Data Optimization</h3>
+      <ul>
+        <li>Loại bỏ outlier, dùng PCA, data augmentation.</li>
+      </ul>
+      <h3>Model Optimization</h3>
+      <ul>
+        <li>Dùng dropout, batch normalization, model nhẹ hơn (MobileNet).</li>
+      </ul>
+      <h3>Debugging AI Models</h3>
+      <ul>
+        <li>Theo dõi loss curve, dùng TensorBoard, kiểm tra gradient.</li>
+      </ul>
+
+      <hr class="divider">
+
+      <h2 id="checklist">Checklist học tập và nghiên cứu</h2>
+      <ul class="checklist">
+        <li><input type="checkbox"> Hiểu các loại AI: Narrow AI, General AI, Super AI.</li>
+        <li><input type="checkbox"> Nắm vững các nhánh AI: ML, DL, NLP, CV, RL.</li>
+        <li><input type="checkbox"> Tìm hiểu các thuật toán ML: Linear Regression, SVM, K-Means.</li>
+        <li><input type="checkbox"> Nghiên cứu neural networks: CNN, RNN, Transformers.</li>
+        <li><input type="checkbox"> Thực hành data preprocessing.</li>
+        <li><input type="checkbox"> Tìm hiểu model training và evaluation.</li>
+        <li><input type="checkbox"> Đọc sách <em>Deep Learning</em> của Ian Goodfellow.</li>
+        <li><input type="checkbox"> Thực hành xây dựng mô hình với TensorFlow hoặc PyTorch.</li>
+        <li><input type="checkbox"> Nghiên cứu deployment AI với Docker và AWS.</li>
+        <li><input type="checkbox"> Tìm hiểu các thuật ngữ AI.</li>
+      </ul>
+
+      <hr class="divider">
+
+      <h2 id="cong-cu">Công cụ đề xuất</h2>
+      <ul>
+        <li><strong>TensorFlow</strong>: Framework AI/ML mạnh mẽ.</li>
+        <li><strong>PyTorch</strong>: Linh hoạt, phổ biến trong nghiên cứu.</li>
+        <li><strong>Scikit-learn</strong>: ML truyền thống.</li>
+        <li><strong>Keras</strong>: API cấp cao cho TensorFlow.</li>
+        <li><strong>Hugging Face</strong>: NLP với BERT, GPT.</li>
+        <li><strong>OpenCV</strong>: Computer vision.</li>
+        <li><strong>Jupyter Notebook</strong>: Môi trường tương tác.</li>
+        <li><strong>Google Colab</strong>: Miễn phí, có GPU.</li>
+        <li><strong>Docker</strong>: Đóng gói mô hình.</li>
+      </ul>
+
+      <hr class="divider">
+
+      <h2 id="kinh-nghiem">Kinh nghiệm thực hành</h2>
+      <ol>
+        <li><strong>Xây dựng mô hình ML</strong>: Phân loại email spam, phân cụm khách hàng.</li>
+        <li><strong>Phát triển Deep Learning</strong>: CNN trên MNIST, transfer learning với ResNet.</li>
+        <li><strong>Xử lý NLP</strong>: Chatbot với BERT, sentiment analysis bằng LSTM.</li>
+        <li><strong>Computer Vision</strong>: Phát hiện khuôn mặt (OpenCV), YOLO.</li>
+        <li><strong>Dự án thực tế</strong>: Hệ thống gợi ý, nhận diện bệnh từ X-quang, NLP trên AWS.</li>
+      </ol>
+
+      <hr class="divider">
+
+      <h2 id="tai-lieu">Tài liệu tham khảo</h2>
+      <p><strong>Sách</strong>: <em>Deep Learning</em> (Goodfellow), <em>Pattern Recognition</em> (Bishop), <em>Reinforcement Learning</em> (Sutton).</p>
+      <p><strong>Khóa học</strong>: Coursera (Andrew Ng), Fast.ai, Udemy.</p>
+      <p><strong>Website</strong>: <a href="https://tensorflow.org" target="_blank">TensorFlow</a>, <a href="https://pytorch.org" target="_blank">PyTorch</a>, <a href="https://huggingface.co" target="_blank">Hugging Face</a>, <a href="https://opencv.org" target="_blank">OpenCV</a>.</p>
+      <p><strong>Cộng đồng</strong>: Kaggle, Stack Overflow, Reddit r/MachineLearning.</p>
+
+      <footer>
+        <p><i class="fas fa-leaf"></i> <strong>Lưu ý</strong>: Tài liệu này sẽ được cập nhật liên tục. Phần AI Agent sẽ có tài liệu riêng. Liên hệ <strong>@author</strong> nếu cần hỗ trợ.</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- THEME TOGGLE BUTTON -->
+  <div class="theme-toggle" onclick="toggleTheme()">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll('.content > *:not(.divider)');
+      elements.forEach((el, i) => {
+        el.style.setProperty('--i', i);
+      });
+    });
+
+    const sections = document.querySelectorAll('h2[id], h3[id]');
+    const navLinks = document.querySelectorAll('.sidebar a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      const term = e.target.value.toLowerCase();
+      const items = document.querySelectorAll('.content h2, .content h3, .content h4, .content p, .content li');
+      items.forEach(el => {
+        if (el.textContent.toLowerCase().includes(term)) {
+          el.style.display = 'block';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    });
+
+    function expandAll() {
+      document.querySelectorAll('.content h3, .content h4').forEach(h => h.style.display = 'block');
+    }
+    function collapseAll() {
+      alert("Tính năng thu gọn đang phát triển.");
+    }
+
+    function toggleTheme() {
+      const btn = document.querySelector('.theme-toggle i');
+      if (btn.classList.contains('fa-moon')) {
+        btn.classList.replace('fa-moon', 'fa-sun');
+        document.body.style.setProperty('--accent', '#66bb6a');
+        document.body.style.setProperty('--accent-glow', '#66bb6a33');
+        document.body.style.setProperty('--glow', '0 0 15px rgba(102, 187, 106, 0.6)');
+      } else {
+        btn.classList.replace('fa-sun', 'fa-moon');
+        document.body.style.setProperty('--accent', '#00cc66');
+        document.body.style.setProperty('--accent-glow', '#00cc6633');
+        document.body.style.setProperty('--glow', '0 0 15px rgba(0, 204, 102, 0.6)');
+      }
+    }
+  </script>
+</body>
+</html>

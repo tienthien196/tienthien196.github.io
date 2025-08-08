@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Agent - Comprehensive Guide</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --bg: #0a120a;
+      --text: #e0f0e0;
+      --accent: #00cc66;
+      --accent-glow: #00cc6633;
+      --sidebar-bg: #0d1a0d;
+      --card-bg: #122212;
+      --border: #2a4d2a;
+      --hover: #00aa55;
+      --radius: 16px;
+      --transition: all 0.3s ease;
+      --font: 'Segoe UI', system-ui, sans-serif;
+      --shadow: 0 15px 40px rgba(0, 80, 0, 0.4);
+      --glow: 0 0 18px rgba(0, 204, 102, 0.7);
+      --sidebar-width: 300px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.8;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ===== SIDEBAR (GLASSMORPHIC + MODERN) ===== */
+    .sidebar {
+      width: var(--sidebar-width);
+      background: linear-gradient(180deg, rgba(13,26,13,0.8), rgba(10,18,10,0.6));
+      backdrop-filter: blur(12px);
+      border-right: 1px solid rgba(0, 204, 102, 0.15);
+      padding: 25px 0;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+      z-index: 100;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar-header {
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-header h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent), #4caf50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0 18px;
+    }
+
+    .sidebar li {
+      margin: 10px 0;
+    }
+
+    .sidebar a {
+      display: block;
+      color: var(--text);
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 0.98rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sidebar a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: transparent;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: rgba(0, 204, 102, 0.1);
+      color: var(--accent);
+      transform: translateX(4px);
+      box-shadow: var(--glow);
+    }
+
+    .sidebar a:hover::before {
+      background: var(--accent);
+    }
+
+    .sidebar a.active {
+      background: rgba(0, 204, 102, 0.15);
+      color: var(--accent);
+      font-weight: 600;
+      box-shadow: var(--glow);
+    }
+
+    .sidebar a.active::before {
+      background: var(--accent);
+    }
+
+    .sidebar .nested {
+      margin-left: 25px;
+      font-size: 0.92rem;
+    }
+
+    .sidebar .nested a {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .main {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      padding: 50px 40px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent), #4caf50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+    }
+
+    .author {
+      color: var(--accent);
+      font-size: 1.15rem;
+      opacity: 0.95;
+    }
+
+    /* ===== SEARCH BAR ===== */
+    .search-box {
+      max-width: 600px;
+      margin: 35px auto;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px 22px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      border-radius: 50px;
+      font-size: 1.05rem;
+      outline: none;
+      transition: var(--transition);
+      font-family: var(--font);
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent);
+      box-shadow: var(--glow);
+      background: rgba(0, 204, 102, 0.05);
+    }
+
+    .search-box i {
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    /* ===== CONTENT ===== */
+    .content {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    h2, h3, h4 {
+      color: var(--accent);
+      margin: 40px 0 20px;
+      position: relative;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      border-left: 6px solid var(--accent);
+      padding-left: 18px;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      border-left: 5px solid var(--accent-glow);
+      padding-left: 15px;
+    }
+
+    h4 {
+      font-size: 1.35rem;
+    }
+
+    p, ul, ol {
+      margin: 14px 0;
+    }
+
+    ul li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    .checklist li {
+      list-style: none;
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .checklist input[type="checkbox"] {
+      accent-color: var(--accent);
+      transform: scale(1.4);
+      margin-right: 14px;
+      cursor: pointer;
+    }
+
+    .note {
+      background: rgba(0, 204, 102, 0.12);
+      border-left: 5px solid var(--accent);
+      padding: 18px 20px;
+      margin: 30px 0;
+      border-radius: 0 10px 10px 0;
+      font-style: italic;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    .note strong {
+      color: var(--accent);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content > * {
+      opacity: 0;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .content > *:not(.divider):not(hr) {
+      animation-delay: calc(var(--i) * 0.1s);
+    }
+
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 45px 0;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #777;
+      font-size: 0.95rem;
+      padding: 25px;
+      border-top: 1px solid var(--border);
+      margin-top: 50px;
+    }
+
+    footer i {
+      color: var(--accent);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      :root {
+        --sidebar-width: 100%;
+      }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 15px;
+      }
+      .main {
+        margin-left: 0;
+        padding: 30px 20px;
+      }
+      h1 {
+        font-size: 2.3rem;
+      }
+      .content {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h3>AI Agent Docs</h3>
+    </div>
+    <ul id="sidebar-nav">
+      <li><a href="#gioi-thieu-ve-ai-agent">Giới thiệu về AI Agent</a></li>
+      <li><a href="#ly-thuyet">Lý thuyết cốt lõi</a>
+        <ul class="nested">
+          <li><a href="#dinh-nghia-va-dac-diem">Định nghĩa và đặc điểm</a></li>
+          <li><a href="#cac-loai-ai-agent">Các loại AI Agent</a></li>
+          <li><a href="#mo-hinh-kien-truc-agent">Mô hình kiến trúc Agent</a></li>
+        </ul>
+      </li>
+      <li><a href="#ky-thuat">Kỹ thuật phát triển AI Agent</a>
+        <ul class="nested">
+          <li><a href="#reinforcement-learning">Reinforcement Learning</a></li>
+          <li><a href="#multi-agent-systems">Multi-Agent Systems</a></li>
+          <li><a href="#agent-communication">Agent Communication</a></li>
+          <li><a href="#knowledge-representation">Knowledge Representation</a></li>
+        </ul>
+      </li>
+      <li><a href="#thuat-ngu">Thuật ngữ quan trọng</a></li>
+      <li><a href="#thu-thuat">Thủ thuật thực tế</a>
+        <ul class="nested">
+          <li><a href="#toi-uu-hoa">Tối ưu hóa hiệu suất</a></li>
+          <li><a href="#debugging">Debugging Agent</a></li>
+          <li><a href="#scaling">Scaling Systems</a></li>
+        </ul>
+      </li>
+      <li><a href="#checklist">Checklist học tập</a></li>
+      <li><a href="#cong-cu">Công cụ đề xuất</a></li>
+      <li><a href="#kinh-nghiem">Kinh nghiệm thực hành</a></li>
+      <li><a href="#tai-lieu">Tài liệu tham khảo</a></li>
+    </ul>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <header>
+      <h1>AI Agent: A Comprehensive Guide</h1>
+      <p class="author">Tài liệu này được xây dựng để cung cấp một cái nhìn toàn diện về AI Agent trong Application Software, từ lý thuyết, kỹ thuật, đến các ứng dụng thực tế, phục vụ mục đích lưu trữ và tham khảo cho các dự án IT.</p>
+    </header>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Tìm kiếm trong tài liệu..." />
+      <i class="fas fa-search"></i>
+    </div>
+
+    <div class="content" id="content">
+
+      <h2 id="gioi-thieu-ve-ai-agent">Giới thiệu về AI Agent</h2>
+      <p><strong>AI Agent</strong> là một thực thể phần mềm có khả năng tự động ra quyết định, tương tác với môi trường, và thực hiện các tác vụ thông minh dựa trên mục tiêu được định nghĩa. Trong bối cảnh <strong>Application Software</strong>, AI Agent được sử dụng để tự động hóa các quy trình, hỗ trợ người dùng, hoặc điều khiển các hệ thống phức tạp, từ chatbot, trợ lý ảo, đến robot tự động trong game hoặc sản xuất.</p>
+      <p><strong>Mục đích chính</strong>:</p>
+      <ul>
+        <li>Tự động hóa các tác vụ phức tạp như điều khiển nhân vật trong game hoặc hỗ trợ khách hàng qua chatbot.</li>
+        <li>Ra quyết định tối ưu trong môi trường không chắc chắn (ví dụ: điều khiển xe tự lái).</li>
+        <li>Tăng cường khả năng tương tác thông minh giữa người dùng và hệ thống.</li>
+      </ul>
+      <p><strong>Ứng dụng thực tế</strong>:</p>
+      <ul>
+        <li>Trợ lý ảo như Grok (xAI) trả lời câu hỏi người dùng.</li>
+        <li>NPC (Non-Player Character) trong game sử dụng AI để hành động thông minh.</li>
+        <li>Agent tự động trong hệ thống giao dịch tài chính (algorithmic trading).</li>
+      </ul>
+
+      <hr class="divider">
+
+      <h2 id="ly-thuyet">Lý thuyết cốt lõi</h2>
+
+      <h3 id="dinh-nghia-va-dac-diem">Định nghĩa và đặc điểm</h3>
+      <p><strong>Định nghĩa</strong>: AI Agent là một hệ thống tự trị (autonomous) nhận đầu vào từ môi trường, xử lý thông tin, và thực hiện hành động để đạt mục tiêu.</p>
+      <p><strong>Đặc điểm</strong>:</p>
+      <ul>
+        <li><strong>Autonomy</strong>: Tự ra quyết định mà không cần can thiệp liên tục.</li>
+        <li><strong>Reactivity</strong>: Phản ứng với thay đổi trong môi trường.</li>
+        <li><strong>Proactivity</strong>: Chủ động thực hiện hành động để đạt mục tiêu.</li>
+        <li><strong>Social Ability</strong>: Tương tác với các agent khác hoặc con người.</li>
+      </ul>
+      <div class="note">
+        <strong>Ví dụ thực tế</strong>: Chatbot Grok phản ứng với câu hỏi người dùng và chủ động gợi ý thông tin liên quan.
+      </div>
+
+      <h3 id="cac-loai-ai-agent">Các loại AI Agent</h3>
+      <ul>
+        <li><strong>Simple Reflex Agents</strong>: Hành động dựa trên luật cố định (if-then rules).<br>Ví dụ: Agent điều khiển đèn giao thông.</li>
+        <li><strong>Model-Based Reflex Agents</strong>: Sử dụng mô hình nội bộ về môi trường.<br>Ví dụ: Robot hút bụi lập bản đồ căn phòng.</li>
+        <li><strong>Goal-Based Agents</strong>: Ra quyết định dựa trên mục tiêu cụ thể.<br>Ví dụ: Agent điều hướng xe tự lái đến đích.</li>
+        <li><strong>Utility-Based Agents</strong>: Tối ưu hóa dựa trên hàm tiện ích.<br>Ví dụ: Agent trong game chọn chiến lược để tối đa hóa điểm số.</li>
+        <li><strong>Learning Agents</strong>: Học từ kinh nghiệm để cải thiện hiệu suất.<br>Ví dụ: Agent chơi cờ vua học từ các ván trước.</li>
+      </ul>
+
+      <h3 id="mo-hinh-kien-truc-agent">Mô hình kiến trúc Agent</h3>
+      <p><strong>PEAS Framework</strong> (Performance, Environment, Actuators, Sensors):</p>
+      <ul>
+        <li><strong>Performance</strong>: Tiêu chí đánh giá hiệu suất.</li>
+        <li><strong>Environment</strong>: Môi trường agent hoạt động.</li>
+        <li><strong>Actuators</strong>: Công cụ để thực hiện hành động.</li>
+        <li><strong>Sensors</strong>: Công cụ để nhận dữ liệu.</li>
+      </ul>
+      <p><strong>BDI Architecture</strong> (Beliefs, Desires, Intentions):</p>
+      <ul>
+        <li><strong>Beliefs</strong>: Kiến thức về môi trường.</li>
+        <li><strong>Desires</strong>: Mục tiêu agent muốn đạt.</li>
+        <li><strong>Intentions</strong>: Kế hoạch hành động để đạt mục tiêu.</li>
+      </ul>
+      <div class="note">
+        <strong>Ví dụ thực tế</strong>: Agent trong game sử dụng PEAS để điều khiển NPC, với camera là sensor và động cơ di chuyển là actuator.
+      </div>
+
+      <hr class="divider">
+
+      <h2 id="ky-thuat">Kỹ thuật phát triển AI Agent</h2>
+
+      <h3 id="reinforcement-learning">Reinforcement Learning for Agents</h3>
+      <p><strong>Mô tả</strong>: Agent học qua thử và sai, tối ưu hóa hành động dựa trên phần thưởng.</p>
+      <ul>
+        <li><strong>Q-Learning</strong>: Tạo bảng Q để đánh giá hành động.</li>
+        <li><strong>Deep Q-Networks (DQN)</strong>: Kết hợp neural networks với Q-Learning.</li>
+        <li><strong>Policy Gradient Methods</strong>: Tối ưu hóa chính sách trực tiếp (PPO, TRPO).</li>
+      </ul>
+      <div class="note">
+        <strong>Ví dụ thực tế</strong>: Agent trong game <em>StarCraft II</em> sử dụng DQN để học chiến lược.
+      </div>
+
+      <h3 id="multi-agent-systems">Multi-Agent Systems</h3>
+      <p><strong>Mô tả</strong>: Hệ thống gồm nhiều agent tương tác với nhau.</p>
+      <ul>
+        <li><strong>Coordination</strong>: Các agent hợp tác (robot sản xuất).</li>
+        <li><strong>Competition</strong>: Các agent đối đầu (game multiplayer).</li>
+        <li><strong>Game Theory</strong>: Sử dụng Nash Equilibrium để tối ưu.</li>
+      </ul>
+      <div class="note">
+        <strong>Ví dụ thực tế</strong>: Agent trong game <em>Among Us</em> phối hợp hoặc cạnh tranh để hoàn thành nhiệm vụ.
+      </div>
+
+      <h3 id="agent-communication">Agent Communication</h3>
+      <p><strong>Mô tả</strong>: Agent trao đổi thông tin với nhau hoặc với con người.</p>
+      <ul>
+        <li><strong>ACL (Agent Communication Language)</strong>: Ngôn ngữ chuẩn như FIPA-ACL.</li>
+        <li><strong>Message Passing</strong>: Gửi/nhận thông điệp qua API.</li>
+        <li><strong>Natural Language</strong>: Sử dụng NLP để giao tiếp.</li>
+      </ul>
+      <div class="note">
+        <strong>Ví dụ thực tế</strong>: Chatbot sử dụng NLP để hiểu và trả lời câu hỏi.
+      </div>
+
+      <h3 id="knowledge-representation">Knowledge Representation</h3>
+      <p><strong>Mô tả</strong>: Lưu trữ và tổ chức kiến thức để agent suy luận.</p>
+      <ul>
+        <li><strong>Ontologies</strong>: Biểu diễn kiến thức dạng cây (OWL).</li>
+        <li><strong>Knowledge Graphs</strong>: Lưu trữ quan hệ giữa các thực thể.</li>
+        <li><strong>Rule-Based Systems</strong>: Sử dụng luật logic (if-then).</li>
+      </ul>
+      <div class="note">
+        <strong>Ví dụ thực tế</strong>: Agent y tế sử dụng knowledge graph để chẩn đoán bệnh.
+      </div>
+
+      <hr class="divider">
+
+      <h2 id="thuat-ngu">Thuật ngữ quan trọng</h2>
+      <ul>
+        <li><strong>Agent</strong>: Thực thể tự trị ra quyết định.</li>
+        <li><strong>Environment</strong>: Không gian agent tương tác.</li>
+        <li><strong>State</strong>: Trạng thái hiện tại của môi trường.</li>
+        <li><strong>Action</strong>: Hành động agent thực hiện.</li>
+        <li><strong>Reward</strong>: Phản hồi từ môi trường.</li>
+        <li><strong>Policy</strong>: Chiến lược chọn hành động.</li>
+        <li><strong>Exploration vs. Exploitation</strong>: Cân bằng thử nghiệm và sử dụng kinh nghiệm.</li>
+        <li><strong>Markov Decision Process (MDP)</strong>: Mô hình toán học cho RL.</li>
+        <li><strong>Belief State</strong>: Kiến thức khi thông tin không đầy đủ.</li>
+        <li><strong>Utility Function</strong>: Hàm đánh giá mức độ đạt mục tiêu.</li>
+      </ul>
+
+      <hr class="divider">
+
+      <h2 id="thu-thuat">Thủ thuật và kinh nghiệm thực tế</h2>
+
+      <h3 id="toi-uu-hoa">Tối ưu hóa hiệu suất Agent</h3>
+      <ul>
+        <li>Giảm không gian trạng thái bằng nhóm trạng thái tương tự.</li>
+        <li>Sử dụng transfer learning để tái sử dụng kiến thức.</li>
+        <li>Áp dụng reward shaping để định hướng học nhanh hơn.</li>
+      </ul>
+      <div class="note">
+        <strong>Ví dụ thực tế</strong>: Trong game, giảm không gian trạng thái bằng cách chỉ xét các vị trí gần nhân vật.
+      </div>
+
+      <h3 id="debugging">Debugging Agent Behavior</h3>
+      <ul>
+        <li>Ghi log hành động và trạng thái để phân tích.</li>
+        <li>Sử dụng visualization tools để theo dõi chính sách.</li>
+        <li>Kiểm tra reward function để đảm bảo logic.</li>
+      </ul>
+      <div class="note">
+        <strong>Ví dụ thực tế</strong>: Sử dụng matplotlib để vẽ biểu đồ reward trong reinforcement learning.
+      </div>
+
+      <h3 id="scaling">Scaling Agent Systems</h3>
+      <ul>
+        <li>Sử dụng mô phỏng song song (parallel simulation).</li>
+        <li>Triển khai multi-agent trên cloud (AWS, Google Cloud).</li>
+        <li>Tối ưu hóa giao tiếp bằng giao thức nhẹ (gRPC).</li>
+      </ul>
+      <div class="note">
+        <strong>Ví dụ thực tế</strong>: Huấn luyện multi-agent trong game với Google Cloud TPU.
+      </div>
+
+      <hr class="divider">
+
+      <h2 id="checklist">Checklist học tập và nghiên cứu</h2>
+      <ul class="checklist">
+        <li><input type="checkbox"> Hiểu rõ định nghĩa và đặc điểm của AI Agent.</li>
+        <li><input type="checkbox"> Nắm vững các loại agent: Reflex, Model-Based, Goal-Based.</li>
+        <li><input type="checkbox"> Tìm hiểu PEAS và BDI architecture.</li>
+        <li><input type="checkbox"> Nghiên cứu reinforcement learning: Q-Learning, DQN, Policy Gradient.</li>
+        <li><input type="checkbox"> Thực hành xây dựng agent đơn giản với OpenAI Gym.</li>
+        <li><input type="checkbox"> Tìm hiểu multi-agent systems và game theory.</li>
+        <li><input type="checkbox"> Đọc sách <em>Reinforcement Learning: An Introduction</em> của Sutton.</li>
+        <li><input type="checkbox"> Nghiên cứu giao tiếp agent với FIPA-ACL hoặc NLP.</li>
+        <li><input type="checkbox"> Thực hành phát triển agent trong game sử dụng Godot hoặc Unity.</li>
+        <li><input type="checkbox"> Tìm hiểu bảo mật và tối ưu hóa agent trong môi trường thực tế.</li>
+      </ul>
+
+      <hr class="divider">
+
+      <h2 id="cong-cu">Công cụ đề xuất</h2>
+      <ul>
+        <li><strong>OpenAI Gym</strong>: Môi trường mô phỏng để huấn luyện agents.</li>
+        <li><strong>Stable Baselines3</strong>: Thư viện RL với PPO, DQN.</li>
+        <li><strong>PyTorch/TensorFlow</strong>: Framework cho neural networks.</li>
+        <li><strong>Unity ML-Agents</strong>: Phát triển AI Agent trong game.</li>
+        <li><strong>Godot</strong>: Game engine mã nguồn mở.</li>
+        <li><strong>JADE</strong>: Framework multi-agent systems.</li>
+        <li><strong>ROS</strong>: Hỗ trợ phát triển agents cho robot.</li>
+        <li><strong>Hugging Face Transformers</strong>: NLP cho agents giao tiếp.</li>
+        <li><strong>Google Colab</strong>: Môi trường miễn phí với GPU.</li>
+        <li><strong>Matplotlib/Seaborn</strong>: Trực quan hóa hành vi agent.</li>
+      </ul>
+
+      <hr class="divider">
+
+      <h2 id="kinh-nghiem">Kinh nghiệm thực hành</h2>
+      <ol>
+        <li><strong>Xây dựng simple reflex agent</strong>: Viết agent điều khiển đèn giao thông với Python.</li>
+        <li><strong>Phát triển learning agent</strong>: Huấn luyện agent chơi CartPole với DQN.</li>
+        <li><strong>Multi-agent systems</strong>: Xây dựng hai agents cạnh tranh trong Tic-Tac-Toe.</li>
+        <li><strong>Agent trong game</strong>: Dùng Unity ML-Agents để huấn luyện NPC thông minh.</li>
+        <li><strong>Dự án thực tế</strong>: Phát triển chatbot hỗ trợ khách hàng hoặc agent giao dịch tài chính tự động.</li>
+      </ol>
+
+      <hr class="divider">
+
+      <h2 id="tai-lieu">Tài liệu tham khảo</h2>
+      <p><strong>Sách</strong>: <em>Reinforcement Learning</em> (Sutton), <em>Artificial Intelligence: A Modern Approach</em> (Russell & Norvig), <em>Deep Reinforcement Learning Hands-On</em> (Lapan).</p>
+      <p><strong>Khóa học</strong>: Coursera (Reinforcement Learning), Udemy (Deep RL), Unity Learn (ML-Agents).</p>
+      <p><strong>Website</strong>: <a href="https://gym.openai.com" target="_blank">OpenAI Gym</a>, <a href="https://github.com/Unity-Technologies/ml-agents" target="_blank">Unity ML-Agents</a>, <a href="https://pytorch.org" target="_blank">PyTorch</a>, <a href="https://www.ros.org" target="_blank">ROS</a>.</p>
+      <p><strong>Cộng đồng</strong>: Stack Overflow, Reddit r/reinforcementlearning, GitHub.</p>
+
+      <footer>
+        <p><i class="fas fa-leaf"></i> <strong>Lưu ý</strong>: Tài liệu này sẽ được cập nhật liên tục. Nếu bạn có đề xuất hoặc cần thêm chi tiết, hãy liên hệ với <strong>@author</strong>!</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Animation khi load
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll('.content > *:not(.divider):not(hr)');
+      elements.forEach((el, i) => {
+        el.style.setProperty('--i', i + 1);
+      });
+    });
+
+    // Active link khi scroll
+    const sections = document.querySelectorAll('h2[id], h3[id]');
+    const navLinks = document.querySelectorAll('.sidebar a');
+
+    function updateActiveLink() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink(); // Gọi lần đầu
+
+    // Tìm kiếm
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      const term = e.target.value.toLowerCase();
+      const items = document.querySelectorAll('.content h2, .content h3, .content h4, .content p, .content li');
+      items.forEach(el => {
+        if (el.textContent.toLowerCase().includes(term)) {
+          el.style.display = 'block';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

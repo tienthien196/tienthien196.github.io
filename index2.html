@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecosystem Support & Build by Me</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .code-font {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .nav-link {
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #3b82f6;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .nav-link.active {
+      color: #3b82f6;
+    }
+    
+    .nav-link.active:after {
+      width: 100%;
+    }
+    
+    .check-item {
+      transition: all 0.2s ease;
+    }
+    
+    .check-item:hover {
+      transform: translateX(5px);
+    }
+    
+    .section-header {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .section-header:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      transition: width 0.5s ease;
+    }
+    
+    .section-header:hover:after {
+      width: 100%;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-gray-100">
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- Header -->
+    <header class="text-center mb-12 fade-in">
+      <div class="flex items-center justify-center mb-4">
+        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+          <i class="fas fa-cube text-white text-xl"></i>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold gradient-text">Ecosystem Support</h1>
+      </div>
+      <p class="text-xl text-gray-300 mb-2">Build by Me !!</p>
+      <p class="text-gray-400 mb-6">Project được xây dựng bởi <span class="text-blue-400 font-semibold">@author</span> với mục đích lưu trữ toàn bộ checklist từ <span class="text-purple-400 font-semibold">BNJ</span></p>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="flex flex-wrap justify-center gap-2 mb-12">
+      <button onclick="showSection('hardware')" class="nav-link px-6 py-3 rounded-xl bg-slate-700 hover:bg-slate-600 active text-blue-400 font-medium transition-all duration-300 flex items-center gap-2">
+        <i class="fas fa-microchip"></i>
+        Hardware
+      </button>
+      <button onclick="showSection('computer-science')" class="nav-link px-6 py-3 rounded-xl bg-slate-700 hover:bg-slate-600 font-medium transition-all duration-300 flex items-center gap-2">
+        <i class="fas fa-laptop-code"></i>
+        Computer Science
+      </button>
+    </nav>
+
+    <!-- Content -->
+    <div id="content" class="space-y-10">
+      <!-- Hardware Section -->
+      <div id="hardware" class="hidden">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold mb-4 section-header text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500">Hardware</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-red-400 to-orange-500 mx-auto rounded-full"></div>
+        </div>
+        <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 shadow-2xl card-hover">
+          <div class="text-center">
+            <i class="fas fa-sync-alt fa-spin text-4xl text-orange-400 mb-4 pulse"></i>
+            <p class="text-xl text-gray-300">Đang được cập nhật...</p>
+            <p class="text-gray-400 mt-2">Chúng tôi đang làm việc chăm chỉ để cung cấp nội dung mới</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Computer Science Section -->
+      <div id="computer-science" class="fade-in">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold mb-4 section-header text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500">Computer Science</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-400 to-cyan-500 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Computer Architecture -->
+        <div class="mb-8 card-hover">
+          <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fas fa-project-diagram text-white"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-blue-400 mb-3">1. Computer Architecture</h3>
+                <p class="text-gray-300 mb-4"><strong>Mô tả:</strong> Lý thuyết trừu tượng về cách tổ chức và hoạt động của phần cứng máy tính, bao gồm CPU, bộ nhớ, và các thành phần liên quan.</p>
+                
+                <div class="bg-slate-900/50 rounded-xl p-5 mb-4 border-l-4 border-blue-500">
+                  <h4 class="font-semibold text-cyan-400 mb-3 flex items-center">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Checklist
+                  </h4>
+                  <div class="space-y-3">
+                    <div class="flex items-start check-item">
+                      <i class="fas fa-square text-blue-500 text-xs mt-2 mr-3"></i>
+                      <span class="text-gray-200">Hiểu về các thành phần chính: CPU, RAM, Cache, Bus.</span>
+                    </div>
+                    <div class="flex items-start check-item">
+                      <i class="fas fa-square text-blue-500 text-xs mt-2 mr-3"></i>
+                      <span class="text-gray-200">Tìm hiểu các mô hình kiến trúc: Von Neumann, Harvard.</span>
+                    </div>
+                    <div class="flex items-start check-item">
+                      <i class="fas fa-square text-blue-500 text-xs mt-2 mr-3"></i>
+                      <span class="text-gray-200">Nghiên cứu về pipeline, superscalar, và parallel processing.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div class="bg-slate-900/50 rounded-xl p-4 border border-slate-600">
+                    <h4 class="font-semibold text-purple-400 mb-3 flex items-center">
+                      <i class="fas fa-tools mr-2"></i>
+                      Công cụ đề xuất
+                    </h4>
+                    <ul class="space-y-2 text-gray-300">
+                      <li class="flex items-center"><i class="fas fa-caret-right text-purple-500 mr-2"></i> Logisim: Phần mềm mô phỏng mạch logic.</li>
+                      <li class="flex items-center"><i class="fas fa-caret-right text-purple-500 mr-2"></i> Simulators: RISC-V, MIPS simulators.</li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-slate-900/50 rounded-xl p-4 border border-slate-600">
+                    <h4 class="font-semibold text-green-400 mb-3 flex items-center">
+                      <i class="fas fa-lightbulb mr-2"></i>
+                      Kinh nghiệm
+                    </h4>
+                    <ul class="space-y-2 text-gray-300">
+                      <li class="flex items-center"><i class="fas fa-caret-right text-green-500 mr-2"></i> Thực hành thiết kế mạch đơn giản để hiểu cách hoạt động của CPU.</li>
+                      <li class="flex items-center"><i class="fas fa-caret-right text-green-500 mr-2"></i> Tìm hiểu cách tối ưu hóa hiệu suất qua các kỹ thuật như branch prediction.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="mt-4 text-sm text-gray-400">
+                  <i class="fas fa-book mr-2"></i> 
+                  <strong>Tài liệu tham khảo:</strong> Sách <em class="text-gray-200">Computer Organization and Design</em> của Patterson & Hennessy.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Computer Network -->
+        <div class="mb-8 card-hover">
+          <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fas fa-network-wired"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-green-400 mb-3">2. Computer Network</h3>
+                <p class="text-gray-300 mb-4"><strong>Mô tả:</strong> Lý thuyết trừu tượng về mạng máy tính, giao thức, và cách các thiết bị kết nối, truyền thông.</p>
+                
+                <div class="bg-slate-900/50 rounded-xl p-5 mb-4 border-l-4 border-green-500">
+                  <h4 class="font-semibold text-teal-400 mb-3 flex items-center">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Checklist
+                  </h4>
+                  <div class="space-y-3">
+                    <div class="flex items-start check-item">
+                      <i class="fas fa-square text-green-500 text-xs mt-2 mr-3"></i>
+                      <span class="text-gray-200">Nắm vững mô hình OSI và TCP/IP.</span>
+                    </div>
+                    <div class="flex items-start check-item">
+                      <i class="fas fa-square text-green-500 text-xs mt-2 mr-3"></i>
+                      <span class="text-gray-200">Tìm hiểu các giao thức: HTTP, DNS, FTP, TCP, UDP.</span>
+                    </div>
+                    <div class="flex items-start check-item">
+                      <i class="fas fa-square text-green-500 text-xs mt-2 mr-3"></i>
+                      <span class="text-gray-200">Hiểu về cấu trúc mạng: LAN, WAN, VPN.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div class="bg-slate-900/50 rounded-xl p-4 border border-slate-600">
+                    <h4 class="font-semibold text-purple-400 mb-3 flex items-center">
+                      <i class="fas fa-tools mr-2"></i>
+                      Công cụ đề xuất
+                    </h4>
+                    <ul class="space-y-2 text-gray-300">
+                      <li class="flex items-center"><i class="fas fa-caret-right text-purple-500 mr-2"></i> Wireshark: Phân tích gói tin mạng.</li>
+                      <li class="flex items-center"><i class="fas fa-caret-right text-purple-500 mr-2"></i> Cisco Packet Tracer: Mô phỏng mạng.</li>
+                    </ul>
+                  </div>
+
+                  <div class="bg-slate-900/50 rounded-xl p-4 border border-slate-600">
+                    <h4 class="font-semibold text-green-400 mb-3 flex items-center">
+                      <i class="fas fa-lightbulb mr-2"></i>
+                      Kinh nghiệm
+                    </h4>
+                    <ul class="space-y-2 text-gray-300">
+                      <li class="flex items-center"><i class="fas fa-caret-right text-green-500 mr-2"></i> Thực hành thiết lập mạng nội bộ (LAN) nhỏ.</li>
+                      <li class="flex items-center"><i class="fas fa-caret-right text-green-500 mr-2"></i> Phân tích lưu lượng mạng để hiểu cách các giao thức hoạt động.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="mt-4 text-sm text-gray-400">
+                  <i class="fas fa-book mr-2"></i> 
+                  <strong>Tài liệu tham khảo:</strong> Sách <em class="text-gray-200">Computer Networking: A Top-Down Approach</em> của Kurose & Ross.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Section -->
+        <div class="mb-8 card-hover">
+          <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-xl">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold text-purple-400 mb-3">3. Software</h3>
+                <p class="text-gray-300 mb-6"><strong>Mô tả:</strong> Phần mềm ứng dụng phục vụ người dùng cuối, bao gồm AI, client, server, web, và các công cụ.</p>
+
+                <!-- System Software -->
+                <div class="mb-6 pl-6 border-l-4 border-purple-500">
+                  <h4 class="text-xl font-semibold text-pink-400 mb-4 flex items-center">
+                    <i class="fas fa-server mr-2"></i>
+                    System Software
+                  </h4>
+                  
+                  <!-- OS -->
+                  <div class="mb-4 bg-slate-900/30 rounded-xl p-4 border border-slate-600">
+                    <h5 class="font-semibold text-cyan-400 mb-2">1. OS</h5>
+                    <p class="text-gray-300 text-sm mb-3">Hệ điều hành quản lý tài nguyên phần cứng và cung cấp giao diện cho phần mềm ứng dụng.</p>
+                    <div class="space-y-2 text-sm">
+                      <div class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Tìm hiểu các thành phần: Kernel, File System, Process Management.</div>
+                      <div class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Nghiên cứu các hệ điều hành: Linux, Windows, macOS.</div>
+                    </div>
+                    <div class="mt-2 text-xs text-gray-400">
+                      Tài liệu: <em>Operating System Concepts</em> của Silberschatz
+                    </div>
+                  </div>
+
+                  <!-- Compiler -->
+                  <div class="mb-4 bg-slate-900/30 rounded-xl p-4 border border-slate-600">
+                    <h5 class="font-semibold text-cyan-400 mb-2">2. Compiler</h5>
+                    <p class="text-gray-300 text-sm mb-3">Trình biên dịch chuyển đổi mã nguồn thành mã máy tính có thể thực thi.</p>
+                    <div class="space-y-2 text-sm">
+                      <div class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Hiểu về các giai đoạn biên dịch: Lexical Analysis, Syntax Analysis, Code Generation.</div>
+                      <div class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Tìm hiểu các trình biên dịch: GCC, Clang.</div>
+                    </div>
+                    <div class="mt-2 text-xs text-gray-400">
+                      Tài liệu: <em>Compilers: Principles, Techniques, and Tools</em> của Aho
+                    </div>
+                  </div>
+
+                  <!-- Devices IO Driver -->
+                  <div class="bg-slate-900/30 rounded-xl p-4 border border-slate-600">
+                    <h5 class="font-semibold text-cyan-400 mb-2">3. Devices IO Driver</h5>
+                    <p class="text-gray-300 text-sm mb-3">Driver điều khiển giao tiếp giữa phần cứng và hệ điều hành.</p>
+                    <div class="space-y-2 text-sm">
+                      <div class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Hiểu về driver: Kernel modules, User-space drivers.</div>
+                      <div class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Tìm hiểu cách viết driver cho Linux.</div>
+                    </div>
+                    <div class="mt-2 text-xs text-gray-400">
+                      Tài liệu: <em>Linux Device Drivers</em> của Corbet
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Application Software -->
+                <div class="pl-6 border-l-4 border-blue-500">
+                  <h4 class="text-xl font-semibold text-blue-400 mb-4 flex items-center">
+                    <i class="fas fa-desktop mr-2"></i>
+                    Application Software
+                  </h4>
+                  
+                  <!-- Build Source -->
+                  <div class="mb-4 bg-slate-900/30 rounded-xl p-4 border border-slate-600">
+                    <h5 class="font-semibold text-yellow-400 mb-3">1. Build Source</h5>
+                    
+                    <!-- AI Agent -->
+                    <div class="mb-3 pl-4 border-l-2 border-cyan-500">
+                      <h6 class="font-medium text-cyan-300 text-sm">AI Agent</h6>
+                      <div class="text-xs text-gray-400 ml-2">Các agent AI tự động hóa tác vụ hoặc hỗ trợ ra quyết định.</div>
+                      <div class="mt-2 space-y-1">
+                        <div class="flex items-center text-xs"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Tìm hiểu các framework: TensorFlow, PyTorch.</div>
+                        <div class="flex items-center text-xs"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Hiểu về các thuật toán: Neural Networks, Reinforcement Learning.</div>
+                      </div>
+                    </div>
+
+                    <!-- Client -->
+                    <div class="mb-3 pl-4 border-l-2 border-green-500">
+                      <h6 class="font-medium text-green-300 text-sm">Client</h6>
+                      <div class="text-xs text-gray-400 ml-2">Chủ yếu tập trung vào phát triển game và ứng dụng client-side.</div>
+                      <div class="mt-2 space-y-1">
+                        <div class="flex items-center text-xs"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Tìm hiểu các engine game: Unity, Unreal Engine.</div>
+                        <div class="flex items-center text-xs"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Hiểu về giao diện người dùng: SDL, OpenGL.</div>
+                      </div>
+                    </div>
+
+                    <!-- Server -->
+                    <div class="mb-3 pl-4 border-l-2 border-purple-500">
+                      <h6 class="font-medium text-purple-300 text-sm">Server</h6>
+                      <div class="text-xs text-gray-400 ml-2">Xây dựng và quản lý backend server.</div>
+                      <div class="mt-2 space-y-1">
+                        <div class="flex items-center text-xs"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Tìm hiểu các framework: Node.js, Django, Spring.</div>
+                        <div class="flex items-center text-xs"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Hiểu về API: REST, GraphQL.</div>
+                      </div>
+                    </div>
+
+                    <!-- WWW -->
+                    <div class="mb-3 pl-4 border-l-2 border-orange-500">
+                      <h6 class="font-medium text-orange-300 text-sm">WWW</h6>
+                      <div class="text-xs text-gray-400 ml-2">Nghiên cứu đặc biệt về Web 3, blockchain, và các công nghệ web hiện đại.</div>
+                      <div class="mt-2 space-y-1">
+                        <div class="flex items-center text-xs"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Tìm hiểu về Web 3: Ethereum, IPFS, Smart Contracts.</div>
+                        <div class="flex items-center text-xs"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Hiểu về frontend: React, Vue.js.</div>
+                      </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="pl-4 border-l-2 border-gray-500">
+                      <h6 class="font-medium text-gray-300 text-sm">Tools</h6>
+                      <div class="text-xs text-gray-400 ml-2">Các công cụ hỗ trợ phát triển và quản lý dự án.</div>
+                      <div class="mt-2 space-y-1">
+                        <div class="flex items-center text-xs"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Tìm hiểu về version control: Git, GitHub.</div>
+                        <div class="flex items-center text-xs"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Hiểu về CI/CD: Jenkins, GitHub Actions.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Cyber Security -->
+                  <div class="bg-slate-900/30 rounded-xl p-4 border border-slate-600">
+                    <h5 class="font-semibold text-red-400 mb-3">2. Cyber Security</h5>
+                    <div class="text-sm text-gray-300 mb-3">Bảo mật hệ thống và ứng dụng, phòng chống tấn công mạng.</div>
+                    <div class="space-y-2 text-sm">
+                      <div class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Tìm hiểu các khái niệm: Encryption, Authentication, Penetration Testing.</div>
+                      <div class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Hiểu về các công cụ: Metasploit, Burp Suite.</div>
+                    </div>
+                    <div class="mt-2 text-xs text-gray-400">
+                      Tài liệu: <em>Hacking: The Art of Exploitation</em> của Jon Erickson
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-16 pt-8 border-t border-slate-700">
+      <div class="flex items-center justify-center mb-4">
+        <i class="fas fa-heart text-red-500 mr-2 pulse"></i>
+        <span class="text-gray-400">Built with passion by @author</span>
+      </div>
+      <p class="text-sm text-gray-500">© 2024 Ecosystem Support. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Show section function
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('#content > div').forEach(section => {
+        section.classList.add('hidden');
+      });
+      
+      // Show selected section
+      document.getElementById(sectionId).classList.remove('hidden');
+      
+      // Update active state for navigation
+      document.querySelectorAll('.nav-link').forEach(button => {
+        button.classList.remove('active', 'text-blue-400', 'bg-slate-600');
+        button.classList.add('text-gray-200', 'bg-slate-700');
+      });
+      
+      event.target.classList.add('active', 'text-blue-400', 'bg-slate-600');
+      event.target.classList.remove('text-gray-200', 'bg-slate-700');
+    }
+
+    // Initialize with Computer Science section visible
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('computer-science').classList.remove('hidden');
+      document.querySelector('button[onclick="showSection(\'computer-science\')"]').classList.add('active', 'text-blue-400', 'bg-slate-600');
+    });
+  </script>
+</body>
+</html>
