@@ -1,228 +1,285 @@
-# Ecosystem Support and Build by Me !!
+# 🌐 Ecosystem Support and Built by Me!!
 
-> Project được build bởi **@author** với mục đích lưu trữ toàn bộ checklist từ **BNJ**.
-
----
-
-## Mục Lục
-
-- [HomePage](https://tienthien196.github.io/ecosys.portfolioBNJ)
-- HardWare (Update soon)
-- Computer Science
-  - 1\. [Computer Architecture](/CSLIist/Architecture/ComputerArchitecture.md)
-  - 2\. [Computer Network](/CSLIist/Network/ComputerNetwork.md)
-  - 3\. Software
-    - [System Software](/CSLIist/Software/SysTem/SystemSoftware.md)
-      - 1\. [OperatorSystem](/CSLIist/Software/SysTem/OperatorSystem.md)
-      - 2\. [Compiler](/CSLIist/Software/SysTem/Compiler.md)
-      - 3\. [Devices IO Driver](/CSLIist/Software/SysTem/Devices%20IO%20Driver.md)
-    - [Application Software](/CSLIist/Software/App/ApplicationSoftware.md)
-      - 1\. Build Source
-        - AI Agent
-            1. [AI](/CSLIist/Software/App/BuildSource/AI_Agent/AI-Guide.md)
-            2. [Agent](/CSLIist/Software/App/BuildSource/AI_Agent/AI-Agent-Guide.md)
-        - [Client](/CSLIist/Software/App/BuildSource/Client/Client.md)
-        - [Server](CSLIist/Software/App/BuildSourceServer/Server.md)
-        - [WWW](CSLIist/Software/App/BuildSource/WWW/Web3-Guide.md)
-        - Tools
-      - 2\. [Cyber Security](/CSLIist/Software/App/CyberSecurity.md)
+> 🔧 *Project được xây dựng bởi* **@tienthien196** *với mục đích lưu trữ toàn bộ checklist học tập và phát triển từ* **BNJ**.  
+> 🚀 Một hệ sinh thái tri thức – từ phần cứng đến AI, từ hệ điều hành đến Web3.
 
 ---
 
-## HardWare
+## 📚 Mục Lục
 
-*Đang được cập nhật...*
+- 🏠 [Trang Chủ](https://tienthien196.github.io/ecosys.portfolioBNJ)
+- 📦 [Resources – Coming Soon](./Resource/Home_Resource_Collection.md)
+- 💾 Hardware *(Đang cập nhật)*
+- 🖥️ Computer Science
+  - 1. [Computer Architecture](/CSLIist/Architecture/ComputerArchitecture.md)
+  - 2. [Computer Network](/CSLIist/Network/ComputerNetwork.md)
+  - 3. Software
+    - 🛠️ [System Software](/CSLIist/Software/SysTem/SystemSoftware.md)
+      - [Operating System](/CSLIist/Software/SysTem/OperatorSystem.md)
+      - [Compiler](/CSLIist/Software/SysTem/Compiler.md)
+      - [Device IO Driver](/CSLIist/Software/SysTem/DevicesIODriver.md)
+    - 📱 [Application Software](/CSLIist/Software/App/ApplicationSoftware.md)
+      - 🔨 Build Source
+        - 🤖 [AI Agent](/CSLIist/Software/App/BuildSource/AI_Agent/AI-Guide.md)
+        - 🎮 [Client](/CSLIist/Software/App/BuildSource/Client/Client.md)
+        - ⚙️ [Server](CSLIist/Software/App/BuildSourceServer/Server.md)
+        - 🌐 [WWW (Web3 & Blockchain)](CSLIist/Software/App/BuildSource/WWW/Web3-Guide.md)
+        - 🧰 Tools
+      - 🔐 [Cyber Security](/CSLIist/Software/App/CyberSecurity.md)
 
 ---
 
-## Computer Science
+## 💾 Hardware
 
-### 1. Computer Architecture
+🔧 *Nội dung đang được cập nhật...*  
+🧠 Sắp tới: Kiến trúc vi xử lý, FPGA, Embedded Systems, IoT.
 
-- **Mô tả**: Lý thuyết trừu tượng về cách tổ chức và hoạt động của phần cứng máy tính, bao gồm CPU, bộ nhớ, và các thành phần liên quan.
-- **Checklist**:
-  - [ ] Hiểu về các thành phần chính: CPU, RAM, Cache, Bus.
+---
 
-  - [ ] Tìm hiểu các mô hình kiến trúc: Von Neumann, Harvard.
+## 🖥️ Computer Science
 
-  - [ ] Nghiên cứu về pipeline, superscalar, và parallel processing.
+> "Hiểu sâu hệ thống — từ silicon đến phần mềm."
 
-  - [ ] Tài liệu tham khảo: Sách *Computer Organization and Design* của Patterson & Hennessy.
-- **Công cụ đề xuất**:
-  - Logisim: Phần mềm mô phỏng mạch logic.
-  - Simulators: RISC-V, MIPS simulators.
-- **Kinh nghiệm**:
-  - Thực hành thiết kế mạch đơn giản để hiểu cách hoạt động của CPU.
-  - Tìm hiểu cách tối ưu hóa hiệu suất qua các kỹ thuật như branch prediction.
+### 1. 🏗️ Computer Architecture
 
-### 2. Computer Network
+- **📘 Mô tả**:  
+  Nghiên cứu cách tổ chức và hoạt động của phần cứng máy tính: CPU, bộ nhớ, bus, pipeline, và kiến trúc song song.
 
-- **Mô tả**: Lý thuyết trừu tượng về mạng máy tính, giao thức, và cách các thiết bị kết nối, truyền thông.
-- **Checklist**:
+- **✅ Checklist Học Tập**:
+  - [ ] Hiểu các thành phần chính: CPU, RAM, Cache, Bus.
+  - [ ] So sánh kiến trúc Von Neumann vs Harvard.
+  - [ ] Tìm hiểu về pipeline, superscalar, out-of-order execution.
+  - [ ] Đọc: *Computer Organization and Design* – Patterson & Hennessy.
+
+- **🛠️ Công cụ Đề Xuất**:
+  - [Logisim](https://www.cburch.com/logisim/) – Mô phỏng mạch logic.
+  - [RISC-V Simulator](https://replit.com/@FiveEggRice/RISCVSimulator) – Thực hành kiến trúc hiện đại.
+  - QEMU, SPIM (MIPS) – Mô phỏng CPU.
+
+- **💡 Kinh nghiệm**:
+  - Tự thiết kế mạch logic đơn giản cho ALU.
+  - Thử viết chương trình assembly trên mô phỏng.
+
+---
+
+### 2. 🌐 Computer Network
+
+- **📘 Mô tả**:  
+  Cách các thiết bị giao tiếp qua mạng: giao thức, định tuyến, bảo mật, và cấu trúc mạng.
+
+- **✅ Checklist Học Tập**:
   - [ ] Nắm vững mô hình OSI và TCP/IP.
+  - [ ] Hiểu sâu về HTTP, DNS, TCP, UDP, IP, ICMP.
+  - [ ] Phân biệt LAN, WAN, VLAN, VPN.
+  - [ ] Đọc: *Computer Networking: A Top-Down Approach* – Kurose & Ross.
 
-  - [ ] Tìm hiểu các giao thức: HTTP, DNS, FTP, TCP, UDP.
+- **🛠️ Công cụ Đề Xuất**:
+  - [Wireshark](https://www.wireshark.org/) – Bắt gói tin mạng.
+  - [Cisco Packet Tracer](https://www.netacad.com/courses/packet-tracer) – Mô phỏng mạng.
+  - `tcpdump`, `ping`, `traceroute` – CLI tools.
 
-  - [ ] Hiểu về cấu trúc mạng: LAN, WAN, VPN.
+- **💡 Kinh nghiệm**:
+  - Thiết lập mạng LAN đơn giản.
+  - Dùng Wireshark để phân tích HTTP/HTTPS.
 
-  - [ ] Tài liệu tham khảo: Sách *Computer Networking: A Top-Down Approach* của Kurose & Ross.
-- **Công cụ đề xuất**:
-  - Wireshark: Phân tích gói tin mạng.
-  - Cisco Packet Tracer: Mô phỏng mạng.
-- **Kinh nghiệm**:
-  - Thực hành thiết lập mạng nội bộ (LAN) nhỏ.
-  - Phân tích lưu lượng mạng để hiểu cách các giao thức hoạt động.
+---
 
-### 3. Software
+### 3. 🧩 Software
 
-#### System Software
+#### 🛠️ System Software
 
-- **Mô tả**: Phần mềm hệ thống cung cấp nền tảng cho hoạt động của máy tính, bao gồm hệ điều hành, trình biên dịch, và driver.
+> *Phần mềm nền tảng – cốt lõi của mọi hệ thống.*
 
-##### 1. OS
+##### 1. 🖥️ Operating System (OS)
 
-- **Mô tả**: Hệ điều hành quản lý tài nguyên phần cứng và cung cấp giao diện cho phần mềm ứng dụng.
-- **Checklist**:
-  - [ ] Tìm hiểu các thành phần: Kernel, File System, Process Management.
+- **📘 Mô tả**:  
+  Hệ điều hành quản lý tài nguyên phần cứng và cung cấp môi trường cho ứng dụng chạy.
 
-  - [ ] Nghiên cứu các hệ điều hành: Linux, Windows, macOS.
+- **✅ Checklist**:
+  - [ ] Kernel, Process & Thread Management.
+  - [ ] Memory Management: Paging, Segmentation.
+  - [ ] File Systems: ext4, NTFS, FAT.
+  - [ ] Đọc: *Operating System Concepts* – Silberschatz.
 
-  - [ ] Tài liệu tham khảo: Sách *Operating System Concepts* của Silberschatz.
-- **Công cụ đề xuất**:
-  - VirtualBox: Mô phỏng và thử nghiệm các hệ điều hành.
-  - Linux distributions (Ubuntu, Fedora): Thực hành quản trị hệ thống.
-- **Kinh nghiệm**:
-  - Cài đặt và cấu hình Linux trên máy ảo.
-  - Tìm hiểu cách viết shell script để tự động hóa tác vụ.
+- **🛠️ Công cụ**:
+  - VirtualBox / VMware – Thử nhiều OS.
+  - Ubuntu, Arch Linux – Thực hành CLI.
+  - Shell Scripting – Tự động hóa.
 
-##### 2. Compiler
+- **💡 Kinh nghiệm**:
+  - Cài Linux trên VM, cấu hình systemd.
+  - Viết script quản lý file/log.
 
-- **Mô tả**: Trình biên dịch chuyển đổi mã nguồn thành mã máy tính có thể thực thi.
-- **Checklist**:
-  - [ ] Hiểu về các giai đoạn biên dịch: Lexical Analysis, Syntax Analysis, Code Generation.
+##### 2. 🔤 Compiler
 
-  - [ ] Tìm hiểu các trình biên dịch: GCC, Clang.
+- **📘 Mô tả**:  
+  Chuyển đổi mã nguồn (source code) thành mã máy (machine code).
 
-  - [ ] Tài liệu tham khảo: Sách *Compilers: Principles, Techniques, and Tools* của Aho.
-- **Công cụ đề xuất**:
-  - GCC: Biên dịch C/C++.
-  - LLVM: Nghiên cứu tối ưu hóa mã.
-- **Kinh nghiệm**:
-  - Thử viết một trình biên dịch đơn giản cho ngôn ngữ mini.
-  - Tìm hiểu cách tối ưu hóa mã máy.
+- **✅ Checklist**:
+  - [ ] Lexical Analysis, Parsing, Semantic Analysis.
+  - [ ] Code Generation & Optimization.
+  - [ ] Đọc: *Compilers: Principles, Techniques, and Tools* – Aho (Dragon Book).
 
-##### 3. Devices IO Driver
+- **🛠️ Công cụ**:
+  - GCC, Clang – Compiler thực tế.
+  - LLVM – Nền tảng tối ưu hóa.
+  - ANTLR – Parser generator.
 
-- **Mô tả**: Driver điều khiển giao tiếp giữa phần cứng và hệ điều hành.
-- **Checklist**:
-  - [ ] Hiểu về driver: Kernel modules, User-space drivers.
+- **💡 Kinh nghiệm**:
+  - Viết một mini compiler cho ngôn ngữ đơn giản (ví dụ: Calc).
+  - Tạo AST và sinh mã bytecode.
 
-  - [ ] Tìm hiểu cách viết driver cho Linux.
+##### 3. 🔌 Device IO Driver
 
-  - [ ] Tài liệu tham khảo: *Linux Device Drivers* của Corbet.
-- **Công cụ đề xuất**:
-  - Linux Kernel Module Programming.
-  - QEMU: Mô phỏng thiết bị phần cứng.
-- **Kinh nghiệm**:
-  - Thực hành viết module kernel đơn giản.
-  - Tìm hiểu cách debug driver.
+- **📘 Mô tả**:  
+  Phần mềm kết nối phần cứng với hệ điều hành (kernel drivers).
 
-#### Application Software
+- **✅ Checklist**:
+  - [ ] Kernel modules vs User-space drivers.
+  - [ ] Character & Block devices.
+  - [ ] Đọc: *Linux Device Drivers* – Corbet.
 
-- **Mô tả**: Phần mềm ứng dụng phục vụ người dùng cuối, bao gồm AI, client, server, web, và các công cụ.
+- **🛠️ Công cụ**:
+  - Linux Kernel Module (LKM) – Viết driver đơn giản.
+  - QEMU – Mô phỏng thiết bị ảo.
+  - `dmesg`, `insmod`, `rmmod` – Debug driver.
 
-##### 1. Build Source
+- **💡 Kinh nghiệm**:
+  - Viết module “Hello World” cho kernel.
+  - Tạo driver cho thiết bị giả lập.
 
-###### AI Agent
+---
 
-- **Mô tả**: Các agent AI tự động hóa tác vụ hoặc hỗ trợ ra quyết định.
-- **Checklist**:
-  - [ ] Tìm hiểu các framework: TensorFlow, PyTorch.
+#### 📱 Application Software
 
-  - [ ] Hiểu về các thuật toán: Neural Networks, Reinforcement Learning.
+> *Phần mềm phục vụ người dùng cuối – nơi sáng tạo cất cánh.*
 
-  - [ ] Tài liệu tham khảo: *Deep Learning* của Goodfellow.
-- **Công cụ đề xuất**:
-  - Jupyter Notebook: Thực hành AI/ML.
-  - Google Colab: Hỗ trợ GPU miễn phí.
-- **Kinh nghiệm**:
-  - Xây dựng một mô hình AI đơn giản (ví dụ: phân loại ảnh).
-  - Tìm hiểu cách triển khai AI agent trên cloud.
+##### 🔨 1. Build Source
 
-###### Client
+###### 🤖 AI Agent
 
-- **Mô tả**: Chủ yếu tập trung vào phát triển game và ứng dụng client-side.
-- **Checklist**:
-  - [ ] Tìm hiểu các engine game: Unity, Unreal Engine.
+- **📘 Mô tả**:  
+  Agent AI tự động ra quyết định, học từ dữ liệu, và tương tác với môi trường.
 
-  - [ ] Hiểu về giao diện người dùng: SDL, OpenGL.
+- **✅ Checklist**:
+  - [ ] TensorFlow, PyTorch, Hugging Face.
+  - [ ] Neural Networks, RL, NLP.
+  - [ ] Đọc: *Deep Learning* – Goodfellow.
 
-  - [ ] Tài liệu tham khảo: *Game Programming Patterns* của Robert Nystrom.
-- **Công cụ đề xuất**:
-  - Unity: Phát triển game 2D/3D.
-  - Godot: Engine mã nguồn mở.
-- **Kinh nghiệm**:
-  - Thực hành xây dựng game đơn giản (ví dụ: Flappy Bird clone).
-  - Tìm hiểu về optimal rendering techniques.
+- **🛠️ Công cụ**:
+  - Jupyter Notebook, Google Colab (GPU free).
+  - LangChain, AutoGPT – Xây dựng agent.
 
-###### Server
+- **💡 Kinh nghiệm**:
+  - Huấn luyện model phân loại ảnh (MNIST/CIFAR).
+  - Triển khai chatbot đơn giản.
 
-- **Mô tả**: Xây dựng và quản lý backend server.
-- **Checklist**:
-  - [ ] Tìm hiểu các framework: Node.js, Django, Spring.
+###### 🎮 Client (Game & UI)
 
-  - [ ] Hiểu về API: REST, GraphQL.
+- **📘 Mô tả**:  
+  Phát triển ứng dụng phía người dùng: game, desktop app, giao diện đồ họa.
 
-  - [ ] Tài liệu tham khảo: *Designing Data-Intensive Applications* của Kleppmann.
-- **Công cụ đề xuất**:
-  - Postman: Kiểm tra API.
-  - Docker: Triển khai containerized server.
-- **Kinh nghiệm**:
-  - Xây dựng một REST API đơn giản.
-  - Tìm hiểu cách scale server với load balancer.
+- **✅ Checklist**:
+  - [ ] Unity, Unreal Engine, Godot.
+  - [ ] SDL, OpenGL, Vulkan.
+  - [ ] Đọc: *Game Programming Patterns* – Robert Nystrom.
 
-###### WWW
+- **🛠️ Công cụ**:
+  - Unity – Game 2D/3D.
+  - Godot – Nhẹ, mã nguồn mở.
+  - Figma – Thiết kế UI.
 
-- **Mô tả**: Nghiên cứu đặc biệt về Web 3, blockchain, và các công nghệ web hiện đại.
-- **Checklist**:
-  - [ ] Tìm hiểu về Web 3: Ethereum, IPFS, Smart Contracts.
+- **💡 Kinh nghiệm**:
+  - Làm game Flappy Bird clone.
+  - Tối ưu FPS bằng culling & batching.
 
-  - [ ] Hiểu về frontend: React, Vue.js.
+###### ⚙️ Server (Backend)
 
-  - [ ] Tài liệu tham khảo: *Mastering Blockchain* của Imran Bashir.
-- **Công cụ đề xuất**:
-  - Hardhat: Phát triển smart contract.
-  - IPFS: Lưu trữ phi tập trung.
-- **Kinh nghiệm**:
-  - Xây dựng một DApp đơn giản trên Ethereum.
-  - Tìm hiểu về decentralized identity.
+- **📘 Mô tả**:  
+  Xây dựng hệ thống backend: API, database, xử lý đồng thời.
 
-###### Tools
+- **✅ Checklist**:
+  - [ ] Node.js, Django, Spring Boot.
+  - [ ] REST, GraphQL, WebSockets.
+  - [ ] Đọc: *Designing Data-Intensive Applications* – Kleppmann.
 
-- **Mô tả**: Các công cụ hỗ trợ phát triển và quản lý dự án.
-- **Checklist**:
-  - [ ] Tìm hiểu về version control: Git, GitHub.
+- **🛠️ Công cụ**:
+  - Postman – Test API.
+  - Docker, Kubernetes – Triển khai.
+  - MongoDB, PostgreSQL.
 
-  - [ ] Hiểu về CI/CD: Jenkins, GitHub Actions.
-- **Công cụ đề xuất**:
-  - VS Code: IDE mạnh mẽ.
-  - Jira: Quản lý dự án.
-- **Kinh nghiệm**:
-  - Thiết lập pipeline CI/CD cho dự án.
-  - Tìm hiểu cách sử dụng Git hiệu quả.
+- **💡 Kinh nghiệm**:
+  - Xây REST API quản lý task.
+  - Dùng Redis để cache.
 
-##### 2. Cyber Security
+###### 🌐 WWW (Web3 & Blockchain)
 
-- **Mô tả**: Bảo mật hệ thống và ứng dụng, phòng chống tấn công mạng.
-- **Checklist**:
-  - [ ] Tìm hiểu các khái niệm: Encryption, Authentication, Penetration Testing.
+- **📘 Mô tả**:  
+  Web thế hệ mới: phi tập trung, blockchain, DApps, Smart Contracts.
 
-  - [ ] Hiểu về các công cụ: Metasploit, Burp Suite.
+- **✅ Checklist**:
+  - [ ] Ethereum, Solidity, IPFS.
+  - [ ] Wallet, NFT, DAO.
+  - [ ] Đọc: *Mastering Blockchain* – Imran Bashir.
 
-  - [ ] Tài liệu tham khảo: *Hacking: The Art of Exploitation* của Jon Erickson.
-- **Công cụ đề xuất**:
-  - Kali Linux: Hệ điều hành cho pentesting.
-  - Nmap: Quét mạng.
-- **Kinh nghiệm**:
-  - Thực hành pentesting trên môi trường thử nghiệm (như Hack The Box).
-  - Tìm hiểu cách phát hiện và vá lỗ hổng XSS, SQL Injection.
+- **🛠️ Công cụ**:
+  - Hardhat, Truffle – Dev smart contract.
+  - MetaMask – Wallet thử nghiệm.
+  - IPFS – Lưu trữ phi tập trung.
+
+- **💡 Kinh nghiệm**:
+  - Viết smart contract đơn giản (ví dụ: voting DApp).
+  - Deploy lên mạng thử nghiệm (Goerli).
+
+###### 🧰 Tools (DevOps & Productivity)
+
+- **📘 Mô tả**:  
+  Công cụ hỗ trợ phát triển, kiểm thử, và quản lý dự án.
+
+- **✅ Checklist**:
+  - [ ] Git, GitHub, Branching Strategy.
+  - [ ] CI/CD: GitHub Actions, Jenkins.
+  - [ ] Agile, Scrum, Jira.
+
+- **🛠️ Công cụ**:
+  - VS Code – IDE đa năng.
+  - Docker – Container hóa.
+  - Jira, Notion – Quản lý task.
+
+- **💡 Kinh nghiệm**:
+  - Thiết lập CI/CD tự động test & deploy.
+  - Sử dụng Git Flow trong team.
+
+---
+
+### 🔐 2. Cyber Security
+
+- **📘 Mô tả**:  
+  Bảo vệ hệ thống khỏi tấn công: mạng, ứng dụng, dữ liệu.
+
+- **✅ Checklist**:
+  - [ ] Encryption, Hashing, Authentication.
+  - [ ] Penetration Testing, OWASP Top 10.
+  - [ ] Đọc: *Hacking: The Art of Exploitation* – Jon Erickson.
+
+- **🛠️ Công cụ**:
+  - Kali Linux – OS cho pentesting.
+  - Nmap, Metasploit, Burp Suite.
+  - Wireshark – Phân tích mạng.
+
+- **💡 Kinh nghiệm**:
+  - Thực hành trên Hack The Box, TryHackMe.
+  - Phát hiện & vá lỗi SQLi, XSS.
+
+---
+
+## 🛠️ Góp ý & Đóng góp
+
+Bạn thấy thiếu tài liệu? Muốn thêm chủ đề?  
+👉 Mở **Issue** hoặc **Pull Request** trên GitHub!  
+Chúng ta cùng xây dựng hệ sinh thái tri thức này!
+
+---
+
+> 🌱 *"Học sâu – Xây chắc – Chia sẻ rộng."*  
+> — @tienthien196
