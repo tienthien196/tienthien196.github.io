@@ -282,5 +282,4 @@ Chúng ta cùng xây dựng hệ sinh thái tri thức này!
 ---
 
 > 🌱 *"Học sâu – Xây chắc – Chia sẻ rộng."*  
-> — @tienthien196#   u p U P u p  
- 
+> — @tienthien196#
