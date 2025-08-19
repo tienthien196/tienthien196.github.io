@@ -1,31 +1,32 @@
 # 🌐 Ecosystem Support and Built by Me!!
 
 > 🔧 *Project được xây dựng bởi* **@tienthien196** *với mục đích lưu trữ toàn bộ checklist học tập và phát triển từ* **BNJ**.  
-> 🚀 Một hệ sinh thái tri thức – từ phần cứng đến AI, từ hệ điều hành đến Web3.
+>   Một hệ sinh thái tri thức – từ phần cứng đến AI, từ hệ điều hành đến Web3.
 
 ---
 
-## 📚 Mục Lục
+## 📚 Check lIst
 
-- 🏠 [Trang Chủ](https://tienthien196.github.io/ecosys.portfolioBNJ)
+- 🏠 [Home Page](https://tienthien196.github.io/ecosys.portfolioBNJ)
 - 📦 [Resources – Coming Soon](./Resource/Home_Resource_Collection.md)
-- 💾 Hardware *(Đang cập nhật)*
-- 🖥️ Computer Science
+- 🤖 Hardware *(Đang cập nhật)*
+      - EE
+      - CE
+- 🖥️ Computer Science [CS]
   - 1. [Computer Architecture](/CSLIist/Architecture/ComputerArchitecture.md)
   - 2. [Computer Network](/CSLIist/Network/ComputerNetwork.md)
+      - 🔐 [Cyber Security](/CSLIist/Software/App/CyberSecurity.md)
   - 3. Software
     - 🛠️ [System Software](/CSLIist/Software/SysTem/SystemSoftware.md)
       - [Operating System](/CSLIist/Software/SysTem/OperatorSystem.md)
       - [Compiler](/CSLIist/Software/SysTem/Compiler.md)
       - [Device IO Driver](/CSLIist/Software/SysTem/DevicesIODriver.md)
     - 📱 [Application Software](/CSLIist/Software/App/ApplicationSoftware.md)
-      - 🔨 Build Source
         - 🤖 [AI Agent](/CSLIist/Software/App/BuildSource/AI_Agent/AI-Guide.md)
         - 🎮 [Client](/CSLIist/Software/App/BuildSource/Client/Client.md)
         - ⚙️ [Server](CSLIist/Software/App/BuildSourceServer/Server.md)
         - 🌐 [WWW (Web3 & Blockchain)](CSLIist/Software/App/BuildSource/WWW/Web3-Guide.md)
         - 🧰 Tools
-      - 🔐 [Cyber Security](/CSLIist/Software/App/CyberSecurity.md)
 
 ---
 
@@ -58,7 +59,7 @@
 
 - **💡 Kinh nghiệm**:
   - Tự thiết kế mạch logic đơn giản cho ALU.
-  - Thử viết chương trình assembly trên mô phỏng.
+  - Viết chương trình assembly trên mô phỏng.
 
 ---
 
