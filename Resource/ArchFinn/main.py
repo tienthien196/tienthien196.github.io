@@ -2,8 +2,8 @@
 import os
 
 # Cấu hình
-ROOT_DIR = r"E:\DOCS\NoteBook\ArchFin_Engine"
-OUTPUT_FILE = r"E:\DOCS\NoteBook\ArchFin_Engine\out.txt"
+ROOT_DIR = r"E:\DOCS\NoteBook\Data\Network\archNetwork"
+OUTPUT_FILE = r"E:\DOCS\NoteBook\Resource\ArchFinn\out.txt"
 
 # Các đuôi file cần dump (có thể mở rộng)
 EXTENSIONS = {

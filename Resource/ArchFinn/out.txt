@@ -1,20 +1,1903 @@
-PATCHSET
+=== DUMP CODE TỪ: E:\DOCS\NoteBook\Data\Network\archNetwork ===
+Chỉ dump các file: .afinn, .c, .cfg, .conf, .cpp, .css, .go, .h, .hpp, .html, .ini, .java, .js, .json, .lark, .md, .py, .rs, .toml, .ts, .txt, .yaml, .yml
+================================================================================
 
-=== FILE: archfinn/core/engine.py (replace entire file) ===
+--- FILE: ceh_pentest_cheatsheet.md ---
+# CEH / Penetration Testing Roadmap — Cheat Sheet __En__
+
+> **Mục tiêu:** Tập hợp nhanh toàn bộ ý chính: quy trình pentest, crypto, recon, scanning, tấn công hệ thống, web/app, wireless, malware, công cụ…  
+
+---
+
+## Mục lục
+- [Basics Guide](https://chat.qwen.ai/s/6071e273-dd70-41c7-af9d-bcef7e71d448?fev=0.0.190)
+- [5 Phases to a Penetration Test](#5-phases-to-a-penetration-test)
+- [Attack Types](#attack-types)
+- [Legal / Standards / Compliance](#legal--standards--compliance)
+- [Cryptography](#cryptography)
+  - [Symmetric Encryption](#symmetric-encryption)
+  - [Asymmetric Encryption](#asymmetric-encryption)
+  - [Hash Algorithms](#hash-algorithms)
+  - [Trust Models](#trust-models)
+  - [Cryptography Attacks](#cryptography-attacks)
+  - [Digital Certificate Fields](#digital-certificate-fields)
+- [Reconnaissance](#reconnaissance)
+  - [Google Hacking Operators](#google-hacking-operators)
+  - [DNS Essentials](#dns-essentials)
+  - [TCP Header Flags](#tcp-header-flags)
+  - [DHCP Handshake](#dhcp-handshake)
+- [Scanning & Enumeration](#scanning--enumeration)
+  - [ICMP Message Types](#icmp-message-types)
+  - [CIDR / IPv4 Quick Notes](#cidr--ipv4-quick-notes)
+  - [Port Numbers](#port-numbers)
+  - [HTTP Status Families](#http-status-families)
+  - [Nmap Quick Reference](#nmap-quick-reference)
+  - [Scan Types Semantics](#scan-types-semantics)
+  - [NetBIOS Cheats](#netbios-cheats)
+  - [SNMP Notes](#snmp-notes)
+- [Sniffing & Evasion](#sniffing--evasion)
+  - [IPv4 vs IPv6](#ipv4-vs-ipv6)
+  - [MAC Address](#mac-address)
+  - [NAT](#nat)
+  - [Stateful Inspection](#stateful-inspection)
+  - [HTTP Tunnelling](#http-tunnelling)
+  - [Snort IDS Basics](#snort-ids-basics)
+  - [IDS Evasion Tactics](#ids-evasion-tactics)
+  - [tcpdump Syntax](#tcpdump-syntax)
+- [Attacking a System](#attacking-a-system)
+  - [Password Rules (CEH style)](#password-rules-ceh-style)
+  - [LM Hashing Note](#lm-hashing-note)
+  - [Attack Types](#attack-types-1)
+  - [Sidejacking](#sidejacking)
+  - [Authentication Factors](#authentication-factors)
+  - [Session Hijacking Steps](#session-hijacking-steps)
+  - [Kerberos Overview](#kerberos-overview)
+  - [SAM File](#sam-file)
+  - [Windows Registry Essentials](#windows-registry-essentials)
+- [Trojans / Malware / DoS](#trojans--malware--dos)
+  - [Virus Types](#virus-types)
+  - [DoS Types](#dos-types)
+  - [Notable CVEs / Worms](#notable-cves--worms)
+- [Web-based Hacking](#web-based-hacking)
+  - [SQL Injection Types](#sql-injection-types)
+  - [Buffer Overflow Quick Notes](#buffer-overflow-quick-notes)
+  - [Dangerous C Functions](#dangerous-c-functions)
+- [Wireless Hacking](#wireless-hacking)
+  - [802.11 Specs](#80211-specs)
+  - [Bluetooth Attacks](#bluetooth-attacks)
+- [Physical Security](#physical-security)
+- [Social Engineering](#social-engineering)
+- [Linux Commands](#linux-commands)
+- [Command-Line Quickies](#command-line-quickies)
+- [Tools of the Trade](#tools-of-the-trade)
+---
+
+```
+                         ┌─────────────────────────┐
+                         │ CEH / Pentest Roadmap   │
+                         │    (Cheat Sheet)        │
+                         └──────────┬─────────────┘
+                                    │
+      ┌─────────────────────────────┼─────────────────────────────┐
+      │                             │                             │
+   Basics                       Cryptography                 Reconnaissance
+      │                             │                             │
+ ┌────┼─────┐          ┌────────────┼────────────┐     ┌──────────┼─────────────┐
+ │ 5 Phases │          │ Symmetric  │ Asymmetric │     │ Google Hacking Ops    │
+ │ Attack   │          │ Hash Algo  │ TrustModel │     │ DNS Essentials        │
+ │ Legal    │          │ CryptoAtk  │ Certificate│     │ TCP Flags             │
+ └──────────┘          └─────────────────────────┘     │ DHCP Handshake        │
+                                                       └───────────────────────┘
+
+      ┌─────────────────────────────┼─────────────────────────────┐
+      │                             │                             │
+ Scanning & Enumeration        Sniffing & Evasion           Attacking System
+      │                             │                             │
+ ┌────┼────┐              ┌─────────┼───────────┐     ┌───────────┼─────────────┐
+ │ ICMP Msg │              │ IPv4 vs IPv6      │     │ Password Rules          │
+ │ CIDR/IPv4│              │ NAT / Firewall    │     │ LM Hash Note            │
+ │ Ports    │              │ IDS / Snort       │     │ Attack Types            │
+ │ Nmap     │              │ tcpdump           │     │ Sidejacking             │
+ │ NetBIOS  │              └───────────────────┘     │ Kerberos / SAM / Reg    │
+ │ SNMP     │                                        └─────────────────────────┘
+ └──────────┘
+
+      ┌─────────────────────────────┼─────────────────────────────┐
+      │                             │                             │
+Trojans / Malware / DoS        Web / App Hacking             Wireless Hacking
+      │                             │                             │
+ ┌────┼─────┐              ┌────────┼─────────┐           ┌───────┼────────────┐
+ │ Virus   │              │ SQLi   │ Buffer   │           │ 802.11 Specs      │
+ │ DoS     │              │ XSS    │ Overflow │           │ Bluetooth Attacks │
+ │ CVEs    │              │ CSRF   │ C Funcs  │           └───────────────────┘
+ └─────────┘              └───────────────────┘
+
+      ┌─────────────────────────────┼─────────────────────────────┐
+      │                             │                             │
+Physical Security            Social Engineering               Linux / Commands
+      │                             │                             │
+ ┌────┴─────┐              ┌────────┴────────┐           ┌────────┴───────────┐
+ │ Locks    │              │ Human-based     │           │ FS Layout           │
+ │ Cameras  │              │ Computer-based  │           │ Users / Perms       │
+ │ Policies │              │ SE Types        │           │ Snort Rules         │
+ └──────────┘              └─────────────────┘           │ Cmd Quickies        │
+                                                         └─────────────────────┘
+
+                             ┌───────────────────────┐
+                             │ Tools of the Trade    │
+                             │ (Scanning, Exploits,  │
+                             │   Sniffing, Crypto,   │
+                             │   Wireless, Web…)     │
+                             └───────────────────────┘
+```
+
+---
+## Basics
+
+### 5 Phases to a Penetration Test
+1. Reconnaissance  
+2. Scanning & Enumeration  
+3. Gaining Access  
+4. Maintaining Access  
+5. Covering Tracks
+
+### Attack Types
+- **OS**: Tấn công cấu hình mặc định của hệ điều hành
+- **App level**: Tấn công mã ứng dụng
+- **Shrink Wrap**: Tận dụng script/off-the-shelf
+- **Misconfiguration**: Cấu hình kém
+
+### Legal / Standards / Compliance
+- 18 U.S.C 1029 & 1030  
+- RFC 1918 – Private IP Standard  
+- RFC 3227 – Collecting & storing data  
+- ISO 27002 – InfoSec Guidelines  
+- CAN-SPAM – email marketing  
+- SPY-Act – License Enforcement  
+- DMCA – Intellectual Property  
+- SOX – Corporate Finance Processes  
+- GLBA – Personal Finance Data  
+- FERPA – Education Records  
+- FISMA – Gov Networks Security Std  
+- CVSS – Common Vulnerability Scoring System  
+- CVE – Common Vulnerabilities & Exposures  
+- Regional Registry Coverage Map
+
+---
+
+## Cryptography
+
+### Symmetric Encryption
+- **Key pairs required =** 1 (shared secret)  
+- **Algorithms:**
+  - DES: 56-bit key (8-bit parity); fixed block
+  - 3DES: 168-bit key; keys ≤ 3
+  - AES: 128/192/256; thay DES
+  - IDEA: 128-bit key
+  - Twofish: block cipher, key ≤ 256-bit
+  - Blowfish: thay bởi AES; 64-bit block
+  - RC family: RC2→RC6; RC6 128-bit block; tối đa ~2040-bit key
+
+### Asymmetric Encryption
+- **Public Key = Encrypt**, **Private Key = Decrypt** (thông thường)  
+- **Algorithms:**
+  - Diffie–Hellman: Trao đổi khóa; dùng trong SSL/IPsec
+  - ECC: Elliptic Curve – hiệu quả cho mobile/low-power
+  - ElGamal: Dựa trên log rời rạc; mã hóa/ký
+  - RSA: 2 số nguyên tố lớn; key phổ biến đến 4096-bit
+
+### Hash Algorithms
+- MD5: 128-bit hash, biểu diễn 32 hex
+- SHA-1: 160-bit hash
+- SHA-2: 224/256/384/512
+
+### Trust Models
+- **Web of Trust**: Thực thể ký chéo
+- **Single Authority**: 1 CA gốc
+- **Hierarchical**: CA gốc + RA cấp dưới
+- **XMKS**: XML PKI System
+
+### Cryptography Attacks
+- **Known Plain-text**: So chuỗi lặp lại của bản rõ
+- **Ciphertext-only**: Thu thập nhiều bản mã, phân tích mẫu
+- **Replay (MITM)**: Lặp lại trao đổi để lừa thiết lập kênh
+
+### Digital Certificate Fields
+- Version, Serial
+- Subject, Issuer
+- Algorithm ID
+- Valid from/to
+- Key usage
+- Subject’s Public Key
+- Optional: Issuer ID, Subject Alt Name, …
+
+---
+
+## Reconnaissance
+
+### Định nghĩa
+- **Recon**: Thu thập thông tin mục tiêu (CEH dùng thay footprinting).
+- **Footprinting**: Vẽ bản đồ tổng quan ở mức cao.
+
+### Google Hacking Operators
+- `operator:keyword`
+- `site:` – trong domain
+- `ext:` – phần mở rộng tệp
+- `loc:` – vị trí bản đồ
+- `intitle:` / `allintitle:`
+- `inurl:` / `allinurl:`
+- `incache:` – chỉ cache
+
+### DNS Essentials
+- **Port** 53 – UDP (truy vấn), TCP (zone transfer)  
+- **Records:**
+  - SRV – hostname & port dịch vụ
+  - SOA – Primary name server
+  - PTR – IP→Hostname (reverse DNS)
+  - NS – Name servers
+  - MX – Mail servers
+  - CNAME – bí danh (alias)
+  - A – Hostname→IP
+- **Footprinting tools**: `whois`, `nslookup`, `dig`
+
+### TCP Header Flags
+- **URG** – out-of-band data  
+- **ACK** – xác nhận (sau SYN)  
+- **PSH** – đẩy dữ liệu không buffer  
+- **RST** – reset kết nối 2 chiều  
+- **SYN** – mở kết nối, tham số & seq  
+- **FIN** – đóng kết nối có thứ tự
+
+### DHCP Handshake
+Client —**Discover**→ Server  
+Client ←**Offer**— Server  
+Client —**Request**→ Server  
+Client ←**Ack**— Server (IP bị rút khỏi pool)
+
+---
+
+## Scanning & Enumeration
+
+### ICMP Message Types
+- **0**: Echo Reply  
+- **3**: Destination Unreachable (Codes: 0 network, 1 host, 6 network unknown, 7 host unknown, 9/10 admin prohibited, 13 comms admin prohibited)  
+- **4**: Source Quench (cũ)  
+- **5**: Redirect (0 network, 1 host)  
+- **8**: Echo Request  
+- **11**: Time Exceeded
+
+### CIDR / IPv4 Quick Notes
+- `/30 = 4  (.255.252)`  
+- `/28 = 16 (.255.240)`  
+- `/26 = 64 (.255.192)`  
+- `/24 = 256 (.255.0)`  
+- `/22 = 1024 (.248.0)`  
+- `/20 = 4096 (.240.0)`  
+
+### Port Numbers
+- **0–1023**: Well-known  
+- **1024–49151**: Registered  
+- **49152–65535**: Dynamic
+
+**Important ports**
+- FTP: 20/21
+- SSH: 22
+- Telnet: 23
+- SMTP: 25
+- WINS: 42
+- TACACS: 49
+- DNS: 53
+- HTTP: 80 / 8080
+- Kerberos: 88
+- POP3: 110
+- Portmapper (Linux): 111
+- NNTP: 119
+- NTP: 123
+- RPC-DCOM: 135
+- NetBIOS/SMB: 137–139
+- IMAP: 143
+- SNMP: 161/162
+- LDAP: 389
+- HTTPS: 443
+- CIFS: 445
+- RADIUS: 1812
+- RDP: 3389
+- IRC: 6667
+- Printer: 515, 631, 9100
+- Tini: 7777
+- NetBus: 12345
+- Back Orifice: 27374
+- Sub7: 31337
+
+### HTTP Status Families
+- **200** series – OK  
+- **400** series – Client error / Could not provide request  
+- **500** series – Server error / Could not process request
+
+### Nmap Quick Reference
+```bash
+nmap <scan options> <target>
+# Popular:
+-sS (SYN) -sT (TCP connect) -sA (ACK) -sF (FIN) -sN (NULL) -sX (XMAS) -sW (Window)
+-sn (ping sweep) -sI (Idle) -sR (RPC) -PS (SYN ping) -PI (ICMP ping) -PT (TCP ping)
+-Po (no ping) -A (OS/Version/Script) -oN (normal) -oX (XML) -T0..T4 (chậm→nhanh)
+```
+
+### Scan Types Semantics
+- **TCP (full 3-way)**: Open = SYN/ACK; Closed = RST/ACK  
+- **SYN (half-open)**: Open = SYN/ACK; Closed = RST/ACK  
+- **FIN**: Open = no response; Closed = RST  
+- **XMAS (FIN, URG, PSH)**: Open = no response; Closed = RST  
+- **ACK (Linux/Unix)**: Open = RST; Closed = no response  
+- **IDLE (spoofed)**: Open = SYN/ACK; Closed = RST/ACK  
+- **NULL (no flags)**: Phụ thuộc OS (Linux/Unix oriented)
+
+### NetBIOS Cheats
+```bash
+nbtstat -a COMPUTER190         # remote table by name
+nbtstat -A 192.168.10.12       # remote table by IP
+nbtstat -n                     # local name table
+nbtstat -c                     # local name cache
+nbtstat -r                     # purge name cache
+nbtstat -S 10                  # session stats every 10s
+# 1B = master browser (subnet), 1C = domain controller, 1D = domain master browser
+```
+
+### SNMP Notes
+- Dùng **community string** như mật khẩu (v1/v2c)
+- **SNMPv3** mã hóa & xác thực community/traffic
+
+---
+
+## Sniffing & Evasion
+
+### IPv4 vs IPv6
+- **IPv4**: unicast, multicast, **broadcast**
+- **IPv6**: unicast, multicast, **anycast**; phạm vi: link-local, site-local, global
+
+### MAC Address
+- 3 byte đầu (OUI – Org Unique ID) + 3 byte sau (serial)
+
+### NAT
+- **Basic NAT**: 1–1 private↔public  
+- **PAT (NAT Overload)**: Port Address Translation (thường dùng)
+
+### Stateful Inspection
+- Kiểm soát theo **state** kết nối; không soi từng gói
+
+### HTTP Tunnelling
+- Bọc payload qua port ít bị chặn (ví dụ 80)
+
+### Snort IDS Basics
+- 3 chế độ: **Sniffer / Packet logger / NIDS**  
+- Config: `/etc/snort` hoặc `C:\snort\etc`  
+- Ví dụ rule:
+```snort
+alert tcp !HOME_NET any -> $HOME_NET 31337 (msg:"BACKDOOR ATTEMPT-Backorifice.";)
+```
+
+### IDS Evasion Tactics
+- **Chậm lại** / **flood** / **fragmentation**
+
+### tcpdump Syntax
+```bash
+tcpdump [flags] <interface>
+```
+
+---
+
+## Attacking a System
+
+### Password Rules (CEH style)
+- Không chứa tên user, tối thiểu **8** ký tự, **3/4** nhóm: đặc biệt, số, chữ hoa, chữ thường
+
+### LM Hashing Note
+- 7 spaces hashed: `AAD3B435B51404EE`
+
+### Attack Types
+- **Passive Online**: sniff/replay/MITM
+- **Active Online**: đoán mật khẩu
+- **Offline**: trộm SAM, crack ngoại tuyến
+- **Non-electronic**: social engineering
+
+### Sidejacking
+- Đánh cắp cookie và **replay**
+
+### Authentication Factors
+- **Type 1**: Something you know  
+- **Type 2**: Something you have  
+- **Type 3**: Something you are
+
+### Session Hijacking Steps
+1. Sniff traffic client↔server  
+2. Theo dõi & dự đoán sequence  
+3. **Desynchronize** client  
+4. Đoán **session token**  
+5. Inject packet vào server
+
+### Kerberos Overview
+- **Thành phần**: KDC, AS, TGS, TGT  
+- **Quy trình tóm tắt**: Client xin TGT (cleartext req) → Server trả key băm theo pass trên AD (TGT) → Dùng TGT xin TGS → Nhận ticket để truy cập tài nguyên
+
+### SAM File
+- `C:\Windows\System32\config`
+
+### Windows Registry Essentials
+- **Root Keys**:  
+  - HKLM – thông tin HW/SW  
+  - HKCR – file associations & OLE classes  
+  - HKCU – profile user hiện tại  
+  - HKEY_USERS – cấu hình mọi user active  
+  - HKCC – Hardware Profiles  
+- **Run Keys**:  
+  `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run*` / `RunServices*`
+
+---
+
+## Social Engineering
+- **Human-based**: Dumpster diving, impersonation, help desk, shoulder surfing, tailgating/piggybacking
+- **Computer-based**: Phishing, **Whaling** (CEO), **Pharming** (evil twin)
+- **Types of SE**:  
+  - Insider Associates (quyền hạn giới hạn)  
+  - Insider Affiliates (giả mạo Insider)  
+  - Outsider Affiliates (kẻ ngoài lợi dụng điểm mở)
+
+---
+
+## Physical Security
+- **Physical**: cửa, khóa, camera…  
+- **Technical**: smartcards, biometrics  
+- **Operational**: chính sách & quy trình
+
+---
+
+## Web-based Hacking
+- **CSRF**
+- **Dot-dot-slash** (path traversal, unicode/invalid input)
+
+### SQL Injection Types
+- **Union Query**
+- **Tautology**
+- **Blind SQLi**
+- **Error-based** (enumeration)
+
+### Buffer Overflow Quick Notes
+- Ghi vượt bộ đệm → hỏng dữ liệu / thực thi mã
+- **Stack**: thay đổi function pointer/var
+- **Heap**: overwrite function pointers vùng heap
+- **NOP Sled**: chuỗi NOP lớn (IDS thường chặn)
+
+### Dangerous C Functions
+- `gets()` `strcpy()` `strcat()` `printf()` (không kiểm kích thước đích)
+
+---
+
+## Wireless Hacking
+
+### 802.11 Specs
+- **WEP**: RC4 + 24-bit IV; key 40/104-bit  
+- **WPA**: RC4; IV 48-bit  
+- **WPA/TKIP**: đổi IV mỗi frame + key mixing  
+- **WPA2**: AES + tính năng TKIP; IV 48-bit
+
+| Spec    | Dist | Speed   | Freq     |
+|---------|------|---------|----------|
+| 802.11a | 30m  | 54 Mbps | 5 GHz    |
+| 802.11b | 100m | 11 Mbps | 2.4 GHz  |
+| 802.11g | 100m | 54 Mbps | 2.4 GHz  |
+| 802.11n | 125m | 100+ Mb | 2.4/5GHz |
+
+### Bluetooth Attacks
+- **Bluesmacking** (DoS)  
+- **Bluejacking** (nhắn tin)  
+- **Bluesniffing** (sniff)  
+- **Bluesnarfing** (trộm dữ liệu)
+
+---
+
+## Trojans / Malware / DoS
+
+### Virus Types
+- Boot, Camouflage, Cavity, Macro, Multipartite
+- Metamorphic, Network, Polymorphic Code
+- Shell, Stealth
+
+### DoS Types
+- **SYN Attack/Flood**, **ICMP Flood**, **App-level Flood**
+- **Smurf** (ICMP broadcast spoofed), **Fraggle** (UDP)
+- **Ping of Death** (reassembly > max size)
+
+### Notable CVEs / Worms
+- **Heartbleed** (CVE-2014-0160) – OpenSSL heartbeat leak (MITM)
+- **POODLE** (CVE-2014-3566) – SSL 3.0 downgrade MITM
+- **Shellshock** (CVE-2014-6271) – Bash code injection via env
+- **ILOVEYOU** (2000, VBS macro) – from Philippines
+- **Melissa** (1999, MS Word macro)
+
+---
+
+## Linux Commands
+
+### FS Layout
+`/` (root), `/var` (logs), `/bin` (user bins), `/sbin` (admin bins), `/root`, `/boot` (kernel), `/proc` (kernel), `/dev` (devices), `/mnt` (mount)
+
+### Users / Procs / IDs
+- `init` PID 1  
+- root UID/GID 0  
+- Services 1–999  
+- Users ≥ 1000
+
+### Permissions
+- 4 Read / 2 Write / 1 Execute  
+- `764` = User RWX / Group RW / Other R
+
+### Snort Rule Form
+```
+action protocol src_ip src_port -> dst_ip dst_port (option:value; ...)
+alert tcp 10.0.0.1 25 -> 10.0.0.2 25 (msg:"Sample Alert"; sid:1000;)
+```
+
+---
+
+## Command-Line Quickies
+
+```bash
+# Nmap
+nmap -sT -T5 -n -p 1-100 10.0.0.1
+
+# Netcat
+nc -v -z -w 2 10.0.0.1 1-1000
+
+# tcpdump
+tcpdump -i eth0 -v -X ip proto 1
+
+# Snort
+snort -vde -c my.rules
+
+# hping
+hping3 -I eth0 -c 10 -a 2.2.2.2 -t 100 10.0.0.1
+
+# iptables
+iptables -A FORWARD -j ACCEPT -p tcp --dport 80
+```
+
+---
+
+## Tools of the Trade
+
+### Vulnerability Research
+- National Vuln DB, Eccouncil.org, Exploit-DB
+
+### Foot-printing
+- Netcraft, Wayback/Archive, Webmaster tools
+- DNS & WHOIS: nslookup, Sam Spade, ARIN, WhereisIP, DNSstuff, DNS-Digger
+- Mirroring: `wget`, Wayback, Google Cache
+
+### Scanning & Enumeration
+- Ping Sweep: Angry IP Scanner, MegaPing
+- Scanners: SuperScan, Nmap (Zenmap), NetScan Tools Pro, hping, netcat
+- War Dialing: THC-Scan, TeleSweep, ToneLoc, WarVox
+- Banner grab: telnet, ID Serve, Netcraft, Xprobe
+- Vuln Scan: Nessus, SAINT, Retina, Core Impact, Nikto
+- Mapping: NetMapper, LANState, IPSonar
+- Proxy/Tunnel/Anon: Tor, ProxySwitcher, ProxyChains, SoftCab, HTTP Tunnel, Anonymouse
+- Enumeration: SuperScan, User2Sid/Sid2User, LDAP Admin, Xprobe, Hyena
+- SNMP Enum: SolarWinds, SNMPUtil, SNMPScanner
+
+### System Hacking
+- Password: Cain, John, LCP, THC-Hydra, ElcomSoft, Aircrack, RainbowCrack, Brutus, KerbCrack
+- Sniffing: Wireshark, Ace, KerbSniff, Ettercap
+- Keylogger/Screen: KeyProwler, Ultimate Keylogger, All In One, Actual Spy, Ghost, Hidden Recorder, Desktop Spy, USB Grabber
+- Priv Esc / Recovery: Password Recovery Boot Disk/Reset, System Recovery
+- Remote Exec: PDQ Deploy, RemoteExec, Dameware
+- Spyware/Monitor: Remote Desktop Spy, Activity Monitor, OSMonitor, SSPro, Spector Pro
+- Cover Tracks: ELsave, CCleaner, EraserPro, Evidence Eliminator
+
+### Packet Crafting / Spoofing
+- Komodia, hping2/3, PackEth, Packet Generator, NetScan, Scapy, Nemesis
+
+### Session Hijacking
+- Paros Proxy, Burp Suite, Firesheep, Hamster/Ferret, Ettercap, Hunt
+
+### Crypto / Stego / Hash
+- Encryption: TrueCrypt, BitLocker, DriveCrypt
+- Hash: MD5 Hash, HashCalc
+- Stego: XPTools, ImageHide, Merge Streams, StegParty, gifShuffle, QuickStego, InvisibleSecrets, EZStego, OmniHidePro
+- Cryptanalysis: Cryptobench
+
+### Sniffing (Packet Capture)
+- Wireshark, CACE, tcpdump, Capsa, OmniPeek, WinDump, dnsstuff, EtherApe
+
+### Wireless
+- Discovery: Kismet, NetStumbler, inSSIDer, NetSurveyor
+- Sniffing: Cascade Pilot, OmniPeek, CommView, Capsa
+- WEP/WPA: Aircrack, KisMAC, Wireless Security Auditor, WepAttack, WepCrack, coWPAtty
+- Bluetooth: BTBrowser, BH Bluejack, BTScanner, Bluesnarfer
+- Mobile Tracking: Where’s My Droid, Find My iPhone, GadgetTrack, iHound
+
+### Trojans / Malware
+- Wrappers: Elite Wrap
+- Monitoring: HiJackThis, CurrPorts, fport
+- Attack: netcat, Nemesis
+
+### IDS / Evasion
+- IDS: Snort
+- Evasion: ADMutate, NIDSBench, IDSInformer, Inundator
+
+### Web Attacks
+- Recon & Audit: Wfetch, httprecon, ID Serve, WebSleuth, Black Widow, CookieDigger, NStalker, NetBrute
+- SQLi: BSQL Hacker, Marathon, SQL Injection Brute, SQL Brute, SQLNinja, SQLGET
+
+---
 
 
-=== FILE: archfinn_studio/main.py (replace entire file) ===
+================================================================================
 
+--- FILE: ComputerNetwork.md ---
+# Computer Network: A Comprehensive Guide
 
+> Tài liệu này được xây dựng để cung cấp một cái nhìn toàn diện về Mạng Máy tính, từ các khái niệm cơ bản đến các kỹ thuật nâng cao, phục vụ mục đích lưu trữ và tham khảo cho các dự án IT. Tài liệu được thiết kế để hỗ trợ cả người mới bắt đầu và những người có kinh nghiệm muốn hệ thống hóa kiến thức.
 
-=== FILE: archfinn_studio/pyproject.toml (replace entire file) ===
+---
 
+## Mục Lục
 
+- [Giới thiệu về Computer Network](#giới-thiệu-về-computer-network)
+- [Các khái niệm cơ bản](#các-khái-niệm-cơ-bản)
+  - [Mô hình OSI](#mô-hình-osi)
+  - [Mô hình TCP/IP](#mô-hình-tcp-ip)
+  - [Các loại mạng](#các-loại-mạng)
+- [Các giao thức mạng chính](#các-giao-thức-mạng-chính)
+  - [Giao thức tầng ứng dụng](#giao-thức-tầng-ứng-dụng)
+  - [Giao thức tầng giao vận](#giao-thức-tầng-giao-vận)
+  - [Giao thức tầng mạng](#giao-thức-tầng-mạng)
+  - [Giao thức tầng liên kết dữ liệu](#giao-thức-tầng-liên-kết-dữ-liệu)
+- [Các thiết bị mạng](#các-thiết-bị-mạng)
+  - [Router](#router)
+  - [Switch](#switch)
+  - [Access Point](#access-point)
+  - [Firewall](#firewall)
+- [Các kỹ thuật tối ưu hóa mạng](#các-kỹ-thuật-tối-ưu-hóa-mạng)
+  - [Load Balancing](#load-balancing)
+  - [Quality of Service (QoS)](#quality-of-service-qos)
+  - [Network Security](#network-security)
+- [Checklist học tập và nghiên cứu](#checklist-học-tập-và-nghiên-cứu)
+- [Công cụ đề xuất](#công-cụ-đề-xuất)
+- [Kinh nghiệm thực hành](#kinh-nghiệm-thực-hành)
+- [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
-=== FILE: archfinn_studio/gui/graph_viewer.py (replace entire file) ===
+---
 
+## Giới thiệu về Computer Network
 
-=== FILE: archfinn_studio/gui/main_window.py (replace entire file) ===
+Mạng máy tính là tập hợp các thiết bị được kết nối với nhau để chia sẻ tài nguyên, trao đổi dữ liệu và cung cấp các dịch vụ. Mạng máy tính đóng vai trò quan trọng trong mọi lĩnh vực từ giao tiếp cá nhân, doanh nghiệp, đến các ứng dụng công nghệ cao như trí tuệ nhân tạo và blockchain.
 
+- **Tầm quan trọng**:
+  - Kết nối toàn cầu thông qua Internet.
+  - Hỗ trợ các ứng dụng thời gian thực như video streaming, VoIP, và game online.
+  - Là nền tảng cho các công nghệ hiện đại như cloud computing và IoT.
 
-=== FILE: archfinn_studio/utils/graph_builder.py (replace entire file) ===
+- **Ứng dụng thực tế**:
+  - Xây dựng mạng nội bộ (LAN) cho doanh nghiệp.
+  - Triển khai hệ thống cloud (AWS, Azure).
+  - Phát triển các ứng dụng phân tán (blockchain, P2P).
+
+---
+
+## Các khái niệm cơ bản
+
+### Mô hình OSI
+- **Mô tả**: Mô hình OSI (Open Systems Interconnection) là một khung tham chiếu lý thuyết chia quá trình truyền thông mạng thành 7 tầng (Layers).
+- **Các tầng**:
+  1. **Physical Layer**: Truyền tín hiệu vật lý (cáp, tín hiệu điện, quang).
+  2. **Data Link Layer**: Đảm bảo truyền dữ liệu không lỗi giữa các nút liền kề (MAC address, Ethernet).
+  3. **Network Layer**: Định tuyến và chuyển tiếp gói tin (IP address, routing).
+  4. **Transport Layer**: Đảm bảo truyền dữ liệu đáng tin cậy (TCP, UDP).
+  5. **Session Layer**: Quản lý phiên giao tiếp giữa các ứng dụng.
+  6. **Presentation Layer**: Chuyển đổi định dạng dữ liệu (mã hóa, nén).
+  7. **Application Layer**: Giao diện cho người dùng (HTTP, FTP, DNS).
+- **Ưu điểm**: Cung cấp cách tiếp cận chuẩn hóa để thiết kế và phân tích mạng.
+- **Ví dụ thực tế**: Phân tích gói tin bằng Wireshark dựa trên các tầng OSI.
+
+### Mô hình TCP/IP
+- **Mô tả**: Mô hình TCP/IP là một mô hình thực tiễn, đơn giản hơn OSI, gồm 4 tầng, được sử dụng rộng rãi trong Internet.
+- **Các tầng**:
+  1. **Link Layer**: Tương ứng với Physical và Data Link Layer của OSI.
+  2. **Internet Layer**: Tương ứng với Network Layer (IP).
+  3. **Transport Layer**: Tương ứng với Transport Layer (TCP, UDP).
+  4. **Application Layer**: Bao gồm Session, Presentation, và Application Layer của OSI.
+- **Ưu điểm**: Đơn giản, thực tiễn, là nền tảng của Internet.
+- **Ví dụ thực tế**: Giao thức HTTP chạy trên TCP/IP để truy cập website.
+
+### Các loại mạng
+- **LAN (Local Area Network)**: Mạng nội bộ, phạm vi nhỏ (văn phòng, nhà ở).
+- **WAN (Wide Area Network)**: Mạng diện rộng, kết nối các khu vực địa lý (Internet).
+- **MAN (Metropolitan Area Network)**: Mạng đô thị, kết nối trong một thành phố.
+- **PAN (Personal Area Network)**: Mạng cá nhân (Bluetooth, USB).
+- **VPN (Virtual Private Network)**: Mạng riêng ảo, mã hóa dữ liệu qua Internet.
+- **Ví dụ thực tế**:
+  - LAN: Mạng Wi-Fi trong nhà.
+  - WAN: Kết nối Internet giữa các quốc gia.
+  - VPN: Sử dụng OpenVPN để truy cập mạng công ty từ xa.
+
+---
+
+## Các giao thức mạng chính
+
+### Giao thức tầng ứng dụng
+- **HTTP/HTTPS**: Giao thức truyền siêu văn bản, sử dụng cho web.
+- **DNS**: Chuyển đổi tên miền thành địa chỉ IP.
+- **FTP/SFTP**: Truyền tệp tin giữa client và server.
+- **SMTP/POP3/IMAP**: Giao thức cho email.
+- **Ví dụ thực tế**:
+  - Truy cập website qua HTTPS (port 443).
+  - Sử dụng DNS để phân giải `google.com` thành `172.217.167.78`.
+
+### Giao thức tầng giao vận
+- **TCP (Transmission Control Protocol)**: Đảm bảo truyền dữ liệu đáng tin cậy, có kết nối, kiểm tra lỗi.
+- **UDP (User Datagram Protocol)**: Truyền dữ liệu nhanh, không cần kết nối, không đảm bảo lỗi (dùng cho streaming, game).
+- **Ví dụ thực tế**:
+  - TCP: Tải xuống tệp tin qua FTP.
+  - UDP: Truyền video trực tiếp qua Zoom.
+
+### Giao thức tầng mạng
+- **IP (Internet Protocol)**: Định tuyến gói tin qua mạng (IPv4, IPv6).
+- **ICMP**: Giao thức kiểm tra trạng thái mạng (dùng cho `ping`).
+- **ARP**: Ánh xạ địa chỉ IP sang địa chỉ MAC.
+- **Ví dụ thực tế**:
+  - IPv4: `192.168.1.1` cho mạng nội bộ.
+  - ICMP: Sử dụng lệnh `ping` để kiểm tra kết nối.
+
+### Giao thức tầng liên kết dữ liệu
+- **Ethernet**: Giao thức phổ biến cho mạng LAN.
+- **PPP (Point-to-Point Protocol)**: Kết nối trực tiếp giữa hai nút.
+- **Wi-Fi (IEEE 802.11)**: Giao thức cho mạng không dây.
+- **Ví dụ thực tế**:
+  - Ethernet: Kết nối máy tính qua cáp RJ45.
+  - Wi-Fi: Kết nối không dây qua chuẩn 802.11ac/ax.
+
+---
+
+## Các thiết bị mạng
+
+### Router
+- **Mô tả**: Chuyển tiếp gói tin giữa các mạng khác nhau, hoạt động ở tầng mạng.
+- **Chức năng**: Định tuyến, NAT (Network Address Translation), DHCP.
+- **Ví dụ thực tế**: Router Wi-Fi TP-Link Archer cung cấp kết nối Internet cho mạng gia đình.
+
+### Switch
+- **Mô tả**: Kết nối các thiết bị trong cùng một mạng, hoạt động ở tầng liên kết dữ liệu.
+- **Chức năng**: Chuyển tiếp khung dữ liệu (frame) dựa trên địa chỉ MAC.
+- **Ví dụ thực tế**: Switch Cisco Catalyst cho mạng doanh nghiệp.
+
+### Access Point
+- **Mô tả**: Thiết bị cung cấp kết nối Wi-Fi cho các thiết bị.
+- **Chức năng**: Kết nối không dây, mở rộng phạm vi mạng.
+- **Ví dụ thực tế**: Ubiquiti UniFi AP cho mạng Wi-Fi doanh nghiệp.
+
+### Firewall
+- **Mô tả**: Thiết bị bảo mật, kiểm soát lưu lượng mạng dựa trên quy tắc.
+- **Chức năng**: Ngăn chặn truy cập trái phép, bảo vệ mạng khỏi tấn công.
+- **Ví dụ thực tế**: pfSense, Fortinet Firewall cho mạng doanh nghiệp.
+
+---
+
+## Các kỹ thuật tối ưu hóa mạng
+
+### Load Balancing
+- **Mô tả**: Phân phối lưu lượng mạng đều trên nhiều server để tăng hiệu suất và độ tin cậy.
+- **Các kỹ thuật**:
+  - Round-robin: Phân phối tuần tự.
+  - Least connections: Gửi lưu lượng đến server ít kết nối nhất.
+- **Ví dụ thực tế**: Sử dụng NGINX làm load balancer cho web server.
+
+### Quality of Service (QoS)
+- **Mô tả**: Quản lý và ưu tiên lưu lượng mạng để đảm bảo hiệu suất cho các ứng dụng quan trọng.
+- **Các kỹ thuật**:
+  - Traffic shaping: Giới hạn băng thông cho một số ứng dụng.
+  - Packet prioritization: Ưu tiên gói tin VoIP hoặc video.
+- **Ví dụ thực tế**: QoS trên router để ưu tiên băng thông cho Zoom.
+
+### Network Security
+- **Mô tả**: Bảo vệ mạng khỏi các mối đe dọa như tấn công DDoS, malware, hoặc truy cập trái phép.
+- **Các kỹ thuật**:
+  - Mã hóa: Sử dụng HTTPS, VPN.
+  - Authentication: Sử dụng giao thức như RADIUS, LDAP.
+  - IDS/IPS (Intrusion Detection/Prevention System): Phát hiện và ngăn chặn tấn công.
+- **Ví dụ thực tế**: Sử dụng Wireshark để phát hiện lưu lượng đáng nghi.
+
+---
+
+## Checklist học tập và nghiên cứu
+
+- [ ] Hiểu rõ mô hình OSI và TCP/IP, so sánh sự khác biệt.
+- [ ] Nắm vững các giao thức chính: HTTP, TCP, IP, DNS, Ethernet.
+- [ ] Tìm hiểu các loại mạng: LAN, WAN, VPN, PAN.
+- [ ] Thực hành phân tích gói tin bằng Wireshark.
+- [ ] Thiết lập một mạng LAN đơn giản với router và switch.
+- [ ] Tìm hiểu về bảo mật mạng: Firewall, VPN, IDS/IPS.
+- [ ] Đọc sách *Computer Networking: A Top-Down Approach* của Kurose & Ross.
+- [ ] Thực hành cấu hình router và switch bằng Cisco Packet Tracer.
+- [ ] Tìm hiểu về IPv6 và cách chuyển đổi từ IPv4.
+- [ ] Nghiên cứu các công nghệ mạng hiện đại như SDN (Software-Defined Networking).
+
+---
+
+## Công cụ đề xuất
+
+- **Wireshark**: Phân tích gói tin mạng, hỗ trợ debug và bảo mật.
+- **Cisco Packet Tracer**: Mô phỏng mạng, lý tưởng cho học tập và thử nghiệm.
+- **GNS3**: Mô phỏng mạng phức tạp, hỗ trợ thiết bị thực tế.
+- **Postman**: Kiểm tra API (HTTP, REST).
+- **Nmap**: Quét mạng để phát hiện thiết bị và cổng mở.
+- **pfSense**: Phần mềm firewall mã nguồn mở.
+- **Mininet**: Mô phỏng mạng SDN.
+- **Netcat**: Công cụ linh hoạt để kiểm tra kết nối mạng.
+
+---
+
+## Kinh nghiệm thực hành
+
+1. **Phân tích gói tin**:
+   - Sử dụng Wireshark để bắt và phân tích lưu lượng HTTP, DNS, TCP.
+   - Tìm hiểu cách xác định các gói tin bất thường hoặc tấn công.
+
+2. **Thiết lập mạng LAN**:
+   - Cấu hình router Wi-Fi với DHCP và NAT.
+   - Thiết lập VLAN trên switch để tách biệt lưu lượng mạng.
+
+3. **Mô phỏng mạng**:
+   - Sử dụng Cisco Packet Tracer để thiết kế một mạng doanh nghiệp nhỏ.
+   - Thử nghiệm định tuyến tĩnh và động (RIP, OSPF).
+
+4. **Bảo mật mạng**:
+   - Cài đặt pfSense để cấu hình firewall và VPN.
+   - Thực hành quét mạng bằng Nmap để tìm lỗ hổng.
+
+5. **Dự án thực tế**:
+   - Xây dựng một hệ thống giám sát mạng sử dụng Prometheus và Grafana.
+   - Triển khai một VPN server sử dụng OpenVPN.
+
+---
+
+## Tài liệu tham khảo
+
+1. **Sách**:
+   - *Computer Networking: A Top-Down Approach* bởi James F. Kurose và Keith W. Ross.
+   - *TCP/IP Illustrated, Volume 1: The Protocols* bởi W. Richard Stevens.
+   - *Network Security Essentials* bởi William Stallings.
+2. **Khóa học trực tuyến**:
+   - Coursera: *Introduction to Computer Networking* bởi Stanford University.
+   - Udemy: *Cisco CCNA 200-301 Complete Course*.
+3. **Website**:
+   - Cisco Networking Academy: https://www.netacad.com/
+   - Wireshark Documentation: https://www.wireshark.org/docs/
+   - IETF (Internet Engineering Task Force): https://www.ietf.org/
+4. **Tài nguyên cộng đồng**:
+   - Stack Overflow: Câu hỏi và trả lời về mạng máy tính.
+   - Reddit: r/networking, r/sysadmin.
+
+---
+
+> **Lưu ý**: Tài liệu này sẽ được cập nhật liên tục để bổ sung các khái niệm mới, công cụ, và kinh nghiệm thực tế. Nếu bạn có đề xuất hoặc cần thêm chi tiết, hãy liên hệ với **@author**!
+================================================================================
+
+--- FILE: check\crypted.md ---
+# 🔐 RADIUS, AAA, và FortiToken Resource (Advanced Security Concepts)
+
+## 1️⃣ Giới thiệu về RADIUS
+**RADIUS (Remote Authentication Dial-In User Service)** là một giao thức chuẩn **AAA** (Authentication, Authorization, Accounting).  
+Khác với LDAP, RADIUS không sử dụng cấu trúc cây thư mục, mà tập trung vào xác thực và quản lý truy cập.
+
+- **AAA bao gồm:**
+  - **Authentication:** Xác minh danh tính người dùng.
+  - **Authorization:** Quyền được phép làm gì sau khi đăng nhập.
+  - **Accounting:** Theo dõi, ghi log hoạt động người dùng.
+
+### 📡 Quá trình xác thực RADIUS
+1. Client (VD: FortiGate) gửi **ACCESS-REQUEST** đến RADIUS server.
+2. Server trả về một trong ba phản hồi:
+   - **ACCESS-ACCEPT:** Thông tin xác thực đúng.
+   - **ACCESS-REJECT:** Thông tin sai.
+   - **ACCESS-CHALLENGE:** Yêu cầu thêm xác thực thứ hai (2FA, token, chứng chỉ).
+3. Một số client không hỗ trợ **RADIUS Challenge**.
+
+### ⚙️ Kỹ thuật
+- Giao thức: UDP (Authentication: 1645/1812, Accounting: 1646/1813).
+- RADIUS có thể mở rộng bằng **Vendor-Specific Attributes (VSA)**, ví dụ Fortinet có dictionary riêng.
+
+---
+
+## 2️⃣ Cấu hình RADIUS Server trên FortiGate
+- **GUI:** `User & Authentication > RADIUS Servers`
+- **CLI:** `config user radius`
+
+Các thành phần chính:
+- **Primary Server IP/Name:** IP/FQDN của RADIUS server.
+- **Secret:** Khóa bí mật chia sẻ giữa FortiGate và RADIUS server.
+- **Backup Servers:** Server dự phòng.
+- **Authentication Method:** chap, pap, mschap, mschap2 (Default: pap → mschap2 → chap).
+- **Test Connectivity:** Kiểm tra kết nối đến RADIUS.
+- **Test User Credentials:** Kiểm tra xác thực người dùng.
+- **Include in every User Group:** Chỉ bật trong trường hợp đặc biệt (ví dụ admin-only).
+
+### 🔍 Kiểm thử RADIUS
+- Dùng CLI:  
+  ```bash
+  diagnose test authserver radius <server_name> <username> <password>
+
+================================================================================
+
+--- FILE: check\dns_guide.md ---
+# 🌐 DNS (Domain Name System) 
+
+> Tài liệu này là phần nối tiếp bộ **Network/VPN/Ports**: tập trung vào cách DNS hoạt động ở mức hệ thống, cấu trúc bản ghi, triển khai, bảo mật (DNSSEC, DoH/DoT), và troubleshooting.
+
+---
+
+## 1) DNS là gì? (What & Why)
+**DNS** là hệ thống phân giải tên miền → địa chỉ (thường là IP), giống như **“danh bạ điện thoại của Internet”**.
+- Người dùng gõ `example.com` → hệ thống trả về **A/AAAA** (IPv4/IPv6).
+- Ứng dụng/OS không phải nhớ IP, dễ thay đổi kiến trúc hạ tầng mà không làm gián đoạn người dùng.
+- DNS còn làm nhiều việc hơn: email routing (MX), service discovery (SRV), chính sách bảo mật/ủy quyền (TXT, CAA)…
+
+**Cổng & giao thức mặc định**
+- Port **53/UDP** (truy vấn thông thường), **53/TCP** (truy vấn lớn/AXFR/IXFR hoặc khi UDP bị chặn/fragment).
+- **DoT (DNS over TLS)**: TCP **853**.
+- **DoH (DNS over HTTPS)**: **443** (qua HTTPS).
+- **DoQ (DNS over QUIC)**: UDP **853** (được IANA cấp phát).
+
+---
+
+## 2) Thành phần trong hệ sinh thái DNS
+- **Stub Resolver** (trên OS/app): gởi truy vấn đến recursive resolver.
+- **Recursive Resolver** (còn gọi “resolver”/“caching resolver”): nhận truy vấn từ client, truy vấn tiếp các **authoritative** và **cache** kết quả.
+- **Authoritative Nameserver**: máy chủ **có thẩm quyền** cho một zone (trả lời dữ liệu gốc).
+- **Registrar**: nơi đăng ký tên miền (liên kết domain ↔ nameserver thông qua **NS** tại registry).
+- **Registry / TLD**: cơ quan quản lý TLD (ví dụ `.com`, `.vn`).
+
+### Luồng phân giải (đơn giản hoá)
+```ascii
+[App/OS]
+   │ 1. Query: example.com A?
+   ▼
+[Recursive Resolver]
+   │ 2. Hỏi root (.) → chỉ đến .com
+   ▼
+[. Root NS]
+   │ 3. Hỏi .com → chỉ đến NS của example.com
+   ▼
+[.com TLD NS]
+   │ 4. Hỏi NS của zone example.com
+   ▼
+[Authoritative NS for example.com]
+   │ 5. Trả lời A 93.184.216.34 (kèm TTL)
+   ▼
+[Recursive Resolver] (cache)
+   │ 6. Trả về client (tôn trọng TTL)
+   ▼
+[App/OS]
+```
+
+---
+
+## 3) Zone, Delegation & Glue
+- **Zone**: phạm vi dữ liệu DNS được quản trị thống nhất (ví dụ: zone `example.com.` trong file zone).
+- **Delegation**: ủy quyền một nhánh con cho zone khác (ví dụ: `dev.example.com` do team khác quản lý).
+- **Glue Record**: Khi NS của zone con dùng **hostname nằm trong chính zone đó**, cần bản ghi **A/AAAA “kèm keo”** ở zone cha để tránh vòng lặp tra cứu.
+
+```ascii
+Parent Zone: example.com.
+  dev.example.com.  NS   ns1.dev.example.com.
+  ns1.dev.example.com.  A  203.0.113.10   ; <-- glue tại zone cha
+```
+
+---
+
+## 4) Các loại bản ghi (Record Types) quan trọng
+- **A**: tên → IPv4
+- **AAAA**: tên → IPv6
+- **CNAME**: bí danh (alias) → *canonical name*. Không được đặt CNAME ở **apex** (gốc zone), trừ giải pháp **ALIAS/ANAME** của một số DNS providers.
+- **MX**: định tuyến email (ưu tiên thấp hơn = ưu tiên cao hơn).
+- **TXT**: đa dụng (SPF, DKIM, DMARC, domain verification…)
+- **NS**: chỉ định nameserver có thẩm quyền cho (sub)zone.
+- **SOA**: thông tin zone (serial, refresh, retry, expire, minimum/negative TTL).
+- **SRV**: service discovery (ví dụ `_sip._tcp.example.com`).
+- **CAA**: chỉ định CA nào được phép phát hành chứng chỉ cho domain.
+- **PTR**: reverse DNS (IP → tên). Quản lý bởi chủ sở hữu block IP (thường là ISP/Cloud).
+
+Ví dụ **zone file** rút gọn:
+```zone
+$ORIGIN example.com.
+$TTL 3600
+@       IN SOA  ns1.example.net. hostmaster.example.com. (
+            20250822 ; serial (YYYYMMDD or increment)
+            7200     ; refresh
+            3600     ; retry
+            1209600  ; expire
+            300 )    ; negative caching (min TTL/NX)
+
+        IN NS   ns1.example.net.
+        IN NS   ns2.example.net.
+
+; Web
+@       IN A    203.0.113.20
+@       IN AAAA 2001:db8::20
+www     IN CNAME @
+
+; Email
+@       IN MX 10 mail.example.com.
+mail    IN A 203.0.113.30
+_dmarc  IN TXT "v=DMARC1; p=quarantine; rua=mailto:dmarc@example.com"
+@       IN TXT "v=spf1 ip4:203.0.113.30 -all"
+selector1._domainkey IN TXT "v=DKIM1; k=rsa; p=MIIBI..."
+
+; Service Discovery
+_sip._tcp IN SRV 10 60 5060 sip1.example.com.
+sip1     IN A 203.0.113.40
+
+; Certificate policy
+@       IN CAA 0 issue "letsencrypt.org"
+```
+
+---
+
+## 5) Caching & TTL (và “Propagation”)
+- **TTL** (Time To Live) quyết định thời gian bản ghi được giữ trong cache của resolver/OS/browser.
+- Thay đổi DNS **không “lan” ngay lập tức** – sẽ phụ thuộc TTL còn lại trong cache.
+- **Negative Caching** (NXDOMAIN/NODATA) dùng giá trị trong **SOA minimum** / RFC 2308.
+- Chiến lược deploy: hạ TTL (ví dụ 300s) **trước** khi cắt chuyển, đợi TTL cũ hết, rồi cập nhật bản ghi.
+
+---
+
+## 6) Recursion Control, Forwarder, Split-Horizon
+- **Open Resolver** (để Internet truy vấn tùy ý) → **KHÔNG KHUYÊN DÙNG** (rủi ro DDoS amplification, lạm dụng). Chỉ bật recursion cho mạng nội bộ/trusted.
+- **Forwarder**: Resolver chuyển toàn bộ truy vấn đến một upstream (ví dụ public DNS như 1.1.1.1/8.8.8.8) để đơn giản hoá quản trị/ghi log.
+- **Split-Horizon / Split-Brain DNS**: Cùng một tên nhưng trả IP khác nhau cho **internal** vs **public** (hữu ích cho hybrid cloud, zero-trust).
+
+---
+
+## 7) DNSSEC, DoT/DoH/DoQ & Bảo mật
+- **DNSSEC**: Ký số dữ liệu DNS để chống giả mạo (origin authentication, data integrity). Gồm các bản ghi **RRSIG, DNSKEY, DS, NSEC/NSEC3**.
+  - Chain of trust: Root (.) → TLD → Domain (DS record tại zone cha trỏ đến DNSKEY của zone con).
+  - Triển khai cần xoay **key rollover** đúng quy trình.
+- **DoT (DNS over TLS)**: Mã hoá truy vấn DNS qua TLS (port 853).
+- **DoH (DNS over HTTPS)**: DNS qua HTTPS (port 443), dễ vượt proxy/kiểm duyệt, tích hợp trình duyệt.
+- **DoQ (DNS over QUIC)**: Độ trễ thấp, tránh head-of-line blocking (UDP 853).
+- **TSIG**: Ký MAC (symmetric) để bảo vệ **zone transfer** (AXFR/IXFR) & dynamic updates.
+- **RRL/ACL**: Response Rate Limiting & Access Control Lists để giảm thiểu amplification/dga abuse.
+
+**Amplification Attack** – vì sao?  
+- Truy vấn nhỏ → đáp lớn (đặc biệt với **ANY**, DNSSEC, EDNS0), kẻ xấu giả mạo **source IP** của nạn nhân.
+- Giảm thiểu: tắt open recursion, RRL, hạn chế ANY, BCP-38 (ingress filtering).
+
+---
+
+## 8) Tooling & Troubleshooting (dig/nslookup/drill/kdig)
+Các lệnh mẫu (Linux/macOS; trên Windows dùng `nslookup` hoặc PowerShell `Resolve-DnsName`):
+
+```bash
+# Truy vấn A & theo dõi đường đi (trace từ root)
+dig +trace example.com A
+
+# Truy vấn cụ thể đến 1 NS
+dig @8.8.8.8 example.com A
+
+# MX, NS, TXT
+dig example.com MX
+dig example.com NS
+dig example.com TXT
+
+# Kiểm tra DNSSEC
+dig example.com A +dnssec
+dig example.com DS +dnssec
+
+# Kiểm tra CAA
+dig example.com CAA
+
+# Kiểm tra reverse (PTR) cho IPv4
+dig -x 203.0.113.30
+
+# EDNS0, kích thước UDP, và fallback TCP
+dig example.com A +edns=0 +bufsize=1232 +tcp
+
+# Windows PowerShell
+Resolve-DnsName example.com -Type A
+Resolve-DnsName example.com -Type MX
+```
+
+**Trường hợp thường gặp**
+- “Propagation chậm”: do cache còn hạn, TTL lớn, resolver trung gian.
+- “Email không đến”: thiếu/bị sai **MX/SPF/DKIM/DMARC**; PTR không khớp IP gửi.
+- “Không trỏ CNAME ở apex”: dùng **ALIAS/ANAME** của provider, hoặc chuyển qua A/AAAA.
+- “NXDOMAIN vs NODATA”: domain không tồn tại vs tồn tại nhưng không có record query type.
+- “Glue lỗi thời”: thay NS/host mà quên cập nhật A/AAAA tương ứng ở zone cha.
+
+---
+
+## 9) Thực tiễn tốt (Best Practices)
+- **Thiết kế TTL hợp lý**: 300–3600s cho dịch vụ động; cao hơn cho bản ghi ổn định (NS/SOA cân nhắc).
+- **Bảo vệ zone transfer**: chỉ cho phép AXFR/IXFR với secondary đã xác thực (TSIG/ACL/VPN).
+- **Giảm tấn công**: tắt open recursion, bật RRL, lọc ANY, theo dõi log.
+- **Email hygiene**: triển khai **SPF, DKIM, DMARC**, reverse PTR phù hợp.
+- **Giám sát**: health-check authoritative, theo dõi **serial** tăng đều (SOA).
+- **Anycast authoritative/recursive** để tăng SLA, giảm latency khu vực.
+- **IaC cho DNS**: quản lý zone bằng GitOps/Terraform/OctoDNS để review/rollback dễ dàng.
+
+---
+
+## 10) Phụ lục: Sơ đồ tổng quan
+```ascii
+                         +----------------------+
+                         |     Root (.) NS      |
+                         +----------+-----------+
+                                    |
+                                  (referral)
+                                    |
+                          +---------v----------+
+                          |      .com  NS      |
+                          +---------+----------+
+                                    |
+                                  (referral)
+                                    |
+                     +--------------v---------------+
+                     |  Authoritative NS (example)  |
+                     +--------------+---------------+
+                                    |
+                                 (answer)
+                                    |
+     +-----------+         +--------v--------+
+     |  Client   |  --->   | Recursive/Caching|
+     | (Stub Res)|         |    Resolver      |
+     +-----------+         +------------------+
+```
+
+---
+
+### Tóm tắt
+- DNS phân giải **tên → dữ liệu** (phổ biến nhất là **IP**), dựa trên hệ thống **authoritative + caching**.
+- Nắm chắc **record types**, **TTL/cache**, **delegation/glue**, và **bảo mật (DNSSEC/DoH/DoT/DoQ)** là chìa khoá để vận hành hệ thống hiện đại.
+
+================================================================================
+
+--- FILE: check\network_protocols_ports.md ---
+# 🌐 Internet Protocols, Ports & Networking – Resource for Developers
+
+## 1. Internet Protocols Overview
+Internet protocols are a **set of rules and conventions** that govern how data is transmitted and received over the Internet.  
+They define standards for communication between devices and networks.
+
+---
+
+## 2. What is Protocol?
+A **protocol** is a standardized set of rules that allow two or more entities in a communication system to transmit information.
+
+Examples: HTTP, TCP, UDP, FTP, etc.
+
+---
+
+## 3. What is a Network Port?
+A **network port** is a communication endpoint in a computer network.  
+It is a **software construct** that allows devices or applications to send and receive data.
+
+- Port numbers are **16-bit unsigned integers** → range from 0 to 65,535.  
+- Each port number is associated with a **specific protocol or service**.
+
+👉 Example:  
+- HTTP → Port 80  
+- HTTPS → Port 443  
+- FTP → Port 21  
+
+---
+
+## 4. Port Numbers in Action
+When a communication arrives at a server:
+- **IP address** identifies the host.  
+- **Port number** identifies the specific service/process.
+
+📌 Example:  
+- FTP (Port 21) for file transfers.  
+- HTTP (Port 80) for websites.  
+- SMTP (Port 25) for email transfer.  
+
+---
+
+## 5. Why are Ports Important?
+Ports allow **multiple types of traffic** to flow simultaneously without confusion.
+
+Example:  
+- Bob sends Alice an MP3 via FTP (Port 21).  
+- At the same time, Alice loads a website via HTTP (Port 80).  
+- Even though both streams travel over the same Wi-Fi, the OS knows which application to send the data to.
+
+---
+
+## 6. OSI Model & Ports
+The OSI model divides Internet communication into **7 layers**.
+
+- **Ports are part of the Transport Layer (Layer 4)**.  
+- Only transport protocols (TCP, UDP) define port numbers.  
+- The **Network Layer (Layer 3, e.g., IP)** is unaware of ports (only handles IP addresses).
+
+---
+
+## 7. OSI Model Protocols
+
+### 🔹 Layer 1: Physical Layer
+Examples: USB, Ethernet, Wi-Fi PHY, DSL, ISDN, Bluetooth
+
+### 🔹 Layer 2: Data Link Layer
+Examples: Ethernet, PPP, VLAN, STP, MAC, LACP, HDLC
+
+### 🔹 Layer 3: Network Layer
+Examples: IPv4, IPv6, ICMP, IPSec, OSPF, MPLS, NAT, RIP, BGP
+
+### 🔹 Layer 4: Transport Layer
+Examples: TCP, UDP, SCTP, DCCP
+
+### 🔹 Layer 5: Session Layer
+Examples: PPTP, SMB, RPC, NFS, PAP
+
+### 🔹 Layer 6: Presentation Layer
+Examples: TLS, SSL, AFP
+
+### 🔹 Layer 7: Application Layer
+Examples: HTTP, HTTPS, DNS, FTP, SMTP, POP3, SSH, SNMP, Telnet, BitTorrent
+
+---
+
+## 8. Common Ports and Services
+
+| Port | Protocol/Service | Description | Transport |
+|------|-----------------|-------------|-----------|
+| 20-21 | FTP | File Transfer Protocol | TCP |
+| 22 | SSH | Secure Shell (remote login, file transfer, tunneling) | TCP |
+| 23 | Telnet | Remote text communication (insecure) | TCP/UDP |
+| 25 | SMTP | Email transfer between servers | TCP |
+| 53 | DNS | Domain Name System (hostname ↔ IP) | TCP/UDP |
+| 69 | TFTP | Trivial File Transfer Protocol | UDP |
+| 80 | HTTP | Unencrypted web traffic | TCP |
+| 110 | POP3 | Email retrieval from server | TCP/UDP |
+| 123 | NTP | Network Time Protocol | UDP |
+| 135 | DCE/RPC | Endpoint Mapper | TCP/UDP |
+| 139 | NetBIOS | Session Service | TCP/UDP |
+| 161 | SNMP | Network management protocol | TCP/UDP |
+| 389 | LDAP | Directory Access Protocol | TCP/UDP |
+| 443 | HTTPS | Encrypted web traffic | TCP/UDP |
+| 445 | SMB | Microsoft Directory Services & file sharing | TCP/UDP |
+| 465 | SMTP (Secure) | Secure mail submission | TCP |
+| 514 | Syslog | Logging protocol | UDP |
+| 587 | SMTP | Email submission | TCP |
+| 636 | LDAPS | Secure LDAP over SSL | TCP/UDP |
+| 993 | IMAP | Secure mail retrieval | TCP |
+| 995 | POP3 (Secure) | Secure email download | TCP/UDP |
+| 1433 | MSSQL | Microsoft SQL Server | TCP |
+| 1521 | Oracle DB | Oracle Database | TCP |
+| 3306 | MySQL | MySQL Database | TCP |
+| 3389 | RDP | Remote Desktop Protocol | TCP |
+| 5060 | SIP | Session Initiation Protocol (VoIP) | TCP/UDP |
+| 6881–6999 | BitTorrent | Peer-to-peer sharing | TCP/UDP |
+
+---
+
+## 9. Security Notes on Ports
+- Open ports can be **attack vectors** if not properly secured.  
+- Use **firewalls** to restrict access.  
+- Prefer **encrypted protocols** (e.g., HTTPS over HTTP, SFTP over FTP).  
+
+---
+
+## 10. Summary
+- Protocols define communication rules.  
+- Ports act as "doors" into a machine’s services.  
+- OSI Model explains where protocols & ports operate.  
+- Common services map to well-known ports (0–1023).  
+
+👉 As a developer, understanding ports & protocols is crucial for building secure and scalable networked applications.
+
+================================================================================
+
+--- FILE: check\OSImodel.md ---
+# 📘 OSI Model - Full Resource (Master Level)
+
+## 🔹 Giới thiệu
+**OSI Model (Open Systems Interconnection Model)** là một mô hình tham chiếu gồm **7 tầng** giúp chuẩn hóa cách dữ liệu được truyền qua mạng máy tính. Nó không phải là một giao thức cụ thể, mà là khung lý thuyết mô tả quá trình truyền dữ liệu từ **ứng dụng của người gửi** đến **ứng dụng của người nhận**.
+
+---
+
+## 🔹 7 tầng trong mô hình OSI
+
+### 1️⃣ Physical Layer (Tầng vật lý)
+- **Chức năng:** Truyền tải bit (0/1) dưới dạng tín hiệu điện, ánh sáng hoặc sóng vô tuyến qua môi trường truyền dẫn (cáp, sóng không dây).
+- **Đơn vị dữ liệu:** **Bit**
+- **Thiết bị liên quan:** Hub, repeater, cáp quang, card mạng (NIC).
+- **Nhiệm vụ chính:**
+  - Mã hóa tín hiệu (Encoding/Decoding).
+  - Định nghĩa chuẩn kết nối vật lý (RJ45, USB, Bluetooth).
+  - Điều chế sóng (Modulation).
+
+---
+
+### 2️⃣ Data Link Layer (Tầng liên kết dữ liệu)
+- **Chức năng:** Đóng gói bit thành **frame**, kiểm soát lỗi và kiểm soát truy cập đường truyền.
+- **Đơn vị dữ liệu:** **Frame**
+- **Giao thức/chuẩn:** Ethernet, PPP, HDLC, Wi-Fi (IEEE 802.11).
+- **Nhiệm vụ chính:**
+  - **MAC (Media Access Control):** Quản lý truy cập đường truyền, địa chỉ MAC.
+  - **LLC (Logical Link Control):** Kiểm tra lỗi (CRC), kiểm soát luồng dữ liệu.
+- **Thiết bị liên quan:** Switch, Bridge.
+
+---
+
+### 3️⃣ Network Layer (Tầng mạng)
+- **Chức năng:** Xác định đường đi (routing) cho gói tin từ nguồn → đích.
+- **Đơn vị dữ liệu:** **Packet**
+- **Giao thức:** IPv4, IPv6, ICMP, IPsec.
+- **Nhiệm vụ chính:**
+  - Định tuyến (Routing).
+  - Địa chỉ hóa (Addressing – IP address).
+  - Phân mảnh & lắp ghép gói tin.
+- **Thiết bị liên quan:** Router, Layer 3 Switch.
+
+---
+
+### 4️⃣ Transport Layer (Tầng giao vận)
+- **Chức năng:** Đảm bảo dữ liệu truyền tải tin cậy giữa hai ứng dụng.
+- **Đơn vị dữ liệu:** **Segment (TCP)** / **Datagram (UDP)**
+- **Giao thức chính:**
+  - **TCP (Transmission Control Protocol):** Tin cậy, có xác nhận (ACK), kiểm soát luồng, phục hồi lỗi.
+  - **UDP (User Datagram Protocol):** Nhanh, không cần xác nhận, dùng cho video/voice streaming, DNS.
+- **Nhiệm vụ chính:**
+  - Phân mảnh và tái lắp dữ liệu (Segmentation & Reassembly).
+  - Quản lý cổng (Port numbers).
+
+---
+
+### 5️⃣ Session Layer (Tầng phiên)
+- **Chức năng:** Quản lý **phiên giao tiếp (session)** giữa hai ứng dụng.
+- **Nhiệm vụ chính:**
+  - Thiết lập, duy trì, kết thúc phiên làm việc.
+  - Đồng bộ hóa dữ liệu (Checkpoint/Recovery).
+  - **Authentication & Authorization** (Xác thực & phân quyền).
+- **Ví dụ thực tế:** Trình duyệt quản lý session khi đăng nhập website.
+
+---
+
+### 6️⃣ Presentation Layer (Tầng trình diễn)
+- **Chức năng:** Đảm bảo dữ liệu có định dạng phù hợp giữa hai hệ thống.
+- **Nhiệm vụ chính:**
+  - **Data Translation:** Chuyển đổi dữ liệu (EBCDIC ↔ ASCII, JPEG ↔ PNG).
+  - **Data Compression:** Giảm kích thước dữ liệu (Lossy/Lossless).
+  - **Data Encryption/Decryption:** Bảo mật dữ liệu khi truyền.
+- **Ví dụ thực tế:** SSL/TLS (HTTPS).
+
+---
+
+### 7️⃣ Application Layer (Tầng ứng dụng)
+- **Chức năng:** Tầng gần người dùng nhất, cung cấp dịch vụ mạng trực tiếp cho ứng dụng.
+- **Giao thức tiêu biểu:**
+  - **HTTP/HTTPS** – Web.
+  - **FTP** – Truyền file.
+  - **SMTP/IMAP/POP3** – Email.
+  - **DNS** – Phân giải tên miền.
+  - **Telnet/SSH** – Remote access.
+- **Ví dụ:** Chrome, Firefox, Outlook, Zalo, Discord.
+
+---
+
+## 🔹 Cách dữ liệu đi qua các tầng (Encapsulation & Decapsulation)
+1. Ứng dụng tạo **Data** tại Application Layer.
+2. Presentation Layer **mã hóa/nén** dữ liệu.
+3. Session Layer **quản lý phiên**.
+4. Transport Layer chia dữ liệu thành **Segment (TCP)** hoặc **Datagram (UDP)**.
+5. Network Layer đóng gói thành **Packet** với địa chỉ IP.
+6. Data Link Layer đóng gói thành **Frame** với địa chỉ MAC.
+7. Physical Layer truyền đi dưới dạng **Bit (0/1)** qua cáp hoặc sóng.
+
+Ngược lại, bên nhận sẽ **decapsulation** theo chiều ngược lại.
+
+---
+
+## 🔹 OSI vs TCP/IP Model
+- **TCP/IP Model** có 4 tầng: Application, Transport, Internet, Network Access.
+- OSI chi tiết hơn với 7 tầng.
+- Trên thực tế, TCP/IP là mô hình triển khai chính trong Internet.
+
+---
+
+## 🔹 Các khái niệm liên quan cần biết
+- **Encapsulation / Decapsulation:** Quá trình gói và mở gói dữ liệu qua các tầng.
+- **Protocol Data Unit (PDU):**
+  - Application → Data
+  - Transport → Segment/Datagram
+  - Network → Packet
+  - Data Link → Frame
+  - Physical → Bit
+- **Port Number:** Định danh dịch vụ (HTTP: 80, HTTPS: 443, FTP: 21).
+- **Sự khác biệt TCP & UDP:**
+  - TCP = Reliable, Connection-oriented.
+  - UDP = Fast, Connectionless.
+
+---
+
+## 🔹 Tóm tắt OSI theo cách dễ nhớ
+| Tầng | Chức năng chính | Đơn vị dữ liệu | Ví dụ |
+|------|-----------------|----------------|-------|
+| 7. Application | Giao diện cho người dùng | Data | HTTP, FTP |
+| 6. Presentation | Dịch, mã hóa, nén dữ liệu | Data | SSL, JPEG |
+| 5. Session | Quản lý phiên, đồng bộ | Data | NetBIOS, RPC |
+| 4. Transport | Truyền dữ liệu tin cậy | Segment/Datagram | TCP, UDP |
+| 3. Network | Định tuyến, địa chỉ IP | Packet | IP, ICMP |
+| 2. Data Link | Đóng gói frame, kiểm soát lỗi | Frame | Ethernet, Wi-Fi |
+| 1. Physical | Truyền bit qua môi trường | Bit | Cáp, Hub |
+
+---
+
+## 🔹 Kết luận
+Mô hình OSI là nền tảng quan trọng để hiểu cách dữ liệu di chuyển trong mạng máy tính. Nắm rõ từng tầng giúp ta:
+- Thiết kế hệ thống mạng.
+- Phân tích lỗi mạng (troubleshooting).
+- Hiểu sâu hơn về giao thức và bảo mật.
+
+---
+📌 **Tip nhớ nhanh thứ tự các tầng OSI (7 → 1):**
+> **A**ll **P**eople **S**eem **T**o **N**eed **D**ata **P**rocessing  
+(Application – Presentation – Session – Transport – Network – Data Link – Physical)
+
+================================================================================
+
+--- FILE: check\OSI_ZTA_AAA_Handbook.md ---
+# 📚 Networking & Security Master Handbook
+**(OSI + AAA/RADIUS + FortiToken + Zero Trust Architecture theo NIST SP 1800‑35B)**  
+Phiên bản: 2025‑08‑22
+
+---
+
+## Mục lục
+1. [Tổng quan & Mục tiêu học](#tong-quan--muc-tieu-hoc)
+2. [Mô hình OSI (7 tầng) – Chi tiết & Thực tiễn](#mo-hinh-osi-7-tang--chi-tiet--thuc-tien)
+   - 2.1 [Sơ đồ nhanh](#21-so-do-nhanh)
+   - 2.2 [Chức năng từng tầng](#22-chuc-nang-tung-tang)
+   - 2.3 [Encapsulation/Decapsulation](#23-encapsulationdecapsulation)
+   - 2.4 [PDU, thiết bị, ví dụ giao thức](#24-pdu-thiet-bi-vi-du-giao-thuc)
+   - 2.5 [OSI vs TCP/IP](#25-osi-vs-tcpip)
+   - 2.6 [Troubleshooting theo lớp](#26-troubleshooting-theo-lop)
+3. [Transport chuyên sâu: TCP & UDP](#transport-chuyen-sau-tcp--udp)
+4. [AAA & RADIUS & FortiToken (2FA/MFA)](#aaa--radius--fortitoken-2famfa)
+   - 4.1 [AAA là gì](#41-aaa-la-gi)
+   - 4.2 [RADIUS căn bản](#42-radius-can-ban)
+   - 4.3 [RADIUS trên FortiGate – Cấu hình & Kiểm thử](#43-radius-tren-fortigate--cau-hinh--kiem-thu)
+   - 4.4 [Hai yếu tố xác thực & OTP/FortiToken](#44-hai-yeu-to-xac-thuc--otpfortitoken)
+5. [Zero Trust Architecture (ZTA) – NIST SP 1800‑35B](#zero-trust-architecture-zta--nist-sp-1800-35b)
+   - 5.1 [Collaborators & CRADA](#51-collaborators--crada)
+   - 5.2 [Document Conventions & Call for Patent Claims](#52-document-conventions--call-for-patent-claims)
+   - 5.3 [Tổng quan kiến trúc tham chiếu ZTA](#53-tong-quan-kien-truc-tham-chieu-zta)
+   - 5.4 [Thành phần cốt lõi ZTA](#54-thanh-phan-cot-loi-zta)
+   - 5.5 [Thành phần hỗ trợ & ngữ cảnh](#55-thanh-phan-ho-tro--ngu-canh)
+   - 5.6 [Luồng hoạt động ZTA điển hình](#56-luong-hoat-dong-zta-dien-hinh)
+   - 5.7 [Các pha triển khai (Crawl → Walk → Run)](#57-cac-pha-trien-khai-crawl--walk--run)
+   - 5.8 [Kiến trúc phòng lab & kịch bản doanh nghiệp](#58-kien-truc-phong-lab--kich-ban-doanh-nghiep)
+   - 5.9 [Năng lực tiêu biểu của vendor](#59-nang-luc-tieu-bieu-cua-vendor)
+6. [Phụ lục A – Bảng từ viết tắt](#phu-luc-a--bang-tu-viet-tat)
+7. [Phụ lục B – Thuật ngữ nhanh](#phu-luc-b--thuat-ngu-nhanh)
+8. [Phụ lục C – Mẫu cấu hình & lệnh kiểm thử](#phu-luc-c--mau-cau-hinh--lenh-kiem-thu)
+9. [Phụ lục D – Tip ghi nhớ & lộ trình ôn tập](#phu-luc-d--tip-ghi-nho--lo-trinh-on-tap)
+
+---
+
+## Tổng quan & Mục tiêu học
+Tài liệu này gộp **ba mảng trọng tâm** để học/ôn tập liền mạch:
+- **OSI Model (7 tầng):** nền tảng phân tích mạng, mapping giao thức, mô hình hóa dữ liệu.
+- **AAA/RADIUS/FortiToken:** xác thực, phân quyền, ghi nhật ký; cấu hình FortiGate & OTP.
+- **Zero Trust Architecture (NIST SP 1800‑35B):** kiến trúc tham chiếu, thành phần, quy trình, vendor.
+
+**Bạn sẽ nắm được:**
+- Cách dữ liệu đi qua các tầng (encapsulation) & phương pháp khoanh lỗi theo lớp.
+- Thiết kế/đánh giá chính sách **AAA** và triển khai **2FA/MFA** với **FortiToken**.
+- Xây dựng tư duy **Zero Trust** (không mặc định tin tưởng; xác minh liên tục; least privilege).
+
+---
+
+## Mô hình OSI (7 tầng) – Chi tiết & Thực tiễn
+
+### 2.1 Sơ đồ nhanh
+```
+┌───────────────────────┐ 7. Application  (HTTP, DNS, SMTP, FTP, SSH...)
+├───────────────────────┤ 6. Presentation (TLS/SSL, nén, mã hóa, chuyển mã)
+├───────────────────────┤ 5. Session      (thiết lập/duy trì/kết thúc phiên)
+├───────────────────────┤ 4. Transport    (TCP/UDP, cổng, kiểm soát luồng)
+├───────────────────────┤ 3. Network      (IP, routing, ICMP, IPsec)
+├───────────────────────┤ 2. Data Link    (Ethernet, Wi‑Fi, MAC, VLAN, CRC)
+└───────────────────────┘ 1. Physical     (bit, tín hiệu, cáp/sóng, encoding)
+```
+
+### 2.2 Chức năng từng tầng
+**1) Physical** – Truyền bit (0/1) dưới dạng tín hiệu (điện/quang/vô tuyến). Chuẩn đầu nối, tốc độ, modulation, encoding.  
+**2) Data Link** – Đóng gói **frame**, địa chỉ **MAC**, điều khiển truy cập môi trường (MAC), phát hiện lỗi (FCS/CRC), VLAN (802.1Q). Thiết bị: **Switch/Bridge**.  
+**3) Network** – Định tuyến **packet**, địa chỉ IP, phân mảnh/lắp ghép, ICMP. Thiết bị: **Router/L3 Switch**.  
+**4) Transport** – Truyền **end‑to‑end** tin cậy (TCP) hoặc nhanh, không đảm bảo (UDP). Cổng, phân mảnh/tái lắp, kiểm soát luồng/tắc nghẽn.  
+**5) Session** – Thiết lập/duy trì/kết thúc **phiên**; đồng bộ checkpoint; **authn/authz** theo một số mô hình.  
+**6) Presentation** – **Chuyển mã**, **nén**, **mã hóa/giải mã** (TLS/SSL).  
+**7) Application** – Giao diện dịch vụ mạng (HTTP/HTTPS, DNS, SMTP/IMAP/POP3, FTP, Telnet/SSH...).
+
+### 2.3 Encapsulation/Decapsulation
+- App tạo **Data** → Transport tạo **Segment/Datagram** (thêm TCP/UDP header)  
+→ Network tạo **Packet** (thêm IP header)  
+→ Data Link tạo **Frame** (thêm MAC header/trailer)  
+→ Physical truyền **Bit**.  
+- Bên nhận mở gói theo chiều ngược lại.
+
+### 2.4 PDU, thiết bị, ví dụ giao thức
+| Lớp | PDU       | Thiết bị chính        | Ví dụ giao thức/chuẩn |
+|-----|-----------|-----------------------|-----------------------|
+| 7   | Data      | App/Agent             | HTTP, HTTPS, DNS, SMTP, FTP, SSH |
+| 6   | Data      | TLS library           | TLS/SSL, JPEG/PNG, ASN.1 |
+| 5   | Data      | API, RPC              | RPC, NetBIOS session |
+| 4   | Segment/Datagram | Host OS Stack   | TCP, UDP |
+| 3   | Packet    | Router/L3 Switch      | IPv4/IPv6, ICMP, IPsec |
+| 2   | Frame     | Switch/Bridge         | Ethernet 802.3, Wi‑Fi 802.11, 802.1Q |
+| 1   | Bit       | NIC, Hub, Repeater    | UTP/FO, 1000BASE‑T, OFDM |
+
+### 2.5 OSI vs TCP/IP
+- **TCP/IP (4 lớp):** Application | Transport | Internet | Network Access.  
+- Thực tế Internet chạy theo TCP/IP, **OSI** dùng để **học & phân tích lỗi** chi tiết.
+
+### 2.6 Troubleshooting theo lớp (mẫu câu hỏi nhanh)
+1. Physical: Link up chưa? cáp đúng? tốc độ/duplex?  
+2. Data Link: MAC/VLAN đúng? STP/port‑security? CRC tăng?  
+3. Network: IP/subnet/gateway? route? ICMP ping/traceroute?  
+4. Transport: Port mở? TCP handshake? window/timeout?  
+5–7. Ứng dụng: DNS resolve? HTTP status? TLS certificate?
+
+---
+
+## Transport chuyên sâu: TCP & UDP
+**TCP**: Kết nối tin cậy (3‑way handshake), **ACK**, **retransmission**, **flow control** (window), **congestion control** (slow start, AIMD), **ordering** (sequence). Cờ: SYN, ACK, FIN, RST, PSH, URG.  
+**UDP**: Không kết nối, tối thiểu overhead, latency thấp (VoIP, video, DNS).  
+**Cổng:** well‑known (0–1023), registered (1024–49151), dynamic/ephemeral (49152–65535).
+
+**Mẹo kiểm tra TCP:** `SYN → SYN/ACK → ACK`; xem RTT, MSS, window scaling, retransmissions.  
+**Mẹo kiểm tra UDP:** kiểm tra loss/jitter, MTU/fragment, timeout ứng dụng.
+
+---
+
+## AAA & RADIUS & FortiToken (2FA/MFA)
+
+### 4.1 AAA là gì
+- **Authentication (AuthN):** Xác minh danh tính.  
+- **Authorization (AuthZ):** Phân quyền sau khi xác minh.  
+- **Accounting (Acct):** Ghi nhật ký sử dụng, phục vụ audit/billing.
+
+### 4.2 RADIUS căn bản
+- Giao thức AAA chuẩn, **UDP**: Auth **1812** (hoặc lịch sử **1645**), Acct **1813** (hoặc **1646**).  
+- Gói xác thực điển hình từ client (VD: **FortiGate**) gửi **ACCESS‑REQUEST** → server phản hồi:  
+  - **ACCESS‑ACCEPT** (đúng), **ACCESS‑REJECT** (sai), **ACCESS‑CHALLENGE** (yêu cầu yếu tố thứ hai/token/chứng chỉ).  
+- Không phải mọi RADIUS client đều hỗ trợ **Challenge**.  
+- Hỗ trợ nhiều phương pháp: **PAP, CHAP, MS‑CHAPv2** (và các phương thức **EAP** qua RADIUS).  
+- **VSA (Vendor‑Specific Attributes):** mở rộng thuộc tính riêng, Fortinet có **dictionary** riêng.
+
+### 4.3 RADIUS trên FortiGate – Cấu hình & Kiểm thử
+**GUI:** *User & Authentication → RADIUS Servers*  
+**CLI:** `config user radius`  
+
+Thông số chính:
+- **Primary Server IP/Name** (IP/FQDN máy chủ RADIUS).  
+- **Secret** (khóa chia sẻ), có thể cấu hình **backup servers** (mỗi server có secret riêng).  
+- **Authentication Method:** `chap`, `pap`, `mschap`, `mschap2`; `default` = `pap → mschap2 → chap`.  
+- **Test Connectivity**: chỉ kiểm tra kết nối tới server.  
+- **Test User Credentials**: kiểm thử đăng nhập người dùng.  
+- **Include in every User Group**: chỉ bật trong trường hợp rất đặc biệt (ví dụ chỉ admin).  
+- FortiGate phải được khai báo **client** trên máy chủ RADIUS, nếu không server sẽ **không trả lời**.
+
+**Kiểm thử CLI:**
+```bash
+# Kiểm tra kết nối/xác thực với RADIUS (ví dụ)
+diagnose test authserver radius <server_name> <username> <password>
+# Kết quả sẽ trả: success / failure / group membership
+```
+
+### 4.4 Hai yếu tố xác thực & OTP/FortiToken
+- **2FA**: Password (biết) + Token/OTP (có). Có thể thêm **biometrics** (là).  
+- **OTP**: mã sống ngắn (thường 60s), dùng một lần → bị chặn bắt cũng vô dụng sau khi dùng.  
+- **Deliver OTP**: **FortiToken 200 (hard token)**, **FortiToken Mobile (app)**, **email/SMS**, **Mobile Push**.  
+- **Đồng bộ thời gian:** nên dùng **NTP** để token và FortiGate khớp giờ.  
+- **FortiToken quản trị:**
+  - **Hard Token**: serial cung cấp seed ban đầu. Có thể import danh sách serial.  
+  - **Soft Token**: cần activation code; mỗi FortiGate/FGT‑VM thường có **2** kích hoạt miễn phí, thêm cần mua.  
+  - **One‑to‑One**: Một token chỉ đăng ký cho **một** FortiGate/FortiAuthenticator. Dùng nhiều thiết bị → trung tâm xác thực **FortiAuthenticator**.  
+- **Lưu ý:** Không dùng 2FA với **explicit proxy** trên FortiGate.
+
+**Quy trình MFA trên FortiGate (tóm tắt):**
+1. Người dùng truy cập tài nguyên.  
+2. Traffic khớp security policy yêu cầu auth.  
+3. Nhập username/password → FortiOS xác minh.  
+4. FortiOS yêu cầu OTP (hoặc push).  
+5. Người dùng nhập mã/accept push.  
+6. FortiOS xác minh OTP → cấp quyền truy cập (theo policy/nhóm).
+
+---
+
+## Zero Trust Architecture (ZTA) – NIST SP 1800‑35B
+
+### 5.1 Collaborators & CRADA
+- Dự án ZTA của NIST kêu gọi các **Technology Partners/Collaborators** (Appgate, AWS, Broadcom, Cisco, DigiCert, F5, Forescout, Google Cloud, IBM, Ivanti, Lookout, Mandiant, Microsoft, Okta, Palo Alto Networks, PC Matic, Ping Identity, Radiant Logic, SailPoint, Tenable, Trellix, VMware, Zimperium, Zscaler…).  
+- Các bên tham gia thông qua **CRADA** để đóng góp sản phẩm/khả năng vào các **build** trong lab.
+
+### 5.2 Document Conventions & Call for Patent Claims
+- **shall/shall not**: yêu cầu **bắt buộc**; **should/should not**: **khuyến nghị**; **may/need not**: **tùy chọn**; **can/cannot**: **khả năng**.  
+- NIST mời gọi công bố **bằng sáng chế thiết yếu** (nếu có) và/hoặc cam kết **cấp phép công bằng, không phân biệt**, hoặc **không bồi hoàn** nhằm bảo đảm khả năng áp dụng rộng rãi.
+
+### 5.3 Tổng quan kiến trúc tham chiếu ZTA
+**Tư tưởng cốt lõi:** “Không mặc định tin tưởng gì cả—**luôn xác minh** dựa trên **ngữ cảnh** và **chính sách**; cấp quyền **tối thiểu**; **giám sát liên tục**.”
+
+**Minh họa khái quát:**
+```
+[ Subject ] --request--> [ PEP ] --attr/telemetry--> [ PA ] --policy--> [ PE ]
+     |                                           ^                      |
+     |---- posture ----- [ Device Security ]     |                      |
+     |---- identity ---- [ IdP / ICAM ] ---------+                      |
+     |---- context ----- [ SIEM/EDR/MDM/CDM ] --------------------------+
+                                     |
+                                 [ Data/Resource ]
+Legend: PEP=Policy Enforcement Point, PA=Policy Administrator, PE=Policy Engine
+```
+
+### 5.4 Thành phần cốt lõi ZTA
+- **Policy Engine (PE):** Nơi “ra quyết định” cấp quyền dựa trên chính sách, thuộc tính, rủi ro, posture.  
+- **Policy Administrator (PA):** Biến quyết định thành lệnh cấu hình cho **Policy Enforcement Point**.  
+- **Policy Enforcement Point (PEP):** Thực thi quyết định (cho phép/chặn/giới hạn), thường nằm sát tài nguyên hoặc ở edge.  
+- **ID, Credential, and Access Management (ICAM):** Nhận diện, xác thực, quản trị vòng đời danh tính/thuộc tính.  
+- **Posture/Telemetry:** EDR/MDM/SIEM/NDR cung cấp ngữ cảnh (rủi ro, tuân thủ, tính toàn vẹn thiết bị).  
+- **Data/Applications/Services:** Tài nguyên mục tiêu (on‑prem, cloud, SaaS, OT/IoT).
+
+**Nguyên tắc chính sách:** **ABAC** (Attribute‑Based Access Control) + **risk‑based** + **continuous evaluation** (liên tục tái thẩm định).
+
+### 5.5 Thành phần hỗ trợ & ngữ cảnh
+- **Device Security:** EDR, MDM, mã hóa đĩa, kiểm tra jailbreak/root, patch level.  
+- **Network Security:** Micro‑segmentation, SD‑WAN/SASE, TLS inspection (theo chính sách), DNS security.  
+- **Data Security:** DLP, encryption, tokenization, classification/labeling.  
+- **Observability & Ops:** SIEM, SOAR, UEBA, CMDB, threat intel, CDM.  
+- **Key Management/PKI:** CA, certificate lifecycle (DigiCert,...).
+
+### 5.6 Luồng hoạt động ZTA điển hình
+1. **Request**: Subject (user/app/service account) yêu cầu truy cập một **resource**.  
+2. **Collect**: PEP/PA/PE thu thập **thuộc tính** (subject, device, location, time, risk score, data sensitivity…).  
+3. **Decide**: PE đánh giá chính sách (ABAC/SoD/least privilege) + **trust algorithm**.  
+4. **Enforce**: PA đẩy quyết định xuống PEP (allow/deny/step‑up auth/quarantine/limited access).  
+5. **Monitor & Re‑Evaluate**: Telemetry thay đổi → re‑auth/re‑policy (liên tục).
+
+### 5.7 Các pha triển khai (Crawl → Walk → Run)
+- **Crawl**: Kiểm kê tài nguyên/danh tính, dựng **ICAM**, xác định **chính sách căn bản**, kết nối nguồn thuộc tính.  
+- **Walk**: Thử nghiệm theo **use case** (ứng dụng trọng yếu), tích hợp posture/EDR/MDM, bắt đầu **micro‑segmentation**.  
+- **Run**: Mở rộng tổ chức, **continuous evaluation**, tự động hóa (SOAR), đo lường **risk & compliance**.
+
+### 5.8 Kiến trúc phòng lab & kịch bản doanh nghiệp
+- **Enterprise 1–4**, **Branch**, **Coffee Shop**, **Management & Orchestration**, **Cloud (AWS/Azure)**.  
+- Mục tiêu: chứng minh liên hoạt động đa nhà cung cấp, môi trường hỗn hợp on‑prem + cloud + remote.
+
+### 5.9 Năng lực tiêu biểu của vendor
+- **Ping Identity**
+  - **PingAccess**: quản lý truy cập, triển khai linh hoạt (SaaS, cloud riêng, on‑prem, air‑gap).  
+  - **PingDirectory**: directory hiệu năng cao cho hàng triệu danh tính; hỗ trợ LDAP/JDBC/SCIM; mã hóa, log ký số, LB/rate limiting/proxy tích hợp.
+- **Radiant Logic**
+  - **RadiantOne Platform**: **Identity Data Fabric** – hợp nhất, làm giàu dữ liệu danh tính từ nhiều nguồn để phục vụ ZTA theo thời gian gần thực.  
+  - **Federated Identity Engine**, **Universal Directory** (FIPS 140‑2, LDAP/SQL/SCIM/REST), **SSO**, **Global Synchronization**.
+- **SailPoint**
+  - **IdentityIQ**: **Identity Governance & Administration** (IGA) – lifecycle, provisioning, access request, certification, **SoD**, báo cáo tuân thủ; AI/ML hỗ trợ tự động hóa.
+
+*(Cùng với các cộng tác viên khác: Appgate, Okta, Microsoft, Zscaler, Palo Alto Networks, Tenable, Trellix, F5, DigiCert, Broadcom, Google Cloud, IBM, Ivanti, Lookout, Mandiant, VMware, Zimperium, PC Matic…)*
+
+---
+
+## Phụ lục A – Bảng từ viết tắt
+AAA – Authentication, Authorization, Accounting  
+ABAC – Attribute‑Based Access Control  
+Acct – Accounting  
+CDM – Continuous Diagnostics & Mitigation  
+CMDB – Configuration Management Database  
+EDR – Endpoint Detection & Response  
+EIG – Example Implementation Guide (ngữ cảnh 1800‑35)  
+IdP – Identity Provider  
+ICAM – Identity, Credential, and Access Management  
+IGA – Identity Governance & Administration  
+Ig – Implementation Guide  
+MDM – Mobile Device Management  
+MFA – Multi‑Factor Authentication  
+NDR – Network Detection & Response  
+NTP – Network Time Protocol  
+OTP – One‑Time Password  
+PA/PE/PEP – Policy Admin/Engine/Enforcement Point  
+PAP/CHAP/MS‑CHAPv2 – Phương thức xác thực RADIUS  
+PDU – Protocol Data Unit  
+PKI – Public Key Infrastructure  
+SASE – Secure Access Service Edge  
+SIEM – Security Information & Event Management  
+SoD – Separation of Duties  
+TLS/SSL – Transport Layer Security / Secure Sockets Layer  
+VSA – Vendor‑Specific Attributes  
+ZTA – Zero Trust Architecture
+
+---
+
+## Phụ lục B – Thuật ngữ nhanh
+- **Least Privilege:** Cấp đúng quyền cần thiết, không thừa.  
+- **Continuous Evaluation:** Quyết định truy cập có thể thay đổi khi ngữ cảnh thay đổi.  
+- **Micro‑Segmentation:** Chia nhỏ miền mạng để hạn chế lateral movement.  
+- **Posture:** Trạng thái an toàn thiết bị (patch, AV, disk encryption…).  
+- **Trust Algorithm:** Công thức kết hợp thuộc tính + rủi ro để quyết định cho phép/không.
+
+---
+
+## Phụ lục C – Mẫu cấu hình & lệnh kiểm thử
+
+### C.1 FortiGate – RADIUS (CLI phác thảo)
+```bash
+config user radius
+    edit "corp-radius"
+        set server "10.0.0.10"
+        set secret ENC <chuoi_bi_mat>
+        set auth-type mschap2
+        set timeout 5
+    next
+end
+
+# Tạo user group trỏ tới RADIUS
+config user group
+    edit "grp-rad-users"
+        set member "corp-radius"
+    next
+end
+
+# Áp dụng trong policy (ví dụ captive portal / SSL VPN / admin)
+# ...
+```
+
+### C.2 Kiểm thử RADIUS
+```bash
+diagnose test authserver radius corp-radius alice 'Password@123'
+# → success/failure + group membership
+```
+
+### C.3 Kiểm tra TCP/UDP
+```bash
+# Bắt tay TCP
+tcpdump -nn -i any 'tcp[tcpflags] & (tcp-syn|tcp-ack) != 0'
+
+# Kiểm tra UDP port
+nc -vzu target.example.com 1812
+```
+
+---
+
+## Phụ lục D – Tip ghi nhớ & lộ trình ôn tập
+**Nhớ thứ tự OSI (7→1):** *All People Seem To Need Data Processing.*  
+**Mapping nhanh:** App=HTTP/DNS, Pres=TLS/Codec, Sess=State, Trans=TCP/UDP, Net=IP, Link=Ethernet/Wi‑Fi, Phy=Bit.
+
+**Lộ trình 7 ngày (gợi ý):**
+- **Ngày 1:** OSI tổng quan + bài tập PDU/mapping.
+- **Ngày 2:** Transport (TCP/UDP) + bắt tay/timeout/window.
+- **Ngày 3:** AAA/RADIUS – message, port, phương thức, VSA.
+- **Ngày 4:** FortiGate RADIUS – cấu hình + kiểm thử lab.
+- **Ngày 5:** ZTA căn bản – PE/PA/PEP, ABAC, posture.
+- **Ngày 6:** ZTA theo use case – VPN, SaaS, app nội bộ; step‑up auth.
+- **Ngày 7:** Ôn tập + checklist triển khai thật (Crawl→Walk→Run).
+
+---
+
+### Hết
+
+================================================================================
+
+--- FILE: check\vpn_guide.md ---
+# 🔐 VPN (Virtual Private Network) – Hướng dẫn cho Developer
+
+## 1. Khái niệm
+VPN là một **mạng riêng ảo** được thiết lập trên hạ tầng mạng công cộng (Internet), cho phép:
+- **Mã hóa (Encryption)**: Toàn bộ traffic giữa client ↔ VPN server được mã hóa.
+- **Định tuyến (Routing)**: Traffic từ client được định tuyến qua VPN server trước khi đến đích.
+- **Ẩn IP**: Server/website chỉ thấy IP của VPN server, không thấy IP thực.
+
+👉 Từ góc nhìn dev: VPN giống như một **network overlay** hoạt động ở tầng OSI Layer 3 (Network Layer), thiết lập một **tunnel** encapsulating IP packets.
+
+---
+
+## 2. Mô hình hoạt động
+
+### 🔹 Truy cập Internet không dùng VPN
+```ascii
+[Client Device] ---ISP---> [Destination Server]
+       | (IP thật, data raw, dễ bị sniff)
+```
+
+### 🔹 Truy cập Internet qua VPN
+```ascii
+[Client Device] --Encrypted Tunnel--> [VPN Server] ---> [Destination Server]
+       |                 |                 |
+       |   Data mã hóa   |   Giải mã       |  IP hiển thị = IP VPN
+       |   (AES, TLS)    |                 |
+```
+
+- ISP chỉ thấy client kết nối đến **VPN server**, không thấy website thật.
+- Destination server thấy request đến từ **VPN server IP**, không phải IP thật của client.
+
+---
+
+## 3. Kỹ thuật cốt lõi
+- **Tunneling**: Gói tin gốc (original packet) được bọc (encapsulated) trong một gói mới.  
+  Ví dụ: `IP over UDP`, `IPSec over IP`.
+- **Encryption**: 
+  - AES-256 (phổ biến trong OpenVPN, WireGuard).
+  - ChaCha20 (dùng trong WireGuard).
+- **Authentication**:  
+  - Username/password, certificate, hoặc EAP (Extensible Authentication Protocol).
+- **Key Exchange**: Diffie–Hellman, Elliptic Curve DH, IKEv2.
+
+---
+
+## 4. Giao thức VPN phổ biến
+| Protocol | Layer | Ưu điểm | Nhược điểm |
+|----------|-------|---------|------------|
+| PPTP | L2 | Dễ cài, nhanh | Bảo mật yếu (deprecated) |
+| L2TP/IPSec | L2 + L3 | Bảo mật khá | Tốc độ chậm do double encapsulation |
+| OpenVPN | L4 (TCP/UDP) | Linh hoạt, open-source, mạnh | Cấu hình phức tạp hơn |
+| IKEv2/IPSec | L3 | Ổn định, reconnect nhanh | Khó triển khai cross-platform |
+| WireGuard | L3 | Codebase nhỏ, nhanh, secure | Chưa phổ biến trên tất cả OS |
+
+---
+
+## 5. Trường hợp sử dụng cho Developer
+- **Remote DevOps**: SSH vào server nội bộ qua VPN thay vì mở port public.
+- **Secure API Access**: Giới hạn API chỉ cho phép gọi từ IP của VPN.
+- **CI/CD Pipeline**: Build agent kết nối qua VPN vào network công ty.
+- **Game Development**: Che giấu traffic test, tránh bị sniff packet khi dev game online.
+- **Bypass Geo-block**: Test app/web từ nhiều quốc gia.
+
+---
+
+## 6. Ưu – Nhược điểm
+
+### Ưu điểm
+- 🛡️ Bảo mật dữ liệu traffic.
+- 🕶️ Ẩn danh IP thật.
+- 🌍 Vượt kiểm duyệt Internet.
+- 🖥️ Cho phép remote access vào LAN công ty.
+
+### Nhược điểm
+- 🐌 Overhead mã hóa → tốc độ giảm.
+- 📊 VPN provider có thể log traffic (nếu không chọn cẩn thận).
+- 🚫 Một số dịch vụ detect & block IP VPN.
+
+---
+
+## 7. Sơ đồ network tổng quát
+
+```ascii
++-----------+         +-----------+         +------------------+
+|  Client   | ======> | VPN Server| ======> | Destination Host |
+|  (Laptop) |  TLS    |  (Gateway)|   IP    |   (Web/API/Game) |
++-----------+         +-----------+         +------------------+
+       ^                    ^
+       |                    |
+   Encrypt traffic      Decrypt traffic
+```
+
+---
+
+## 8. Best Practices cho Dev
+- Sử dụng **WireGuard** hoặc **OpenVPN** thay vì PPTP.
+- Dùng **Split tunneling** khi không cần tất cả traffic đi qua VPN (giảm latency).
+- Triển khai **Self-hosted VPN** (vd: OpenVPN, WireGuard trên VPS) khi muốn toàn quyền kiểm soát.
+- Luôn kiểm tra **DNS Leak** và **WebRTC Leak** khi dev ứng dụng web liên quan đến bảo mật.
+- Với microservices: có thể dùng VPN để nối các cluster trên nhiều cloud provider.
+
+---
+
+## 9. Kết luận
+VPN không chỉ để "fake IP" hay "xem Netflix US" 😄.  
+Với developer, nó là **một công cụ hạ tầng quan trọng** giúp:
+- Thiết lập môi trường dev/test an toàn.
+- Bảo mật kết nối đến resource nội bộ.
+- Kiểm thử ứng dụng từ nhiều region.
+
+================================================================================
+
