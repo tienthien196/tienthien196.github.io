@@ -1,0 +1,3 @@
+[submodule "ArchFinn"]
+	path = ArchFinn
+	url = https://github.com/tienthien196/ArchFinn.git
