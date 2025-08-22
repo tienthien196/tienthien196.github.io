@@ -1,0 +1,8 @@
+lark
+networkx
+numpy
+pandas
+fastapi
+streamlit
+PySide6
+matplotlib

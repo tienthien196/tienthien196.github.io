@@ -1,0 +1,20 @@
+PATCHSET
+
+=== FILE: archfinn/core/engine.py (replace entire file) ===
+
+
+=== FILE: archfinn_studio/main.py (replace entire file) ===
+
+
+
+=== FILE: archfinn_studio/pyproject.toml (replace entire file) ===
+
+
+
+=== FILE: archfinn_studio/gui/graph_viewer.py (replace entire file) ===
+
+
+=== FILE: archfinn_studio/gui/main_window.py (replace entire file) ===
+
+
+=== FILE: archfinn_studio/utils/graph_builder.py (replace entire file) ===

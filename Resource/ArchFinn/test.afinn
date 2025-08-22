@@ -1,0 +1,54 @@
+ARCHFINN "v1.0"
+
+SIMULATION "Demo Multi-step Attack" {
+    timeline = { max_steps = 8, tick_delay = 1.0 }
+
+    STEP S1 {
+        action = exploit
+        attacker = hacker
+        target = webserver
+        method = sql_injection
+        base_success = 0.7
+        on_success = goto:S2
+        on_fail = goto:S3
+    }
+
+    STEP S2 {
+        action = move_lateral
+        from = webserver
+        to = dbserver
+        type = stolen_credentials
+        base_success = 0.5
+        on_fail = goto:S2_retry
+        on_success = goto:S4
+    }
+
+    STEP S2_retry {
+        action = brute_force
+        attacker = hacker
+        target = dbserver
+        method = password_guess
+        base_success = 0.3
+        next = goto:S4
+    }
+
+    STEP S3 {
+        action = exploit
+        target = backupserver
+        type = rce
+        base_success = 0.4
+        on_success = goto:S2
+        on_fail = end:BLOCKED
+    }
+
+    STEP S4 {
+        action = exfiltration
+        attacker = hacker
+        target = dbserver
+        data_volume = 1000
+        base_success = 0.8
+        detect_prob = 0.3
+        on_success = end:SUCCESS
+        on_detect = end:ALERT
+    }
+}
