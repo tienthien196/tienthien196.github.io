@@ -8,26 +8,21 @@
 ---
 
 ## 1) DNS là gì? (What & Why)
-**DNS** là hệ thống phân giải tên miền → địa chỉ (thường là IP), giống như **“danh bạ điện thoại của Internet”**.
+### Máy tính hiểu IP, con người thì biết domain -> Dùng DNS
+**DNS** là hệ thống phân giải tên miền : doamin name -> IP
 - Người dùng gõ `example.com` → hệ thống trả về **A/AAAA** (IPv4/IPv6).
 - Ứng dụng/OS không phải nhớ IP, dễ thay đổi kiến trúc hạ tầng mà không làm gián đoạn người dùng.
 - DNS còn làm nhiều việc hơn: email routing (MX), service discovery (SRV), chính sách bảo mật/ủy quyền (TXT, CAA)…
 
 **Cổng & giao thức mặc định**
 - Port **53/UDP** (truy vấn thông thường), **53/TCP** (truy vấn lớn/AXFR/IXFR hoặc khi UDP bị chặn/fragment).
-- **DoT (DNS over TLS)**: TCP **853**.
-- **DoH (DNS over HTTPS)**: **443** (qua HTTPS).
-- **DoQ (DNS over QUIC)**: UDP **853** (được IANA cấp phát).
+- **DoT (DNS over TLS)**: TCP **853** Mã hóa DNS, tránh bị nghe lén
+- **DoH (DNS over HTTPS)**: **443** (qua HTTPS) Gửi DNS qua HTTPS (ẩn trong web)
+- **DoQ (DNS over QUIC)**: UDP **853** (được IANA cấp phát) Nhanh hơn DoH, ít độ trễ
 
 ---
 
 ## 2) Thành phần trong hệ sinh thái DNS
-- **Stub Resolver** (trên OS/app): gởi truy vấn đến recursive resolver.
-- **Recursive Resolver** (còn gọi “resolver”/“caching resolver”): nhận truy vấn từ client, truy vấn tiếp các **authoritative** và **cache** kết quả.
-- **Authoritative Nameserver**: máy chủ **có thẩm quyền** cho một zone (trả lời dữ liệu gốc).
-- **Registrar**: nơi đăng ký tên miền (liên kết domain ↔ nameserver thông qua **NS** tại registry).
-- **Registry / TLD**: cơ quan quản lý TLD (ví dụ `.com`, `.vn`).
-
 ### Luồng phân giải (đơn giản hoá)
 ```ascii
 [App/OS]
@@ -50,6 +45,12 @@
    ▼
 [App/OS]
 ```
+- **Stub Resolver** (trên OS/app): hỏi recursive resolver.
+- **Recursive Resolver** (còn gọi “resolver”/“caching resolver”): nhận từ client -> hỏi  **authoritative** và **cache** kết quả.
+- **Authoritative Nameserver**: máy chủ **có thẩm quyền** cho một zone (trả lời dữ liệu gốc).
+- **Registrar**: nơi đăng ký tên miền (liên kết domain ↔ nameserver thông qua **NS** tại registry).
+- **Registry / TLD**: cơ quan quản lý TLD (ví dụ `.com`, `.vn`).
+
 
 ---
 
@@ -66,7 +67,7 @@ Parent Zone: example.com.
 
 ---
 
-## 4) Các loại bản ghi (Record Types) quan trọng
+## 4) Các loại bản ghi (Record Types) -> Dánh dấu IP
 - **A**: tên → IPv4
 - **AAAA**: tên → IPv6
 - **CNAME**: bí danh (alias) → *canonical name*. Không được đặt CNAME ở **apex** (gốc zone), trừ giải pháp **ALIAS/ANAME** của một số DNS providers.

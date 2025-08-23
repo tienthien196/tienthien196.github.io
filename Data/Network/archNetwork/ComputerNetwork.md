@@ -59,7 +59,7 @@ Mạng máy tính là tập hợp các thiết bị được kết nối với n
 
 ---
 
-# MAP ASCII hệ thống hoá kiến thức (Networking & Security)
+# MAP hệ thống hoá kiến thức (Networking & Security)
 
 ```
                                 ┌───────────────────────────────────────────┐
