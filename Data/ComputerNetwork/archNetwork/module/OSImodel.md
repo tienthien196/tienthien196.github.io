@@ -422,43 +422,4 @@ Mô hình OSI là nền tảng để hiểu cách mạng máy tính hoạt độ
 > ***TÀI LIỆU BUILD BY @TIẾN THIỆN*** [(truy cập chi tiết)](https://tienthien196.github.io/ecosys.portfolioBNJ/)
 
 
-### Mô hình OSI
-- **Mô tả**: Mô hình OSI (Open Systems Interconnection) là một khung tham chiếu lý thuyết chia quá trình truyền thông mạng thành 7 tầng (Layers).
-- **Các tầng**:
-  1. **Physical Layer**: Truyền tín hiệu vật lý (cáp, tín hiệu điện, quang).
-  2. **Data Link Layer**: Đảm bảo truyền dữ liệu không lỗi giữa các nút liền kề (MAC address, Ethernet).
-  3. **Network Layer**: Định tuyến và chuyển tiếp gói tin (IP address, routing).
-  4. **Transport Layer**: Đảm bảo truyền dữ liệu đáng tin cậy (TCP, UDP).
-  5. **Session Layer**: Quản lý phiên giao tiếp giữa các ứng dụng.
-  6. **Presentation Layer**: Chuyển đổi định dạng dữ liệu (mã hóa, nén).
-  7. **Application Layer**: Giao diện cho người dùng (HTTP, FTP, DNS).
-- **Ưu điểm**: Cung cấp cách tiếp cận chuẩn hóa để thiết kế và phân tích mạng.
-- **Ví dụ thực tế**: Phân tích gói tin bằng Wireshark dựa trên các tầng OSI.
-
-### Mô hình TCP/IP
-- **Mô tả**: Mô hình TCP/IP là một mô hình thực tiễn, đơn giản hơn OSI, gồm 4 tầng, được sử dụng rộng rãi trong Internet.
-- **Các tầng**:
-  1. **Link Layer**: Tương ứng với Physical và Data Link Layer của OSI.
-  2. **Internet Layer**: Tương ứng với Network Layer (IP).
-  3. **Transport Layer**: Tương ứng với Transport Layer (TCP, UDP).
-  4. **Application Layer**: Bao gồm Session, Presentation, và Application Layer của OSI.
-- **Ưu điểm**: Đơn giản, thực tiễn, là nền tảng của Internet.
-- **Ví dụ thực tế**: Giao thức HTTP chạy trên TCP/IP để truy cập website.
-
-
-| OSI Layer            | TCP/IP Layer       | Ví dụ                     |
-|----------------------|--------------------|---------------------------|
-| 7. Application       | Application        | HTTP, DNS, SMTP, SSH      |
-| 6. Presentation      | Application        | TLS/SSL, JSON, ASN.1      |
-| 5. Session           | Application        | RPC, SMB, PPTP            |
-| 4. Transport         | Transport          | TCP, UDP, SCTP            |
-| 3. Network           | Internet           | IP, ICMP, IPSec, OSPF     |
-| 2. Data Link         | Link               | Ethernet, 802.11, ARP, VLAN |
-| 1. Physical          | Link               | Cáp, tín hiệu, NIC, Hub   |
-
-> Nắm các tầng giúp **khoanh vùng lỗi** và hiểu **encapsulation/PDU** (bit/frame/packet/segment).
-
-
-
-
 
