@@ -4,10 +4,34 @@
 
 >![(img)](./DNS_working.jpg)
 
-
+## Luồng phân giải DNS
+```
++-----------+        query         +------------------+
+|  Client   | -------------------> | Recursive Resolver|
+| (Stub)    |                      +---------+--------+
++-----------+                                |
+                                             | referrals
+                                   +---------v----------+
+                                   |   Root (.)  NS     |
+                                   +---------+----------+
+                                             |
+                                   +---------v----------+
+                                   |     TLD (.com)     |
+                                   +---------+----------+
+                                             |
+                                   +---------v----------+
+                                   | Authoritative NS   |
+                                   +---------+----------+
+                                             |
+                                           answer
+                                             |
++-----------+                                |
+|  Client   | <------------------------------+
++-----------+
+```
 ---
 
-## 1) DNS là gì? (What & Why)
+## 1 DNS là gì? (What & Why)
 ### Máy tính hiểu IP, con người thì biết domain -> Dùng DNS
 **DNS** là hệ thống phân giải tên miền : doamin name -> IP
 - Người dùng gõ `example.com` → hệ thống trả về **A/AAAA** (IPv4/IPv6).
@@ -22,7 +46,7 @@
 
 ---
 
-## 2) Thành phần trong hệ sinh thái DNS
+## 2 Thành phần trong hệ sinh thái DNS
 ### Luồng phân giải (đơn giản hoá)
 ```ascii
 [App/OS]
@@ -54,7 +78,7 @@
 
 ---
 
-## 3) Zone, Delegation & Glue
+## 3 Zone, Delegation & Glue
 - **Zone**: phạm vi dữ liệu DNS được quản trị thống nhất (ví dụ: zone `example.com.` trong file zone).
 - **Delegation**: ủy quyền một nhánh con cho zone khác (ví dụ: `dev.example.com` do team khác quản lý).
 - **Glue Record**: Khi NS của zone con dùng **hostname nằm trong chính zone đó**, cần bản ghi **A/AAAA “kèm keo”** ở zone cha để tránh vòng lặp tra cứu.
@@ -67,7 +91,7 @@ Parent Zone: example.com.
 
 ---
 
-## 4) Các loại bản ghi (Record Types) -> Dánh dấu IP
+## 4 Các loại bản ghi (Record Types) -> Dánh dấu IP
 - **A**: tên → IPv4
 - **AAAA**: tên → IPv6
 - **CNAME**: bí danh (alias) → *canonical name*. Không được đặt CNAME ở **apex** (gốc zone), trừ giải pháp **ALIAS/ANAME** của một số DNS providers.
@@ -115,7 +139,7 @@ sip1     IN A 203.0.113.40
 
 ---
 
-## 5) Caching & TTL (và “Propagation”)
+## 5 Caching & TTL (và “Propagation”)
 - **TTL** (Time To Live) quyết định thời gian bản ghi được giữ trong cache của resolver/OS/browser.
 - Thay đổi DNS **không “lan” ngay lập tức** – sẽ phụ thuộc TTL còn lại trong cache.
 - **Negative Caching** (NXDOMAIN/NODATA) dùng giá trị trong **SOA minimum** / RFC 2308.
@@ -123,14 +147,14 @@ sip1     IN A 203.0.113.40
 
 ---
 
-## 6) Recursion Control, Forwarder, Split-Horizon
+## 6 Recursion Control, Forwarder, Split-Horizon
 - **Open Resolver** (để Internet truy vấn tùy ý) → **KHÔNG KHUYÊN DÙNG** (rủi ro DDoS amplification, lạm dụng). Chỉ bật recursion cho mạng nội bộ/trusted.
 - **Forwarder**: Resolver chuyển toàn bộ truy vấn đến một upstream (ví dụ public DNS như 1.1.1.1/8.8.8.8) để đơn giản hoá quản trị/ghi log.
 - **Split-Horizon / Split-Brain DNS**: Cùng một tên nhưng trả IP khác nhau cho **internal** vs **public** (hữu ích cho hybrid cloud, zero-trust).
 
 ---
 
-## 7) DNSSEC, DoT/DoH/DoQ & Bảo mật
+## 7 DNSSEC, DoT/DoH/DoQ & Bảo mật
 - **DNSSEC**: Ký số dữ liệu DNS để chống giả mạo (origin authentication, data integrity). Gồm các bản ghi **RRSIG, DNSKEY, DS, NSEC/NSEC3**.
   - Chain of trust: Root (.) → TLD → Domain (DS record tại zone cha trỏ đến DNSKEY của zone con).
   - Triển khai cần xoay **key rollover** đúng quy trình.
@@ -146,7 +170,7 @@ sip1     IN A 203.0.113.40
 
 ---
 
-## 8) Tooling & Troubleshooting (dig/nslookup/drill/kdig)
+## 8 Tooling & Troubleshooting (dig/nslookup/drill/kdig)
 Các lệnh mẫu (Linux/macOS; trên Windows dùng `nslookup` hoặc PowerShell `Resolve-DnsName`):
 
 ```bash
@@ -188,7 +212,7 @@ Resolve-DnsName example.com -Type MX
 
 ---
 
-## 9) Thực tiễn tốt (Best Practices)
+## 9 Thực tiễn tốt (Best Practices)
 - **Thiết kế TTL hợp lý**: 300–3600s cho dịch vụ động; cao hơn cho bản ghi ổn định (NS/SOA cân nhắc).
 - **Bảo vệ zone transfer**: chỉ cho phép AXFR/IXFR với secondary đã xác thực (TSIG/ACL/VPN).
 - **Giảm tấn công**: tắt open recursion, bật RRL, lọc ANY, theo dõi log.
@@ -199,7 +223,7 @@ Resolve-DnsName example.com -Type MX
 
 ---
 
-## 10) Phụ lục: Sơ đồ tổng quan
+## 10 Phụ lục: Sơ đồ tổng quan
 ```ascii
                          +----------------------+
                          |     Root (.) NS      |

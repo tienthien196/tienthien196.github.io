@@ -344,3 +344,65 @@ zpa status --connector-id "zpa-connector"
 
 ### ***NOTE***
 > ***TÀI LIỆU BUILD BY @TIẾN THIỆN*** [(truy cập chi tiết)](https://tienthien196.github.io/ecosys.portfolioBNJ/)
+
+##  Bảo mật , nén , mã hoá  
+  [(xem chi tiết)](./a/ZTA_AAA.md)
+
+###  AAA/RADIUS – Chu trình xác thực (ví dụ FortiGate)
+```
+[User] → credentials → [RADIUS Client (FortiGate)]
+    └─► ACCESS-REQUEST ─────────────────────────────►
+                    [RADIUS Server]
+           (PAP/CHAP/MS-CHAPv2/EAP, VSA)
+   ◄─ ACCESS-ACCEPT / ACCESS-REJECT / ACCESS-CHALLENGE ─┘
+
+Accounting:
+[RADIUS Client] ── Start/Interim/Stop → [RADIUS Server] (UDP 1813)
+```
+> Mẹo: cấu hình **secret**, khai báo client trên server, **test connectivity/credentials**, cân nhắc **2FA/OTP**.
+
+- **AAA**: Authentication (xác thực), Authorization (phân quyền), Accounting (ghi log).
+- **RADIUS**: Giao thức xác thực qua UDP 1812 (auth), 1813 (accounting).
+- **Ví dụ thực tế**: Cấu hình FortiGate với RADIUS server để xác thực VPN users, sử dụng 2FA (FortiToken).
+
+---
+
+
+### Crypto & PKI (rút gọn)
+
+| Loại        | Mô tả                              | Ví dụ             |
+|-------------|------------------------------------|-------------------|
+| Symmetric   | Nhanh, dùng chung khóa            | AES-256, ChaCha20 |
+| Asymmetric  | Khóa đôi (public/private)         | RSA, ECC, DH      |
+| Hash        | Đảm bảo toàn vẹn dữ liệu          | SHA-256, SHA-3    |
+| PKI         | Hệ thống quản lý chứng thư số     | Root CA, SubCA    |
+| TLS         | Mã hóa kết nối (HTTPS, VPN)       | TLS 1.3           |
+
+- **Chứng thư số**: Chứa Subject, Issuer, Validity, SAN (Subject Alternative Name).
+- **Mô hình tin cậy**: Hierarchical (Root CA → SubCA) hoặc Web of Trust.
+- **Ví dụ thực tế**: Sử dụng Let’s Encrypt để cấp chứng thư TLS cho website.
+
+---
+
+### Zero Trust – Khối thành phần
+```
+Identities ──┐
+Devices ─────┼─►  Policy Engine (PE) ─► Decision
+Network ─────┤
+Posture ─────┤           ▲
+Telemetry ───┘           │
+                  Policy Admin (PA)
+                        │
+                  Policy Enforcement Point (PEP)
+                        │
+                     Allow/Deny + Continuous Eval
+```
+- **Mô tả**: Zero Trust giả định không tin tưởng bất kỳ ai, yêu cầu xác thực liên tục.
+- **Thành phần**:
+  - **PE (Policy Engine)**: Ra quyết định dựa trên chính sách.
+  - **PEP (Policy Enforcement Point)**: Thực thi quyết định (cho phép/chặn).
+  - **PA (Policy Admin)**: Quản lý chính sách.
+  - **Posture**: Kiểm tra trạng thái thiết bị (cập nhật, bảo mật).
+- **Ví dụ thực tế**: ZTNA (Zero Trust Network Access) trong Cisco Secure Access.
+
+

@@ -1,6 +1,35 @@
-# 🔐 VPN (Virtual Private Network) – Hướng dẫn cho Developer
+### Các loại mạng
+```
+           ┌───────────┐
+           │   LAN     │ (Văn phòng, nhà ở)
+           └─────┬─────┘
+                 │
+ ┌───────────┐   │   ┌───────────┐
+ │   WAN     │<──┼──>│   MAN     │
+ │ (Internet)│   │   │ (Thành phố)│
+ └───────────┘   │   └───────────┘
+                 │
+          ┌──────▼──────┐
+          │    PAN      │ (Bluetooth, USB)
+          └──────┬──────┘
+                 │
+          ┌──────▼──────┐
+          │    VPN      │ (Mạng riêng ảo)
+          └─────────────┘
+```
 
-## 1. Khái niệm
+- **LAN (Local Area Network)**: Mạng nội bộ, phạm vi nhỏ (văn phòng, nhà ở).
+- **WAN (Wide Area Network)**: Mạng diện rộng, kết nối các khu vực địa lý (Internet).
+- **MAN (Metropolitan Area Network)**: Mạng đô thị, kết nối trong một thành phố.
+- **PAN (Personal Area Network)**: Mạng cá nhân (Bluetooth, USB).
+- **VPN (Virtual Private Network)**: Mạng riêng ảo, mã hóa dữ liệu qua Internet. [(xem chi tiết VPN)](./a/VPN.md)
+- **Ví dụ thực tế**:
+  - LAN: Mạng Wi-Fi trong nhà.
+  - WAN: Kết nối Internet giữa các quốc gia.
+  - VPN: Sử dụng OpenVPN để truy cập mạng công ty từ xa.
+
+
+## 🔐 VPN (Virtual Private Network)
 VPN là một **mạng riêng ảo** được thiết lập trên hạ tầng mạng công cộng (Internet), cho phép:
 - **Mã hóa (Encryption)**: Toàn bộ traffic giữa client ↔ VPN server được mã hóa.
 - **Định tuyến (Routing)**: Traffic từ client được định tuyến qua VPN server trước khi đến đích.
