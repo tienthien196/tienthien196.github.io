@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resource Docs</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+    }
+    .sidebar {
+      width: 280px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background-color: #fff;
+      border-right: 1px solid #e9ecef;
+      padding: 1rem 0;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    .sidebar-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #e9ecef;
+      font-weight: 600;
+      color: #495057;
+      font-size: 1.2rem;
+    }
+    .nav-topic {
+      padding: 0.75rem 1.5rem;
+      color: #495057;
+      text-decoration: none;
+      display: block;
+      border-left: 3px solid transparent;
+      transition: all 0.2s;
+    }
+    .nav-topic:hover {
+      background-color: #f8f9fa;
+      border-left-color: #0d6efd;
+      color: #0d6efd;
+    }
+    .nav-topic.active {
+      background-color: #e7f3ff;
+      border-left-color: #0d6efd;
+      color: #0d6efd;
+      font-weight: 500;
+    }
+    .main-content {
+      margin-left: 280px;
+      width: calc(100% - 280px);
+      min-height: 100vh;
+    }
+    .navbar {
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background-color: #fff;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .navbar-brand {
+      font-weight: 600;
+    }
+    .card {
+      transition: transform 0.2s;
+      border: 1px solid #e9ecef;
+      height: 100%;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .tag {
+      font-size: 0.8rem;
+      background: #e9ecef;
+      padding: 0.2rem 0.5rem;
+      border-radius: 12px;
+      margin-right: 0.3rem;
+    }
+    .search-results {
+      color: #6c757d;
+      font-size: 0.9em;
+      margin-bottom: 1rem;
+    }
+    .no-result {
+      text-align: center;
+      color: #6c757d;
+      font-style: italic;
+      padding: 2rem;
+    }
+    .topic-section {
+      scroll-margin-top: 70px;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 220px;
+      }
+      .main-content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+      }
+    }
+    @media (max-width: 576px) {
+      .sidebar {
+        width: 60px;
+        padding: 0;
+      }
+      .sidebar-header, .nav-topic span {
+        display: none;
+      }
+      .sidebar-header {
+        padding: 1rem;
+      }
+      .nav-topic {
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.2rem;
+      }
+      .main-content {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <i class="bi bi-book"></i> <span>Resource Docs</span>
+    </div>
+    <div class="nav-topic active" href="#home">
+      <i class="bi bi-house"></i> <span>Home</span>
+    </div>
+    <div class="nav-topic" href="#programming">
+      <i class="bi bi-code-slash"></i> <span>Programming</span>
+    </div>
+    <div class="nav-topic" href="#design">
+      <i class="bi bi-palette"></i> <span>Design</span>
+    </div>
+    <div class="nav-topic" href="#data-science">
+      <i class="bi bi-graph-up"></i> <span>Data Science</span>
+    </div>
+    <div class="nav-topic" href="#devops">
+      <i class="bi bi-server"></i> <span>DevOps</span>
+    </div>
+    <div class="nav-topic" href="#mobile">
+      <i class="bi bi-phone"></i> <span>Mobile</span>
+    </div>
+    <div class="nav-topic" href="#web-development">
+      <i class="bi bi-globe"></i> <span>Web Development</span>
+    </div>
+    <div class="nav-topic" href="#ai-ml">
+      <i class="bi bi-robot"></i> <span>AI & ML</span>
+    </div>
+    <div class="nav-topic" href="#cybersecurity">
+      <i class="bi bi-shield-lock"></i> <span>Cybersecurity</span>
+    </div>
+    <div class="nav-topic" href="#cloud">
+      <i class="bi bi-cloud"></i> <span>Cloud</span>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Search Form -->
+        <form class="d-flex flex-grow-1 mx-3" method="GET" action="#">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0">
+              <i class="bi bi-search text-muted"></i>
+            </span>
+            <input class="form-control border-start-0 ps-0" type="search" name="q" placeholder="Search documentation..." value="" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+          </div>
+        </form>
+
+        <div class="d-flex align-items-center">
+          <a href="#" class="text-decoration-none text-dark me-3">
+            <i class="bi bi-github h4 mb-0"></i>
+          </a>
+          <a href="#" class="text-decoration-none text-dark">
+            <i class="bi bi-question-circle h4 mb-0"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container mt-4 px-4">
+      <div class="search-results">
+        Found <strong>12</strong> result(s) for "<strong>react</strong>"
+        <a href="#" class="text-decoration-none ms-2">Clear search</a>
+      </div>
+
+      <!-- Programming Section -->
+      <h4 id="programming" class="mt-4 topic-section text-primary border-bottom pb-1">
+        <i class="bi bi-code-slash me-2"></i>Programming (3)
+      </h4>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="text-decoration-none text-dark">
+                  JavaScript Guide
+                </a>
+              </h6>
+              <p class="card-text text-muted small flex-grow-1">Comprehensive guide to modern JavaScript including ES6+ features, async programming, and best practices.</p>
+              <div class="mt-2">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Beginner</span>
+              </div>
+              <small class="text-muted mt-2">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="text-decoration-none">🔗 Link</a>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">
+                <a href="https://docs.python.org/3/" target="_blank" class="text-decoration-none text-dark">
+                  Python Documentation
+                </a>
+              </h6>
+              <p class="card-text text-muted small flex-grow-1">Official Python documentation with tutorials, library reference, and language reference.</p>
+              <div class="mt-2">
+                <span class="tag">Python</span>
+                <span class="tag">Reference</span>
+              </div>
+              <small class="text-muted mt-2">
+                <a href="https://docs.python.org/3/" target="_blank" class="text-decoration-none">🔗 Link</a>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">
+                <a href="https://go.dev/doc/" target="_blank" class="text-decoration-none text-dark">
+                  Go Language Spec
+                </a>
+              </h6>
+              <p class="card-text text-muted small flex-grow-1">Official Go language specification and documentation for building efficient and reliable software.</p>
+              <div class="mt-2">
+                <span class="tag">Go</span>
+                <span class="tag">Systems</span>
+              </div>
+              <small class="text-muted mt-2">
+                <a href="https://go.dev/doc/" target="_blank" class="text-decoration-none">🔗 Link</a>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Web Development Section -->
+      <h4 id="web-development" class="mt-5 topic-section text-primary border-bottom pb-1">
+        <i class="bi bi-globe me-2"></i>Web Development (4)
+      </h4>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">
+                <a href="https://react.dev/" target="_blank" class="text-decoration-none text-dark">
+                  React Documentation
+                </a>
+              </h6>
+              <p class="card-text text-muted small flex-grow-1">The library for web and native user interfaces. Learn how to build component-based UIs.</p>
+              <div class="mt-2">
+                <span class="tag">React</span>
+                <span class="tag">Frontend</span>
+                <span class="tag">UI</span>
+              </div>
+              <small class="text-muted mt-2">
+                <a href="https://react.dev/" target="_blank" class="text-decoration-none">🔗 Link</a>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">
+                <a href="https://getbootstrap.com/docs/5.3/" target="_blank" class="text-decoration-none text-dark">
+                  Bootstrap 5
+                </a>
+              </h6>
+              <p class="card-text text-muted small flex-grow-1">The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects.</p>
+              <div class="mt-2">
+                <span class="tag">CSS</span>
+                <span class="tag">Framework</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <small class="text-muted mt-2">
+                <a href="https://getbootstrap.com/docs/5.3/" target="_blank" class="text-decoration-none">🔗 Link</a>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">
+                <a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank" class="text-decoration-none text-dark">
+                  MDN Web Docs
+                </a>
+              </h6>
+              <p class="card-text text-muted small flex-grow-1">The definitive resource for web technologies including HTML, CSS, and JavaScript.</p>
+              <div class="mt-2">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <small class="text-muted mt-2">
+                <a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank" class="text-decoration-none">🔗 Link</a>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">
+                <a href="https://webpack.js.org/" target="_blank" class="text-decoration-none text-dark">
+                  Webpack Guide
+                </a>
+              </h6>
+              <p class="card-text text-muted small flex-grow-1">Module bundler for modern JavaScript applications. Learn how to bundle your assets efficiently.</p>
+              <div class="mt-2">
+                <span class="tag">Build</span>
+                <span class="tag">Tooling</span>
+                <span class="tag">Bundler</span>
+              </div>
+              <small class="text-muted mt-2">
+                <a href="https://webpack.js.org/" target="_blank" class="text-decoration-none">🔗 Link</a>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design Section -->
+      <h4 id="design" class="mt-5 topic-section text-primary border-bottom pb-1">
+        <i class="bi bi-palette me-2"></i>Design (2)
+      </h4>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">
+                <a href="https://www.figma.com/community" target="_blank" class="text-decoration-none text-dark">
+                  Figma Community
+                </a>
+              </h6>
+              <p class="card-text text-muted small flex-grow-1">Explore thousands of design files, templates, and resources shared by the Figma community.</p>
+              <div class="mt-2">
+                <span class="tag">Figma</span>
+                <span class="tag">UI/UX</span>
+                <span class="tag">Design</span>
+              </div>
+              <small class="text-muted mt-2">
+                <a href="https://www.figma.com/community" target="_blank" class="text-decoration-none">🔗 Link</a>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">
+                <a href="https://material.io/design" target="_blank" class="text-decoration-none text-dark">
+                  Material Design
+                </a>
+              </h6>
+              <p class="card-text text-muted small flex-grow-1">Comprehensive guide to Material Design principles, components, and best practices.</p>
+              <div class="mt-2">
+                <span class="tag">Design</span>
+                <span class="tag">Guidelines</span>
+                <span class="tag">UI</span>
+              </div>
+              <small class="text-muted mt-2">
+                <a href="https://material.io/design" target="_blank" class="text-decoration-none">🔗 Link</a>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Handle sidebar navigation active state
+    document.querySelectorAll('.nav-topic').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        document.querySelectorAll('.nav-topic').forEach(el => {
+          el.classList.remove('active');
+        });
+        
+        // Add active class to clicked link
+        this.classList.add('active');
+        
+        // Scroll to section
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Set active section based on scroll position
+    const sections = document.querySelectorAll('.topic-section');
+    const navLinks = document.querySelectorAll('.nav-topic');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

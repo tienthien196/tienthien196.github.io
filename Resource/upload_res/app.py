@@ -339,6 +339,10 @@ def client_view():
 def debug_data():
     return render_template('debug.html', data=data_store)
 
+@app.route('/res')
+def show_res():
+    return render_template('res.html')
+
 
 @app.route('/docs')
 def docs():
@@ -364,6 +368,9 @@ def docs():
                          topics=sorted(topics),
                          data=filtered_data,
                          query=query)
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
