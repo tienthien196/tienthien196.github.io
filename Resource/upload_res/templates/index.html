@@ -1,0 +1,261 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Resource Manager</title>
+    <style>
+        :root {
+            --primary: #0066cc;
+            --primary-hover: #0055aa;
+            --danger: #d40000;
+            --text: #333;
+            --text-muted: #555;
+            --border: #ddd;
+            --bg-light: #f9f9f9;
+            --bg-flash: #ffebee;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa;
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        h1, h2 {
+            color: var(--primary);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            margin: 10px 0;
+            transition: all 0.2s ease;
+        }
+
+        li:hover {
+            background: #f0f7ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 102, 204, 0.1);
+        }
+
+        li a {
+            font-size: 1.15em;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+            color: var(--primary-hover);
+        }
+
+        .actions {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .actions a {
+            color: #777;
+            margin: 0 8px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .actions a:hover {
+            color: var(--danger);
+        }
+
+        form {
+            margin: 25px 0;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-light);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 16px;
+            font-size: 1em;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .flash {
+            color: var(--danger);
+            background: var(--bg-flash);
+            padding: 12px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-size: 0.95em;
+            border-left: 4px solid var(--danger);
+        }
+
+        /* Nút export */
+        .export-link {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 15px;
+            background: #e3f2fd;
+            color: #0d47a1;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .export-link:hover {
+            background: #bbdefb;
+            transform: scale(1.02);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .actions {
+                margin-top: 5px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Topics</h1>
+
+        <!-- Hiển thị thông báo -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="flash">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+            <p>
+                <a href="/export_data">
+                    💾 Xuất dữ liệu (Backup toàn bộ)
+                </a>
+            </p>
+        <!-- Danh sách các topic -->
+        <h2>Existing Topics</h2>
+        <ul>
+            {% for topic in topics %}
+                <li>
+                    <a href="/topic/{{ topic }}">{{ topic }}</a>
+                    <span class="actions">
+                        <a href="/edit_topic/{{ topic }}">✏️ Rename</a>
+                        <a href="/delete_topic/{{ topic }}" onclick="return confirm('Delete topic & all its resources? This cannot be undone.')">🗑️ Delete</a>
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Form thêm topic mới -->
+        <h2>Add New Topic</h2>
+        <form method="POST" action="/add_topic">
+            <label>Topic Name:
+                <input type="text" name="topic_name" placeholder="e.g. Web Development" required>
+            </label><br>
+            <button type="submit">Add Topic</button>
+        </form>
+    </div>
+</body>
+</html>

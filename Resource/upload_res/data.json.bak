@@ -1,0 +1,57 @@
+{
+    "Unity": [
+        {
+            "name": "Unity Learn",
+            "description": "Official Unity learning platform",
+            "link": "https://learn.unity.com",
+            "tags": "beginner, tutorial",
+            "level": "Beginner"
+        },
+        {
+            "name": "bin",
+            "description": "fsgfdsg",
+            "link": "http://sdfsdfsdf.com",
+            "key0": "dfgdf",
+            "value0": "dfgdfg",
+            "key1": "dfg",
+            "value1": "dfg",
+            "key2": "dfgdfg",
+            "value2": "dfg",
+            "file": "/uploads/0318279a05884a7888fa8b3f73ba89e0.txt",
+            "filename": "values.txt"
+        }
+    ],
+    "Godot": [
+        {
+            "name": "Godot Docs",
+            "description": "Official documentation for Godot Engine",
+            "link": "https://docs.godotengine.org",
+            "tags": "documentation, engine",
+            "version": "4.2"
+        }
+    ],
+    "Computer Science": [
+        {
+            "name": "CS50 by Harvard",
+            "description": "Free intro to computer science course",
+            "link": "https://cs50.harvard.edu",
+            "duration": "12 weeks",
+            "free": "yes"
+        },
+        {
+            "name": "UnderstandMath",
+            "description": "repo github cung cấp keien thức về toán",
+            "link": "https://github.com/nbro/understanding-math"
+        }
+    ],
+    "Tools Python": [
+        {
+            "name": "Flask Documentation",
+            "description": "Web framework for Python",
+            "link": "https://flask.palletsprojects.com",
+            "use_case": "web development"
+        }
+    ],
+    "ComputerArchitecture": [],
+    "ComputerNetwork": []
+}

@@ -1,0 +1,60 @@
+<!-- templates/edit_resource.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Resource in {{ topic }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Resource: "{{ resource.name }}"</h1>
+        <a href="/topic/{{ topic }}" class="back-link">← Back to {{ topic }}</a>
+
+        <form method="POST" enctype="multipart/form-data">
+            <!-- Các trường hiện có -->
+            {% for key, value in resource.items() %}
+                {% if key not in ['file', 'filename'] %}
+                    <label>
+                        {{ key | capitalize }}:
+                        <input type="text" name="field_{{ key }}" value="{{ value }}" placeholder="{{ key }}">
+                    </label><br>
+                {% endif %}
+            {% endfor %}
+
+            <!-- Thêm các cặp key-value mới -->
+            <h3>Add Custom Fields (optional)</h3>
+            {% for i in range(3) %}
+                <input type="text" name="field_key{{i}}" placeholder="Key (e.g. tags)" style="width: 100px;">
+                <input type="text" name="field_value{{i}}" placeholder="Value"><br>
+            {% endfor %}
+
+            <!-- Upload file mới -->
+            <h3>Upload New File (optional)</h3>
+            <label>
+                Replace file:
+                <input type="file" name="file">
+            </label>
+            <p><small>Leave empty to keep current file.</small></p>
+
+            <!-- Hiển thị file hiện tại với tùy chọn xem/tải -->
+            {% if resource.get('file') %}
+                <div class="current-file">
+                    <h3>Current Attached File</h3>
+                    <p>
+                        <strong>Original name:</strong> {{ resource.filename or 'Unknown' }}<br>
+                        <strong>Stored as:</strong> {{ resource.file.split('/')[-1] }}<br>
+                        <a href="{{ resource.file }}" target="_blank">👁️ Xem trước trong tab mới</a> |
+                        <a href="/download/{{ resource.file.split('/')[-1] }}">⬇️ Tải về máy</a>
+                    </p>
+                </div>
+            {% else %}
+                <p><em>No file attached.</em></p>
+            {% endif %}
+
+            <br>
+            <button type="submit" class="btn-submit">💾 Update Resource</button>
+        </form>
+    </div>
+</body>
+</html>

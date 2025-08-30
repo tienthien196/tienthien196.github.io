@@ -1,0 +1,30 @@
+<!-- templates/edit_topic.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Rename Topic</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 500px; margin: auto; }
+        input, button { width: 100%; padding: 10px; margin: 10px 0; }
+        button { background: #0066cc; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0055aa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rename Topic</h1>
+        <form method="POST">
+            <label>Current Name:</label>
+            <input type="text" value="{{ old_name }}" disabled>
+
+            <label>New Name:</label>
+            <input type="text" name="new_topic_name" value="{{ old_name }}" required>
+
+            <button type="submit">Rename Topic</button>
+        </form>
+        <a href="/">← Cancel</a>
+    </div>
+</body>
+</html>

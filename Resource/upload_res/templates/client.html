@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Learning Resources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --primary: #ff6b9d;
+      --secondary: #6b78ff;
+      --accent: #ffcc00;
+      --dark: #2a2a3a;
+      --light: #f8f9ff;
+      --sidebar-bg: #ffffff;
+      --sidebar-active: #f0f4ff;
+      --border: #eaeaea;
+      --gray: #888;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+      --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 107, 157, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(107, 120, 255, 0.1) 0%, transparent 20%);
+    }
+    
+    .sidebar {
+      width: 280px;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 20px 0;
+      overflow-y: auto;
+      box-shadow: var(--shadow);
+      z-index: 100;
+    }
+    
+    .sidebar-header {
+      padding: 0 24px 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+    
+    .sidebar-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .sidebar-header h2::before {
+      content: '📚';
+    }
+    
+    .sidebar-nav {
+      list-style: none;
+    }
+    
+    .sidebar-item {
+      margin-bottom: 4px;
+    }
+    
+    .sidebar-link {
+      display: block;
+      padding: 12px 24px;
+      color: #666;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border-left: 3px solid transparent;
+    }
+    
+    .sidebar-link:hover {
+      background: var(--sidebar-active);
+      color: var(--secondary);
+      border-left-color: var(--secondary);
+    }
+    
+    .sidebar-link.active {
+      background: var(--sidebar-active);
+      color: var(--secondary);
+      font-weight: 600;
+      border-left-color: var(--secondary);
+    }
+    
+    .main-content {
+      flex: 1;
+      margin-left: 280px;
+      padding: 40px 20px;
+    }
+    
+    h1 {
+      color: var(--dark);
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+    
+    .topic {
+      background: white;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      margin-bottom: 25px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    .topic:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    
+    .topic-header {
+      padding: 20px;
+      background: var(--gradient);
+      color: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+    }
+    
+    .topic-header:hover {
+      opacity: 0.9;
+    }
+    
+    .topic-header .arrow {
+      transition: transform 0.3s ease;
+    }
+    
+    .topic.expanded .topic-header .arrow {
+      transform: rotate(180deg);
+    }
+    
+    .topic-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    
+    .topic.expanded .topic-content {
+      max-height: 2000px;
+      padding: 20px;
+    }
+    
+    .resource {
+      margin-bottom: 16px;
+      padding: 16px;
+      background: #f8f9ff;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary);
+      transition: all 0.3s ease;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .resource:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .resource h3 {
+      margin: 0 0 8px 0;
+      color: var(--secondary);
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .resource h3::before {
+      content: '✦';
+      margin-right: 8px;
+      color: var(--accent);
+    }
+    
+    .resource p {
+      margin: 4px 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    
+    .resource-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    
+    .tag {
+      background: rgba(107, 120, 255, 0.1);
+      color: var(--secondary);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .difficulty-beginner {
+      background: rgba(76, 175, 80, 0.1);
+      color: #4CAF50;
+    }
+    
+    .difficulty-intermediate {
+      background: rgba(255, 152, 0, 0.1);
+      color: #FF9800;
+    }
+    
+    .difficulty-advanced {
+      background: rgba(244, 67, 54, 0.1);
+      color: #F44336;
+    }
+    
+    .link {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      margin-top: 8px;
+    }
+    
+    .link::before {
+      content: '↗';
+      margin-right: 4px;
+      font-size: 0.8rem;
+    }
+    
+    .link:hover {
+      text-decoration: underline;
+      color: var(--primary);
+    }
+    
+    .file-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 8px;
+      color: #d9534f;
+      font-size: 0.9em;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .file-link::before {
+      content: '📎';
+      margin-right: 6px;
+    }
+    
+    .file-link:hover {
+      text-decoration: underline;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      color: var(--gray);
+      font-size: 0.9em;
+      padding: 20px;
+      border-top: 1px dashed #ddd;
+    }
+    
+    .footer span {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 600;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @media (max-width: 992px) {
+      .sidebar {
+        width: 240px;
+      }
+      
+      .main-content {
+        margin-left: 240px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 80px;
+        overflow: hidden;
+      }
+      
+      .sidebar-header h2 span,
+      .sidebar-link span:last-child {
+        display: none;
+      }
+      
+      .sidebar-header h2::before {
+        margin-right: 0;
+      }
+      
+      .main-content {
+        margin-left: 80px;
+      }
+      
+      .topic-header {
+        font-size: 1.1rem;
+        padding: 15px;
+      }
+      
+      .resource {
+        padding: 12px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .main-content {
+        margin-left: 0;
+        padding: 20px;
+      }
+      
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      
+      .sidebar-header {
+        padding: 16px 20px;
+      }
+      
+      .sidebar-nav {
+        display: flex;
+        overflow-x: auto;
+        padding: 10px 0;
+      }
+      
+      .sidebar-item {
+        margin-bottom: 0;
+        margin-right: 8px;
+      }
+      
+      .sidebar-link {
+        padding: 10px 16px;
+        white-space: nowrap;
+      }
+      
+      .sidebar-link.active {
+        border-radius: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Learning Resources</h2>
+    </div>
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <!-- Dynamic links will be inserted here by JavaScript -->
+    </ul>
+  </div>
+  
+  <div class="main-content">
+    <h1>📚 Learning Resources</h1>
+
+    {% for topic_name, resources in data_store.items() %}
+      {% if resources %}
+        <div class="topic" id="{{ topic_name | replace(' ', '-') | lower }}-topic">
+          <div class="topic-header" onclick="toggleTopic('{{ topic_name | replace(' ', '-') | lower }}-topic')">
+            <span>{{ topic_name }}</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="topic-content">
+            {% for resource in resources %}
+              <div class="resource">
+                <h3>{{ resource.get('name', 'Unnamed') }}</h3>
+                
+                {% if resource.get('description') %}
+                  <p><strong>Description:</strong> {{ resource.get('description') }}</p>
+                {% endif %}
+
+                <div class="resource-details">
+                  {% if resource.get('difficulty') %}
+                    <span class="tag difficulty-{{ resource.get('difficulty') | lower }}">{{ resource.get('difficulty').capitalize() }}</span>
+                  {% endif %}
+                  {% if resource.get('duration') %}
+                    <span class="tag">{{ resource.get('duration') }}</span>
+                  {% endif %}
+                </div>
+
+                {% if resource.get('link') %}
+                  <a href="{{ resource.get('link') }}" class="link" target="_blank">
+                    {{ resource.get('link_text', 'Visit Resource') }}
+                  </a>
+                {% endif %}
+
+                {% for key, value in resource.items() %}
+                  {% if key not in ['name', 'description', 'link', 'link_text', 'file', 'filename', 'difficulty', 'duration'] %}
+                    <p><strong>{{ key.capitalize() }}:</strong> {{ value }}</p>
+                  {% endif %}
+                {% endfor %}
+
+                {% if resource.get('file') %}
+                  <a href="{{ url_for('download_file', filename=resource['file'].split('/')[-1]) }}" 
+                     class="file-link" target="_blank">
+                     Download file: {{ resource.get('filename', 'click to download') }}
+                  </a>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="footer">
+      <span>🔒 This is a read-only view. No editing allowed.</span> | Generated with anime love ❤️ | {{ now }}
+    </div>
+  </div>
+
+  <script>
+    function toggleTopic(topicId) {
+      const topic = document.getElementById(topicId);
+      const isExpanded = topic.classList.contains('expanded');
+      
+      // Đóng tất cả các topic
+      document.querySelectorAll('.topic').forEach(t => {
+        t.classList.remove('expanded');
+      });
+      
+      // Mở topic được nhấn (nếu chưa mở)
+      if (!isExpanded) {
+        topic.classList.add('expanded');
+      }
+      
+      // Cập nhật active state cho sidebar
+      updateSidebarActive(topicId);
+    }
+    
+    function updateSidebarActive(topicId) {
+      document.querySelectorAll('.sidebar-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-topic') === topicId) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    // Tạo sidebar navigation từ các topic
+    document.addEventListener('DOMContentLoaded', function() {
+      const sidebarNav = document.getElementById('sidebar-nav');
+      const topics = document.querySelectorAll('.topic');
+      const firstTopic = topics[0];
+      
+      topics.forEach(topic => {
+        const topicId = topic.id;
+        const topicName = topic.querySelector('.topic-header span').textContent;
+        
+        const li = document.createElement('li');
+        li.className = 'sidebar-item';
+        
+        const link = document.createElement('a');
+        link.href = '#' + topicId;
+        link.className = 'sidebar-link';
+        link.setAttribute('data-topic', topicId);
+        link.textContent = topicName;
+        
+        // Thêm event listener
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          toggleTopic(topicId);
+        });
+        
+        li.appendChild(link);
+        sidebarNav.appendChild(li);
+      });
+      
+      // Mở topic đầu tiên và thiết lập active
+      if (firstTopic) {
+        firstTopic.classList.add('expanded');
+        updateSidebarActive(firstTopic.id);
+      }
+    });
+  </script>
+</body>
+</html>

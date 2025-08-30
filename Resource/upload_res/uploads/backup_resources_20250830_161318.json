@@ -1,0 +1,2570 @@
+{
+    "meta": {
+        "exported_at": "2025-08-30 16:13:18",
+        "total_topics": 12,
+        "note": "This backup includes all resources and file references."
+    },
+    "data": {
+        "Unity": [
+            {
+                "name": "Unity Learn",
+                "description": "Official Unity learning platform with free courses and projects by Unity experts.",
+                "link": "https://learn.unity.com",
+                "tags": "beginner, tutorial, real-time 3D",
+                "level": "Beginner"
+            }
+        ],
+        "Godot": [
+            {
+                "name": "Godot Docs",
+                "description": "Official documentation for Godot Engine, a free and open-source 2D/3D game engine.",
+                "link": "https://docs.godotengine.org",
+                "tags": "documentation, engine, open-source",
+                "version": "4.4"
+            }
+        ],
+        "Computer Science": [
+            {
+                "name": "CS50 by Harvard",
+                "description": "Free introductory computer science course covering algorithms, data structures, and programming (C, Python, SQL, JavaScript).",
+                "link": "https://cs50.harvard.edu",
+                "duration": "12 weeks",
+                "free": "yes",
+                "tags": "introductory, algorithms, web development, AI"
+            },
+            {
+                "name": "UnderstandMath",
+                "description": "GitHub repository providing foundational knowledge in mathematics for computer science.",
+                "link": "https://github.com/nbro/understanding-math",
+                "tags": "math, theory, learning"
+            },
+            {
+                "name": "Lộ trình CS (Open Source CS)",
+                "description": "A comprehensive open-source computer science roadmap and curriculum.",
+                "link": "https://github.com/ForrestKnight/open-source-cs",
+                "tags": "roadmap, curriculum, self-study"
+            },
+            {
+                "name": "Tài liệu học CS",
+                "description": "Notes and resources for computer science topics.",
+                "link": "https://github.com/crclayton/notes",
+                "tags": "notes, study"
+            },
+            {
+                "name": "Tài liệu về OS",
+                "description": "Core computer science concepts including operating systems.",
+                "link": "https://github.com/akm199785/Computer-Science-Core-Concept",
+                "tags": "OS, theory"
+            },
+            {
+                "name": "Thiết kế hệ thống lớn",
+                "description": "A comprehensive guide to system design for interviews and real-world applications.",
+                "link": "https://github.com/donnemartin/system-design-primer",
+                "tags": "system design, scalability, interview"
+            },
+            {
+                "name": "System design algorithms",
+                "description": "Algorithmic approaches in system design.",
+                "link": "https://github.com/resumejob/system-design-algorithms",
+                "tags": "algorithms, system design"
+            },
+            {
+                "name": "Tất cả thuật toán bằng Python",
+                "description": "Implementation of various algorithms in Python.",
+                "link": "https://github.com/TheAlgorithms/Python",
+                "tags": "algorithms, Python"
+            },
+            {
+                "name": "Phỏng vấn Python",
+                "description": "Interactive coding challenges for Python and technical interviews.",
+                "link": "https://github.com/donnemartin/interactive-coding-challenges",
+                "tags": "interview, Python, practice"
+            },
+            {
+                "name": "Tech Interview Handbook",
+                "description": "Guide for technical interviews including coding, system design, and behavioral questions.",
+                "link": "https://github.com/yangshun/tech-interview-handbook",
+                "tags": "interview, preparation, system design"
+            },
+            {
+                "name": "Interview Questions",
+                "description": "Common interview questions and answers for software engineering roles.",
+                "link": "https://github.com/kdn251/interviews",
+                "tags": "interview, prep"
+            }
+        ],
+        "Tools Python": [
+            {
+                "name": "Flask Documentation",
+                "description": "Web framework for Python, lightweight and easy to get started with.",
+                "link": "https://flask.palletsprojects.com",
+                "use_case": "web development",
+                "tags": "Flask, WSGI, Python"
+            }
+        ],
+        "ComputerArchitecture": [
+            {
+                "name": "Giả lập systemcall",
+                "description": "Tool to emulate system calls for low-level analysis.",
+                "link": "https://github.com/momo5502/sogen",
+                "note": "So sánh nó với debugger và VM"
+            },
+            {
+                "name": "Tạo máy tính 16 bit",
+                "description": "Build a 16-bit computer from scratch (HACK architecture).",
+                "link": "https://github.com/aalhour/Assembler.hack",
+                "tags": "computer architecture, assembler"
+            },
+            {
+                "name": "HACK Assembler",
+                "description": "Assembler for the HACK computer used in Nand2Tetris.",
+                "link": "https://github.com/HACKE-RC/HACK-assembler",
+                "tags": "assembler, nand2tetris"
+            },
+            {
+                "name": "Book log low language",
+                "description": "University-level low-level programming concepts.",
+                "link": "https://github.com/gurugio/lowlevelprogramming-university",
+                "tags": "assembly, low-level"
+            },
+            {
+                "name": "Công cụ hỗ trợ tìm kiếm gadget",
+                "description": "ROPgadget - Tool for finding ROP gadgets in binaries.",
+                "link": "https://github.com/JonathanSalwan/ROPgadget",
+                "tags": "reverse engineering, security, ROP"
+            },
+            {
+                "name": "Zpoline",
+                "description": "Zero-cost indirect call protection using return-oriented programming.",
+                "link": "https://github.com/yasukata/zpoline",
+                "tags": "security, ARM, kernel"
+            },
+            {
+                "name": "Svc hook arm 64",
+                "description": "Hooking SVC (Supervisor Call) on ARM64.",
+                "link": "https://github.com/retrage/svc-hook",
+                "tags": "ARM64, kernel, hooking"
+            },
+            {
+                "name": "Code chip Skala",
+                "description": "Open-source RISC-V core (XiangShan) developed in Chisel (Scala).",
+                "link": "https://github.com/OpenXiangShan/XiangShan",
+                "tags": "RISC-V, CPU, hardware"
+            }
+        ],
+        "ComputerNetwork": [
+            {
+                "name": "Security Kubernetes",
+                "description": "Tool to hunt for security issues in Kubernetes clusters.",
+                "link": "https://github.com/aquasecurity/kube-hunter",
+                "tags": "Kubernetes, security, network"
+            },
+            {
+                "name": "Observe Kubernetes",
+                "description": "Real-time observability for Kubernetes with Pixie.",
+                "link": "https://github.com/pixie-io/pixie",
+                "tags": "observability, monitoring, Kubernetes"
+            },
+            {
+                "name": "Công cụ tìm kiếm P tán",
+                "description": "OpenSearch - Open-source search and analytics engine.",
+                "link": "https://github.com/opensearch-project/OpenSearch",
+                "tags": "search, distributed, full-text"
+            },
+            {
+                "name": "Hệ thống P tán",
+                "description": "PaaSTA - Yelp's platform as a service for deploying services.",
+                "link": "https://github.com/Yelp/paasta",
+                "tags": "PaaS, deployment, distributed"
+            },
+            {
+                "name": "Scan open port of server",
+                "description": "Simple port scanner for network exploration.",
+                "link": "https://github.com/vinitshahdeo/PortScanner",
+                "tags": "network, security, scanning"
+            }
+        ],
+        "Software Engineering & DevOps": [
+            {
+                "name": "Deploy hệ thống",
+                "description": "Ansible - Automation for configuration management and deployment.",
+                "link": "https://github.com/ansible/ansible",
+                "tags": "DevOps, automation, IaC"
+            },
+            {
+                "name": "Distributed system",
+                "description": "Awesome list of distributed systems concepts and resources.",
+                "link": "https://github.com/gojek/awesome-distributed-systems",
+                "tags": "distributed, scalability"
+            },
+            {
+                "name": "Mở rộng hệ thống",
+                "description": "Awesome scalability - Techniques for scaling systems.",
+                "link": "https://github.com/binhnguyennus/awesome-scalability",
+                "tags": "scalability, architecture"
+            },
+            {
+                "name": "Framework serverless",
+                "description": "Cloudburst - Serverless framework with support for stateful functions.",
+                "link": "https://github.com/hydro-project/cloudburst",
+                "tags": "serverless, cloud"
+            },
+            {
+                "name": "Caching",
+                "description": "Resources on caching strategies and tools.",
+                "link": "https://github.com/vercel/swr",
+                "note": "See Flask and system design docs for implementation patterns."
+            }
+        ],
+        "Reverse Engineering & Security": [
+            {
+                "name": "Chống reverse engineering",
+                "description": "Collection of anti-reversing techniques.",
+                "link": "https://github.com/sukritisingh/Anti-Reversing-Techniques",
+                "tags": "RE, security, obfuscation"
+            },
+            {
+                "name": "Free RE assembly",
+                "description": "Reverse engineering tutorials and resources.",
+                "link": "https://github.com/mytechnotalent/Reverse-Engineering",
+                "tags": "reverse engineering, assembly"
+            },
+            {
+                "name": "Source window",
+                "description": "Windows Research Kernel (WRK) source code.",
+                "link": "https://github.com/ayyucedemirbas/Windows-Research-Kernel-WRK-",
+                "tags": "Windows, kernel, research"
+            },
+            {
+                "name": "Bộ sưu tập malware",
+                "description": "Open-source malware source code for research.",
+                "link": "https://github.com/vxunderground/MalwareSourceCode",
+                "tags": "malware, security, research"
+            },
+            {
+                "name": "Resource red team",
+                "description": "Knowledge base for red team operations.",
+                "link": "https://github.com/RedTeamLounge/RedTeamLounge-KB",
+                "tags": "red team, pentesting"
+            }
+        ],
+        "Data & AI": [
+            {
+                "name": "Tính toán lượng tử",
+                "description": "Qulacs - High-performance quantum computing simulator.",
+                "link": "https://github.com/qulacs/qulacs",
+                "tags": "quantum computing, simulation"
+            },
+            {
+                "name": "Reinforcement course",
+                "description": "Practical Reinforcement Learning course by Yandex.",
+                "link": "https://github.com/yandexdataschool/Practical_RL",
+                "tags": "RL, AI, Python"
+            },
+            {
+                "name": "Lib PyTorch",
+                "description": "Hivemind - Decentralized deep learning with PyTorch.",
+                "link": "https://github.com/learning-at-home/hivemind",
+                "tags": "PyTorch, distributed learning"
+            },
+            {
+                "name": "PySpark + Scikit-learn",
+                "description": "Scikit-learn integration with PySpark.",
+                "link": "https://github.com/lensacom/sparkit-learn",
+                "tags": "machine learning, big data"
+            }
+        ],
+        "Productivity & Tools": [
+            {
+                "name": "Dùng Obsidian",
+                "description": "Awesome list of Obsidian plugins and resources.",
+                "link": "https://github.com/kmaasrud/awesome-obsidian",
+                "tags": "note-taking, knowledge management"
+            },
+            {
+                "name": "CLI apps for Linux",
+                "description": "Awesome CLI apps for Linux.",
+                "link": "https://github.com/agarrharr/awesome-cli-apps",
+                "tags": "CLI, productivity"
+            },
+            {
+                "name": "Markdown cheatsheet",
+                "description": "Quick reference for Markdown syntax.",
+                "link": "https://github.com/tchapi/markdown-cheatsheet",
+                "tags": "writing, documentation"
+            },
+            {
+                "name": "Viết luận văn bằng Python dùng Matplotlib",
+                "description": "Tips and tricks for writing academic papers using Python and Matplotlib.",
+                "link": "https://github.com/Wookai/paper-tips-and-tricks",
+                "tags": "academic, Python, visualization"
+            }
+        ],
+        "Miscellaneous": [
+            {
+                "name": "App for business",
+                "description": "Odoo - Open-source ERP and CRM for business.",
+                "link": "https://github.com/odoo/odoo",
+                "tags": "ERP, business"
+            },
+            {
+                "name": "Sổ tay quản lý",
+                "description": "A playbook for engineering managers.",
+                "link": "https://github.com/ksindi/managers-playbook",
+                "tags": "management, leadership"
+            },
+            {
+                "name": "Cộng đồng mã open source",
+                "description": "Guestbook for open-source communities.",
+                "link": "https://github.com/OpenSource-Communities/guestbook",
+                "tags": "community, open-source"
+            }
+        ],
+        "OTher tools": [
+            {
+                "name": "Tài liệu hướng dẫn DSA (bằng tiếng Trung)",
+                "description": "Tài liệu hướng dẫn DSA (bằng tiếng Trung)",
+                "link": "https://www.hello-algo.com/en/?fbclid=IwY2xjawMDgh9leHRuA2FlbQIxMABicmlkETF0Z2diZ1draWFxdnJsTjNhAR76hflm4FWPP72-ruSEs7LtuYlKC-3WMx34PkaXuz3WADiiV5mnAVcYjlGZaQ_aem_0a-lQ-Elw3S6zM-cpg0Xhw",
+                "tags": "General"
+            },
+            {
+                "name": "Youtube hướng dẫn DevOps",
+                "description": "Youtube hướng dẫn DevOps",
+                "link": "https://www.youtube.com/@TechWorldwithNana/playlists",
+                "tags": "General"
+            },
+            {
+                "name": "Youtube hướng dẫn shortcut VS Code",
+                "description": "Youtube hướng dẫn shortcut VS Code",
+                "link": "https://www.youtube.com/watch?v=HewjjEmMZfA&list=PLry1kjfeC-JbyyEtZD9mk4hd4Oc9F0UxX",
+                "tags": "General"
+            },
+            {
+                "name": "Github chia sẻ DSA",
+                "description": "Github chia sẻ DSA",
+                "link": "https://github.com/Algo-Voyager/cheat-sheet-cp",
+                "tags": "General"
+            },
+            {
+                "name": "Python code DSA",
+                "description": "Python code DSA",
+                "link": "https://github.com/DNofulla/icsi-435-BFS-DFS-UCS",
+                "tags": "General"
+            },
+            {
+                "name": "DSA đầy đủ bằng Java",
+                "description": "DSA đầy đủ bằng Java",
+                "link": "https://github.com/mazhar266/Java",
+                "tags": "General"
+            },
+            {
+                "name": "DSA đầy đủ bằng C++",
+                "description": "DSA đầy đủ bằng C++",
+                "link": "https://github.com/mazhar266/C-Plus-Plus",
+                "tags": "General"
+            },
+            {
+                "name": "Thuật toán deep fake (đổi mặt)",
+                "description": "Thuật toán deep fake (đổi mặt)",
+                "link": "https://github.com/mazhar266/swap-face",
+                "tags": "General"
+            },
+            {
+                "name": "Câu hỏi thi/đấu DSA",
+                "description": "Câu hỏi thi/đấu DSA",
+                "link": "https://github.com/smv1999/CompetitiveProgrammingQuestionBank",
+                "tags": "General"
+            },
+            {
+                "name": "Thuật toán bằng C#",
+                "description": "Thuật toán bằng C#",
+                "link": "https://github.com/aalhour/C-Sharp-Algorithms",
+                "tags": "General"
+            },
+            {
+                "name": "Triển khai mô hình học máy",
+                "description": "Triển khai mô hình học máy",
+                "link": "https://github.com/KI-labs/kaos",
+                "tags": "General"
+            },
+            {
+                "name": "CS 107: Programming Paradigms",
+                "description": "CS 107: Programming Paradigms",
+                "link": "https://github.com/7etsuo/CS107-Programming-Paradigms",
+                "tags": "General"
+            },
+            {
+                "name": "Bài tập Python",
+                "description": "Bài tập Python",
+                "link": "https://github.com/zhiwehu/Python-programming-exercises",
+                "tags": "General"
+            },
+            {
+                "name": "DSA bằng Swift",
+                "description": "DSA bằng Swift",
+                "link": "https://github.com/kodecocodes/swift-algorithm-club",
+                "tags": "General"
+            },
+            {
+                "name": "Tài liệu dạy Python",
+                "description": "Tài liệu dạy Python",
+                "link": "https://github.com/squillero/python-lectures",
+                "tags": "General"
+            },
+            {
+                "name": "Design pattern Python",
+                "description": "Design pattern Python",
+                "link": "https://github.com/aalhour/python-patterns",
+                "tags": "General"
+            },
+            {
+                "name": "Hướng dẫn code Python",
+                "description": "Hướng dẫn code Python",
+                "link": "https://github.com/aalhour/intro-to-information-theory-code-book",
+                "tags": "General"
+            },
+            {
+                "name": "Telegram bot hay",
+                "description": "Telegram bot hay",
+                "link": "https://github.com/DenisIzmaylov/awesome-telegram-bots",
+                "tags": "General"
+            },
+            {
+                "name": "MMO backend bằng Python",
+                "description": "MMO backend bằng Python",
+                "link": "https://github.com/PanTrakX/Generic-MMO-Backend",
+                "tags": "General"
+            },
+            {
+                "name": "Extension bot Telegram",
+                "description": "Extension bot Telegram",
+                "link": "https://github.com/PaiGramTeam/PamGram",
+                "tags": "General"
+            },
+            {
+                "name": "Zalo bot ví dụ",
+                "description": "Zalo bot ví dụ",
+                "link": "https://github.com/Aedotris/example-zalo-bot",
+                "tags": "General"
+            },
+            {
+                "name": "Zalo bot API",
+                "description": "Zalo bot API",
+                "link": "https://github.com/ttpro1995/zalo-python-sdk",
+                "tags": "General"
+            },
+            {
+                "name": "Github user code Python",
+                "description": "Github user code Python",
+                "link": "https://github.com/AbdelrhmanNile",
+                "tags": "General"
+            },
+            {
+                "name": "Robot Framework tutorial",
+                "description": "Robot Framework tutorial",
+                "link": "https://github.com/mazhar266/robot-framework-tutorial",
+                "tags": "General"
+            },
+            {
+                "name": "Deep Learning models",
+                "description": "Deep Learning models",
+                "link": "https://github.com/mazhar266/deeplearning-models",
+                "tags": "General"
+            },
+            {
+                "name": "UI cho IoT (ThingsBoard)",
+                "description": "UI cho IoT (ThingsBoard)",
+                "link": "https://github.com/mazhar266/thingsboard?tab=readme-ov-file",
+                "tags": "General"
+            },
+            {
+                "name": "AI Agent (SerpentAI)",
+                "description": "AI Agent (SerpentAI)",
+                "link": "https://github.com/mazhar266/SerpentAI",
+                "tags": "General"
+            },
+            {
+                "name": "Thương mại điện tử (Saleor)",
+                "description": "Thương mại điện tử (Saleor)",
+                "link": "https://github.com/saleor",
+                "tags": "General"
+            },
+            {
+                "name": "Github user AI & Blockchain",
+                "description": "Github user AI & Blockchain",
+                "link": "https://github.com/ErikBjare",
+                "tags": "General"
+            },
+            {
+                "name": "Học giám sát (Supervised Learning)",
+                "description": "Học giám sát (Supervised Learning)",
+                "link": "https://github.com/roboflow",
+                "tags": "General"
+            },
+            {
+                "name": "API miễn phí",
+                "description": "API miễn phí",
+                "link": "https://github.com/public-apis/public-apis",
+                "tags": "General"
+            },
+            {
+                "name": "Trader - PineScript",
+                "description": "Trader - PineScript",
+                "link": "https://github.com/pAulseperformance/awesome-pinescript",
+                "tags": "General"
+            },
+            {
+                "name": "Phân tích khuôn mặt",
+                "description": "Phân tích khuôn mặt",
+                "link": "https://github.com/deepinsight/insightface",
+                "tags": "General"
+            },
+            {
+                "name": "Phân tích và giải nén file nhị phân",
+                "description": "Phân tích và giải nén file nhị phân",
+                "link": "https://github.com/redballoonsecurity/ofrak",
+                "tags": "General"
+            },
+            {
+                "name": "Thuật toán băm",
+                "description": "Thuật toán băm",
+                "link": "https://github.com/OALabs/hashdb",
+                "tags": "General"
+            },
+            {
+                "name": "Công cụ mạng (.NET)",
+                "description": "Công cụ mạng (.NET)",
+                "link": "https://github.com/AGDCservices/Networking-Scripts",
+                "tags": "General"
+            },
+            {
+                "name": "Hỗ trợ điều khiển robot (OpenPilot)",
+                "description": "Hỗ trợ điều khiển robot (OpenPilot)",
+                "link": "https://github.com/commaai/openpilot",
+                "tags": "General"
+            },
+            {
+                "name": "Dịch ngược file exe",
+                "description": "Dịch ngược file exe",
+                "link": "https://github.com/WithSecureLabs/python-exe-unpacker",
+                "tags": "General"
+            },
+            {
+                "name": "Nhận dạng output (pyWhat)",
+                "description": "Nhận dạng output (pyWhat)",
+                "link": "https://github.com/bee-san/pyWhat",
+                "tags": "General"
+            },
+            {
+                "name": "Kiểm tra lỗi C/C++",
+                "description": "Kiểm tra lỗi C/C++",
+                "link": "https://github.com/david-a-wheeler/flawfinder",
+                "tags": "General"
+            },
+            {
+                "name": "Bộ khóa băm (shrack)",
+                "description": "Bộ khóa băm (shrack)",
+                "link": "https://github.com/d4rckh/shrack",
+                "tags": "General"
+            },
+            {
+                "name": "Định dạng văn bản terminal (Rich)",
+                "description": "Định dạng văn bản terminal (Rich)",
+                "link": "https://github.com/Textualize/rich",
+                "tags": "General"
+            },
+            {
+                "name": "Kiểm tra rò rỉ .git",
+                "description": "Kiểm tra rò rỉ .git",
+                "link": "https://github.com/Ebryx/GitDump",
+                "tags": "General"
+            },
+            {
+                "name": "Kiểm tra HTTP Request Smuggling",
+                "description": "Kiểm tra HTTP Request Smuggling",
+                "link": "https://github.com/defparam/smuggler",
+                "tags": "General"
+            },
+            {
+                "name": "Tool scan APK tìm URI",
+                "description": "Tool scan APK tìm URI",
+                "link": "https://github.com/dwisiswant0/apkleaks",
+                "tags": "General"
+            },
+            {
+                "name": "Tips cải thiện Python",
+                "description": "Tips cải thiện Python",
+                "link": "https://github.com/SigmaQuan/Better-Python-59-Ways",
+                "tags": "General"
+            },
+            {
+                "name": "Tricks lập trình Python",
+                "description": "Tricks lập trình Python",
+                "link": "https://github.com/brennerm/PyTricks",
+                "tags": "General"
+            },
+            {
+                "name": "Khởi thiết bị nhúng (Routersploit)",
+                "description": "Khởi thiết bị nhúng (Routersploit)",
+                "link": "https://github.com/threat9/routersploit",
+                "tags": "General"
+            },
+            {
+                "name": "API Instagram OSINT",
+                "description": "API Instagram OSINT",
+                "link": "https://github.com/sc1341/InstagramOSINT",
+                "tags": "General"
+            },
+            {
+                "name": "Phân tích nhị phân ứng dụng",
+                "description": "Phân tích nhị phân ứng dụng",
+                "link": "https://github.com/carlosgprado/BrundleFuzz",
+                "tags": "General"
+            },
+            {
+                "name": "Bot theo dõi Tor",
+                "description": "Bot theo dõi Tor",
+                "link": "https://github.com/kaiiyer/TorBot",
+                "tags": "General"
+            },
+            {
+                "name": "Bộ xử lý RISC-V 32 bit",
+                "description": "Bộ xử lý RISC-V 32 bit",
+                "link": "https://github.com/aalhour/minerva",
+                "tags": "General"
+            },
+            {
+                "name": "Hỗ trợ xây dựng AI agent",
+                "description": "Hỗ trợ xây dựng AI agent",
+                "link": "https://github.com/agno-agi/agno",
+                "tags": "General"
+            },
+            {
+                "name": "Xác suất với Python (Pyro)",
+                "description": "Xác suất với Python (Pyro)",
+                "link": "https://github.com/pyro-ppl/pyro",
+                "tags": "General"
+            },
+            {
+                "name": "250+ cấu trúc dữ liệu mở rộng",
+                "description": "250+ cấu trúc dữ liệu mở rộng",
+                "link": "https://github.com/mahmoud/boltons",
+                "tags": "General"
+            },
+            {
+                "name": "Mã hóa chống deep fake (Fawkes)",
+                "description": "Mã hóa chống deep fake (Fawkes)",
+                "link": "https://github.com/Shawn-Shan/fawkes",
+                "tags": "General"
+            },
+            {
+                "name": "Tổng hợp tin tức Telegram",
+                "description": "Tổng hợp tin tức Telegram",
+                "link": "https://github.com/NyanNyanovich/nyan",
+                "tags": "General"
+            },
+            {
+                "name": "Clone giọng nói thời gian thực",
+                "description": "Clone giọng nói thời gian thực",
+                "link": "https://github.com/CorentinJ/Real-Time-Voice-Cloning",
+                "tags": "General"
+            },
+            {
+                "name": "Thu thập dữ liệu từ IDE/code",
+                "description": "Thu thập dữ liệu từ IDE/code",
+                "link": "https://github.com/jrnl-org/jrnl",
+                "tags": "General"
+            },
+            {
+                "name": "Thư viện chức năng (Funcy)",
+                "description": "Thư viện chức năng (Funcy)",
+                "link": "https://github.com/Suor/funcy",
+                "tags": "General"
+            },
+            {
+                "name": "Kiểm tra máy chủ (Ty)",
+                "description": "Kiểm tra máy chủ (Ty)",
+                "link": "https://github.com/astral-sh/ty",
+                "tags": "General"
+            },
+            {
+                "name": "Debug thay cho print (Icecream)",
+                "description": "Debug thay cho print (Icecream)",
+                "link": "https://github.com/gruns/icecream",
+                "tags": "General"
+            },
+            {
+                "name": "Awesome Python (tổng hợp)",
+                "description": "Awesome Python (tổng hợp)",
+                "link": "https://github.com/vinta/awesome-python",
+                "tags": "General"
+            },
+            {
+                "name": "Hệ thống gợi ý (Buffalo)",
+                "description": "Hệ thống gợi ý (Buffalo)",
+                "link": "https://github.com/kakao/buffalo",
+                "tags": "General"
+            },
+            {
+                "name": "Thư viện Python (Abseil)",
+                "description": "Thư viện Python (Abseil)",
+                "link": "https://github.com/abseil/abseil-py",
+                "tags": "General"
+            },
+            {
+                "name": "Framework web server (Sanic)",
+                "description": "Framework web server (Sanic)",
+                "link": "https://github.com/sanic-org/sanic",
+                "tags": "General"
+            },
+            {
+                "name": "Bắt đầu dự án Django (Cookiecutter)",
+                "description": "Bắt đầu dự án Django (Cookiecutter)",
+                "link": "https://github.com/cookiecutter/cookiecutter-django",
+                "tags": "General"
+            },
+            {
+                "name": "Phát hiện phần mềm độc hại",
+                "description": "Phát hiện phần mềm độc hại",
+                "link": "https://github.com/airbnb/binaryalert",
+                "tags": "General"
+            },
+            {
+                "name": "Thuật toán gợi ý kết hợp (LightFM)",
+                "description": "Thuật toán gợi ý kết hợp (LightFM)",
+                "link": "https://github.com/lyst/lightfm",
+                "tags": "General"
+            },
+            {
+                "name": "Tìm tên trên mạng xã hội (Sherlock)",
+                "description": "Tìm tên trên mạng xã hội (Sherlock)",
+                "link": "https://github.com/sherlock-project/sherlock",
+                "tags": "General"
+            },
+            {
+                "name": "Tool tìm HTTP param (Arjun)",
+                "description": "Tool tìm HTTP param (Arjun)",
+                "link": "https://github.com/s0md3v/Arjun",
+                "tags": "General"
+            },
+            {
+                "name": "Roadmap hacker",
+                "description": "Roadmap hacker",
+                "link": "https://github.com/s0md3v/be-a-hacker",
+                "tags": "General"
+            },
+            {
+                "name": "Phân loại lỗ hổng bảo mật",
+                "description": "Phân loại lỗ hổng bảo mật",
+                "link": "https://github.com/bugcrowd/vulnerability-rating-taxonomy",
+                "tags": "General"
+            },
+            {
+                "name": "Thư viện bot Java",
+                "description": "Thư viện bot Java",
+                "link": "https://mvnrepository.com/artifact/com.botscrew/bot-framework-core-spring-boot-starter",
+                "tags": "General"
+            },
+            {
+                "name": "Blog về Thread trong Java",
+                "description": "Blog về Thread trong Java",
+                "link": "https://www.facebook.com/share/p/1698W9Vkq3/",
+                "tags": "General"
+            },
+            {
+                "name": "Server backend Java (Grasscutter)",
+                "description": "Server backend Java (Grasscutter)",
+                "link": "https://github.com/Grasscutters/Grasscutter",
+                "tags": "General"
+            },
+            {
+                "name": "Data source NRO",
+                "description": "Data source NRO",
+                "link": "https://github.com/SQKhanh/nro_data",
+                "tags": "General"
+            },
+            {
+                "name": "Backend thương mại điện tử",
+                "description": "Backend thương mại điện tử",
+                "link": "https://github.com/dnofulla/marketcove-e-commerce-backend",
+                "tags": "General"
+            },
+            {
+                "name": "Hỗ trợ IoT (SiteWhere)",
+                "description": "Hỗ trợ IoT (SiteWhere)",
+                "link": "https://github.com/sitewhere",
+                "tags": "General"
+            },
+            {
+                "name": "Kaa IoT platform",
+                "description": "Kaa IoT platform",
+                "link": "https://github.com/mazhar266/kaa",
+                "tags": "General"
+            },
+            {
+                "name": "Giỏ hàng (Shopping Cart)",
+                "description": "Giỏ hàng (Shopping Cart)",
+                "link": "https://github.com/mazhar266/ShoppingCart",
+                "tags": "General"
+            },
+            {
+                "name": "Framework serverless Java",
+                "description": "Framework serverless Java",
+                "link": "https://github.com/mazhar266/awesome-serverless",
+                "tags": "General"
+            },
+            {
+                "name": "Get OS info Java (Oshi)",
+                "description": "Get OS info Java (Oshi)",
+                "link": "https://github.com/mazhar266/oshi",
+                "tags": "General"
+            },
+            {
+                "name": "Framework & thư viện Java",
+                "description": "Framework & thư viện Java",
+                "link": "https://github.com/akullpp/awesome-java",
+                "tags": "General"
+            },
+            {
+                "name": "Framework & thư viện Scala",
+                "description": "Framework & thư viện Scala",
+                "link": "https://github.com/lauris/awesome-scala",
+                "tags": "General"
+            },
+            {
+                "name": "Awesome Go",
+                "description": "Awesome Go",
+                "link": "https://github.com/avelino/awesome-go",
+                "tags": "General"
+            },
+            {
+                "name": "Awesome Go (faiface)",
+                "description": "Awesome Go (faiface)",
+                "link": "https://github.com/faiface/awesome-go",
+                "tags": "General"
+            },
+            {
+                "name": "Signal App (backend Java, cross-platform)",
+                "description": "Signal App (backend Java, cross-platform)",
+                "link": "https://github.com/signalapp",
+                "tags": "General"
+            },
+            {
+                "name": "Dự án lâu đời Java (InstaBrowser)",
+                "description": "Dự án lâu đời Java (InstaBrowser)",
+                "link": "https://github.com/ariashirazi/InstaBrowser",
+                "tags": "General"
+            },
+            {
+                "name": "Virus & Anti-virus Android",
+                "description": "Virus & Anti-virus Android",
+                "link": "https://github.com/harshalbenake/Android-Elite-Virus",
+                "tags": "General"
+            },
+            {
+                "name": "Thư viện Java hay",
+                "description": "Thư viện Java hay",
+                "link": "https://github.com/wtsxDev/Amazing-Java-List",
+                "tags": "General"
+            },
+            {
+                "name": "Chăm sóc sức khỏe thời gian thực",
+                "description": "Chăm sóc sức khỏe thời gian thực",
+                "link": "https://github.com/kaiiyer/streamsx.health",
+                "tags": "General"
+            },
+            {
+                "name": "Design pattern trong Java",
+                "description": "Design pattern trong Java",
+                "link": "https://github.com/redvelvets/desgin-pattern",
+                "tags": "General"
+            },
+            {
+                "name": "Phỏng vấn Java",
+                "description": "Phỏng vấn Java",
+                "link": "https://github.com/redvelvets/Interview_question",
+                "tags": "General"
+            },
+            {
+                "name": "Egeria - Siêu dữ liệu",
+                "description": "Egeria - Siêu dữ liệu",
+                "link": "https://github.com/odpi/egeria",
+                "tags": "General"
+            },
+            {
+                "name": "Giao diện mạng không đồng bộ (Netty)",
+                "description": "Giao diện mạng không đồng bộ (Netty)",
+                "link": "https://github.com/netty/netty",
+                "tags": "General"
+            },
+            {
+                "name": "Nền tảng microservices (Armeria)",
+                "description": "Nền tảng microservices (Armeria)",
+                "link": "https://github.com/line/armeria",
+                "tags": "General"
+            },
+            {
+                "name": "Truy vấn SQL phân tán (Trino)",
+                "description": "Truy vấn SQL phân tán (Trino)",
+                "link": "https://github.com/trinodb/trino",
+                "tags": "General"
+            },
+            {
+                "name": "Database chuỗi (QuestDB)",
+                "description": "Database chuỗi (QuestDB)",
+                "link": "https://github.com/questdb/questdb",
+                "tags": "General"
+            },
+            {
+                "name": "Thư viện hỗ trợ lập trình Java",
+                "description": "Thư viện hỗ trợ lập trình Java",
+                "link": "https://jvm-gaming.org/",
+                "tags": "General"
+            },
+            {
+                "name": "Cài đặt Radare2 cho Android",
+                "description": "Cài đặt Radare2 cho Android",
+                "link": "https://github.com/radare/radare2-installer",
+                "tags": "General"
+            },
+            {
+                "name": "Người dùng chia sẻ về AI",
+                "description": "Người dùng chia sẻ về AI",
+                "link": "https://github.com/jeetv",
+                "tags": "General"
+            },
+            {
+                "name": "Giải quyết mã hóa toán học bằng AI",
+                "description": "Giải quyết mã hóa toán học bằng AI",
+                "link": "https://github.com/LectureHubTeam/codemath-solver",
+                "tags": "General"
+            },
+            {
+                "name": "Trang web học AI (fast.ai)",
+                "description": "Trang web học AI (fast.ai)",
+                "link": "https://www.fast.ai/",
+                "tags": "General"
+            },
+            {
+                "name": "Người dùng chia sẻ về Machine Learning",
+                "description": "Người dùng chia sẻ về Machine Learning",
+                "link": "https://github.com/michaelslice/",
+                "tags": "General"
+            },
+            {
+                "name": "Hệ sinh thái mã nguồn AI (Federated Learning)",
+                "description": "Hệ sinh thái mã nguồn AI (Federated Learning)",
+                "link": "https://github.com/FederatedAI",
+                "tags": "General"
+            },
+            {
+                "name": "Người dùng chia sẻ kiến thức AI",
+                "description": "Người dùng chia sẻ kiến thức AI",
+                "link": "https://github.com/mashcodes10",
+                "tags": "General"
+            },
+            {
+                "name": "Người dùng mã nguồn Deep Learning",
+                "description": "Người dùng mã nguồn Deep Learning",
+                "link": "https://github.com/simoninithomas",
+                "tags": "General"
+            },
+            {
+                "name": "Blog về block xử lý mô hình AI",
+                "description": "Blog về block xử lý mô hình AI",
+                "link": "https://github.com/PatrickHua/Awesome-World-Models",
+                "tags": "General"
+            },
+            {
+                "name": "Blog về 6 tác vụ của AI Agent",
+                "description": "Blog về 6 tác vụ của AI Agent",
+                "link": "https://www.facebook.com/share/p/16fU3BFCeV/",
+                "tags": "General"
+            },
+            {
+                "name": "Tổng quan về AI Agent (Blog)",
+                "description": "Tổng quan về AI Agent (Blog)",
+                "link": "https://www.facebook.com/share/p/17RScs5Ggi/",
+                "tags": "General"
+            },
+            {
+                "name": "Hỗ trợ phát triển bằng AI (ChatDBG)",
+                "description": "Hỗ trợ phát triển bằng AI (ChatDBG)",
+                "link": "https://github.com/plasma-umass",
+                "tags": "General"
+            },
+            {
+                "name": "Người dùng mã nguồn AI Agent",
+                "description": "Người dùng mã nguồn AI Agent",
+                "link": "https://github.com/tobrien6?tab=stars",
+                "tags": "General"
+            },
+            {
+                "name": "Agent mô phỏng 3D",
+                "description": "Agent mô phỏng 3D",
+                "link": "https://github.com/danieldeer/amaz3dsim",
+                "tags": "General"
+            },
+            {
+                "name": "Trình gỡ lỗi bằng AI (ChatDBG)",
+                "description": "Trình gỡ lỗi bằng AI (ChatDBG)",
+                "link": "https://github.com/plasma-umass/ChatDBG",
+                "tags": "General"
+            },
+            {
+                "name": "Người dùng mã nguồn ML",
+                "description": "Người dùng mã nguồn ML",
+                "link": "https://github.com/ayyucedemirbas",
+                "tags": "General"
+            },
+            {
+                "name": "Hướng dẫn chủ đề Deep Learning",
+                "description": "Hướng dẫn chủ đề Deep Learning",
+                "link": "https://github.com/kaiiyer/deep-learning",
+                "tags": "General"
+            },
+            {
+                "name": "Tutorial về AI, DL, ML",
+                "description": "Tutorial về AI, DL, ML",
+                "link": "https://github.com/kaiiyer/Artificial-Intelligence-Deep-Learning-Machine-Learning-Tutorials",
+                "tags": "General"
+            },
+            {
+                "name": "Phân tích hành vi người dùng",
+                "description": "Phân tích hành vi người dùng",
+                "link": "https://github.com/kaiiyer/OpenUBA",
+                "tags": "General"
+            },
+            {
+                "name": "Ví dụ về bot Agent",
+                "description": "Ví dụ về bot Agent",
+                "link": "https://github.com/kaiiyer/awesome-bots",
+                "tags": "General"
+            },
+            {
+                "name": "Thư viện AI trong y tế (có thể triển khai)",
+                "description": "Thư viện AI trong y tế (có thể triển khai)",
+                "link": "https://github.com/kaiiyer/healthcareai-py",
+                "tags": "General"
+            },
+            {
+                "name": "Khóa học Deep Learning (Coursera)",
+                "description": "Khóa học Deep Learning (Coursera)",
+                "link": "https://github.com/kaiiyer/deep-learning-coursera",
+                "tags": "General"
+            },
+            {
+                "name": "Generative AI cho người mới bắt đầu",
+                "description": "Generative AI cho người mới bắt đầu",
+                "link": "https://github.com/microsoft/generative-ai-for-beginners",
+                "tags": "General"
+            },
+            {
+                "name": "Tìm hiểu Machine Learning từ đầu",
+                "description": "Tìm hiểu Machine Learning từ đầu",
+                "link": "https://github.com/eriklindernoren/ML-From-Scratch",
+                "tags": "General"
+            },
+            {
+                "name": "An ninh mạng cho AI",
+                "description": "An ninh mạng cho AI",
+                "link": "https://github.com/DeepSpaceHarbor/Awesome-AI-Security",
+                "tags": "General"
+            },
+            {
+                "name": "AI video từ con số 0",
+                "description": "AI video từ con số 0",
+                "link": "https://github.com/Dataweekends/zero_to_deep_learning_video",
+                "tags": "General"
+            },
+            {
+                "name": "Deep Learning Tutorial (LISA Lab)",
+                "description": "Deep Learning Tutorial (LISA Lab)",
+                "link": "https://github.com/lisa-lab/DeepLearningTutorials",
+                "tags": "General"
+            },
+            {
+                "name": "AI Cheat Sheet cơ bản",
+                "description": "AI Cheat Sheet cơ bản",
+                "link": "https://github.com/aalhour/AI-Cheatsheets-for-basics",
+                "tags": "General"
+            },
+            {
+                "name": "Khóa học Hệ thống Deep Learning",
+                "description": "Khóa học Hệ thống Deep Learning",
+                "link": "https://github.com/dlsys-course/dlsys-course.github.io",
+                "tags": "General"
+            },
+            {
+                "name": "Quản lý MLOps & LLM (Weights & Biases)",
+                "description": "Quản lý MLOps & LLM (Weights & Biases)",
+                "link": "https://github.com/wandb/wandb",
+                "tags": "General"
+            },
+            {
+                "name": "Distributed Machine Learning",
+                "description": "Distributed Machine Learning",
+                "link": "https://github.com/Angel-ML/angel",
+                "tags": "General"
+            },
+            {
+                "name": "Dự đoán với đa tiến trình (Ray + TensorFlow)",
+                "description": "Dự đoán với đa tiến trình (Ray + TensorFlow)",
+                "link": "https://github.com/minimaxir/tensorflow-multiprocess-ray",
+                "tags": "General"
+            },
+            {
+                "name": "AI Agent dựa trên cơ sở dữ liệu",
+                "description": "AI Agent dựa trên cơ sở dữ liệu",
+                "link": "https://github.com/mindsdb/mindsdb",
+                "tags": "General"
+            },
+            {
+                "name": "Text-to-Speech (TTS)",
+                "description": "Text-to-Speech (TTS)",
+                "link": "https://github.com/coqui-ai/TTS",
+                "tags": "General"
+            },
+            {
+                "name": "Tự động hóa PyTorch (Lightning)",
+                "description": "Tự động hóa PyTorch (Lightning)",
+                "link": "https://github.com/Lightning-AI/pytorch-lightning",
+                "tags": "General"
+            },
+            {
+                "name": "Hỗ trợ phân tích dữ liệu (MLxtend)",
+                "description": "Hỗ trợ phân tích dữ liệu (MLxtend)",
+                "link": "https://github.com/rasbt/mlxtend",
+                "tags": "General"
+            },
+            {
+                "name": "Trực quan hóa dữ liệu với Pandas (Lux)",
+                "description": "Trực quan hóa dữ liệu với Pandas (Lux)",
+                "link": "https://github.com/lux-org/lux",
+                "tags": "General"
+            },
+            {
+                "name": "Mở rộng hiệu suất Pandas (Modin)",
+                "description": "Mở rộng hiệu suất Pandas (Modin)",
+                "link": "https://github.com/modin-project/modin",
+                "tags": "General"
+            },
+            {
+                "name": "Đánh giá mô hình AI (ParlAI)",
+                "description": "Đánh giá mô hình AI (ParlAI)",
+                "link": "https://github.com/facebookresearch/ParlAI",
+                "tags": "General"
+            },
+            {
+                "name": "Biên dịch ML sang vector (Hummingbird)",
+                "description": "Biên dịch ML sang vector (Hummingbird)",
+                "link": "https://github.com/microsoft/hummingbird",
+                "tags": "General"
+            },
+            {
+                "name": "Tổng hợp Deep Learning",
+                "description": "Tổng hợp Deep Learning",
+                "link": "https://github.com/kmario23/deep-learning-drizzle",
+                "tags": "General"
+            },
+            {
+                "name": "OpenAI Whisper (TTS)",
+                "description": "OpenAI Whisper (TTS)",
+                "link": "https://github.com/openai/whisper",
+                "tags": "General"
+            },
+            {
+                "name": "Xuất & lưu trữ mô hình AI",
+                "description": "Xuất & lưu trữ mô hình AI",
+                "link": "https://github.com/operatorai/modelstore",
+                "tags": "General"
+            },
+            {
+                "name": "ML mã nguồn mở (Rasa)",
+                "description": "ML mã nguồn mở (Rasa)",
+                "link": "https://github.com/RasaHQ/rasa",
+                "tags": "General"
+            },
+            {
+                "name": "Home Assistant (IoT)",
+                "description": "Home Assistant (IoT)",
+                "link": "https://github.com/home-assistant/core",
+                "tags": "General"
+            },
+            {
+                "name": "Triển khai Deep Learning",
+                "description": "Triển khai Deep Learning",
+                "link": "https://github.com/labmlai/annotated_deep_learning_paper_implementations",
+                "tags": "General"
+            },
+            {
+                "name": "Xử lý pipeline dữ liệu",
+                "description": "Xử lý pipeline dữ liệu",
+                "link": "https://github.com/tuplex/tuplex",
+                "tags": "General"
+            },
+            {
+                "name": "Machine Learning cho người mới",
+                "description": "Machine Learning cho người mới",
+                "link": "https://github.com/microsoft/ML-For-Beginners",
+                "tags": "General"
+            },
+            {
+                "name": "API suy luận mô hình (BentoML)",
+                "description": "API suy luận mô hình (BentoML)",
+                "link": "https://github.com/bentoml/BentoML",
+                "tags": "General"
+            },
+            {
+                "name": "MLOps framework (ZenML)",
+                "description": "MLOps framework (ZenML)",
+                "link": "https://github.com/zenml-io/zenml",
+                "tags": "General"
+            },
+            {
+                "name": "Theo dõi tiến độ NLP",
+                "description": "Theo dõi tiến độ NLP",
+                "link": "https://github.com/sebastianruder/NLP-progress",
+                "tags": "General"
+            },
+            {
+                "name": "Tóm tắt tài liệu NLP",
+                "description": "Tóm tắt tài liệu NLP",
+                "link": "https://github.com/vas3k/infomate.club",
+                "tags": "General"
+            },
+            {
+                "name": "Chuyển từ ML sang LLM",
+                "description": "Chuyển từ ML sang LLM",
+                "link": "https://github.com/mlc-ai/mlc-llm",
+                "tags": "General"
+            },
+            {
+                "name": "Tương tác với LLM riêng tư cục bộ",
+                "description": "Tương tác với LLM riêng tư cục bộ",
+                "link": "https://github.com/zylon-ai/private-gpt",
+                "tags": "General"
+            },
+            {
+                "name": "RAG tích hợp vào Generative AI",
+                "description": "RAG tích hợp vào Generative AI",
+                "link": "https://github.com/QuivrHQ/quivr",
+                "tags": "General"
+            },
+            {
+                "name": "Công cụ tìm kiếm thứ 2 (Khoj)",
+                "description": "Công cụ tìm kiếm thứ 2 (Khoj)",
+                "link": "https://github.com/khoj-ai/khoj",
+                "tags": "General"
+            },
+            {
+                "name": "Đầu ra có cấu trúc cho LLM",
+                "description": "Đầu ra có cấu trúc cho LLM",
+                "link": "https://github.com/567-labs/instructor",
+                "tags": "General"
+            },
+            {
+                "name": "Một mô hình LLM mở (Dolly)",
+                "description": "Một mô hình LLM mở (Dolly)",
+                "link": "https://github.com/databrickslabs/dolly",
+                "tags": "General"
+            },
+            {
+                "name": "Kết nối ML và LLM (JARVIS)",
+                "description": "Kết nối ML và LLM (JARVIS)",
+                "link": "https://github.com/microsoft/JARVIS",
+                "tags": "General"
+            },
+            {
+                "name": "Agent GPT tự động (AutoGPT)",
+                "description": "Agent GPT tự động (AutoGPT)",
+                "link": "https://github.com/Significant-Gravitas/AutoGPT",
+                "tags": "General"
+            },
+            {
+                "name": "Xây dựng Agent dựa trên mã nguồn",
+                "description": "Xây dựng Agent dựa trên mã nguồn",
+                "link": "https://github.com/vocodedev/vocode-core",
+                "tags": "General"
+            },
+            {
+                "name": "Agent trợ lý mở (Open-Assistant)",
+                "description": "Agent trợ lý mở (Open-Assistant)",
+                "link": "https://github.com/LAION-AI/Open-Assistant",
+                "tags": "General"
+            },
+            {
+                "name": "Trình thông dịch mã cho GPT",
+                "description": "Trình thông dịch mã cho GPT",
+                "link": "https://github.com/shroominic/codeinterpreter-api",
+                "tags": "General"
+            },
+            {
+                "name": "Hỗ trợ lưu lượng LLM (vLLM)",
+                "description": "Hỗ trợ lưu lượng LLM (vLLM)",
+                "link": "https://github.com/vllm-project/vllm",
+                "tags": "General"
+            },
+            {
+                "name": "Thư viện nhúng Agent vào ứng dụng",
+                "description": "Thư viện nhúng Agent vào ứng dụng",
+                "link": "https://github.com/smol-ai/developer",
+                "tags": "General"
+            },
+            {
+                "name": "Thu thập dữ liệu web bằng Python",
+                "description": "Thu thập dữ liệu web bằng Python",
+                "link": "https://github.com/apify/crawlee-python",
+                "tags": "General"
+            },
+            {
+                "name": "Framework phát triển Agent (AutoGen)",
+                "description": "Framework phát triển Agent (AutoGen)",
+                "link": "https://github.com/microsoft/autogen",
+                "tags": "General"
+            },
+            {
+                "name": "SDK giao tiếp client-server AI",
+                "description": "SDK giao tiếp client-server AI",
+                "link": "https://github.com/modelcontextprotocol/python-sdk",
+                "tags": "General"
+            },
+            {
+                "name": "Agent chạy trên trình duyệt",
+                "description": "Agent chạy trên trình duyệt",
+                "link": "https://github.com/browser-use/browser-use",
+                "tags": "General"
+            },
+            {
+                "name": "Chạy AI Agent trên trình duyệt",
+                "description": "Chạy AI Agent trên trình duyệt",
+                "link": "https://github.com/browser-use/web-ui",
+                "tags": "General"
+            },
+            {
+                "name": "Mô hình clone giọng nói (OpenVoice)",
+                "description": "Mô hình clone giọng nói (OpenVoice)",
+                "link": "https://github.com/myshell-ai/OpenVoice",
+                "tags": "General"
+            },
+            {
+                "name": "Agent tích hợp với Django",
+                "description": "Agent tích hợp với Django",
+                "link": "https://github.com/surenkov/django-pydantic-field",
+                "tags": "General"
+            },
+            {
+                "name": "OpenAI Agents (Python)",
+                "description": "OpenAI Agents (Python)",
+                "link": "https://github.com/openai/openai-agents-python",
+                "tags": "General"
+            },
+            {
+                "name": "Xây dựng Agent nhanh (AgentStack)",
+                "description": "Xây dựng Agent nhanh (AgentStack)",
+                "link": "https://github.com/agentstack-ai/AgentStack",
+                "tags": "General"
+            },
+            {
+                "name": "Môi trường phát triển trên web",
+                "description": "Môi trường phát triển trên web",
+                "link": "https://github.com/stackblitz/webcontainer-core?tab=readme-ov-file",
+                "tags": "General"
+            },
+            {
+                "name": "Ghi chú AI cho Kỹ sư phần mềm",
+                "description": "Ghi chú AI cho Kỹ sư phần mềm",
+                "link": "https://github.com/swyxio/ai-notes",
+                "tags": "General"
+            },
+            {
+                "name": "Agent viết mã (OpenHands)",
+                "description": "Agent viết mã (OpenHands)",
+                "link": "https://github.com/All-Hands-AI/OpenHands",
+                "tags": "General"
+            },
+            {
+                "name": "Agent hỗ trợ GitHub (SWE-agent)",
+                "description": "Agent hỗ trợ GitHub (SWE-agent)",
+                "link": "https://github.com/SWE-agent/SWE-agent",
+                "tags": "General"
+            },
+            {
+                "name": "Thuật toán LLM (minbpe)",
+                "description": "Thuật toán LLM (minbpe)",
+                "link": "https://github.com/karpathy/minbpe",
+                "tags": "General"
+            },
+            {
+                "name": "API ra lệnh cho LLM (Marvin)",
+                "description": "API ra lệnh cho LLM (Marvin)",
+                "link": "https://github.com/PrefectHQ/marvin",
+                "tags": "General"
+            },
+            {
+                "name": "Agent giọng nói thời gian thực",
+                "description": "Agent giọng nói thời gian thực",
+                "link": "https://github.com/livekit/agents",
+                "tags": "General"
+            },
+            {
+                "name": "Biểu diễn kiến thức cho Agent",
+                "description": "Biểu diễn kiến thức cho Agent",
+                "link": "https://github.com/getzep/graphiti",
+                "tags": "General"
+            },
+            {
+                "name": "LangChain - Framework Agent",
+                "description": "LangChain - Framework Agent",
+                "link": "https://github.com/langchain-ai/langchain",
+                "tags": "General"
+            },
+            {
+                "name": "Agent tổng hợp dữ liệu tài chính",
+                "description": "Agent tổng hợp dữ liệu tài chính",
+                "link": "https://github.com/OpenBB-finance/OpenBB",
+                "tags": "General"
+            },
+            {
+                "name": "Thuật toán ML tự làm",
+                "description": "Thuật toán ML tự làm",
+                "link": "https://github.com/trekhleb/homemade-machine-learning",
+                "tags": "General"
+            },
+            {
+                "name": "Khóa học Machine Learning (MLCourse)",
+                "description": "Khóa học Machine Learning (MLCourse)",
+                "link": "https://github.com/Yorko/mlcourse.ai",
+                "tags": "General"
+            },
+            {
+                "name": "Khóa học Deep Learning (MIT)",
+                "description": "Khóa học Deep Learning (MIT)",
+                "link": "https://github.com/lexfridman/mit-deep-learning",
+                "tags": "General"
+            },
+            {
+                "name": "Xử lý Big Data",
+                "description": "Xử lý Big Data",
+                "link": "https://github.com/ekzhu/datasketch",
+                "tags": "General"
+            },
+            {
+                "name": "Chuyển đổi ngữ cảnh Deep Learning",
+                "description": "Chuyển đổi ngữ cảnh Deep Learning",
+                "link": "https://github.com/netx-repo/PipeSwitch",
+                "tags": "General"
+            },
+            {
+                "name": "LLM không cần huấn luyện (Ludwig)",
+                "description": "LLM không cần huấn luyện (Ludwig)",
+                "link": "https://github.com/ludwig-ai/ludwig",
+                "tags": "General"
+            },
+            {
+                "name": "Hỗ trợ tính toán ML (JAX)",
+                "description": "Hỗ trợ tính toán ML (JAX)",
+                "link": "https://github.com/jax-ml/jax",
+                "tags": "General"
+            },
+            {
+                "name": "Chuyển PyTorch sang TensorRT",
+                "description": "Chuyển PyTorch sang TensorRT",
+                "link": "https://github.com/NVIDIA-AI-IOT/torch2trt",
+                "tags": "General"
+            },
+            {
+                "name": "Đào tạo DL phân tán (Horovod)",
+                "description": "Đào tạo DL phân tán (Horovod)",
+                "link": "https://github.com/horovod/horovod",
+                "tags": "General"
+            },
+            {
+                "name": "Hỗ trợ DL tương thích thư viện Python",
+                "description": "Hỗ trợ DL tương thích thư viện Python",
+                "link": "https://github.com/explosion/thinc",
+                "tags": "General"
+            },
+            {
+                "name": "AI mã nguồn mở (Feast)",
+                "description": "AI mã nguồn mở (Feast)",
+                "link": "https://github.com/feast-dev/feast",
+                "tags": "General"
+            },
+            {
+                "name": "Hỗ trợ tăng tốc suy luận DL",
+                "description": "Hỗ trợ tăng tốc suy luận DL",
+                "link": "https://github.com/Adlik/Adlik",
+                "tags": "General"
+            },
+            {
+                "name": "Bộ công cụ học sâu (D2Go)",
+                "description": "Bộ công cụ học sâu (D2Go)",
+                "link": "https://github.com/facebookresearch/d2go",
+                "tags": "General"
+            },
+            {
+                "name": "Deep Learning trên Kubernetes (ElasticDL)",
+                "description": "Deep Learning trên Kubernetes (ElasticDL)",
+                "link": "https://github.com/sql-machine-learning/elasticdl",
+                "tags": "General"
+            },
+            {
+                "name": "Ray - Hỗ trợ ML phân tán",
+                "description": "Ray - Hỗ trợ ML phân tán",
+                "link": "https://github.com/ray-project/ray",
+                "tags": "General"
+            },
+            {
+                "name": "Thuật toán ML (Uber CausalML)",
+                "description": "Thuật toán ML (Uber CausalML)",
+                "link": "https://github.com/uber/causalml",
+                "tags": "General"
+            },
+            {
+                "name": "Công ty về học máy (Neuro)",
+                "description": "Công ty về học máy (Neuro)",
+                "link": "https://github.com/neuro-inc",
+                "tags": "General"
+            },
+            {
+                "name": "Server suy luận mô hình (Triton)",
+                "description": "Server suy luận mô hình (Triton)",
+                "link": "https://github.com/triton-inference-server/server",
+                "tags": "General"
+            },
+            {
+                "name": "Học tăng cường với Agent (TensorTrade)",
+                "description": "Học tăng cường với Agent (TensorTrade)",
+                "link": "https://github.com/tensortrade-org/tensortrade",
+                "tags": "General"
+            },
+            {
+                "name": "Tools khám phá toán trừu tượng",
+                "description": "Tools khám phá toán trừu tượng",
+                "link": "https://github.com/peawormsworth/tools",
+                "tags": "General"
+            },
+            {
+                "name": "Khôi phục hình ảnh (SRGAN)",
+                "description": "Khôi phục hình ảnh (SRGAN)",
+                "link": "https://github.com/MathiasGruber/SRGAN-Keras",
+                "tags": "General"
+            },
+            {
+                "name": "Ebook Deep Learning",
+                "description": "Ebook Deep Learning",
+                "link": "https://github.com/mazhar266/dm-ebook",
+                "tags": "General"
+            },
+            {
+                "name": "Tham khảo về AI",
+                "description": "Tham khảo về AI",
+                "link": "https://github.com/driscoll42/kellogg_ai_club",
+                "tags": "General"
+            },
+            {
+                "name": "Bài báo về Deep Learning",
+                "description": "Bài báo về Deep Learning",
+                "link": "https://github.com/dennybritz/deeplearning-papernotes",
+                "tags": "General"
+            },
+            {
+                "name": "Sách Machine Learning bằng Python",
+                "description": "Sách Machine Learning bằng Python",
+                "link": "https://github.com/rasbt/python-machine-learning-book",
+                "tags": "General"
+            },
+            {
+                "name": "Tấn công & khai thác (Facebook)",
+                "description": "Tấn công & khai thác (Facebook)",
+                "link": "https://www.facebook.com/share/p/19q3MM5uoq/",
+                "tags": "Cyber Attack"
+            },
+            {
+                "name": "Chia sẻ tin về cyber attack (DailyCVE)",
+                "description": "Chia sẻ tin về cyber attack (DailyCVE)",
+                "link": "https://dailycve.com/xwiki-platform-sql-injection-cve-2025-xxxx-critical/",
+                "tags": "Cyber Security"
+            },
+            {
+                "name": "Blog chia sẻ tin an ninh (SecurityLab)",
+                "description": "Blog chia sẻ tin an ninh (SecurityLab)",
+                "link": "https://www.securitylab.ru/",
+                "tags": "Cyber News"
+            },
+            {
+                "name": "Code hacking game",
+                "description": "Code hacking game",
+                "link": "https://github.com/dsasmblr/game-hacking",
+                "tags": "Game Hacking"
+            },
+            {
+                "name": "Roadmap An ninh mạng (Berkanktk)",
+                "description": "Roadmap An ninh mạng (Berkanktk)",
+                "link": "https://github.com/Berkanktk/CyberSecurity",
+                "tags": "Roadmap"
+            },
+            {
+                "name": "Tool Blue Team / Red Team",
+                "description": "Tool Blue Team / Red Team",
+                "link": "https://github.com/A-poc",
+                "tags": "Red Team"
+            },
+            {
+                "name": "Người dùng Red Team (Snovvcrash)",
+                "description": "Người dùng Red Team (Snovvcrash)",
+                "link": "https://github.com/snovvcrash",
+                "tags": "Red Team"
+            },
+            {
+                "name": "Roadmap An ninh mạng (Paulveillard)",
+                "description": "Roadmap An ninh mạng (Paulveillard)",
+                "link": "https://github.com/paulveillard/cybersecurity",
+                "tags": "Roadmap"
+            },
+            {
+                "name": "Python Black Hat (EONRaider)",
+                "description": "Python Black Hat (EONRaider)",
+                "link": "https://github.com/EONRaider/blackhat-python3",
+                "tags": "Black Hat"
+            },
+            {
+                "name": "Người dùng mã Black Hat",
+                "description": "Người dùng mã Black Hat",
+                "link": "https://github.com/blackhatethicalhacking?tab=stars",
+                "tags": "Black Hat"
+            },
+            {
+                "name": "Black Hat Python - Code sách",
+                "description": "Black Hat Python - Code sách",
+                "link": "https://github.com/carloocchiena/blackhat_python_book_code",
+                "tags": "Black Hat"
+            },
+            {
+                "name": "Kho sách Hacking",
+                "description": "Kho sách Hacking",
+                "link": "https://github.com/fainlabs/Hacking-Books",
+                "tags": "Books"
+            },
+            {
+                "name": "Linux Security Guide",
+                "description": "Linux Security Guide",
+                "link": "https://xapax.github.io/security/#",
+                "tags": "Linux Security"
+            },
+            {
+                "name": "Awesome Hacking Tools",
+                "description": "Awesome Hacking Tools",
+                "link": "https://github.com/Hack-with-Github/Awesome-Hacking",
+                "tags": "Collection"
+            },
+            {
+                "name": "Tài nguyên Hacking (CESO)",
+                "description": "Tài nguyên Hacking (CESO)",
+                "link": "https://ceso.github.io/posts/2020/12/hacking-resources/#windows-stuff",
+                "tags": "Resources"
+            },
+            {
+                "name": "100+ Sách Hacking 2024",
+                "description": "100+ Sách Hacking 2024",
+                "link": "https://github.com/verylazytech/Hacking-Books-2024",
+                "tags": "Books"
+            },
+            {
+                "name": "Hacking với Python & Kali",
+                "description": "Hacking với Python & Kali",
+                "link": "https://github.com/jroller33/BlackHat_Python",
+                "tags": "Black Hat"
+            },
+            {
+                "name": "Ghi chú Hacking",
+                "description": "Ghi chú Hacking",
+                "link": "https://github.com/Hacking-Notes",
+                "tags": "Notes"
+            },
+            {
+                "name": "Khóa học Hacking thực tế",
+                "description": "Khóa học Hacking thực tế",
+                "link": "https://github.com/priyankgada/The-Complete-Practical-Certified-Ethical-Hacking-Course-in-English",
+                "tags": "Course"
+            },
+            {
+                "name": "Bộ công cụ Hacking & Malware",
+                "description": "Bộ công cụ Hacking & Malware",
+                "link": "https://github.com/aw-junaid/Hacking-Tools",
+                "tags": "Tools"
+            },
+            {
+                "name": "Tài nguyên Ethical Hacking",
+                "description": "Tài nguyên Ethical Hacking",
+                "link": "https://github.com/rng70/Hacking-Resources",
+                "tags": "Resources"
+            },
+            {
+                "name": "100 sách bảo mật",
+                "description": "100 sách bảo mật",
+                "link": "https://github.com/yeahhub/Hacking-Security-Ebooks",
+                "tags": "Books"
+            },
+            {
+                "name": "Người dùng Red Team",
+                "description": "Người dùng Red Team",
+                "link": "https://github.com/CyberSecurityUP",
+                "tags": "Red Team"
+            },
+            {
+                "name": "Cộng đồng Pentesting & Bug Bounty",
+                "description": "Cộng đồng Pentesting & Bug Bounty",
+                "link": "https://github.com/RESETHACKER-COMMUNITY/Pentesting-Bugbounty",
+                "tags": "Community"
+            },
+            {
+                "name": "Bot Discord theo dõi Threat",
+                "description": "Bot Discord theo dõi Threat",
+                "link": "https://github.com/vxunderground/ThreatIntelligenceDiscordBot",
+                "tags": "Threat Intel"
+            },
+            {
+                "name": "Công cụ mã độc (Responder)",
+                "description": "Công cụ mã độc (Responder)",
+                "link": "https://github.com/SpiderLabs/Responder",
+                "tags": "Tools"
+            },
+            {
+                "name": "Kiểm tra mã độc (tplmap)",
+                "description": "Kiểm tra mã độc (tplmap)",
+                "link": "https://github.com/epinna/tplmap",
+                "tags": "Security Testing"
+            },
+            {
+                "name": "Kho mã độc & malware",
+                "description": "Kho mã độc & malware",
+                "link": "https://github.com/RamadhanAmizudin/malware",
+                "tags": "Malware"
+            },
+            {
+                "name": "Tiêm DLL vào Windows (32/64)",
+                "description": "Tiêm DLL vào Windows (32/64)",
+                "link": "https://github.com/KooroshRZ/Windows-DLL-Injector",
+                "tags": "Windows"
+            },
+            {
+                "name": "Demo các kỹ thuật tiêm",
+                "description": "Demo các kỹ thuật tiêm",
+                "link": "https://github.com/hasherezade/demos",
+                "tags": "Exploitation"
+            },
+            {
+                "name": "Hướng dẫn chuyên gia DFIR",
+                "description": "Hướng dẫn chuyên gia DFIR",
+                "link": "https://github.com/DFIRmadness/5pillars",
+                "tags": "DFIR"
+            },
+            {
+                "name": "Fake Network (FakeNet-NG)",
+                "description": "Fake Network (FakeNet-NG)",
+                "link": "https://github.com/mandiant/flare-fakenet-ng",
+                "tags": "Network"
+            },
+            {
+                "name": "Hack mạng CAN của xe hơi",
+                "description": "Hack mạng CAN của xe hơi",
+                "link": "https://github.com/souravbaghz/CANghost",
+                "tags": "Hardware"
+            },
+            {
+                "name": "Quét thiết bị trong phổ sóng",
+                "description": "Quét thiết bị trong phổ sóng",
+                "link": "https://github.com/souravbaghz/RadareEye",
+                "tags": "RF Hacking"
+            },
+            {
+                "name": "Bộ công cụ cho Kỹ sư RE",
+                "description": "Bộ công cụ cho Kỹ sư RE",
+                "link": "https://github.com/mentebinaria/retoolkit",
+                "tags": "Reverse Engineering"
+            },
+            {
+                "name": "Awesome Reverse Engineering",
+                "description": "Awesome Reverse Engineering",
+                "link": "https://github.com/alphaSeclab/awesome-reverse-engineering",
+                "tags": "RE"
+            },
+            {
+                "name": "Phát hiện lỗ hổng (AFL++)",
+                "description": "Phát hiện lỗ hổng (AFL++)",
+                "link": "https://github.com/AFLplusplus/AFLplusplus",
+                "tags": "Fuzzing"
+            },
+            {
+                "name": "Phân tích mã độc (Police)",
+                "description": "Phân tích mã độc (Police)",
+                "link": "https://github.com/rshipp/awesome-malware-analysis",
+                "tags": "Malware Analysis"
+            },
+            {
+                "name": "Kiểm tra lịch sử truy cập mạng",
+                "description": "Kiểm tra lịch sử truy cập mạng",
+                "link": "https://github.com/codingo/dooked",
+                "tags": "Network Forensics"
+            },
+            {
+                "name": "Tránh tường lửa Web (WAF)",
+                "description": "Tránh tường lửa Web (WAF)",
+                "link": "https://github.com/0xInfection/Awesome-WAF",
+                "tags": "Web Security"
+            },
+            {
+                "name": "Giải mã Captcha đơn giản",
+                "description": "Giải mã Captcha đơn giản",
+                "link": "https://github.com/ptigas/simple-captcha-solver",
+                "tags": "Automation"
+            },
+            {
+                "name": "Tìm kiếm lỗ hổng web",
+                "description": "Tìm kiếm lỗ hổng web",
+                "link": "https://github.com/ghsec/webHunt",
+                "tags": "Web Security"
+            },
+            {
+                "name": "Fake DNS server",
+                "description": "Fake DNS server",
+                "link": "https://github.com/pathes/fakedns",
+                "tags": "DNS"
+            },
+            {
+                "name": "Fake DNS (Crypt0s)",
+                "description": "Fake DNS (Crypt0s)",
+                "link": "https://github.com/Crypt0s/FakeDns",
+                "tags": "DNS"
+            },
+            {
+                "name": "Nền tảng web an toàn",
+                "description": "Nền tảng web an toàn",
+                "link": "https://github.com/Zeecka/AperiSolve",
+                "tags": "Web Security"
+            },
+            {
+                "name": "Tài nguyên Reverse Engineering",
+                "description": "Tài nguyên Reverse Engineering",
+                "link": "https://github.com/wtsxDev/reverse-engineering",
+                "tags": "RE"
+            },
+            {
+                "name": "Lệnh shell cho Kali Linux",
+                "description": "Lệnh shell cho Kali Linux",
+                "link": "https://github.com/DFIRmadness/RedTeam-MashUp",
+                "tags": "Red Team"
+            },
+            {
+                "name": "ML cho An ninh mạng",
+                "description": "ML cho An ninh mạng",
+                "link": "https://github.com/wtsxDev/Machine-Learning-for-Cyber-Security",
+                "tags": "ML Security"
+            },
+            {
+                "name": "Kiểm thử xâm nhập",
+                "description": "Kiểm thử xâm nhập",
+                "link": "https://github.com/wtsxDev/Penetration-Testing",
+                "tags": "Pentest"
+            },
+            {
+                "name": "Tìm mã độc trong hệ thống",
+                "description": "Tìm mã độc trong hệ thống",
+                "link": "https://github.com/hasherezade/pe-sieve",
+                "tags": "Malware Detection"
+            },
+            {
+                "name": "Phân tích file PE",
+                "description": "Phân tích file PE",
+                "link": "https://github.com/hasherezade/pe-bear",
+                "tags": "Malware Analysis"
+            },
+            {
+                "name": "Người dùng mã nguồn bảo mật (Hasherezade)",
+                "description": "Người dùng mã nguồn bảo mật (Hasherezade)",
+                "link": "https://github.com/hasherezade",
+                "tags": "Security"
+            },
+            {
+                "name": "Awesome Threat Intelligence",
+                "description": "Awesome Threat Intelligence",
+                "link": "https://github.com/kaiiyer/awesome-threat-intelligence",
+                "tags": "Threat Intel"
+            },
+            {
+                "name": "Cộng đồng Sigma (Cyber)",
+                "description": "Cộng đồng Sigma (Cyber)",
+                "link": "https://github.com/SigmaHQ/sigma",
+                "tags": "SIEM/Sigma"
+            },
+            {
+                "name": "Kiểm thử xâm nhập (Pentest)",
+                "description": "Kiểm thử xâm nhập (Pentest)",
+                "link": "https://github.com/enaqx/awesome-pentest",
+                "tags": "Pentest"
+            },
+            {
+                "name": "Khóa học Hacking Nhị phân",
+                "description": "Khóa học Hacking Nhị phân",
+                "link": "https://github.com/ujjwal-kr/Binary-Hacking-Course",
+                "tags": "Binary Exploitation"
+            },
+            {
+                "name": "Tài nguyên Bảo mật (7etsuo)",
+                "description": "Tài nguyên Bảo mật (7etsuo)",
+                "link": "https://github.com/7etsuo/Awesome-Cyber-Security-List",
+                "tags": "Resources"
+            },
+            {
+                "name": "Linux Handbook (The Book of Secret Knowledge)",
+                "description": "Linux Handbook (The Book of Secret Knowledge)",
+                "link": "https://github.com/trimstray/the-book-of-secret-knowledge",
+                "tags": "Linux"
+            },
+            {
+                "name": "Bài tập bảo mật (CTF)",
+                "description": "Bài tập bảo mật (CTF)",
+                "link": "https://github.com/sys41x4/CTFLearn",
+                "tags": "CTF"
+            },
+            {
+                "name": "Writeups CTF",
+                "description": "Writeups CTF",
+                "link": "https://github.com/EladBeber/CTFlearn-Writeups",
+                "tags": "CTF"
+            },
+            {
+                "name": "Quản lý danh sách an ninh (SecLists)",
+                "description": "Quản lý danh sách an ninh (SecLists)",
+                "link": "https://github.com/danielmiessler/SecLists",
+                "tags": "Wordlists"
+            },
+            {
+                "name": "Lệnh khai thác Bug Bounty",
+                "description": "Lệnh khai thác Bug Bounty",
+                "link": "https://github.com/souravbaghz/awesome-oneliner-bugbounty",
+                "tags": "Bug Bounty"
+            },
+            {
+                "name": "Scanner lệnh (Lighthouse)",
+                "description": "Scanner lệnh (Lighthouse)",
+                "link": "https://github.com/gaasedelen/lighthouse",
+                "tags": "Tools"
+            },
+            {
+                "name": "Reverse Engineering Linux",
+                "description": "Reverse Engineering Linux",
+                "link": "https://github.com/michalmalik/linux-re-101",
+                "tags": "RE"
+            },
+            {
+                "name": "Xử lý phần mềm Android bị lỗi",
+                "description": "Xử lý phần mềm Android bị lỗi",
+                "link": "https://github.com/UDcide/udcide",
+                "tags": "Android"
+            },
+            {
+                "name": "Trích xuất dữ liệu từ heap",
+                "description": "Trích xuất dữ liệu từ heap",
+                "link": "https://github.com/shellphish/how2heap",
+                "tags": "Exploitation"
+            },
+            {
+                "name": "Lấy root Android (Emuroot)",
+                "description": "Lấy root Android (Emuroot)",
+                "link": "https://github.com/airbus-seclab/android_emuroot",
+                "tags": "Android"
+            },
+            {
+                "name": "Chương trình giảng dạy (CNCF)",
+                "description": "Chương trình giảng dạy (CNCF)",
+                "link": "https://github.com/cncf/curriculum",
+                "tags": "Education"
+            },
+            {
+                "name": "Writeups Bug Bounty",
+                "description": "Writeups Bug Bounty",
+                "link": "https://github.com/devanshbatham/Awesome-Bugbounty-Writeups",
+                "tags": "Bug Bounty"
+            },
+            {
+                "name": "CTF Hacker101",
+                "description": "CTF Hacker101",
+                "link": "https://github.com/testert1ng/hacker101-ctf",
+                "tags": "CTF"
+            },
+            {
+                "name": "100 ý tưởng Red Team",
+                "description": "100 ý tưởng Red Team",
+                "link": "https://github.com/kurogai/100-redteam-projects",
+                "tags": "Red Team"
+            },
+            {
+                "name": "Người dùng làm framework cho Unity",
+                "description": "Người dùng làm framework cho Unity",
+                "link": "https://github.com/EllanJiang",
+                "tags": "Unity"
+            },
+            {
+                "name": "Người dùng làm framework với C#",
+                "description": "Người dùng làm framework với C#",
+                "link": "https://github.com/pardeike",
+                "tags": "Unity"
+            },
+            {
+                "name": "Server Nitrox cho Unity (Pirate)",
+                "description": "Server Nitrox cho Unity (Pirate)",
+                "link": "https://github.com/denynic96/PirateNitrox",
+                "tags": "Unity MMO"
+            },
+            {
+                "name": "Client Nitrox cho Unity",
+                "description": "Client Nitrox cho Unity",
+                "link": "https://github.com/oktaysahin3010/Nitrox-Pirate",
+                "tags": "Unity MMO"
+            },
+            {
+                "name": "Server MMO mở (OpenCoreMMO)",
+                "description": "Server MMO mở (OpenCoreMMO)",
+                "link": "https://github.com/OpenCoreMMO/OpenCoreMMO",
+                "tags": "Unity MMO"
+            },
+            {
+                "name": "Người dùng mã nguồn Server/Client Unity",
+                "description": "Người dùng mã nguồn Server/Client Unity",
+                "link": "https://github.com/jzyong",
+                "tags": "Unity Networking"
+            },
+            {
+                "name": "Người dùng mã nguồn Engine C++/C#",
+                "description": "Người dùng mã nguồn Engine C++/C#",
+                "link": "https://github.com/raizam",
+                "tags": "Game Engine"
+            },
+            {
+                "name": "Làm game bằng C++ (khóa học)",
+                "description": "Làm game bằng C++ (khóa học)",
+                "link": "https://github.com/mrunix00/game-in-cpp-full-course",
+                "tags": "C++"
+            },
+            {
+                "name": "Tài nguyên Red Team - Tấn công lấy credential",
+                "description": "Tài nguyên Red Team - Tấn công lấy credential",
+                "link": "https://github.com/Ignitetechnologies/Credential-Dumping",
+                "tags": "Red Team"
+            },
+            {
+                "name": "Source MMO Godot 4",
+                "description": "Source MMO Godot 4",
+                "link": "https://github.com/sourceofmana",
+                "tags": "Godot MMO"
+            },
+            {
+                "name": "Indie MMO 2D bằng Godot",
+                "description": "Indie MMO 2D bằng Godot",
+                "link": "https://github.com/ooblies/Idle-MMO-2D",
+                "tags": "Godot MMO"
+            },
+            {
+                "name": "Bot GDScript cho Godot",
+                "description": "Bot GDScript cho Godot",
+                "link": "https://github.com/RayOfIdeas/Godot_GDbot_2D_Demo",
+                "tags": "Godot Bot"
+            },
+            {
+                "name": "MMO Server (Godot)",
+                "description": "MMO Server (Godot)",
+                "link": "https://github.com/godotmmo/mmo-server.git",
+                "tags": "Godot MMO"
+            },
+            {
+                "name": "Tài liệu làm Server .NET",
+                "description": "Tài liệu làm Server .NET",
+                "link": "https://github.com/WithinAmnesia/ARPG/discussions/16",
+                "tags": ".NET Server"
+            },
+            {
+                "name": "Server MMO (FairyDustServer)",
+                "description": "Server MMO (FairyDustServer)",
+                "link": "https://github.com/neqs20/FairyDustServer",
+                "tags": "MMO Server"
+            },
+            {
+                "name": "MMO Server (Reia)",
+                "description": "MMO Server (Reia)",
+                "link": "https://github.com/Quaint-Studios/Reia",
+                "tags": "MMO Server"
+            },
+            {
+                "name": "Framework MMO (Mercadinho)",
+                "description": "Framework MMO (Mercadinho)",
+                "link": "https://github.com/maursgamedev/Mercadinho-MMO-Base",
+                "tags": "MMO Framework"
+            },
+            {
+                "name": "Plugin LLM cho Godot",
+                "description": "Plugin LLM cho Godot",
+                "link": "https://github.com/playajames760/Godot-LLM-Framework",
+                "tags": "Godot AI"
+            },
+            {
+                "name": "Người dùng mã nguồn Godot",
+                "description": "Người dùng mã nguồn Godot",
+                "link": "https://github.com/Dechode?tab=repositories",
+                "tags": "Godot"
+            },
+            {
+                "name": "Người dùng Godot Native (C++)",
+                "description": "Người dùng Godot Native (C++)",
+                "link": "https://github.com/samdze",
+                "tags": "Godot Native"
+            },
+            {
+                "name": "Game Godot 4 - Raptor Run",
+                "description": "Game Godot 4 - Raptor Run",
+                "link": "https://github.com/quiver-dev/raptor-run",
+                "tags": "Godot Game"
+            },
+            {
+                "name": "Adventure 2D bằng Godot",
+                "description": "Adventure 2D bằng Godot",
+                "link": "https://github.com/timothyqiu/godot-2d-adventure-tutorial",
+                "tags": "Godot Tutorial"
+            },
+            {
+                "name": "2D Shooter RPG Godot",
+                "description": "2D Shooter RPG Godot",
+                "link": "https://github.com/codicate/godot-rpg",
+                "tags": "Godot Game"
+            },
+            {
+                "name": "Game Godot 3 - Open Custom Night",
+                "description": "Game Godot 3 - Open Custom Night",
+                "link": "https://github.com/nemisune/opencustomnight",
+                "tags": "Godot Game"
+            },
+            {
+                "name": "Hệ thống 2D Animator cho Godot",
+                "description": "Hệ thống 2D Animator cho Godot",
+                "link": "https://github.com/reevesc7/2d-animator-godot",
+                "tags": "Godot System"
+            },
+            {
+                "name": "Hệ thống thoại (Dialogue Editor)",
+                "description": "Hệ thống thoại (Dialogue Editor)",
+                "link": "https://github.com/genderfreak/godot-dialogue-editor",
+                "tags": "Godot System"
+            },
+            {
+                "name": "Người dùng làm plugin 3D cho Godot",
+                "description": "Người dùng làm plugin 3D cho Godot",
+                "link": "https://github.com/RodZill4",
+                "tags": "Godot Plugin"
+            },
+            {
+                "name": "Người dùng mã nguồn plugin Godot",
+                "description": "Người dùng mã nguồn plugin Godot",
+                "link": "https://github.com/cloudofoz",
+                "tags": "Godot Plugin"
+            },
+            {
+                "name": "Plugin Godot bằng C++ (Goost)",
+                "description": "Plugin Godot bằng C++ (Goost)",
+                "link": "https://github.com/goostengine/goost",
+                "tags": "Godot Plugin"
+            },
+            {
+                "name": "Danh sách plugin Godot (GitHub Stars)",
+                "description": "Danh sách plugin Godot (GitHub Stars)",
+                "link": "https://github.com/stars/al1-ce/lists/godot?page=2",
+                "tags": "Godot Plugin"
+            },
+            {
+                "name": "Người dùng hệ thống game (Smitner Studio)",
+                "description": "Người dùng hệ thống game (Smitner Studio)",
+                "link": "https://github.com/Smitner-Studio",
+                "tags": "Game System"
+            },
+            {
+                "name": "Mẫu script Godot",
+                "description": "Mẫu script Godot",
+                "link": "https://github.com/tobrien6/godot",
+                "tags": "Godot Template"
+            },
+            {
+                "name": "Hệ thống di chuyển (GBM2K)",
+                "description": "Hệ thống di chuyển (GBM2K)",
+                "link": "https://github.com/Oplexitie/GBM2K-Framework",
+                "tags": "Game System"
+            },
+            {
+                "name": "Tin tức công nghệ (Undercode)",
+                "description": "Tin tức công nghệ (Undercode)",
+                "link": "https://undercodenews.com/",
+                "tags": "Công nghệ"
+            },
+            {
+                "name": "Testing & Privacy (Undercode)",
+                "description": "Testing & Privacy (Undercode)",
+                "link": "https://undercodetesting.com/",
+                "tags": "Testing"
+            },
+            {
+                "name": "Cộng đồng Apress (sách lập trình)",
+                "description": "Cộng đồng Apress (sách lập trình)",
+                "link": "https://github.com/Apress",
+                "tags": "Books"
+            },
+            {
+                "name": "Microsoft Docs",
+                "description": "Microsoft Docs",
+                "link": "https://github.com/MicrosoftDocs/",
+                "tags": "Documentation"
+            },
+            {
+                "name": "Tài nguyên phát triển game",
+                "description": "Tài nguyên phát triển game",
+                "link": "https://github.com/getvmio/free-game-development-resources",
+                "tags": "Game Dev"
+            },
+            {
+                "name": "Thiết kế game (Awesome Game Design)",
+                "description": "Thiết kế game (Awesome Game Design)",
+                "link": "https://github.com/Roobyx/awesome-game-design",
+                "tags": "Game Design"
+            },
+            {
+                "name": "Framework Cynefin (Decision Making)",
+                "description": "Framework Cynefin (Decision Making)",
+                "link": "https://github.com/aalhour/awesome-cynefin?tab=readme-ov-file",
+                "tags": "Framework"
+            },
+            {
+                "name": "Kho tri thức Data Science (Airbnb)",
+                "description": "Kho tri thức Data Science (Airbnb)",
+                "link": "https://github.com/airbnb/knowledge-repo",
+                "tags": "Data Science"
+            },
+            {
+                "name": "DevOps Việt Nam (Blog)",
+                "description": "DevOps Việt Nam (Blog)",
+                "link": "https://devops.vn/posts/linux-meo-nho-tranh-lo-tay-pha-hong-he-thong/?fbclid=IwY2xjawMLl0ZleHRuA2FlbQIxMQBicmlkETE4MGkzZkFoNG5sS1M3eXVMAR6vq8PFpR0j_QW8Gi-HJcW2-8nwBzhrS6vDR0C4uNZoU4uOno6JeysbyT56oQ_aem_qk6Sj6BZKczjoJ_o_X9YEw",
+                "tags": "DevOps"
+            },
+            {
+                "name": "Người dùng GitHub (lhl)",
+                "description": "Người dùng GitHub (lhl)",
+                "link": "https://github.com/lhl?tab=repositories",
+                "tags": "User"
+            },
+            {
+                "name": "Người dùng mã nguồn Godot",
+                "description": "Người dùng mã nguồn Godot",
+                "link": "https://github.com/moraguma",
+                "tags": "Godot"
+            },
+            {
+                "name": "Trang chia sẻ tài nguyên học tập",
+                "description": "Trang chia sẻ tài nguyên học tập",
+                "link": "https://www.tutorialsduniya.com/",
+                "tags": "Learning"
+            },
+            {
+                "name": "Giao diện Frontend Template",
+                "description": "Giao diện Frontend Template",
+                "link": "https://github.com/DucQuyen199/Campus-Learning",
+                "tags": "UI/UX"
+            },
+            {
+                "name": "Server lưu trữ JavaScript",
+                "description": "Server lưu trữ JavaScript",
+                "link": "https://github.com/orgs/hsdn/repositories?type=all",
+                "tags": "Hosting"
+            },
+            {
+                "name": "100 ý tưởng ứng dụng Fullstack",
+                "description": "100 ý tưởng ứng dụng Fullstack",
+                "link": "https://github.com/nabaraj/100-Project-Ideas-for-Full-Stack",
+                "tags": "Project Ideas"
+            },
+            {
+                "name": "Ý tưởng phát triển Web",
+                "description": "Ý tưởng phát triển Web",
+                "link": "https://github.com/s-shemmee/Web-Dev-Projects-Idea",
+                "tags": "Project Ideas"
+            },
+            {
+                "name": "30 ngày học JavaScript",
+                "description": "30 ngày học JavaScript",
+                "link": "https://github.com/Asabeneh/30-Days-Of-JavaScript",
+                "tags": "Tutorial"
+            },
+            {
+                "name": "Trình duyệt Kagi",
+                "description": "Trình duyệt Kagi",
+                "link": "https://kagi.com/search?q=github+framework+gmae+engine",
+                "tags": "Search Engine"
+            },
+            {
+                "name": "DuckDuckGo",
+                "description": "DuckDuckGo",
+                "link": "https://duckduckgo.com/",
+                "tags": "Search Engine"
+            },
+            {
+                "name": "Naver (Hàn Quốc)",
+                "description": "Naver (Hàn Quốc)",
+                "link": "https://www.naver.com/",
+                "tags": "Search Engine"
+            },
+            {
+                "name": "SearXNG (tìm kiếm riêng tư)",
+                "description": "SearXNG (tìm kiếm riêng tư)",
+                "link": "https://searx.bndkt.io/",
+                "tags": "Search Engine"
+            },
+            {
+                "name": "Baidu (Trung Quốc)",
+                "description": "Baidu (Trung Quốc)",
+                "link": "https://www.baidu.com/",
+                "tags": "Search Engine"
+            },
+            {
+                "name": "Startpage",
+                "description": "Startpage",
+                "link": "https://www.startpage.com/",
+                "tags": "Search Engine"
+            },
+            {
+                "name": "Proxy danh sách",
+                "description": "Proxy danh sách",
+                "link": "https://www.proxynova.com/proxy-server-list/",
+                "tags": "Proxy"
+            },
+            {
+                "name": "GitBook (tài liệu)",
+                "description": "GitBook (tài liệu)",
+                "link": "https://app.gitbook.com/",
+                "tags": "Documentation"
+            },
+            {
+                "name": "Miro (bảng vẽ, thiết kế)",
+                "description": "Miro (bảng vẽ, thiết kế)",
+                "link": "https://miro.com/fr/",
+                "tags": "Productivity"
+            },
+            {
+                "name": "CheatSheetsHero",
+                "description": "CheatSheetsHero",
+                "link": "https://cheatsheetshero.com/",
+                "tags": "Cheat Sheet"
+            },
+            {
+                "name": "Ask Hacker",
+                "description": "Ask Hacker",
+                "link": "https://askhacker.com/",
+                "tags": "Community"
+            },
+            {
+                "name": "Roadmap phát triển",
+                "description": "Roadmap phát triển",
+                "link": "https://github.com/kamranahmedse/developer-roadmap",
+                "tags": "Roadmap"
+            },
+            {
+                "name": "Perplexity AI (tìm kiếm)",
+                "description": "Perplexity AI (tìm kiếm)",
+                "link": "https://www.perplexity.ai/",
+                "tags": "Search Engine"
+            },
+            {
+                "name": "Perchance (AI Pixel Art)",
+                "description": "Perchance (AI Pixel Art)",
+                "link": "https://perchance.org/ai-pixel-art-generator",
+                "tags": "Image Generator"
+            },
+            {
+                "name": "Sourcegraph (tìm mã nguồn)",
+                "description": "Sourcegraph (tìm mã nguồn)",
+                "link": "https://sourcegraph.com",
+                "tags": "Code Search"
+            },
+            {
+                "name": "Chia sẻ game lậu (1)",
+                "description": "Chia sẻ game lậu (1)",
+                "link": "https://www.lyzwlkj.vip/",
+                "tags": "Game (Unofficial)"
+            },
+            {
+                "name": "Chia sẻ game lậu (2)",
+                "description": "Chia sẻ game lậu (2)",
+                "link": "https://all4vn.id.vn/",
+                "tags": "Game (Unofficial)"
+            },
+            {
+                "name": "Chia sẻ game lậu (3)",
+                "description": "Chia sẻ game lậu (3)",
+                "link": "https://sourcegamepro.com/",
+                "tags": "Game (Unofficial)"
+            },
+            {
+                "name": "Chia sẻ game lậu (4)",
+                "description": "Chia sẻ game lậu (4)",
+                "link": "https://chocode.vn/login.php",
+                "tags": "Game (Unofficial)"
+            },
+            {
+                "name": "Chia sẻ game (5)",
+                "description": "Chia sẻ game (5)",
+                "link": "https://chiasegame.com/",
+                "tags": "Game (Offline)"
+            },
+            {
+                "name": "Chia sẻ game lậu (6)",
+                "description": "Chia sẻ game lậu (6)",
+                "link": "https://414jg.com/",
+                "tags": "Game (Unofficial)"
+            },
+            {
+                "name": "Link tài liệu chia sẻ (QQ Doc)",
+                "description": "Link tài liệu chia sẻ (QQ Doc)",
+                "link": "https://docs.qq.com/doc/DZXRJZHF4R09oUU1v",
+                "tags": "Resources"
+            },
+            {
+                "name": "Link tài liệu (Feishu)",
+                "description": "Link tài liệu (Feishu)",
+                "link": "https://sx3g2d5ir1n.feishu.cn/drive/folder/KVAsf0xQHlyMmYdRDH9ciUvRn9b",
+                "tags": "Resources"
+            },
+            {
+                "name": "Link tài nguyên (Trung Quốc)",
+                "description": "Link tài nguyên (Trung Quốc)",
+                "link": "https://ht2.ht2.ht2.cn/",
+                "tags": "Resources"
+            },
+            {
+                "name": "XMR-Stak (khai thác tiền mã hóa)",
+                "description": "XMR-Stak (khai thác tiền mã hóa)",
+                "link": "https://github.com/mazhar266/xmr-stak",
+                "tags": "Crypto"
+            },
+            {
+                "name": "Web3 Deep Learning",
+                "description": "Web3 Deep Learning",
+                "link": "https://github.com/root-tanishq/web3-deep",
+                "tags": "Web3/AI"
+            },
+            {
+                "name": "Bitcoin Core",
+                "description": "Bitcoin Core",
+                "link": "https://github.com/bitcoin/bitcoin",
+                "tags": "Blockchain"
+            },
+            {
+                "name": "DApp Learning DAO",
+                "description": "DApp Learning DAO",
+                "link": "https://github.com/Dapp-Learning-DAO/Dapp-Learning",
+                "tags": "Web3"
+            },
+            {
+                "name": "DeFi Bot",
+                "description": "DeFi Bot",
+                "link": "https://github.com/ExtropyIO/defi-bot",
+                "tags": "DeFi"
+            },
+            {
+                "name": "Catalyst (Secret Network)",
+                "description": "Catalyst (Secret Network)",
+                "link": "https://github.com/scrtlabs/catalyst",
+                "tags": "Blockchain"
+            },
+            {
+                "name": "Auquan Toolbox (giao dịch)",
+                "description": "Auquan Toolbox (giao dịch)",
+                "link": "https://github.com/Auquan/auquantoolbox",
+                "tags": "Algorithmic Trading"
+            },
+            {
+                "name": "Blockchain Reading List",
+                "description": "Blockchain Reading List",
+                "link": "https://github.com/reiver/blockchain-reading-list",
+                "tags": "Blockchain"
+            },
+            {
+                "name": "Chia Blockchain",
+                "description": "Chia Blockchain",
+                "link": "https://github.com/Chia-Network/chia-blockchain",
+                "tags": "Blockchain"
+            },
+            {
+                "name": "Ethminer (khai thác Ethereum)",
+                "description": "Ethminer (khai thác Ethereum)",
+                "link": "https://github.com/ethereum-mining/ethminer",
+                "tags": "Crypto"
+            },
+            {
+                "name": "AlgoTrading (Python)",
+                "description": "AlgoTrading (Python)",
+                "link": "https://github.com/ivopetiz/algotrading",
+                "tags": "Algorithmic Trading"
+            },
+            {
+                "name": "Crypto Chassis API",
+                "description": "Crypto Chassis API",
+                "link": "https://github.com/crypto-chassis/ccapi",
+                "tags": "Crypto API"
+            },
+            {
+                "name": "CCXT (giao dịch tiền mã hóa)",
+                "description": "CCXT (giao dịch tiền mã hóa)",
+                "link": "https://github.com/ccxt/ccxt",
+                "tags": "Crypto"
+            },
+            {
+                "name": "Alpaca Backtrader API",
+                "description": "Alpaca Backtrader API",
+                "link": "https://github.com/alpacahq/alpaca-backtrader-api",
+                "tags": "Algorithmic Trading"
+            },
+            {
+                "name": "Dune Spellbook (SQL, analytics)",
+                "description": "Dune Spellbook (SQL, analytics)",
+                "link": "https://github.com/duneanalytics/spellbook",
+                "tags": "Data Analytics"
+            },
+            {
+                "name": "Saleor (thương mại điện tử)",
+                "description": "Saleor (thương mại điện tử)",
+                "link": "https://github.com/saleor",
+                "tags": "E-commerce"
+            },
+            {
+                "name": "FinMarketPy (phân tích tài chính)",
+                "description": "FinMarketPy (phân tích tài chính)",
+                "link": "https://github.com/cuemacro/finmarketpy",
+                "tags": "Finance"
+            },
+            {
+                "name": "Trading Strategies (amor71)",
+                "description": "Trading Strategies (amor71)",
+                "link": "https://github.com/amor71/trading_strategies",
+                "tags": "Algorithmic Trading"
+            },
+            {
+                "name": "LiuAlgoTrader",
+                "description": "LiuAlgoTrader",
+                "link": "https://github.com/amor71/LiuAlgoTrader",
+                "tags": "Algorithmic Trading"
+            },
+            {
+                "name": "Binance Trade Bot",
+                "description": "Binance Trade Bot",
+                "link": "https://github.com/ccxt/binance-trade-bot",
+                "tags": "Trading Bot"
+            }
+        ]
+    }
+}
