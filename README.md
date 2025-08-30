@@ -4,7 +4,7 @@
 
 > ***List***
 -
-    - [Doccuments](https://github.com/tienthien196/documents)
+    - [Doccuments](https://tienthien196.github.io/documents/)
     - [Resource](./Resource/upload_res/templates/res.html)
 
 ### ***NOTE***
