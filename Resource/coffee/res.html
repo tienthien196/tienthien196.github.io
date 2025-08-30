@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chia Sẻ Tài Nguyên Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #e6e6e6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #4cc9f0;
+            text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #f72585;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #a9a9b8;
+        }
+
+        .resource-img {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+            background: #333;
+            margin-bottom: 15px;
+        }
+
+        .categories {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .category-btn {
+            background: rgba(76, 201, 240, 0.1);
+            border: 1px solid #4cc9f0;
+            color: #4cc9f0;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .category-btn:hover {
+            background: #4cc9f0;
+            color: #1a1a2e;
+            transform: translateY(-2px);
+        }
+
+        .category-btn.active {
+            background: #4cc9f0;
+            color: #1a1a2e;
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border-color: #4cc9f0;
+        }
+
+        .resource-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .resource-icon {
+            width: 50px;
+            height: 50px;
+            background: #f72585;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .resource-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .resource-game {
+            font-size: 0.9rem;
+            color: #4cc9f0;
+            margin-bottom: 10px;
+        }
+
+        .resource-desc {
+            color: #a9a9b8;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #a9a9b8;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .download-btn {
+            background: #f72585;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #d90429;
+            transform: scale(1.05);
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            padding: 15px 25px;
+            background: #4cc9f0;
+            color: #1a1a2e;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background: #3a9fd8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #a9a9b8;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #4cc9f0;
+            transform: translateY(-3px);
+        }
+
+        .content-section {
+            display: none;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .guide-content {
+            line-height: 1.8;
+            color: #e6e6e6;
+        }
+
+        .guide-title {
+            color: #4cc9f0;
+            font-size: 1.5rem;
+            margin: 20px 0 15px;
+            border-bottom: 2px solid #4cc9f0;
+            padding-bottom: 10px;
+        }
+
+        .guide-subtitle {
+            color: #f72585;
+            font-size: 1.2rem;
+            margin: 15px 0 10px;
+        }
+
+        .guide-step {
+            background: rgba(76, 201, 240, 0.1);
+            border-left: 4px solid #4cc9f0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            border: 1px solid #4cc9f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(247, 37, 133, 0.2);
+            color: #f72585;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin: 0 5px 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .resources {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+            }
+            
+            .search-bar button {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🎮 RESOURCE HUB</div>
+            <div class="subtitle">tận hưởng thôi nào</div>
+            <p class="description">
+                Chào mừng bạn đến với kho tài nguyên game lớn nhất! Chúng tôi cung cấp các tài nguyên miễn phí, 
+                công cụ hỗ trợ, hướng dẫn chi tiết và nhiều nội dung hữu ích khác cho cộng đồng game thủ.
+            </p>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm tài nguyên...">
+            <button>Tìm Kiếm</button>
+        </div>
+
+        <div class="categories">
+            <button class="category-btn active" data-category="all">Tất Cả</button>
+            <button class="category-btn" data-category="guides">Hướng Dẫn</button>
+            <button class="category-btn" data-category="tools">Công Cụ</button>
+            <button class="category-btn" data-category="mods">Mod & Plugin</button>
+            <button class="category-btn" data-category="assets">Asset & Texture</button>
+            <button class="category-btn" data-category="scripts">Script & Code</button>
+        </div>
+
+        <!-- Resources Grid -->
+        <div class="resources" id="resources-grid">
+            <div class="resource-card" data-type="tools">
+                <iframe src="https://goalkicker.com/" width="300" height="400" frameborder="0">hí lô </iframe>
+                <!-- <img src="https://goalkicker.com/DotNETFrameworkBook/DotNETFrameworkGrow.png" alt="Auto Clicker Pro" class="resource-img"> -->
+                <div class="resource-header">
+                    <div class="resource-icon">🔧</div>
+                    <div>
+                        <div class="resource-title">Auto Clicker Pro</div>
+                        <div class="resource-game">Hỗ trợ mọi game</div>
+                    </div>
+                </div>
+                <p class="resource-desc">
+                    Công cụ tự động click mạnh mẽ với nhiều tùy chọn cấu hình. Hỗ trợ chuột và bàn phím, 
+                    có thể thiết lập tốc độ và vị trí click linh hoạt.
+                </p>
+                <div class="resource-meta">
+                    <span>Size: 2.3MB</span>
+                    <button class="download-btn">Tải Xuống</button>
+                </div>
+            </div>
+
+            <div class="resource-card" data-type="assets">
+                <iframe src="https://github.com/khamdihi-dev/Prem" width="300" height="400" frameborder="0">hí lô </iframe>
+                <!-- <img src="https://placehold.co/300x180/f72585/ffffff?text=Texture+Pack+4K" alt="Texture Pack 4K" class="resource-img"> -->
+                <div class="resource-header">
+                    <div class="resource-icon">🎨</div>
+                    <div>
+                        <div class="resource-title">Texture Pack 4K</div>
+                        <div class="resource-game">Minecraft</div>
+                    </div>
+                </div>
+                <p class="resource-desc">
+                    Bộ texture độ phân giải 4K chất lượng cao cho Minecraft, cải thiện đồ họa lên mức tối đa 
+                    với hiệu ứng ánh sáng và bóng đổ chân thực.
+                </p>
+                <div class="resource-meta">
+                    <span>Size: 890MB</span>
+                    <button class="download-btn">Tải Xuống</button>
+                </div>
+            </div>
+
+            <div class="resource-card" data-type="guides">
+                <img src="https://placehold.co/300x180/7209b7/ffffff?text=Hướng+Dẫn+Farming" alt="Hướng Dẫn Farming" class="resource-img">
+                <div class="resource-header">
+                    <div class="resource-icon">📜</div>
+                    <div>
+                        <div class="resource-title">Hướng Dẫn Farming</div>
+                        <div class="resource-game">Genshin Impact</div>
+                    </div>
+                </div>
+                <p class="resource-desc">
+                    Tài liệu hướng dẫn chi tiết cách farm nguyên liệu hiệu quả nhất trong Genshin Impact, 
+                    bao gồm thời gian spawn và lộ trình tối ưu.
+                </p>
+                <div class="resource-meta">
+                    <span>Size: 15.7MB</span>
+                    <button class="download-btn">Tải Xuống</button>
+                </div>
+            </div>
+
+            <div class="resource-card" data-type="tools">
+                <img src="https://placehold.co/300x180/560bad/ffffff?text=Config+Optimizer" alt="Config Optimizer" class="resource-img">
+                <div class="resource-header">
+                    <div class="resource-icon">⚙️</div>
+                    <div>
+                        <div class="resource-title">Config Optimizer</div>
+                        <div class="resource-game">Valorant</div>
+                    </div>
+                </div>
+                <p class="resource-desc">
+                    Công cụ tối ưu hóa cấu hình game tự động cho Valorant, giúp tăng FPS và giảm độ trễ 
+                    phù hợp với cấu hình máy của bạn.
+                </p>
+                <div class="resource-meta">
+                    <span>Size: 1.8MB</span>
+                    <button class="download-btn">Tải Xuống</button>
+                </div>
+            </div>
+
+            <div class="resource-card" data-type="mods">
+                <img src="https://placehold.co/300x180/fcc200/000000?text=Controller+Mapper" alt="Controller Mapper" class="resource-img">
+                <div class="resource-header">
+                    <div class="resource-icon">🎮</div>
+                    <div>
+                        <div class="resource-title">Controller Mapper</div>
+                        <div class="resource-game">Tất cả game</div>
+                    </div>
+                </div>
+                <p class="resource-desc">
+                    Phần mềm ánh xạ phím chơi game, cho phép bạn sử dụng tay cầm hoặc bàn phím ảo 
+                    với mọi tựa game trên PC.
+                </p>
+                <div class="resource-meta">
+                    <span>Size: 5.2MB</span>
+                    <button class="download-btn">Tải Xuống</button>
+                </div>
+            </div>
+
+            <div class="resource-card" data-type="tools">
+                <img src="https://placehold.co/300x180/ff5400/ffffff?text=Stat+Tracker" alt="Stat Tracker" class="resource-img">
+                <div class="resource-header">
+                    <div class="resource-icon">📊</div>
+                    <div>
+                        <div class="resource-title">Stat Tracker</div>
+                        <div class="resource-game">League of Legends</div>
+                    </div>
+                </div>
+                <p class="resource-desc">
+                    Theo dõi thống kê chi tiết về các trận đấu, bao gồm KDA, vàng, CS, và nhiều chỉ số khác. 
+                    Phân tích hiệu suất và cải thiện kỹ năng.
+                </p>
+                <div class="resource-meta">
+                    <span>Size: 12.4MB</span>
+                    <button class="download-btn">Tải Xuống</button>
+                </div>
+            </div>
+
+            <div class="resource-card" data-type="tools">
+                <img src="https://placehold.co/300x180/ff0a54/ffffff?text=Aim+Trainer" alt="Aim Trainer" class="resource-img">
+                <div class="resource-header">
+                    <div class="resource-icon">🎯</div>
+                    <div>
+                        <div class="resource-title">Aim Trainer</div>
+                        <div class="resource-game">FPS Games</div>
+                    </div>
+                </div>
+                <p class="resource-desc">
+                    Trình luyện tập ngắm bắn chuyên nghiệp với nhiều chế độ luyện tập khác nhau, 
+                    giúp cải thiện độ chính xác và phản xạ trong các game FPS.
+                </p>
+                <div class="resource-meta">
+                    <span>Size: 28.7MB</span>
+                    <button class="download-btn">Tải Xuống</button>
+                </div>
+            </div>
+
+            <div class="resource-card" data-type="assets">
+                <img src="https://placehold.co/300x180/8a2be2/ffffff?text=Sound+Pack" alt="Sound Pack Premium" class="resource-img">
+                <div class="resource-header">
+                    <div class="resource-icon">🎵</div>
+                    <div>
+                        <div class="resource-title">Sound Pack Premium</div>
+                        <div class="resource-game">Tất cả game</div>
+                    </div>
+                </div>
+                <p class="resource-desc">
+                    Bộ âm thanh chất lượng cao cho game, bao gồm tiếng súng, hiệu ứng, và âm nhạc nền 
+                    với độ phân giải 320kbps.
+                </p>
+                <div class="resource-meta">
+                    <span>Size: 215MB</span>
+                    <button class="download-btn">Tải Xuống</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hướng Dẫn Section -->
+        <div id="guides" class="content-section">
+            <h2 class="guide-title">📘 Hướng Dẫn Sử Dụng Tài Nguyên Game</h2>
+            <div class="guide-content">
+                <p>Hệ thống tài nguyên game của chúng tôi được thiết kế để giúp game thủ tiếp cận dễ dàng với các công cụ, mod, texture và script chất lượng cao. Dưới đây là hướng dẫn chi tiết cách sử dụng từng loại tài nguyên.</p>
+                
+                <h3 class="guide-subtitle">📌 Các Bước Cơ Bản</h3>
+                <div class="guide-step">
+                    <strong>Bước 1: Tải xuống tài nguyên</strong><br>
+                    Nhấn vào nút "Tải Xuống" trên bất kỳ tài nguyên nào bạn muốn sử dụng. Hệ thống sẽ bắt đầu quá trình tải về.
+                </div>
+                <div class="guide-step">
+                    <strong>Bước 2: Giải nén file</strong><br>
+                    Sau khi tải xong, giải nén file bằng WinRAR, 7-Zip hoặc phần mềm giải nén khác. Đa số tài nguyên được nén dưới dạng .zip hoặc .rar.
+                </div>
+                <div class="guide-step">
+                    <strong>Bước 3: Cài đặt và sử dụng</strong><br>
+                    Tùy thuộc vào loại tài nguyên, bạn có thể cần sao chép file vào thư mục game, chạy file cài đặt, hoặc tích hợp vào công cụ phát triển.
+                </div>
+                <div class="guide-step">
+                    <strong>Bước 4: Kiểm tra hoạt động</strong><br>
+                    Khởi động lại game hoặc công cụ để kiểm tra xem tài nguyên đã được tích hợp thành công chưa.
+                </div>
+            </div>
+        </div>
+
+        <!-- Công Cụ Section -->
+        <div id="tools" class="content-section">
+            <h2 class="guide-title">🛠️ Hướng Dẫn Công Cụ</h2>
+            <div class="guide-content">
+                <p>Các công cụ trong hệ thống của chúng tôi được thiết kế để tối ưu hóa trải nghiệm chơi game và phát triển mod. Dưới đây là cách sử dụng chi tiết:</p>
+                
+                <h3 class="guide-subtitle">🔧 Auto Clicker Pro</h3>
+                <p>Công cụ tự động click đa năng cho mọi tựa game.</p>
+                <div class="guide-step">
+                    <strong>Cách sử dụng:</strong>
+                    <ul>
+                        <li>Chạy file AutoClicker.exe</li>
+                        <li>Thiết lập tọa độ click (tự động hoặc thủ công)</li>
+                        <li>Điều chỉnh tốc độ click (50-1000 clicks/phút)</li>
+                        <li>Chọn nút kích hoạt (thường là F6)</li>
+                        <li>Nhấn nút để bắt đầu/ dừng</li>
+                    </ul>
+                </div>
+
+                <h3 class="guide-subtitle">⚙️ Config Optimizer (Valorant)</h3>
+                <p>Tối ưu hóa cấu hình game tự động cho cấu hình máy của bạn.</p>
+                <div class="guide-step">
+                    <strong>Quy trình hoạt động:</strong>
+                    <ol>
+                        <li>Chương trình quét cấu hình phần cứng</li>
+                        <li>Phân tích hiệu suất yêu cầu của game</li>
+                        <li>Tạo file cấu hình tối ưu (.cfg)</li>
+                        <li>Sao chép vào thư mục cài đặt game</li>
+                        <li>Khởi động lại game để áp dụng</li>
+                    </ol>
+                </div>
+                <p><strong>Lưu ý:</strong> Luôn sao lưu file config gốc trước khi tối ưu hóa.</p>
+            </div>
+        </div>
+
+        <!-- Mod & Plugin Section -->
+        <div id="mods" class="content-section">
+            <h2 class="guide-title">🧩 Hướng Dẫn Mod & Plugin</h2>
+            <div class="guide-content">
+                <p>Mod và Plugin giúp mở rộng tính năng của game. Dưới đây là hướng dẫn cài đặt và sử dụng:</p>
+                
+                <h3 class="guide-subtitle">🎮 Controller Mapper</h3>
+                <p>Phần mềm ánh xạ phím chơi game cho mọi tựa game.</p>
+                <div class="guide-step">
+                    <strong>Quy trình cài đặt:</strong>
+                    <ol>
+                        <li>Tải và giải nén bộ cài ControllerMapper_v2.1.zip</li>
+                        <li>Chạy ControllerMapper_Installer.exe với quyền Admin</li>
+                        <li>Chọn game cần cấu hình từ danh sách</li>
+                        <li>Kéo thả nút điều khiển vào vị trí mong muốn</li>
+                        <li>Lưu profile và kích hoạt</li>
+                    </ol>
+                </div>
+
+                <h3 class="guide-subtitle">🔄 Cập nhật Plugin</h3>
+                <div class="guide-step">
+                    <strong>Hướng dẫn cập nhật:</strong>
+                    <ul>
+                        <li>Backup thư mục <code>plugins/</code> hiện tại</li>
+                        <li>Tải bản cập nhật mới nhất</li>
+                        <li>Thay thế file .dll hoặc .so tương ứng</li>
+                        <li>Khởi động lại game/client</li>
+                        <li>Kiểm tra phiên bản trong menu Settings</li>
+                    </ul>
+                </div>
+
+                <div class="code-block">
+                    # Cấu trúc thư mục Mod
+                    game-folder/
+                    ├── mods/
+                    │   ├── mod1.dll
+                    │   ├── mod2.so
+                    │   └── config.json
+                    ├── plugins/
+                    │   └── plugin_manager.dll
+                    └── scripts/
+                        └── auto_load.cs
+                </div>
+            </div>
+        </div>
+
+        <!-- Asset & Texture Section -->
+        <div id="assets" class="content-section">
+            <h2 class="guide-title">🎨 Hướng Dẫn Asset & Texture</h2>
+            <div class="guide-content">
+                <p>Tài nguyên hình ảnh và âm thanh chất lượng cao cho game. Hướng dẫn chi tiết cách tích hợp:</p>
+                
+                <h3 class="guide-subtitle">🖼️ Texture Pack 4K (Minecraft)</h3>
+                <div class="guide-step">
+                    <strong>Cách cài đặt:</strong>
+                    <ol>
+                        <li>Tải xuống TexturePack_4K_v3.zip</li>
+                        <li>Mở Minecraft Launcher</li>
+                        <li>Chuyển đến mục "Resource Packs"</li>
+                        <li>Nhấn "Open Pack Folder"</li>
+                        <li>Kéo thả file zip vào thư mục</li>
+                        <li>Quay lại game và chọn texture pack từ danh sách</li>
+                        <li>Nhấn "Done" để áp dụng</li>
+                    </ol>
+                </div>
+
+                <h3 class="guide-subtitle">🎵 Sound Pack Premium</h3>
+                <div class="guide-step">
+                    <strong>Phương pháp tích hợp:</strong>
+                    <ul>
+                        <li><strong>Phương pháp 1 (Recommended):</strong> Sử dụng công cụ thay thế âm thanh</li>
+                        <li><strong>Phương pháp 2:</strong> Thay thế file gốc trong thư mục game</li>
+                        <li><strong>Phương pháp 3:</strong> Sử dụng mod loader để tự động nạp</li>
+                    </ul>
+                </div>
+
+                <div class="code-block">
+                    // Cấu hình texture trong config.json
+                    {
+                      "texture_resolution": "4K",
+                      "anisotropic_filtering": 16,
+                      "mipmap_bias": -0.5,
+                      "enable_normal_maps": true,
+                      "enable_specular_maps": true
+                    }
+                </div>
+
+                <p><strong>Yêu cầu hệ thống:</strong></p>
+                <div class="guide-step">
+                    <ul>
+                        <li>GPU: NVIDIA GTX 1060 / AMD RX 580 trở lên</li>
+                        <li>RAM: Tối thiểu 8GB (khuyến nghị 16GB)</li>
+                        <li>Dung lượng trống: 1GB cho bản 4K, 3GB cho bản Ultra</li>
+                        <li>Driver: Cập nhật phiên bản mới nhất</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Script & Code Section -->
+        <div id="scripts" class="content-section">
+            <h2 class="guide-title">💻 Hướng Dẫn Script & Code</h2>
+            <div class="guide-content">
+                <p>Code và script cho phát triển game và modding. Tài liệu hướng dẫn chi tiết:</p>
+                
+                <h3 class="guide-subtitle">🐍 Python Script Example</h3>
+                <div class="code-block">
+                    #!/usr/bin/env python3
+                    # AutoFarm Bot for Genshin Impact
+                    # Version 2.1.0
+                    # Author: GameModderVN
+
+                    import cv2
+                    import numpy as np
+                    from pynput import mouse, keyboard
+                    import time
+                    import threading
+
+                    class AutoFarmBot:
+                        def __init__(self):
+                            self.running = False
+                            self.farm_locations = {
+                                'dandelion': (1200, 600),
+                                'glowing_mushroom': (800, 900),
+                                'crystal_marrow': (1500, 400)
+                            }
+                            self.setup_listeners()
+                            
+                        def setup_listeners(self):
+                            self.mouse_listener = mouse.Listener(
+                                on_click=self.on_click
+                            )
+                            self.keyboard_listener = keyboard.Listener(
+                                on_press=self.on_press
+                            )
+                            self.mouse_listener.start()
+                            self.keyboard_listener.start()
+                            
+                        def on_press(self, key):
+                            try:
+                                if key == keyboard.Key.f8:
+                                    self.toggle_farm()
+                                elif key == keyboard.Key.esc:
+                                    self.stop()
+                            except:
+                                pass
+                                
+                        def toggle_farm(self):
+                            self.running = not self.running
+                            status = "BẮT ĐẦU" if self.running else "DỪNG"
+                            print(f"[AutoFarm] Chế độ: {status}")
+                            
+                        def farm_loop(self):
+                            while self.running:
+                                for resource, coords in self.farm_locations.items():
+                                    if not self.running:
+                                        break
+                                    self.navigate_to(coords)
+                                    self.collect_resource()
+                                    time.sleep(0.5)
+                                    
+                        def start(self):
+                            print("[AutoFarm] Bot đã sẵn sàng!")
+                            print("[F8] Bắt đầu/dừng farm")
+                            print("[ESC] Thoát chương trình")
+                            try:
+                                while True:
+                                    time.sleep(0.1)
+                            except KeyboardInterrupt:
+                                self.stop()
+                                
+                        def stop(self):
+                            self.running = False
+                            self.mouse_listener.stop()
+                            self.keyboard_listener.stop()
+                            print("[AutoFarm] Đã dừng và thoát!")
+                            exit()
+
+                    if __name__ == "__main__":
+                        bot = AutoFarmBot()
+                        farm_thread = threading.Thread(target=bot.farm_loop)
+                        farm_thread.daemon = True
+                        farm_thread.start()
+                        bot.start()
+                </div>
+
+                <h3 class="guide-subtitle">🎮 C# Unity Script</h3>
+                <div class="code-block">
+                    using UnityEngine;
+                    using System.Collections;
+
+                    /// <summary>
+                    /// Enhanced Movement System for Unity Games
+                    /// Supports wall running, double jump, and dash
+                    /// </summary>
+                    public class EnhancedMovement : MonoBehaviour
+                    {
+                        [Header("Movement Settings")]
+                        [SerializeField] private float moveSpeed = 5f;
+                        [SerializeField] private float sprintSpeed = 8f;
+                        [SerializeField] private float jumpForce = 10f;
+                        
+                        [Header("Advanced Mechanics")]
+                        [SerializeField] private float wallRunSpeed = 6f;
+                        [SerializeField] private float dashForce = 15f;
+                        [SerializeField] private int maxJumps = 2;
+                        
+                        private Rigidbody rb;
+                        private int jumpCount = 0;
+                        private bool isWallRunning = false;
+                        private bool isDashing = false;
+                        private Vector3 dashDirection;
+                        
+                        void Start()
+                        {
+                            rb = GetComponent<Rigidbody>();
+                            Cursor.lockState = CursorLockMode.Locked;
+                        }
+                        
+                        void Update()
+                        {
+                            HandleMovement();
+                            HandleJump();
+                            HandleSprint();
+                            HandleDash();
+                            HandleWallRun();
+                        }
+                        
+                        void HandleMovement()
+                        {
+                            float horizontal = Input.GetAxis("Horizontal");
+                            float vertical = Input.GetAxis("Vertical");
+                            
+                            Vector3 movement = transform.forward * vertical + transform.right * horizontal;
+                            movement.y = 0f; // Keep movement on horizontal plane
+                            
+                            if (isDashing)
+                            {
+                                rb.velocity = dashDirection * dashForce;
+                            }
+                            else if (!isWallRunning)
+                            {
+                                float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : moveSpeed;
+                                rb.velocity = new Vector3(movement.x * currentSpeed, rb.velocity.y, movement.z * currentSpeed);
+                            }
+                        }
+                        
+                        void HandleJump()
+                        {
+                            if (Input.GetButtonDown("Jump"))
+                            {
+                                if (jumpCount < maxJumps)
+                                {
+                                    rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+                                    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                                    jumpCount++;
+                                }
+                            }
+                            
+                            if (IsGrounded())
+                            {
+                                jumpCount = 0;
+                            }
+                        }
+                        
+                        void HandleDash()
+                        {
+                            if (Input.GetKeyDown(KeyCode.E) && !isDashing)
+                            {
+                                isDashing = true;
+                                dashDirection = transform.forward;
+                                Invoke("ResetDash", 0.3f);
+                            }
+                        }
+                        
+                        void ResetDash()
+                        {
+                            isDashing = false;
+                        }
+                        
+                        void HandleWallRun()
+                        {
+                            // Wall run detection logic would go here
+                            // This is a simplified version
+                            if (/* wall detection conditions */)
+                            {
+                                isWallRunning = true;
+                                // Apply wall run physics
+                            }
+                            else
+                            {
+                                isWallRunning = false;
+                            }
+                        }
+                        
+                        bool IsGrounded()
+                        {
+                            return Physics.Raycast(transform.position, Vector3.down, 0.1f);
+                        }
+                    }
+                </div>
+
+                <h3 class="guide-subtitle">🔧 JavaScript Plugin</h3>
+                <div class="code-block">
+                    /**
+                     * Game Stats Tracker Plugin
+                     * Tracks player performance metrics
+                     * Compatible with most game engines
+                     */
+                    
+                    class StatsTracker {
+                        constructor() {
+                            this.stats = {
+                                kills: 0,
+                                deaths: 0,
+                                assists: 0,
+                                damage: 0,
+                                healing: 0,
+                                matches: 0,
+                                wins: 0,
+                                kdRatio: 0,
+                                winRate: 0
+                            };
+                            
+                            this.matchHistory = [];
+                            this.startTime = null;
+                            this.sessionActive = false;
+                            
+                            this.init();
+                        }
+                        
+                        init() {
+                            this.hookGameEvents();
+                            this.loadSavedData();
+                            this.startSession();
+                        }
+                        
+                        hookGameEvents() {
+                            // Hook into game events
+                            window.addEventListener('gameStart', (e) => {
+                                this.onGameStart(e.detail);
+                            });
+                            
+                            window.addEventListener('playerKill', (e) => {
+                                this.onPlayerKill(e.detail);
+                            });
+                            
+                            window.addEventListener('playerDeath', (e) => {
+                                this.onPlayerDeath(e.detail);
+                            });
+                            
+                            window.addEventListener('matchEnd', (e) => {
+                                this.onMatchEnd(e.detail);
+                            });
+                        }
+                        
+                        onGameStart(gameInfo) {
+                            this.sessionActive = true;
+                            this.startTime = new Date();
+                            console.log('StatsTracker: Session started');
+                        }
+                        
+                        onPlayerKill(killInfo) {
+                            this.stats.kills++;
+                            this.stats.damage += killInfo.damage;
+                            
+                            // Update K/D ratio
+                            this.stats.kdRatio = this.stats.deaths > 0 ? 
+                                (this.stats.kills / this.stats.deaths).toFixed(2) : 
+                                this.stats.kills;
+                        }
+                        
+                        onPlayerDeath(deathInfo) {
+                            this.stats.deaths++;
+                            this.stats.kdRatio = this.stats.deaths > 0 ? 
+                                (this.stats.kills / this.stats.deaths).toFixed(2) : 
+                                this.stats.kills;
+                        }
+                        
+                        onMatchEnd(matchResult) {
+                            this.stats.matches++;
+                            if (matchResult.win) {
+                                this.stats.wins++;
+                            }
+                            
+                            this.stats.winRate = ((this.stats.wins / this.stats.matches) * 100).toFixed(1);
+                            
+                            // Save match to history
+                            const matchData = {
+                                id: this.stats.matches,
+                                date: new Date(),
+                                result: matchResult.win ? 'win' : 'loss',
+                                kills: this.stats.kills - (this.matchHistory.length > 0 ? 
+                                    this.matchHistory[this.matchHistory.length-1].kills : 0),
+                                deaths: this.stats.deaths - (this.matchHistory.length > 0 ? 
+                                    this.matchHistory[this.matchHistory.length-1].deaths : 0),
+                                duration: matchResult.duration
+                            };
+                            
+                            this.matchHistory.push(matchData);
+                            this.saveData();
+                        }
+                        
+                        saveData() {
+                            localStorage.setItem('statsTrackerData', JSON.stringify({
+                                stats: this.stats,
+                                matchHistory: this.matchHistory
+                            }));
+                        }
+                        
+                        loadSavedData() {
+                            const saved = localStorage.getItem('statsTrackerData');
+                            if (saved) {
+                                const data = JSON.parse(saved);
+                                this.stats = data.stats;
+                                this.matchHistory = data.matchHistory;
+                            }
+                        }
+                        
+                        getPerformanceTrends() {
+                            // Calculate performance trends
+                            const recentMatches = this.matchHistory.slice(-5);
+                            const avgKills = recentMatches.reduce((sum, match) => sum + match.kills, 0) / recentMatches.length;
+                            const avgDeaths = recentMatches.reduce((sum, match) => sum + match.deaths, 0) / recentMatches.length;
+                            
+                            return {
+                                recentKDA: avgKills / (avgDeaths || 1),
+                                improvement: this.isImproving()
+                            };
+                        }
+                        
+                        isImproving() {
+                            if (this.matchHistory.length < 2) return false;
+                            
+                            const lastMatch = this.matchHistory[this.matchHistory.length - 1];
+                            const prevMatch = this.matchHistory[this.matchHistory.length - 2];
+                            
+                            return lastMatch.kills > prevMatch.kills;
+                        }
+                        
+                        resetStats() {
+                            this.stats = {
+                                kills: 0, deaths: 0, assists: 0, damage: 0, 
+                                healing: 0, matches: 0, wins: 0, kdRatio: 0, winRate: 0
+                            };
+                            this.matchHistory = [];
+                            this.saveData();
+                        }
+                    }
+                    
+                    // Initialize the tracker when page loads
+                    document.addEventListener('DOMContentLoaded', () => {
+                        window.statsTracker = new StatsTracker();
+                    });
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="social-links">
+                <a href="#" class="social-link">📱</a>
+                <a href="#" class="social-link">💬</a>
+                <a href="#" class="social-link">📺</a>
+                <a href="#" class="social-link">📘</a>
+            </div>
+            <p>© 2024 RESOURCE HUB - Lưu trữ Local userGM Finn</p>
+            <p>Tất cả tài nguyên được cung cấp nhằm mục đích học tập và phát triển cộng đồng</p>
+        </footer>
+    </div>
+
+    <script>
+        // Category filter functionality
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const resources = document.querySelectorAll('.resource-card');
+        const contentSections = document.querySelectorAll('.content-section');
+        const resourcesGrid = document.getElementById('resources-grid');
+
+        // Set up category buttons
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.getAttribute('data-category');
+                
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Show/hide resources and content sections
+                if (category === 'all') {
+                    resourcesGrid.style.display = 'grid';
+                    resources.forEach(resource => {
+                        resource.style.display = 'block';
+                    });
+                    contentSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                } else {
+                    resourcesGrid.style.display = 'none';
+                    contentSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    const targetSection = document.getElementById(category);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        const searchBtn = document.querySelector('.search-bar button');
+        
+        searchBtn.addEventListener('click', () => {
+            performSearch();
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        function performSearch() {
+            const query = searchInput.value.trim().toLowerCase();
+            if (query) {
+                // Filter resources based on search query
+                resources.forEach(resource => {
+                    const title = resource.querySelector('.resource-title').textContent.toLowerCase();
+                    const game = resource.querySelector('.resource-game').textContent.toLowerCase();
+                    const desc = resource.querySelector('.resource-desc').textContent.toLowerCase();
+                    
+                    if (title.includes(query) || game.includes(query) || desc.includes(query)) {
+                        resource.style.display = 'block';
+                    } else {
+                        resource.style.display = 'none';
+                    }
+                });
+                
+                // Auto-select "Tất Cả" category when searching
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                categoryBtns[0].classList.add('active');
+                resourcesGrid.style.display = 'grid';
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+            }
+        }
+
+        // Download buttons
+        const downloadBtns = document.querySelectorAll('.download-btn');
+        downloadBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const resourceTitle = e.target.closest('.resource-card').querySelector('.resource-title').textContent;
+                alert(`Đang chuẩn bị tải xuống: ${resourceTitle}\n\nLưu ý: Đây là bản demo, không có file thực tế để tải.`);
+            });
+        });
+
+        // Initialize with "Tất Cả" category active
+        document.querySelector('.category-btn[data-category="all"]').click();
+    </script>
+</body>
+</html>
