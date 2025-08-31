@@ -77,19 +77,49 @@
     let allTopics = []; // Flatten topics for search
 
     // Load JSON config from GitHub via proxy to avoid CORS
-    const CONFIG_URL = "https://api.allorigins.win/get?url=" + encodeURIComponent("https://yourusername.github.io/docs/config.json");
+    const CONFIG_URL = "https://api.allorigins.win/get?url=" + encodeURIComponent("https://tienthien196.github.io/ecosys.note/Resource/web/res.json");
 
     async function loadConfig() {
-      try {
+    try {
         const res = await fetch(CONFIG_URL);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
         const dataWrapper = await res.json();
-        const config = JSON.parse(dataWrapper.contents); // GitHub raw JSON
+
+        // Kiểm tra nếu nội dung là HTML (không phải JSON)
+        if (dataWrapper.contents.startsWith("<")) {
+        throw new Error("Received HTML instead of JSON. Check if the file exists and GitHub Pages is enabled.");
+        }
+
+        let config;
+        try {
+        config = JSON.parse(dataWrapper.contents); // Parse nội dung JSON
+        } catch (parseError) {
+        console.error("Failed to parse JSON:", dataWrapper.contents);
+        throw new Error("Invalid JSON format in config file.");
+        }
+
         data = config;
         allTopics = flattenTopics(data.tabbars);
         renderSidebar(data.tabbars);
-      } catch (err) {
-        sidebarEl.innerHTML = `<div class="p-4 text-red-500">Lỗi tải cấu hình: ${err.message}</div>`;
-      }
+    } catch (err) {
+        console.error("Load config error:", err);
+        sidebarEl.innerHTML = `
+        <div class="p-4 text-red-500 space-y-2">
+            <div><strong>❌ Lỗi tải cấu hình:</strong></div>
+            <div>${err.message}</div>
+            <div class="text-sm mt-2">
+            <strong>Gợi ý:</strong>
+            <ul class="list-disc list-inside mt-1">
+                <li>Đảm bảo file <code>config.json</code> tồn tại</li>
+                <li>GitHub Pages đã được bật</li>
+                <li>Đường dẫn đúng: <code>https://<tên>.github.io/<repo>/docs/config.json</code></li>
+                <li>File JSON không có lỗi cú pháp</li>
+            </ul>
+            </div>
+        </div>
+        `;
+    }
     }
 
     function flattenTopics(tabbars) {

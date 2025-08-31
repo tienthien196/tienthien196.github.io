@@ -1,65 +1,238 @@
 ---
-sidebar_position: 1
-sidebar_label: Formulas
+sidebar_position: 4
+sidebar_label: Computer Architecture
 ---
 
-# 
-## Formulas
+# Computer Architecture
 
-1. CPU *time* = Instruction count $$\times$$ Clock Cycles per instruction $$\times$$ Clock cycle time
-2. $$X \text{ is } n \text{ times faster than } Y: n = \text{Execution time}_y / \text{ Execution time}_x = \text{Performance}_x / \text{ Performance}_y$$
-3. Amdahl's Law:
+```
++---------------------+     +----------------------------+
+|                     |     |                            |
+|   Input Devices     |<--->|       I/O Controller       |
+| (Keyboard, Mouse,   | Bus | (USB, SATA, PCIe, Network) |
+|  Webcam, Scanner)   |<--->|                            |
+|                     |     +-------------+--------------+
++---------------------+                   |
+                                          |
+                                          | System I/O Bus
+                                          |
++---------------------+                   v                   +---------------------+
+|                     |     +-----------------------------+   |                     |
+|   Output Devices    |<--->|         GPU (Graphics       |<->|    Display /        |
+| (Monitor, Printer,  | Bus |       Processing Unit)      |   |    Audio Devices    |
+|  Speakers)          |<--->|                             |   |                     |
+|                     |     +-----------------------------+   +---------------------+
++---------------------+                   |
+                                          |
+                                          | Front-Side Bus / DMI / PCIe
+                                          v
+                                +----------------------+
+                                |       CPU            |
+                                | +------------------+ |
+                                | |   Control Unit   | |
+                                | +------------------+ |
+                                | |      ALU         | |
+                                | +------------------+ |
+                                | |   Registers      | |
+                                | | (R0, R1, PC, SP) | |
+                                | +------------------+ |
+                                | |  L1 Cache (I + D)| |
+                                | |  L2 Cache        | |
+                                | |  L3 Cache (Shared)||
+                                | +------------------+ |
+                                +-----------+----------+
+                                            |
+                                            | CPU Memory Bus (High Speed)
+                                            |
+                                            v
+                       +------------------------------------------+
+                       |                Main Memory               |
+                       | (RAM - DDR4/DDR5)                        |
+                       | +------------+  +------------+           |
+                       | |  Program   |  |   Data     |           |
+                       | |   Code     |  |   Section  |           |
+                       | +------------+  +------------+           |
+                       +------------------------------------------+
+                                            ^
+                                            | Memory Bus
+                                            |
+                                            v
+                     +---------------------------------------------+
+                     |                Motherboard                  |
+                     | +-----------------+  +--------------------+ |
+                     | |   Chipset       |  |   Clock Generator  | |
+                     | | (Northbridge +  |  |                    | |
+                     | |  Southbridge or |  +--------------------+ |
+                     | |   PCH)          |                         |
+                     | |                 |                         |
+                     | | - Memory Ctrl.  |                         |
+                     | | - PCIe lanes    |                         |
+                     | | - SATA/USB ctrl|                         |
+                     | +-----------------+                         |
+                     +---------------------------------------------+
+                                            |
+                  +------------+           | PCI Express / SATA / USB
+                  |            |           |
+                  |  Storage   |<----------+
+                  | Devices    |
+                  | (SSD, HDD, |<----------+ USB / Thunderbolt
+                  |  Flash)    |
+                  |            |
+                  +------------+
+                          
+```
 
-   $$\text{Speedup}_{overall} = \frac{\text{Execution time}_{old}}{\text{Execution time}_{new}} = \frac{1}{\lparen 1 - \text{Fraction}_{enhanced}\rparen + \frac{\text{Speedup}_{enhanced}}{\text{Fraction}_{enhanced}}}$$
 
-4. $$\text{Energy}_{dynamic}\space\alpha\space 1 / 2 \times \text{Capacitive load} \times \text{Voltage}^2$$
-5. $$\text{Power}_{dynamic}\space\alpha\space 1 / 2 \times \text{Capacitive load} \times \text{Voltage}^2 \times \text{Frequency switched}$$
-6. $$\text{Power}_{static}\space\alpha\space \text{Current}_{static} \times \text{Voltage}$$
-7. Availability = Mean time to fail / (Mean time to fail + Mean time to repair)
-8. Die yield = $$\text{Wafer yield} \times \frac{1} {\lparen 1 + \text{Defects per unit area}\times \text{Die
-   area}\rparen ^N}$$  
+```
++==================================================================+
+|                   CPU CORE HIỆN ĐẠI (1 nhân)                     |
+|       (Dùng đồng thời tất cả kỹ thuật để đạt IPC > 3)            |
++==================================================================+
 
-   where Wafer yield accounts for wafer that are so bad they need not be tested and $$N$$ is a parameter called the
-   process-complexity factor, a measure of manufacturing difficulty.
-   $$N$$ ranges from 11.5 to 15.5 for a 40nm process (in 2010).
-9. Means - arithmetic (AM), weighted arithmetic (WAM), and geometric (GM):  
+  +---------------------+
+  |  Instruction Fetch  | ← Lấy lệnh từ L1i Cache
+  +----------+----------+
+             |
+             v
+  +---------------------+
+  |  Instruction Decode | ← Giải mã lệnh (CISC → µops nếu cần)
+  +----------+----------+
+             |
+             v
+  +---------------------------+
+  |  μop Cache / Scheduler    | ← Chuẩn bị lệnh cho pipeline
+  |  (Out-of-Order Engine)    | ← Sắp xếp lại lệnh để tối ưu
+  +-------------+-------------+
+                |
+        +-------v--------+     +-------------------------+
+        |   PIPELINE     | --> |   EXECUTION UNITS (×N)  |
+        | (IF → ID → EX) |     | - ALU × 4                |
+        |                |     | - FPU × 2                |
+        |                |     | - Load/Store Unit × 2    |
+        |                |     | - Branch Unit            |
+        +----------------+     +------------+------------+
+                                            |
+                                            v
+                                 +----------------------+
+                                 |    DATA CACHE (L1d)   |
+                                 +-----------+-----------+
+                                             |
+                                             v
+                                 +-----------------------+
+                                 |       REGISTER FILE   |
+                                 | (Rename, Bypass Logic)|
+                                 +-----------------------+
 
-   $$\text{AM} = \frac{1}{n} \sum\limits_{i=1}^{N} \text{Time}_{i}$$
+                +-----------------------------------------+
+                |       CÁC KỸ THUẬT CÙNG HOẠT ĐỘNG        |
+                +-----------------------------------------+
+                | • PIPELINE: Dây chuyền lệnh (5–14 stage)|
+                | • SUPERSCALAR: 4–6 lệnh/chu kỳ          |
+                | • OUT-OF-ORDER: Tối ưu thứ tự thực thi  |
+                | • BRANCH PREDICTOR: Độ chính xác >95%   |
+                | • SIMD (AVX/NEON): Xử lý vector         |
+                | • REGISTER RENAMING: Tránh xung đột     |
+                +-----------------------------------------+
+```
 
-   $$\text{WAM} = \frac{1}{n} \sum\limits_{i=1}^{N} \text{Weight}_{i} \times \text{Time}_{i} $$
 
-   $$\text{GM} = \sqrt[n]{\prod\limits_{i=1}^{N} \text{Time}_{i}}$$
 
-   where $$\text{Time}_i$$ is the execution time for the $$i$$th program of a total of $$n$$ in the workload,
-   $$\text{Weight}_i$$ is the weighting of the $$i$$th program in the workload.
-10. Average memory-access time $$= \text{Hit time} + \text{Miss rate} \times \text{Miss Penalty}$$
-11. Misses per instructions $$= \text{Miss rate} \times \text{Memory access per instruction}$$
-12. Cache index size: $$2^{index} = \text{Cache size} / \lparen\text{Block size} \times \text{Set
-    associativity}\rparen$$
+```
++-------------------------------------------------------------+
+|               ISA - Instruction Set Architecture            |
+|   (Giao diện giữa phần mềm và phần cứng)                    |
++-------------------------------------------------------------+
 
-13. Power Utilization Effectiveness (PUE) of a Warehouse Scale Computer $$= \frac{\text{Total Facility Power}}{\text{IT
-    Equipment Power}}$$
++----------------+     +---------------------+     +-------------+
+|                |     |                     |     |             |
+|  Assembly Code | --> |   Machine Code      | --> |  Microcode  |
+|  (ADD R1,R2,R3) |     |  (32-bit: 0x00234020)|     |  (Optional) |
+|                |     |                     |     |             |
++----------------+     +----------+----------+     +-------------+
+                                  |
+                                  v
+           +--------------------------------------------------+
+           |               CPU EXECUTION FLOW                 |
+           +--------------------------------------------------+
+           | 1. FETCH: Lấy lệnh từ Memory → IR (Instruction Register) |
+           |    [PC] → Address Bus → Memory → Data Bus → IR           |
+           |                                                            |
+           | 2. DECODE: Giải mã lệnh → xác định:                        |
+           |    - Loại lệnh (R-type, I-type, J-type)                    |
+           |    - Thanh ghi nguồn (Rs, Rt), đích (Rd)                   |
+           |    - Opcode & Function field                               |
+           |                                                            |
+           | 3. EXECUTE: ALU thực hiện phép toán                       |
+           |    Ví dụ: R1 = R2 + R3                                     |
+           |                                                            |
+           | 4. MEMORY ACCESS (nếu cần):                               |
+           |    - LOAD: Đọc dữ liệu từ RAM                              |
+           |    - STORE: Ghi dữ liệu vào RAM                            |
+           |                                                            |
+           | 5. WRITE BACK: Ghi kết quả vào thanh ghi (Rd)             |
+           +------------------------------------------------------------+
 
-## Rules of Thumb
++-----------------------------------------------------------------------+
+|                        ISA COMPONENTS                                 |
++----------------------------+----------------------+---------------------+
+|   R-TYPE (Register)        |   I-TYPE (Immediate) |   J-TYPE (Jump)     |
+| Opcode | Rs | Rt | Rd |Sh|F| Opcode | Rs | Rt | Addr | Opcode | Target  |
+| 6b     | 5b | 5b | 5b |5b|6b| 6b     | 5b | 5b | 16b    | 6b     | 26b     |
++----------------------------+----------------------+---------------------+
+| EX: ADD R1,R2,R3           | EX: LW R1,4(R2)      | EX: J loop           |
+| (Tính toán giữa thanh ghi) | (Tải từ bộ nhớ)      | (Nhảy đến nhãn)      |
++----------------------------+----------------------+---------------------+
 
-### Amdahl/Case Rule
++------------------------+     +-------------------------+
+| Supported Data Types   |     | Addressing Modes        |
+| - Byte (8-bit)         |     | - Immediate: #5         |
+| - Halfword (16-bit)    |     | - Register: R1          |
+| - Word (32-bit)        |     | - Base + Offset: 4(R2)  |
+| - Single/Double Float  |     | - PC-relative: loop     |
++------------------------+     +-------------------------+
 
-> A balanced computer system needs about 1 MB of the main memory capacity and 1 megabit per second of I/O
-> bandwidth per MIPs of CPU performance.
++-------------------------------------------------------------+
+| Key Features of ISA                                         |
+| - Tập lệnh (ADD, SUB, LW, SW, BEQ, J, ...)                  |
+| - Số lượng thanh ghi (R0–R31)                                |
+| - Định dạng lệnh (3 loại chính)                             |
+| - Cách định địa chỉ (addressing modes)                      |
+| - Hỗ trợ ngắt (interrupts) và ngoại lệ (exceptions)         |
+| - Giao diện ABI (Application Binary Interface)              |
++-------------------------------------------------------------+
+```
+>[!note]
+---
+Computer architecture is a crucial concept in computer science. It involves designing and organizing computer systems at
+the hardware level, encompassing the structure and functionality of computer components and how they interact to execute
+instructions and perform tasks.
 
-### 90/10 Locality Rule
+At its core, computer architecture defines the blueprint of a computer system, specifying the relationships between its
+various components.
+The computer's key parts include the Central Processing Unit (CPU), memory hierarchy, input/output systems, and the
+interconnection structure.
+The CPU confidently executes instructions that are stored in memory.
+The memory hierarchy consists of different levels of storage, including registers, cache, RAM, and secondary storage,
+each with varying access times and capacities.
 
-> A program executes about 90% of its instructions in 10% of its code.
+The instruction set architecture (ISA) serves as the interface between hardware and software, defining the set of
+instructions that a CPU can execute.
+Having different ISAs can affect software compatibility and system performance, so it's important to consider this when
+selecting a CPU.
 
-### Bandwidth Rule
+Additionally, computer architecture incorporates parallelism and pipelining techniques to enhance processing speed.
+Parallelism involves executing multiple instructions simultaneously, while pipelining divides instruction execution into
+stages, enabling the concurrent processing of multiple instructions.
 
-> Bandwidth grows by at least the square of the improvement in latency.
+Interconnection structures such as buses and networks facilitate communication between components!
+Input/output systems manage the interaction between the computer and external devices, ensuring seamless data transfer.
 
-### 2:1 Cache Rule
+The evolution of computer architecture has seen the transition from single-core to multi-core processors, enabling
+significantly improved performance through parallel processing.
+The advancements in Reduced Instruction Set Computing (RISC) and Complex Instruction Set Computing (CISC) architectures
+have revolutionized CPU design strategies.
 
-> The miss rate of a direct-mapped cache of size $$N$$ is about the same as a two-way set-associative
-> cache of size $$\frac{N}{2}$$.
+As a foundational aspect of computer science, computer architecture plays a crucial role in determining how hardware
+components collaborate to execute instructions and deliver computing capabilities.
 
-### Dependability Rule
 
-> Design with no single point of failure.

@@ -21,7 +21,7 @@
               "sidebar_position": 1,
               "sidebar_label": "Computer Architecture",
               "title": "Computer Architecture",
-              "path": "/docs/cs/architecture.md",
+              "path": "../../Data/ComputerNetwork/arch_security/ceh_pentest_cheatsheet.md",
               "description": "Tổng quan về kiến trúc máy tính: CPU, bộ nhớ, bus, I/O."
             },
             {
@@ -29,7 +29,7 @@
               "sidebar_position": 2,
               "sidebar_label": "ISA & Assembly",
               "title": "Instruction Set Architecture",
-              "path": "/docs/cs/isa.md",
+              "path": "../test/a.md",
               "description": "Giao diện giữa phần cứng và phần mềm: RISC, CISC, định dạng lệnh."
             },
             {
