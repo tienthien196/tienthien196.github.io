@@ -223,14 +223,24 @@
       contentEl.innerHTML = "<p class='text-center mt-10'>Đang tải nội dung...</p>";
 
       try {
-        // Load .md file qua proxy
-        const proxyUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent(`https://tienthien196.github.io${path}`);
-        const res = await fetch(proxyUrl);
-        const data = await res.json();
-        const markdown = data.contents;
+        const rawUrl = `https://raw.githubusercontent.com/tienthien196/ecosys.note${path}`;
+        console.log("Fetching:", rawUrl);
+        const res = await fetch(rawUrl);
+        
+        if (!res.ok) {
+          throw new Error(`Không thể tải file: ${res.status} ${res.statusText}`);
+        }
+
+        const markdown = await res.text(); // dùng .text() vì file .md là text, không phải JSON
+
+        if (!markdown || !markdown.trim()) {
+          contentEl.innerHTML = `<div class="p-4 text-yellow-500">Nội dung trống.</div>`;
+          return;
+        }
 
         contentEl.innerHTML = marked.parse(markdown);
       } catch (err) {
+        console.error("Lỗi tải nội dung:", err);
         contentEl.innerHTML = `<div class="p-4 text-red-500">Lỗi tải nội dung: ${err.message}</div>`;
       }
     }
