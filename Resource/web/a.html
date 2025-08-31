@@ -223,8 +223,7 @@
       contentEl.innerHTML = "<p class='text-center mt-10'>Đang tải nội dung...</p>";
 
       try {
-        const rawUrl = `https://raw.githubusercontent.com/tienthien196/ecosys.note${path}`;
-        console.log("Fetching:", rawUrl);
+        const rawUrl = `https://raw.githubusercontent.com/tienthien196/ecosys.note/main${path}`;
         const res = await fetch(rawUrl);
         
         if (!res.ok) {
