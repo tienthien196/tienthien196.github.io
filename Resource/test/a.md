@@ -4,8 +4,7 @@ sidebar_label: Formulas
 ---
 
 # 
-## Computer Architecture Formulas
-
+## Formulas
 
 1. CPU *time* = Instruction count $$\times$$ Clock Cycles per instruction $$\times$$ Clock cycle time
 2. $$X \text{ is } n \text{ times faster than } Y: n = \text{Execution time}_y / \text{ Execution time}_x = \text{Performance}_x / \text{ Performance}_y$$

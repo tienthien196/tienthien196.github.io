@@ -1,0 +1,138 @@
+{
+  "site": {
+    "title": "Document Hub",
+    "description": "Hệ thống quản lý tài liệu học tập và phát triển",
+    "defaultLanguage": "vi",
+    "version": "1.0.0"
+  },
+  "tabbars": [
+    {
+      "id": "cs",
+      "label": "Computer Science",
+      "icon": "💻",
+      "groups": [
+        {
+          "id": "arch",
+          "label": "Computer Architecture",
+          "description": "Kiến trúc máy tính, CPU, bộ nhớ, ISA",
+          "topics": [
+            {
+              "id": "computer-architecture",
+              "sidebar_position": 1,
+              "sidebar_label": "Computer Architecture",
+              "title": "Computer Architecture",
+              "path": "/docs/cs/architecture.md",
+              "description": "Tổng quan về kiến trúc máy tính: CPU, bộ nhớ, bus, I/O."
+            },
+            {
+              "id": "isa",
+              "sidebar_position": 2,
+              "sidebar_label": "ISA & Assembly",
+              "title": "Instruction Set Architecture",
+              "path": "/docs/cs/isa.md",
+              "description": "Giao diện giữa phần cứng và phần mềm: RISC, CISC, định dạng lệnh."
+            },
+            {
+              "id": "pipelining",
+              "sidebar_position": 3,
+              "sidebar_label": "Instruction Pipelining",
+              "title": "Instruction Pipelining",
+              "path": "/docs/cs/pipelining.md",
+              "description": "Kỹ thuật dây chuyền lệnh để tăng hiệu năng CPU."
+            }
+          ]
+        },
+        {
+          "id": "os",
+          "label": "Operating Systems",
+          "description": "Hệ điều hành, quản lý tiến trình, bộ nhớ, file system",
+          "topics": [
+            {
+              "id": "process-scheduling",
+              "sidebar_position": 1,
+              "sidebar_label": "Process Scheduling",
+              "title": "Process Scheduling Algorithms",
+              "path": "/docs/cs/scheduling.md",
+              "description": "Các thuật toán lập lịch CPU: FCFS, Round Robin, Priority, v.v."
+            },
+            {
+              "id": "memory-management",
+              "sidebar_position": 2,
+              "sidebar_label": "Memory Management",
+              "title": "Memory Management",
+              "path": "/docs/cs/memory.md",
+              "description": "Quản lý bộ nhớ: phân vùng, paging, segmentation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math",
+      "label": "Mathematics",
+      "icon": "🧮",
+      "groups": [
+        {
+          "id": "linear-algebra",
+          "label": "Linear Algebra",
+          "description": "Đại số tuyến tính cho machine learning và đồ họa",
+          "topics": [
+            {
+              "id": "vectors",
+              "sidebar_position": 1,
+              "sidebar_label": "Vectors & Spaces",
+              "title": "Vector Spaces",
+              "path": "/docs/math/vectors.md",
+              "description": "Vector, không gian vector, độc lập tuyến tính."
+            },
+            {
+              "id": "matrices",
+              "sidebar_position": 2,
+              "sidebar_label": "Matrices",
+              "title": "Matrix Operations",
+              "path": "/docs/math/matrices.md",
+              "description": "Ma trận, định thức, nghịch đảo, phép biến đổi."
+            }
+          ]
+        },
+        {
+          "id": "calculus",
+          "label": "Calculus",
+          "description": "Vi tích phân, đạo hàm, tích phân, chuỗi",
+          "topics": [
+            {
+              "id": "derivatives",
+              "sidebar_position": 1,
+              "sidebar_label": "Derivatives",
+              "title": "Derivatives and Applications",
+              "path": "/docs/math/derivatives.md",
+              "description": "Đạo hàm, cực trị, ứng dụng trong tối ưu hóa."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "label": "Projects",
+      "icon": "📁",
+      "groups": [
+        {
+          "id": "my-projects",
+          "label": "Personal Projects",
+          "description": "Các dự án cá nhân và bài tập lớn",
+          "topics": [
+            {
+              "id": "cpu-simulator",
+              "sidebar_position": 1,
+              "sidebar_label": "CPU Simulator",
+              "title": "Simple CPU Simulator",
+              "path": "/docs/projects/cpu-sim.md",
+              "description": "Mô phỏng CPU 8-bit với ISA đơn giản."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

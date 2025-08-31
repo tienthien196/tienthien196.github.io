@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document Manager</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .sidebar-item:hover {
+      @apply bg-blue-50 dark:bg-gray-700;
+    }
+    .search-input {
+      @apply px-4 py-2 border rounded-lg dark:border-gray-600 dark:bg-gray-800 dark:text-white w-full mb-4;
+    }
+    pre {
+      @apply bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto;
+    }
+    code {
+      @apply font-mono text-sm;
+    }
+    blockquote {
+      @apply border-l-4 border-blue-500 pl-4 italic text-gray-700 dark:text-gray-300;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-80 bg-white dark:bg-gray-800 shadow-lg flex flex-col overflow-hidden">
+      <div class="p-4 border-b dark:border-gray-700 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-blue-600 dark:text-blue-400">Docs Manager</h1>
+        <button id="themeToggle" class="text-lg font-bold">☀️</button>
+      </div>
+
+      <div class="p-4">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search topics..."
+          class="search-input"
+        />
+      </div>
+
+      <div id="sidebar" class="flex-1 overflow-y-auto p-2 space-y-4"></div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="flex-1 flex flex-col overflow-hidden bg-white dark:bg-gray-850">
+      <div class="p-6 overflow-y-auto flex-1" id="content">
+        <div class="text-center mt-20">
+          <h2 class="text-2xl font-semibold">Chọn một tài liệu để xem nội dung</h2>
+          <p class="text-gray-500 dark:text-gray-400 mt-2">Sidebar → Topic → Xem nội dung</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle theme
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      themeToggle.textContent = document.documentElement.classList.contains("dark") ? "🌙" : "☀️";
+    });
+
+    // Search input
+    const searchInput = document.getElementById("searchInput");
+    searchInput.addEventListener("input", filterSidebar);
+
+    // Data & DOM
+    const sidebarEl = document.getElementById("sidebar");
+    let data = null;
+    let allTopics = []; // Flatten topics for search
+
+    // Load JSON config from GitHub via proxy to avoid CORS
+    const CONFIG_URL = "https://api.allorigins.win/get?url=" + encodeURIComponent("https://yourusername.github.io/docs/config.json");
+
+    async function loadConfig() {
+      try {
+        const res = await fetch(CONFIG_URL);
+        const dataWrapper = await res.json();
+        const config = JSON.parse(dataWrapper.contents); // GitHub raw JSON
+        data = config;
+        allTopics = flattenTopics(data.tabbars);
+        renderSidebar(data.tabbars);
+      } catch (err) {
+        sidebarEl.innerHTML = `<div class="p-4 text-red-500">Lỗi tải cấu hình: ${err.message}</div>`;
+      }
+    }
+
+    function flattenTopics(tabbars) {
+      const topics = [];
+      tabbars.forEach(tabbar =>
+        tabbar.groups.forEach(group =>
+          group.topics.forEach(topic =>
+            topics.push({ ...topic, groupLabel: group.label, tabbarLabel: tabbar.label })
+          )
+        )
+      );
+      return topics;
+    }
+
+    function renderSidebar(tabbars) {
+      sidebarEl.innerHTML = "";
+      tabbars.forEach(tabbar => {
+        const tabbarEl = document.createElement("div");
+        tabbarEl.innerHTML = `<div class="font-semibold text-lg mb-2 px-2 text-blue-700 dark:text-blue-400">${tabbar.label}</div>`;
+        const groupsEl = document.createElement("div");
+
+        tabbar.groups.forEach(group => {
+          const groupEl = document.createElement("div");
+          groupEl.innerHTML = `<div class="font-medium mt-3 px-2 text-gray-800 dark:text-gray-200">${group.label}</div>`;
+          const topicsEl = document.createElement("div");
+
+          group.topics.forEach(topic => {
+            const topicEl = document.createElement("div");
+            topicEl.className = "ml-2 sidebar-item";
+            topicEl.innerHTML = `
+              <button data-id="${topic.id}" data-path="${topic.path}" 
+                class="text-left w-full px-3 py-1.5 rounded text-sm hover:bg-blue-100 dark:hover:bg-gray-700 transition">
+                ${topic.sidebar_label}
+              </button>
+            `;
+            topicsEl.appendChild(topicEl);
+          });
+
+          groupEl.appendChild(topicsEl);
+          groupsEl.appendChild(groupEl);
+        });
+
+        tabbarEl.appendChild(groupsEl);
+        sidebarEl.appendChild(tabbarEl);
+      });
+
+      // Attach click listeners
+      document.querySelectorAll("#sidebar button").forEach(btn => {
+        btn.addEventListener("click", loadContent);
+      });
+    }
+
+    function filterSidebar() {
+      const term = searchInput.value.toLowerCase();
+      const filtered = allTopics.filter(t =>
+        t.title.toLowerCase().includes(term) ||
+        t.id.toLowerCase().includes(term) ||
+        t.groupLabel.toLowerCase().includes(term)
+      );
+
+      sidebarEl.innerHTML = "";
+      const grouped = {};
+
+      filtered.forEach(t => {
+        const key = `${t.tabbarLabel}__${t.groupLabel}`;
+        if (!grouped[key]) grouped[key] = { tabbar: t.tabbarLabel, group: t.groupLabel, topics: [] };
+        grouped[key].topics.push(t);
+      });
+
+      Object.values(grouped).forEach(g => {
+        const tabEl = document.createElement("div");
+        tabEl.innerHTML = `<div class="font-semibold mb-2 px-2">${g.tabbar}</div>`;
+        const groupEl = document.createElement("div");
+        groupEl.innerHTML = `<div class="font-medium mt-3 px-2">${g.group}</div>`;
+        const topicsEl = document.createElement("div");
+        g.topics.forEach(t => {
+          const btn = document.createElement("div");
+          btn.className = "ml-2 sidebar-item";
+          btn.innerHTML = `
+            <button data-id="${t.id}" data-path="${t.path}" 
+              class="text-left w-full px-3 py-1.5 rounded text-sm hover:bg-blue-100 dark:hover:bg-gray-700">
+              ${t.sidebar_label}
+            </button>
+          `;
+          topicsEl.appendChild(btn);
+        });
+        groupEl.appendChild(topicsEl);
+        tabEl.appendChild(groupEl);
+        sidebarEl.appendChild(tabEl);
+      });
+
+      document.querySelectorAll("#sidebar button").forEach(btn => {
+        btn.removeEventListener("click", loadContent);
+        btn.addEventListener("click", loadContent);
+      });
+    }
+
+    async function loadContent(e) {
+      const path = e.target.getAttribute("data-path");
+      const contentEl = document.getElementById("content");
+      contentEl.innerHTML = "<p class='text-center mt-10'>Đang tải nội dung...</p>";
+
+      try {
+        // Load .md file qua proxy
+        const proxyUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent(`https://yourusername.github.io${path}`);
+        const res = await fetch(proxyUrl);
+        const data = await res.json();
+        const markdown = data.contents;
+
+        contentEl.innerHTML = marked.parse(markdown);
+      } catch (err) {
+        contentEl.innerHTML = `<div class="p-4 text-red-500">Lỗi tải nội dung: ${err.message}</div>`;
+      }
+    }
+
+    // Khởi tạo
+    loadConfig();
+  </script>
+</body>
+</html>
