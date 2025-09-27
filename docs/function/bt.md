@@ -284,6 +284,7 @@ Giống như em nâng cả con lắc lên 2cm — nó vẫn dao động, nhưng 
 
 ---
 
+
 ## 🔢 BÀI 13: Hàm lượng giác – 3sinx - 1  
 **Đề bài**: Tìm tập giá trị của hàm số: `y = 3sinx - 1`  
 
