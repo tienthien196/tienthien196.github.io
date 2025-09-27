@@ -18,10 +18,10 @@ const config: Config = {
   },
 
   url: 'https://tienthien196.github.io',
-  baseUrl: '/ecosys.documents/',
+  baseUrl: '/',
 
   organizationName: 'tienthien196',
-  projectName: 'ecosys.documents',
+  projectName: 'tienthien196.github.io',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
