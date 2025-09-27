@@ -21,7 +21,7 @@ const config: Config = {
   baseUrl: '/',
 
   organizationName: 'tienthien196',
-  projectName: 'tienthien196.github.io',
+  projectName: 'ecosys.documents',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
