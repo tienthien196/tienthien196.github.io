@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/Computer Network/pluginNet",
+  "title": "Plugin Network",
+  "description": "Formulas",
+  "source": "@site/docs/00_Computer Fundamentals/Computer Network/pluginNet.md",
+  "sourceDirName": "00_Computer Fundamentals/Computer Network",
+  "slug": "/Computer Fundamentals/Computer Network/pluginNet",
+  "permalink": "/docs/Computer Fundamentals/Computer Network/pluginNet",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "title": "Plugin Network",
+    "sidebar_position": 9
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Physical Layer",
+    "permalink": "/docs/Computer Fundamentals/Computer Network/Layers/Physical"
+  },
+  "next": {
+    "title": "Graphics",
+    "permalink": "/docs/category/graphics"
+  }
+}

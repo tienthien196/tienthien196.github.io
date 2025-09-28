@@ -1,0 +1,24 @@
+{
+  "id": "archNetwork/module/DNS",
+  "title": "🌐 DNS (Domain Name System)",
+  "description": "Tài liệu này là phần nối tiếp bộ Network/VPN/Ports: tập trung vào cách DNS hoạt động ở mức hệ thống, cấu trúc bản ghi, triển khai, bảo mật (DNSSEC, DoH/DoT), và troubleshooting.",
+  "source": "@site/docs/archNetwork/module/DNS.md",
+  "sourceDirName": "archNetwork/module",
+  "slug": "/archNetwork/module/DNS",
+  "permalink": "/docs/archNetwork/module/DNS",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/archNetwork/module/DNS.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Computer Network",
+    "permalink": "/docs/archNetwork/ComputerNetwork"
+  },
+  "next": {
+    "title": "Networks",
+    "permalink": "/docs/archNetwork/module/Networks"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "Systems & Innovation/Innovation Techs/Artificial Intelligence/Artificial Intelligence",
+  "title": "Artificial Intelligence",
+  "description": "1. ARTIFICIAL INTELLIGENCE",
+  "source": "@site/docs/01_Systems & Innovation/Innovation Techs/Artificial Intelligence/Artificial Intelligence.md",
+  "sourceDirName": "01_Systems & Innovation/Innovation Techs/Artificial Intelligence",
+  "slug": "/Systems & Innovation/Innovation Techs/Artificial Intelligence/",
+  "permalink": "/docs/Systems & Innovation/Innovation Techs/Artificial Intelligence/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Computer Graphics",
+    "permalink": "/docs/Computer Fundamentals/Computer Graphics/"
+  },
+  "next": {
+    "title": "Compiler",
+    "permalink": "/docs/Systems & Innovation/Systems/Compiler/"
+  }
+}

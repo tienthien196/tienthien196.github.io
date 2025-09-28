@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/Computer Graphics/Computer Graphics",
+  "title": "Computer Graphics",
+  "description": "ĐỒ HỌA MÁY TÍNH TOÀN DIỆN – BẢN CHẤT TỪ 3D MODEL ĐẾN PIXEL TRÊN MÀN HÌNH",
+  "source": "@site/docs/00_Computer Fundamentals/Computer Graphics/Computer Graphics.md",
+  "sourceDirName": "00_Computer Fundamentals/Computer Graphics",
+  "slug": "/Computer Fundamentals/Computer Graphics/",
+  "permalink": "/docs/Computer Fundamentals/Computer Graphics/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Computer Graphics",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Graphics",
+    "permalink": "/docs/category/graphics"
+  },
+  "next": {
+    "title": "Artificial Intelligence",
+    "permalink": "/docs/Systems & Innovation/Innovation Techs/Artificial Intelligence/"
+  }
+}

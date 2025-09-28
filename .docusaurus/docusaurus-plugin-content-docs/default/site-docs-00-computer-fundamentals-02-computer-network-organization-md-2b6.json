@@ -1,0 +1,26 @@
+{
+  "id": "Computer Fundamentals/ComputerNetwork/Organization",
+  "title": "Organization",
+  "description": "NOTE",
+  "source": "@site/docs/00_Computer Fundamentals/02_ComputerNetwork/Organization.md",
+  "sourceDirName": "00_Computer Fundamentals/02_ComputerNetwork",
+  "slug": "/Computer Fundamentals/ComputerNetwork/Organization",
+  "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/Organization",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Computer Network",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/ComputerNetwork"
+  },
+  "next": {
+    "title": "OSI",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/OSImodel"
+  }
+}

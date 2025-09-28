@@ -1,0 +1,23 @@
+{
+  "id": "GDdocs/sys/time",
+  "title": "time",
+  "description": "",
+  "source": "@site/docs/GDdocs/sys/time.md",
+  "sourceDirName": "GDdocs/sys",
+  "slug": "/GDdocs/sys/time",
+  "permalink": "/ecosys.documents/docs/GDdocs/sys/time",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "setting",
+    "permalink": "/ecosys.documents/docs/GDdocs/sys/setting"
+  },
+  "next": {
+    "title": "threads",
+    "permalink": "/ecosys.documents/docs/GDdocs/threads"
+  }
+}

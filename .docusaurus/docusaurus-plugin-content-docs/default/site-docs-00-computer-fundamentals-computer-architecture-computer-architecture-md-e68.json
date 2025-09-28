@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/Computer Architecture/Computer Architecture",
+  "title": "Computer Architecture",
+  "description": "---",
+  "source": "@site/docs/00_Computer Fundamentals/Computer Architecture/Computer Architecture.md",
+  "sourceDirName": "00_Computer Fundamentals/Computer Architecture",
+  "slug": "/Computer Fundamentals/Computer Architecture/",
+  "permalink": "/docs/Computer Fundamentals/Computer Architecture/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "sidebar_label": "Computer Architecture"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Architecture",
+    "permalink": "/docs/category/architecture"
+  },
+  "next": {
+    "title": "Core",
+    "permalink": "/docs/Computer Fundamentals/Computer Architecture/Core"
+  }
+}

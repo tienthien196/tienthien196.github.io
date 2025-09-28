@@ -1,0 +1,27 @@
+{
+  "id": "ArchNetwork/module/ZTA_AAA",
+  "title": "Crypto",
+  "description": "Phiên bản: 2025-08-22",
+  "source": "@site/docs/ArchNetwork/module/ZTA_AAA.md",
+  "sourceDirName": "ArchNetwork/module",
+  "slug": "/ArchNetwork/module/ZTA_AAA",
+  "permalink": "/ecosys.documents/docs/ArchNetwork/module/ZTA_AAA",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Crypto",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Network Protocol",
+    "permalink": "/ecosys.documents/docs/ArchNetwork/module/Protocol"
+  },
+  "next": {
+    "title": "ComputerArchitecture",
+    "permalink": "/ecosys.documents/docs/ComputerArchitecture/Computer_Architecture"
+  }
+}

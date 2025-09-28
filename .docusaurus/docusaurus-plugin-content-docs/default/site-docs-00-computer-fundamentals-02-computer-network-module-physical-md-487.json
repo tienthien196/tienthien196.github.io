@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/ComputerNetwork/module/Physical",
+  "title": "Physical",
+  "description": "1. OSI Model Protocols",
+  "source": "@site/docs/00_Computer Fundamentals/02_ComputerNetwork/module/Physical.md",
+  "sourceDirName": "00_Computer Fundamentals/02_ComputerNetwork/module",
+  "slug": "/Computer Fundamentals/ComputerNetwork/module/Physical",
+  "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/Physical",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "Physical",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "DNS",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/DNS"
+  },
+  "next": {
+    "title": "Ports important!",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/Ports"
+  }
+}

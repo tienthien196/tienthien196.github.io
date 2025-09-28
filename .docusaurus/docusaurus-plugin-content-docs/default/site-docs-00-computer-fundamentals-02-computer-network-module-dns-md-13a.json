@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/ComputerNetwork/module/DNS",
+  "title": "DNS",
+  "description": "Tài liệu này là phần nối tiếp bộ Network/VPN/Ports: tập trung vào cách DNS hoạt động ở mức hệ thống, cấu trúc bản ghi, triển khai, bảo mật (DNSSEC, DoH/DoT), và troubleshooting.",
+  "source": "@site/docs/00_Computer Fundamentals/02_ComputerNetwork/module/DNS.md",
+  "sourceDirName": "00_Computer Fundamentals/02_ComputerNetwork/module",
+  "slug": "/Computer Fundamentals/ComputerNetwork/module/DNS",
+  "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/DNS",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "title": "DNS",
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Networks",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/Networks"
+  },
+  "next": {
+    "title": "Physical",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/Physical"
+  }
+}

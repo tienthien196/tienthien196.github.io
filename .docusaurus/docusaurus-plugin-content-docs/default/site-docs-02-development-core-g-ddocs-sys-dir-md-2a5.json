@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/sys/dir",
+  "title": "dir",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/sys/dir.md",
+  "sourceDirName": "02_Development Core/GDdocs/sys",
+  "slug": "/Development Core/GDdocs/sys/dir",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/dir",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "websk",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/net/websk"
+  },
+  "next": {
+    "title": "file",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/file"
+  }
+}

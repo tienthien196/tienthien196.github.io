@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/ComputerNetwork/module/Ports",
+  "title": "Ports important!",
+  "description": "2. Common Ports and Services",
+  "source": "@site/docs/00_Computer Fundamentals/02_ComputerNetwork/module/Ports.md",
+  "sourceDirName": "00_Computer Fundamentals/02_ComputerNetwork/module",
+  "slug": "/Computer Fundamentals/ComputerNetwork/module/Ports",
+  "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/Ports",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "title": "Ports important!",
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Physical",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/Physical"
+  },
+  "next": {
+    "title": "Network Protocol",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/Protocol"
+  }
+}

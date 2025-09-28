@@ -1,0 +1,23 @@
+{
+  "id": "GDdocs/sys/performance",
+  "title": "performance",
+  "description": "",
+  "source": "@site/docs/GDdocs/sys/performance.md",
+  "sourceDirName": "GDdocs/sys",
+  "slug": "/GDdocs/sys/performance",
+  "permalink": "/ecosys.documents/docs/GDdocs/sys/performance",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "os",
+    "permalink": "/ecosys.documents/docs/GDdocs/sys/os"
+  },
+  "next": {
+    "title": "res",
+    "permalink": "/ecosys.documents/docs/GDdocs/sys/res"
+  }
+}

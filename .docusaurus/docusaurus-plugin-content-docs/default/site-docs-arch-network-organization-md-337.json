@@ -1,0 +1,26 @@
+{
+  "id": "ArchNetwork/Organization",
+  "title": "Organization",
+  "description": "NOTE",
+  "source": "@site/docs/ArchNetwork/Organization.md",
+  "sourceDirName": "ArchNetwork",
+  "slug": "/ArchNetwork/Organization",
+  "permalink": "/ecosys.documents/docs/ArchNetwork/Organization",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Computer Network",
+    "permalink": "/ecosys.documents/docs/ArchNetwork/ComputerNetwork"
+  },
+  "next": {
+    "title": "OSI",
+    "permalink": "/ecosys.documents/docs/ArchNetwork/module/OSImodel"
+  }
+}

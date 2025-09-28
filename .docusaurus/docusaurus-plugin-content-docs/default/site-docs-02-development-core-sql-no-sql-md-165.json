@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/SQL/NoSql",
+  "title": "NoSql",
+  "description": "NOSQL",
+  "source": "@site/docs/02_Development Core/SQL/NoSql.md",
+  "sourceDirName": "02_Development Core/SQL",
+  "slug": "/Development Core/SQL/NoSql",
+  "permalink": "/docs/Development Core/SQL/NoSql",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "MySql",
+    "permalink": "/docs/Development Core/SQL/MySql"
+  },
+  "next": {
+    "title": "Tutorial Intro",
+    "permalink": "/docs/Tutorials/intro"
+  }
+}

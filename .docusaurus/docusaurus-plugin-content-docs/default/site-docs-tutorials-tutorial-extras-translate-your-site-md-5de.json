@@ -1,0 +1,26 @@
+{
+  "id": "Tutorials/tutorial-extras/translate-your-site",
+  "title": "Translate your site",
+  "description": "Let's translate docs/intro.md to French.",
+  "source": "@site/docs/Tutorials/tutorial-extras/translate-your-site.md",
+  "sourceDirName": "Tutorials/tutorial-extras",
+  "slug": "/Tutorials/tutorial-extras/translate-your-site",
+  "permalink": "/docs/Tutorials/tutorial-extras/translate-your-site",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Manage Docs Versions",
+    "permalink": "/docs/Tutorials/tutorial-extras/manage-docs-versions"
+  },
+  "next": {
+    "title": "diagram",
+    "permalink": "/docs/diagram"
+  }
+}

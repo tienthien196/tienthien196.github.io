@@ -1,0 +1,23 @@
+{
+  "id": "GDdocs/crypto",
+  "title": "crypto",
+  "description": "",
+  "source": "@site/docs/GDdocs/crypto.md",
+  "sourceDirName": "GDdocs",
+  "slug": "/GDdocs/crypto",
+  "permalink": "/ecosys.documents/docs/GDdocs/crypto",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Security",
+    "permalink": "/ecosys.documents/docs/CyberSecurity/Information_Security_Mindmap"
+  },
+  "next": {
+    "title": "arr",
+    "permalink": "/ecosys.documents/docs/GDdocs/data/arr"
+  }
+}

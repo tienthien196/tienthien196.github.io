@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/sys/setting",
+  "title": "setting",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/sys/setting.md",
+  "sourceDirName": "02_Development Core/GDdocs/sys",
+  "slug": "/Development Core/GDdocs/sys/setting",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/setting",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "res",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/res"
+  },
+  "next": {
+    "title": "time",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/time"
+  }
+}

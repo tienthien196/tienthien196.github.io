@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/data/str",
+  "title": "str",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/data/str.md",
+  "sourceDirName": "02_Development Core/GDdocs/data",
+  "slug": "/Development Core/GDdocs/data/str",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/data/str",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "arr",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/data/arr"
+  },
+  "next": {
+    "title": "input",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/input/"
+  }
+}

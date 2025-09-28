@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/sys/res",
+  "title": "res",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/sys/res.md",
+  "sourceDirName": "02_Development Core/GDdocs/sys",
+  "slug": "/Development Core/GDdocs/sys/res",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/res",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "performance",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/performance"
+  },
+  "next": {
+    "title": "setting",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/setting"
+  }
+}

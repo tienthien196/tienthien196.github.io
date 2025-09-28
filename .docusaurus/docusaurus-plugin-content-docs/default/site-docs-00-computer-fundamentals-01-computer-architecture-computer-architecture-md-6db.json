@@ -1,0 +1,23 @@
+{
+  "id": "Computer Fundamentals/ComputerArchitecture/Computer_Architecture",
+  "title": "Computer Architecture",
+  "description": "1. COMPUTER ARCHITECTURE",
+  "source": "@site/docs/00_Computer Fundamentals/01_ComputerArchitecture/Computer_Architecture.md",
+  "sourceDirName": "00_Computer Fundamentals/01_ComputerArchitecture",
+  "slug": "/Computer Fundamentals/ComputerArchitecture/Computer_Architecture",
+  "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerArchitecture/Computer_Architecture",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "sidebar_label": "Computer Architecture"
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Computer Network",
+    "permalink": "/ecosys.documents/docs/category/computer-network"
+  }
+}

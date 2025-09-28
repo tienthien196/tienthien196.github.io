@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/SQL/MySql",
+  "title": "MySql",
+  "description": "---",
+  "source": "@site/docs/02_Development Core/SQL/MySql.md",
+  "sourceDirName": "02_Development Core/SQL",
+  "slug": "/Development Core/SQL/MySql",
+  "permalink": "/docs/Development Core/SQL/MySql",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "DBMS",
+    "permalink": "/docs/Development Core/SQL/DBMS"
+  },
+  "next": {
+    "title": "NoSql",
+    "permalink": "/docs/Development Core/SQL/NoSql"
+  }
+}

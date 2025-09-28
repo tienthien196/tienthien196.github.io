@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/DSA/DSA",
+  "title": "DSA",
+  "description": "",
+  "source": "@site/docs/02_Development Core/DSA/DSA.md",
+  "sourceDirName": "02_Development Core/DSA",
+  "slug": "/Development Core/DSA/",
+  "permalink": "/docs/Development Core/DSA/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "DATA",
+    "permalink": "/docs/Development Core/DATA"
+  },
+  "next": {
+    "title": "CEH",
+    "permalink": "/docs/Development Core/SEC/CEH"
+  }
+}

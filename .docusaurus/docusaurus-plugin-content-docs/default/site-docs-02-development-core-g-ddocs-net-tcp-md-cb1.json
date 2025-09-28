@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/net/tcp",
+  "title": "tcp",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/net/tcp.md",
+  "sourceDirName": "02_Development Core/GDdocs/net",
+  "slug": "/Development Core/GDdocs/net/tcp",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/net/tcp",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "package",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/net/package"
+  },
+  "next": {
+    "title": "websk",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/net/websk"
+  }
+}

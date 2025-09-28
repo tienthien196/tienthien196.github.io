@@ -1,0 +1,20 @@
+{
+  "id": "archNetwork/organization",
+  "title": "organization",
+  "description": "NOTE",
+  "source": "@site/docs/archNetwork/organization.md",
+  "sourceDirName": "archNetwork",
+  "slug": "/archNetwork/organization",
+  "permalink": "/docs/archNetwork/organization",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/archNetwork/organization.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "AAA/RADIUS + FortiToken + Zero Trust Architecture (NIST SP 1800-35B)",
+    "permalink": "/docs/archNetwork/module/ZTA_AAA"
+  }
+}

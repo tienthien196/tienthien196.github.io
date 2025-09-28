@@ -1,0 +1,23 @@
+{
+  "id": "Systems & Innovation/Systems/Operating Systems/OS",
+  "title": "OS",
+  "description": "",
+  "source": "@site/docs/01_Systems & Innovation/Systems/Operating Systems/OS.md",
+  "sourceDirName": "01_Systems & Innovation/Systems/Operating Systems",
+  "slug": "/Systems & Innovation/Systems/Operating Systems/OS",
+  "permalink": "/ecosys.documents/docs/Systems & Innovation/Systems/Operating Systems/OS",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Computer Architecture",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/Computer Architecture/"
+  },
+  "next": {
+    "title": "CEH",
+    "permalink": "/ecosys.documents/docs/Development Core/SEC/CEH"
+  }
+}

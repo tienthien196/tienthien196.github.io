@@ -1,0 +1,23 @@
+{
+  "id": "GDdocs/net/package",
+  "title": "package",
+  "description": "",
+  "source": "@site/docs/GDdocs/net/package.md",
+  "sourceDirName": "GDdocs/net",
+  "slug": "/GDdocs/net/package",
+  "permalink": "/ecosys.documents/docs/GDdocs/net/package",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "ip",
+    "permalink": "/ecosys.documents/docs/GDdocs/net/ip"
+  },
+  "next": {
+    "title": "tcp",
+    "permalink": "/ecosys.documents/docs/GDdocs/net/tcp"
+  }
+}

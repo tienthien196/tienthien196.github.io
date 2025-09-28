@@ -1,0 +1,26 @@
+{
+  "id": "Tutorials/tutorial-basics/create-a-blog-post",
+  "title": "Create a Blog Post",
+  "description": "Docusaurus creates a page for each blog post, but also a blog index page, a tag system, an RSS feed...",
+  "source": "@site/docs/Tutorials/tutorial-basics/create-a-blog-post.md",
+  "sourceDirName": "Tutorials/tutorial-basics",
+  "slug": "/Tutorials/tutorial-basics/create-a-blog-post",
+  "permalink": "/docs/Tutorials/tutorial-basics/create-a-blog-post",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a Document",
+    "permalink": "/docs/Tutorials/tutorial-basics/create-a-document"
+  },
+  "next": {
+    "title": "Markdown Features",
+    "permalink": "/docs/Tutorials/tutorial-basics/markdown-features"
+  }
+}

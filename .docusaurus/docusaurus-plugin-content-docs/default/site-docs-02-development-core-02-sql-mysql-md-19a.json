@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/SQL/mysql",
+  "title": "mysql",
+  "description": "mysql_script",
+  "source": "@site/docs/02_Development Core/02_SQL/mysql.md",
+  "sourceDirName": "02_Development Core/02_SQL",
+  "slug": "/Development Core/SQL/mysql",
+  "permalink": "/ecosys.documents/docs/Development Core/SQL/mysql",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Crypto",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/ZTA_AAA"
+  },
+  "next": {
+    "title": "CEH",
+    "permalink": "/ecosys.documents/docs/Development Core/CyberSecurity/ceh_pentest_cheatsheet"
+  }
+}

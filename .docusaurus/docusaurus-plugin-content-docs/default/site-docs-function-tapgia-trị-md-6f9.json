@@ -1,0 +1,23 @@
+{
+  "id": "function/tapgia_trị",
+  "title": "tapgia_trị",
+  "description": "📚 Toàn Bộ Dạng Bài Tập Giá Trị Của Hàm Số: Từ Base đến Advanced",
+  "source": "@site/docs/function/tapgia_trị.md",
+  "sourceDirName": "function",
+  "slug": "/function/tapgia_trị",
+  "permalink": "/ecosys.documents/docs/function/tapgia_trị",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "sidebar_label": "Tập Giá Trị"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Translate your site",
+    "permalink": "/ecosys.documents/docs/Tutorials/tutorial-extras/translate-your-site"
+  }
+}

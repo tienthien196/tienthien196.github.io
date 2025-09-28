@@ -1,0 +1,19 @@
+{
+  "id": "function/bt",
+  "title": "📚 BỘ 100 BÀI TẬP TẬP GIÁ TRỊ HÀM SỐ – CÓ LỜI GIẢI CHI TIẾT",
+  "description": "“Học toán không phải để làm bài — mà để hiểu thế giới vận hành. Mỗi bài là một cánh cửa.”",
+  "source": "@site/docs/function/bt.md",
+  "sourceDirName": "function",
+  "slug": "/function/bt",
+  "permalink": "/docs/function/bt",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tập Giá Trị",
+    "permalink": "/docs/function/Tập Giá Trị"
+  }
+}

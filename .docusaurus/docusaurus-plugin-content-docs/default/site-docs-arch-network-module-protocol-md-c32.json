@@ -1,0 +1,27 @@
+{
+  "id": "ArchNetwork/module/Protocol",
+  "title": "Network Protocol",
+  "description": "Các giao thức mạng chính",
+  "source": "@site/docs/ArchNetwork/module/Protocol.md",
+  "sourceDirName": "ArchNetwork/module",
+  "slug": "/ArchNetwork/module/Protocol",
+  "permalink": "/ecosys.documents/docs/ArchNetwork/module/Protocol",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Network Protocol",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Ports important!",
+    "permalink": "/ecosys.documents/docs/ArchNetwork/module/Ports"
+  },
+  "next": {
+    "title": "Crypto",
+    "permalink": "/ecosys.documents/docs/ArchNetwork/module/ZTA_AAA"
+  }
+}

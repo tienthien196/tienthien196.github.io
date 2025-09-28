@@ -1,0 +1,23 @@
+{
+  "id": "diagram",
+  "title": "diagram",
+  "description": "Sequence diagram (sơ đồ tuần tự)",
+  "source": "@site/docs/diagram.md",
+  "sourceDirName": ".",
+  "slug": "/diagram",
+  "permalink": "/docs/diagram",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Translate your site",
+    "permalink": "/docs/Tutorials/tutorial-extras/translate-your-site"
+  },
+  "next": {
+    "title": "Tập Giá Trị",
+    "permalink": "/docs/function/Tập Giá Trị"
+  }
+}

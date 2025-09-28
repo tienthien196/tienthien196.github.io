@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/DATA",
+  "title": "DATA",
+  "description": "",
+  "source": "@site/docs/02_Development Core/DATA.md",
+  "sourceDirName": "02_Development Core",
+  "slug": "/Development Core/DATA",
+  "permalink": "/docs/Development Core/DATA",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Operating Systems",
+    "permalink": "/docs/Systems & Innovation/Systems/Operating Systems/"
+  },
+  "next": {
+    "title": "DSA",
+    "permalink": "/docs/Development Core/DSA/"
+  }
+}

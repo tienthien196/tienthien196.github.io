@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/sys/file",
+  "title": "file",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/sys/file.md",
+  "sourceDirName": "02_Development Core/GDdocs/sys",
+  "slug": "/Development Core/GDdocs/sys/file",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/file",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "dir",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/dir"
+  },
+  "next": {
+    "title": "os",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/os"
+  }
+}

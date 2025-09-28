@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/SQL/DBMS",
+  "title": "DBMS",
+  "description": "",
+  "source": "@site/docs/02_Development Core/SQL/DBMS.md",
+  "sourceDirName": "02_Development Core/SQL",
+  "slug": "/Development Core/SQL/DBMS",
+  "permalink": "/docs/Development Core/SQL/DBMS",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Information_Security",
+    "permalink": "/docs/Development Core/SEC/Information_Security"
+  },
+  "next": {
+    "title": "MySql",
+    "permalink": "/docs/Development Core/SQL/MySql"
+  }
+}

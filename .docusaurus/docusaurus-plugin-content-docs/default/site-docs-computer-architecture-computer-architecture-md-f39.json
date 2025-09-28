@@ -1,0 +1,27 @@
+{
+  "id": "ComputerArchitecture/Computer_Architecture",
+  "title": "Computer Architecture",
+  "description": "Computer architecture is a crucial concept in computer science. It involves designing and organizing computer systems at",
+  "source": "@site/docs/ComputerArchitecture/Computer_Architecture.md",
+  "sourceDirName": "ComputerArchitecture",
+  "slug": "/ComputerArchitecture/Computer_Architecture",
+  "permalink": "/ecosys.documents/docs/ComputerArchitecture/Computer_Architecture",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "sidebar_label": "ComputerArchitecture"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Crypto",
+    "permalink": "/ecosys.documents/docs/ArchNetwork/module/ZTA_AAA"
+  },
+  "next": {
+    "title": "CEH",
+    "permalink": "/ecosys.documents/docs/CyberSecurity/ceh_pentest_cheatsheet"
+  }
+}

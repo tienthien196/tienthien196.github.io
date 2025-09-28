@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/input/input",
+  "title": "input",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/input/input.md",
+  "sourceDirName": "02_Development Core/GDdocs/input",
+  "slug": "/Development Core/GDdocs/input/",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/input/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "str",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/data/str"
+  },
+  "next": {
+    "title": "inputevent",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/input/inputevent"
+  }
+}

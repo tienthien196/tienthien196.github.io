@@ -1,0 +1,23 @@
+{
+  "id": "GDdocs/net/ip",
+  "title": "ip",
+  "description": "",
+  "source": "@site/docs/GDdocs/net/ip.md",
+  "sourceDirName": "GDdocs/net",
+  "slug": "/GDdocs/net/ip",
+  "permalink": "/ecosys.documents/docs/GDdocs/net/ip",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "enet",
+    "permalink": "/ecosys.documents/docs/GDdocs/net/enet"
+  },
+  "next": {
+    "title": "package",
+    "permalink": "/ecosys.documents/docs/GDdocs/net/package"
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "Computer Fundamentals/Computer Architecture/Computer Architecture",
+          "docs": [
+            {
+              "id": "Computer Fundamentals/Computer Architecture/cheatsheet_arch",
+              "path": "/docs/Computer Fundamentals/Computer Architecture/cheatsheet_arch",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Architecture/Computer Architecture",
+              "path": "/docs/Computer Fundamentals/Computer Architecture/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Architecture/Core",
+              "path": "/docs/Computer Fundamentals/Computer Architecture/Core",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Architecture/ISA",
+              "path": "/docs/Computer Fundamentals/Computer Architecture/ISA",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Graphics/Computer Graphics",
+              "path": "/docs/Computer Fundamentals/Computer Graphics/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Network/Computer Network",
+              "path": "/docs/Computer Fundamentals/Computer Network/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Network/Layers/Application",
+              "path": "/docs/Computer Fundamentals/Computer Network/Layers/Application",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Network/Layers/Data link",
+              "path": "/docs/Computer Fundamentals/Computer Network/Layers/Data link",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Network/Layers/Networks",
+              "path": "/docs/Computer Fundamentals/Computer Network/Layers/Networks",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Network/Layers/Physical",
+              "path": "/docs/Computer Fundamentals/Computer Network/Layers/Physical",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Network/Layers/Presentation/Presentation",
+              "path": "/docs/Computer Fundamentals/Computer Network/Layers/Presentation/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Network/Layers/Presentation/ZTA_AAA",
+              "path": "/docs/Computer Fundamentals/Computer Network/Layers/Presentation/ZTA_AAA",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Network/Layers/Session",
+              "path": "/docs/Computer Fundamentals/Computer Network/Layers/Session",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Network/Layers/Transport",
+              "path": "/docs/Computer Fundamentals/Computer Network/Layers/Transport",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Network/OSI models",
+              "path": "/docs/Computer Fundamentals/Computer Network/OSI models",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Computer Fundamentals/Computer Network/pluginNet",
+              "path": "/docs/Computer Fundamentals/Computer Network/pluginNet",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Development Core/DATA",
+              "path": "/docs/Development Core/DATA",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Development Core/DSA/DSA",
+              "path": "/docs/Development Core/DSA/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Development Core/SEC/CEH",
+              "path": "/docs/Development Core/SEC/CEH",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Development Core/SEC/Information_Security",
+              "path": "/docs/Development Core/SEC/Information_Security",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Development Core/SQL/DBMS",
+              "path": "/docs/Development Core/SQL/DBMS",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Development Core/SQL/MySql",
+              "path": "/docs/Development Core/SQL/MySql",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Development Core/SQL/NoSql",
+              "path": "/docs/Development Core/SQL/NoSql",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "diagram",
+              "path": "/docs/diagram",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "function/bt",
+              "path": "/docs/function/bt",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "function/Tập Giá Trị",
+              "path": "/docs/function/Tập Giá Trị",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Systems & Innovation/Innovation Techs/Artificial Intelligence/Artificial Intelligence",
+              "path": "/docs/Systems & Innovation/Innovation Techs/Artificial Intelligence/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Systems & Innovation/Systems/Compiler/Compiler",
+              "path": "/docs/Systems & Innovation/Systems/Compiler/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Systems & Innovation/Systems/Compiler/CompilerTest",
+              "path": "/docs/Systems & Innovation/Systems/Compiler/CompilerTest",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Systems & Innovation/Systems/Interpreter/Interpreter",
+              "path": "/docs/Systems & Innovation/Systems/Interpreter/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Systems & Innovation/Systems/Operating Systems/Operating Systems",
+              "path": "/docs/Systems & Innovation/Systems/Operating Systems/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Tutorials/intro",
+              "path": "/docs/Tutorials/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Tutorials/tutorial-basics/computer-network",
+              "path": "/docs/Tutorials/tutorial-basics/computer-network",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Tutorials/tutorial-basics/congratulations",
+              "path": "/docs/Tutorials/tutorial-basics/congratulations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Tutorials/tutorial-basics/create-a-blog-post",
+              "path": "/docs/Tutorials/tutorial-basics/create-a-blog-post",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Tutorials/tutorial-basics/create-a-document",
+              "path": "/docs/Tutorials/tutorial-basics/create-a-document",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Tutorials/tutorial-basics/create-a-page",
+              "path": "/docs/Tutorials/tutorial-basics/create-a-page",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Tutorials/tutorial-basics/deploy-your-site",
+              "path": "/docs/Tutorials/tutorial-basics/deploy-your-site",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Tutorials/tutorial-basics/markdown-features",
+              "path": "/docs/Tutorials/tutorial-basics/markdown-features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Tutorials/tutorial-extras/manage-docs-versions",
+              "path": "/docs/Tutorials/tutorial-extras/manage-docs-versions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Tutorials/tutorial-extras/translate-your-site",
+              "path": "/docs/Tutorials/tutorial-extras/translate-your-site",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/architecture",
+              "path": "/docs/category/architecture",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/networks",
+              "path": "/docs/category/networks",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/layers",
+              "path": "/docs/category/layers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/presentation",
+              "path": "/docs/category/presentation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/graphics",
+              "path": "/docs/category/graphics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/computer-network",
+              "path": "/docs/category/computer-network",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/tutorial---extras",
+              "path": "/docs/category/tutorial---extras",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/category/architecture",
+                "label": "Architecture"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

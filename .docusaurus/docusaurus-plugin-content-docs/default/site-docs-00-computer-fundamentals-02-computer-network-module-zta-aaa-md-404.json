@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/ComputerNetwork/module/ZTA_AAA",
+  "title": "Crypto",
+  "description": "Phiên bản: 2025-08-22",
+  "source": "@site/docs/00_Computer Fundamentals/02_ComputerNetwork/module/ZTA_AAA.md",
+  "sourceDirName": "00_Computer Fundamentals/02_ComputerNetwork/module",
+  "slug": "/Computer Fundamentals/ComputerNetwork/module/ZTA_AAA",
+  "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/ZTA_AAA",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Crypto",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Network Protocol",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/Protocol"
+  },
+  "next": {
+    "title": "mysql",
+    "permalink": "/ecosys.documents/docs/Development Core/SQL/mysql"
+  }
+}

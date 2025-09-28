@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/Computer Network/Layers/Session",
+  "title": "Session Layer",
+  "description": "tầng 5: sesion",
+  "source": "@site/docs/00_Computer Fundamentals/Computer Network/Layers/Session.md",
+  "sourceDirName": "00_Computer Fundamentals/Computer Network/Layers",
+  "slug": "/Computer Fundamentals/Computer Network/Layers/Session",
+  "permalink": "/docs/Computer Fundamentals/Computer Network/Layers/Session",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "Session Layer",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Transport Layer",
+    "permalink": "/docs/Computer Fundamentals/Computer Network/Layers/Transport"
+  },
+  "next": {
+    "title": "Data Link",
+    "permalink": "/docs/Computer Fundamentals/Computer Network/Layers/Data link"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/threads",
+  "title": "threads",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/threads.md",
+  "sourceDirName": "02_Development Core/GDdocs",
+  "slug": "/Development Core/GDdocs/threads",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/threads",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "time",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/time"
+  },
+  "next": {
+    "title": "Tutorial Intro",
+    "permalink": "/ecosys.documents/docs/Tutorials/intro"
+  }
+}

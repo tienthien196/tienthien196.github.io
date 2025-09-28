@@ -1,0 +1,27 @@
+{
+  "id": "CyberSecurity/Information_Security_Mindmap",
+  "title": "Security",
+  "description": "# An Toàn Thông Tin --Information Security--",
+  "source": "@site/docs/CyberSecurity/Information_Security_Mindmap.md",
+  "sourceDirName": "CyberSecurity",
+  "slug": "/CyberSecurity/Information_Security_Mindmap",
+  "permalink": "/ecosys.documents/docs/CyberSecurity/Information_Security_Mindmap",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Security",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "CEH",
+    "permalink": "/ecosys.documents/docs/CyberSecurity/ceh_pentest_cheatsheet"
+  },
+  "next": {
+    "title": "crypto",
+    "permalink": "/ecosys.documents/docs/GDdocs/crypto"
+  }
+}

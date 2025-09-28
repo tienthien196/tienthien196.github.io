@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/sys/performance",
+  "title": "performance",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/sys/performance.md",
+  "sourceDirName": "02_Development Core/GDdocs/sys",
+  "slug": "/Development Core/GDdocs/sys/performance",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/performance",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "os",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/os"
+  },
+  "next": {
+    "title": "res",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/res"
+  }
+}

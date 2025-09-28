@@ -1,0 +1,23 @@
+{
+  "id": "GDdocs/sys/os",
+  "title": "os",
+  "description": "",
+  "source": "@site/docs/GDdocs/sys/os.md",
+  "sourceDirName": "GDdocs/sys",
+  "slug": "/GDdocs/sys/os",
+  "permalink": "/ecosys.documents/docs/GDdocs/sys/os",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "file",
+    "permalink": "/ecosys.documents/docs/GDdocs/sys/file"
+  },
+  "next": {
+    "title": "performance",
+    "permalink": "/ecosys.documents/docs/GDdocs/sys/performance"
+  }
+}

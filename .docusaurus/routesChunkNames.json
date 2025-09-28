@@ -1,0 +1,477 @@
+{
+  "/blog-d18": {
+    "__comp": "a6aa9e1f",
+    "__context": {
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "items": [
+      {
+        "content": "30091fab"
+      },
+      {
+        "content": "785c6f08"
+      },
+      {
+        "content": "b946ae04"
+      },
+      {
+        "content": "696df171"
+      },
+      {
+        "content": "7661071f"
+      },
+      {
+        "content": "f4f34a3a"
+      },
+      {
+        "content": "8717b14a"
+      },
+      {
+        "content": "925b3f96"
+      }
+    ],
+    "__props": "c15d9823"
+  },
+  "/blog/archive-182": {
+    "__comp": "9e4087bc",
+    "__context": {
+      "plugin": "36994c47"
+    },
+    "__props": "f81c1134"
+  },
+  "/blog/authors-0b7": {
+    "__comp": "621db11d",
+    "__context": {
+      "data": {
+        "blogMetadata": "acecf23e"
+      },
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "__props": "ef8b811a"
+  },
+  "/blog/authors/all-sebastien-lorber-articles-4a1": {
+    "__comp": "33fc5bb8",
+    "__context": {
+      "data": {
+        "blogMetadata": "acecf23e"
+      },
+      "plugin": "36994c47"
+    },
+    "items": [
+      {
+        "content": "7661071f"
+      },
+      {
+        "content": "f4f34a3a"
+      },
+      {
+        "content": "925b3f96"
+      }
+    ],
+    "sidebar": "814f3328",
+    "__props": "c9c9bef8"
+  },
+  "/blog/authors/yangshun-a68": {
+    "__comp": "33fc5bb8",
+    "__context": {
+      "data": {
+        "blogMetadata": "acecf23e"
+      },
+      "plugin": "36994c47"
+    },
+    "items": [
+      {
+        "content": "7661071f"
+      },
+      {
+        "content": "8717b14a"
+      },
+      {
+        "content": "925b3f96"
+      }
+    ],
+    "sidebar": "814f3328",
+    "__props": "1dea6ca3"
+  },
+  "/blog/first-blog-post-89a": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "acecf23e"
+      },
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "content": "e273c56f"
+  },
+  "/blog/long-blog-post-9ad": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "acecf23e"
+      },
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "content": "73664a40"
+  },
+  "/blog/math/tuyen_tinh-76e": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "acecf23e"
+      },
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "content": "4f546616"
+  },
+  "/blog/mdx-blog-post-e9f": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "acecf23e"
+      },
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "content": "59362658"
+  },
+  "/blog/physic/core-044": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "acecf23e"
+      },
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "content": "2e2c6e06"
+  },
+  "/blog/physic/docs/essence/PhysiceEssence-15b": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "acecf23e"
+      },
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "content": "b99f862c"
+  },
+  "/blog/physic/read/main-96b": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "acecf23e"
+      },
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "content": "ab127568"
+  },
+  "/blog/tags-287": {
+    "__comp": "01a85c17",
+    "__context": {
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "__props": "3a2db09e"
+  },
+  "/blog/tags/docusaurus-704": {
+    "__comp": "6875c492",
+    "__context": {
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "items": [
+      {
+        "content": "7661071f"
+      },
+      {
+        "content": "f4f34a3a"
+      },
+      {
+        "content": "8717b14a"
+      },
+      {
+        "content": "925b3f96"
+      }
+    ],
+    "__props": "3217192f"
+  },
+  "/blog/tags/facebook-858": {
+    "__comp": "6875c492",
+    "__context": {
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "items": [
+      {
+        "content": "7661071f"
+      }
+    ],
+    "__props": "e5aefb32"
+  },
+  "/blog/tags/hello-299": {
+    "__comp": "6875c492",
+    "__context": {
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "items": [
+      {
+        "content": "7661071f"
+      },
+      {
+        "content": "8717b14a"
+      }
+    ],
+    "__props": "f82cd581"
+  },
+  "/blog/tags/hola-00d": {
+    "__comp": "6875c492",
+    "__context": {
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "items": [
+      {
+        "content": "925b3f96"
+      }
+    ],
+    "__props": "5e90a9b3"
+  },
+  "/blog/welcome-d2b": {
+    "__comp": "ccc49370",
+    "__context": {
+      "data": {
+        "blogMetadata": "acecf23e"
+      },
+      "plugin": "36994c47"
+    },
+    "sidebar": "814f3328",
+    "content": "d9f32620"
+  },
+  "/markdown-page-3d7": {
+    "__comp": "1f391b9e",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "content": "393be207"
+  },
+  "/docs-f57": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "aba21aa0"
+    }
+  },
+  "/docs-895": {
+    "__comp": "a7bd4aaa",
+    "__props": "0058b4c6"
+  },
+  "/docs-e61": {
+    "__comp": "a94703ab"
+  },
+  "/docs/category/architecture-6d1": {
+    "__comp": "14eb3368",
+    "__props": "a29c1785"
+  },
+  "/docs/category/computer-network-c95": {
+    "__comp": "14eb3368",
+    "__props": "f7534ac4"
+  },
+  "/docs/category/graphics-01a": {
+    "__comp": "14eb3368",
+    "__props": "633e6e4d"
+  },
+  "/docs/category/layers-882": {
+    "__comp": "14eb3368",
+    "__props": "e0e79f36"
+  },
+  "/docs/category/networks-a1e": {
+    "__comp": "14eb3368",
+    "__props": "71b38571"
+  },
+  "/docs/category/presentation-b73": {
+    "__comp": "14eb3368",
+    "__props": "b60d3171"
+  },
+  "/docs/category/tutorial---extras-9ad": {
+    "__comp": "14eb3368",
+    "__props": "6bb166bd"
+  },
+  "/docs/Computer Fundamentals/Computer Architecture/-3f1": {
+    "__comp": "17896441",
+    "content": "e68c8c38"
+  },
+  "/docs/Computer Fundamentals/Computer Architecture/cheatsheet_arch-a10": {
+    "__comp": "17896441",
+    "content": "4f13fb29"
+  },
+  "/docs/Computer Fundamentals/Computer Architecture/Core-af7": {
+    "__comp": "17896441",
+    "content": "f753e34c"
+  },
+  "/docs/Computer Fundamentals/Computer Architecture/ISA-a52": {
+    "__comp": "17896441",
+    "content": "1b0781ec"
+  },
+  "/docs/Computer Fundamentals/Computer Graphics/-4e5": {
+    "__comp": "17896441",
+    "content": "8dd38798"
+  },
+  "/docs/Computer Fundamentals/Computer Network/-847": {
+    "__comp": "17896441",
+    "content": "1338ed76"
+  },
+  "/docs/Computer Fundamentals/Computer Network/Layers/Application-b17": {
+    "__comp": "17896441",
+    "content": "f081003d"
+  },
+  "/docs/Computer Fundamentals/Computer Network/Layers/Data link-927": {
+    "__comp": "17896441",
+    "content": "eb501dd3"
+  },
+  "/docs/Computer Fundamentals/Computer Network/Layers/Networks-788": {
+    "__comp": "17896441",
+    "content": "831e5869"
+  },
+  "/docs/Computer Fundamentals/Computer Network/Layers/Physical-d12": {
+    "__comp": "17896441",
+    "content": "fd8be4b6"
+  },
+  "/docs/Computer Fundamentals/Computer Network/Layers/Presentation/-596": {
+    "__comp": "17896441",
+    "content": "6348e211"
+  },
+  "/docs/Computer Fundamentals/Computer Network/Layers/Presentation/ZTA_AAA-69f": {
+    "__comp": "17896441",
+    "content": "0c17f7f4"
+  },
+  "/docs/Computer Fundamentals/Computer Network/Layers/Session-7bc": {
+    "__comp": "17896441",
+    "content": "2da82cd6"
+  },
+  "/docs/Computer Fundamentals/Computer Network/Layers/Transport-0b1": {
+    "__comp": "17896441",
+    "content": "6efc8130"
+  },
+  "/docs/Computer Fundamentals/Computer Network/OSI models-6f0": {
+    "__comp": "17896441",
+    "content": "1761331b"
+  },
+  "/docs/Computer Fundamentals/Computer Network/pluginNet-d64": {
+    "__comp": "17896441",
+    "content": "347b9850"
+  },
+  "/docs/Development Core/DATA-3d4": {
+    "__comp": "17896441",
+    "content": "39e1c3fd"
+  },
+  "/docs/Development Core/DSA/-94f": {
+    "__comp": "17896441",
+    "content": "abcf5f12"
+  },
+  "/docs/Development Core/SEC/CEH-0e0": {
+    "__comp": "17896441",
+    "content": "8f438cb1"
+  },
+  "/docs/Development Core/SEC/Information_Security-9c7": {
+    "__comp": "17896441",
+    "content": "e1f29e4c"
+  },
+  "/docs/Development Core/SQL/DBMS-c28": {
+    "__comp": "17896441",
+    "content": "07eec116"
+  },
+  "/docs/Development Core/SQL/MySql-58d": {
+    "__comp": "17896441",
+    "content": "c0832250"
+  },
+  "/docs/Development Core/SQL/NoSql-f33": {
+    "__comp": "17896441",
+    "content": "1652c1f2"
+  },
+  "/docs/diagram-bfc": {
+    "__comp": "17896441",
+    "content": "c3eac5f5"
+  },
+  "/docs/function/bt-d67": {
+    "__comp": "17896441",
+    "content": "ca777a4e"
+  },
+  "/docs/function/Tập Giá Trị-4a5": {
+    "__comp": "17896441",
+    "content": "7a31a872"
+  },
+  "/docs/Systems & Innovation/Innovation Techs/Artificial Intelligence/-906": {
+    "__comp": "17896441",
+    "content": "3620c4bf"
+  },
+  "/docs/Systems & Innovation/Systems/Compiler/-09e": {
+    "__comp": "17896441",
+    "content": "caaa5867"
+  },
+  "/docs/Systems & Innovation/Systems/Compiler/CompilerTest-84f": {
+    "__comp": "17896441",
+    "content": "bf7947b1"
+  },
+  "/docs/Systems & Innovation/Systems/Interpreter/-db6": {
+    "__comp": "17896441",
+    "content": "3c6c8378"
+  },
+  "/docs/Systems & Innovation/Systems/Operating Systems/-52c": {
+    "__comp": "17896441",
+    "content": "196ca96d"
+  },
+  "/docs/Tutorials/intro-3b2": {
+    "__comp": "17896441",
+    "content": "137e51c7"
+  },
+  "/docs/Tutorials/tutorial-basics/computer-network-e8f": {
+    "__comp": "17896441",
+    "content": "2b185936"
+  },
+  "/docs/Tutorials/tutorial-basics/congratulations-c60": {
+    "__comp": "17896441",
+    "content": "b62d8341"
+  },
+  "/docs/Tutorials/tutorial-basics/create-a-blog-post-fd9": {
+    "__comp": "17896441",
+    "content": "b1154fb8"
+  },
+  "/docs/Tutorials/tutorial-basics/create-a-document-4c9": {
+    "__comp": "17896441",
+    "content": "151a3368"
+  },
+  "/docs/Tutorials/tutorial-basics/create-a-page-9c0": {
+    "__comp": "17896441",
+    "content": "ee1d0b4a"
+  },
+  "/docs/Tutorials/tutorial-basics/deploy-your-site-934": {
+    "__comp": "17896441",
+    "content": "acf53a92"
+  },
+  "/docs/Tutorials/tutorial-basics/markdown-features-a63": {
+    "__comp": "17896441",
+    "content": "d45217f5"
+  },
+  "/docs/Tutorials/tutorial-extras/manage-docs-versions-b82": {
+    "__comp": "17896441",
+    "content": "43442a50"
+  },
+  "/docs/Tutorials/tutorial-extras/translate-your-site-d82": {
+    "__comp": "17896441",
+    "content": "5dea488d"
+  },
+  "/-e5f": {
+    "__comp": "1df93b7f",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  }
+}

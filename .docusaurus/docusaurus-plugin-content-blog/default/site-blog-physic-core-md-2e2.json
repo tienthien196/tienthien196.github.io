@@ -1,0 +1,21 @@
+{
+  "permalink": "/blog/physic/core",
+  "source": "@site/blog/physic/core.md",
+  "title": "`",
+  "description": "_  _   _   _    _     _     _     _     _     _",
+  "date": "2025-09-25T03:22:03.000Z",
+  "tags": [],
+  "readingTime": 1.99,
+  "hasTruncateMarker": false,
+  "authors": [],
+  "frontMatter": {},
+  "unlisted": false,
+  "prevItem": {
+    "title": "math/tuyen_tinh",
+    "permalink": "/blog/math/tuyen_tinh"
+  },
+  "nextItem": {
+    "title": "physic/docs/essence/PhysiceEssence",
+    "permalink": "/blog/physic/docs/essence/PhysiceEssence"
+  }
+}

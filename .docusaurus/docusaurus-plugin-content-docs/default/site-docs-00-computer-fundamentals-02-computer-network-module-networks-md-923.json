@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/ComputerNetwork/module/Networks",
+  "title": "Networks",
+  "description": "Các loại mạng",
+  "source": "@site/docs/00_Computer Fundamentals/02_ComputerNetwork/module/Networks.md",
+  "sourceDirName": "00_Computer Fundamentals/02_ComputerNetwork/module",
+  "slug": "/Computer Fundamentals/ComputerNetwork/module/Networks",
+  "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/Networks",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Networks",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "OSI",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/OSImodel"
+  },
+  "next": {
+    "title": "DNS",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/ComputerNetwork/module/DNS"
+  }
+}

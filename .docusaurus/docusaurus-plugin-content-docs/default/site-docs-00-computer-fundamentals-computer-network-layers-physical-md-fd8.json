@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/Computer Network/Layers/Physical",
+  "title": "Physical Layer",
+  "description": "Physical - Tầng 1",
+  "source": "@site/docs/00_Computer Fundamentals/Computer Network/Layers/Physical.md",
+  "sourceDirName": "00_Computer Fundamentals/Computer Network/Layers",
+  "slug": "/Computer Fundamentals/Computer Network/Layers/Physical",
+  "permalink": "/docs/Computer Fundamentals/Computer Network/Layers/Physical",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "title": "Physical Layer",
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Data Link",
+    "permalink": "/docs/Computer Fundamentals/Computer Network/Layers/Data link"
+  },
+  "next": {
+    "title": "Plugin Network",
+    "permalink": "/docs/Computer Fundamentals/Computer Network/pluginNet"
+  }
+}

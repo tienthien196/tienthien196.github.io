@@ -1,0 +1,28 @@
+{
+  "id": "computer-network",
+  "title": "Mạng Máy Tính",
+  "description": "Sơ đồ mô phỏng luồng dữ liệu",
+  "source": "@site/docs/computer-network.mdx",
+  "sourceDirName": ".",
+  "slug": "/computer-network",
+  "permalink": "/docs/computer-network",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/computer-network.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Mạng Máy Tính",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tutorial Intro",
+    "permalink": "/docs/intro"
+  },
+  "next": {
+    "title": "Tutorial - Basics",
+    "permalink": "/docs/category/tutorial---basics"
+  }
+}

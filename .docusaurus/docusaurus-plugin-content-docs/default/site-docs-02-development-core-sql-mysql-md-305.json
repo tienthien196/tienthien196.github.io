@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/SQL/mysql",
+  "title": "mysql",
+  "description": "",
+  "source": "@site/docs/02_Development Core/SQL/mysql.md",
+  "sourceDirName": "02_Development Core/SQL",
+  "slug": "/Development Core/SQL/mysql",
+  "permalink": "/ecosys.documents/docs/Development Core/SQL/mysql",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "NoSql",
+    "permalink": "/ecosys.documents/docs/Development Core/SQL/NoSql"
+  },
+  "next": {
+    "title": "Tutorial Intro",
+    "permalink": "/ecosys.documents/docs/Tutorials/intro"
+  }
+}

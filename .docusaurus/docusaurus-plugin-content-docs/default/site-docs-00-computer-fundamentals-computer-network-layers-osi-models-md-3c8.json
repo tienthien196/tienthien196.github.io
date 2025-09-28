@@ -1,0 +1,23 @@
+{
+  "id": "Computer Fundamentals/Computer Network/Layers/OSI models",
+  "title": "OSI models",
+  "description": "Đầu tiên là hiểu về OSI - TCP/IP models",
+  "source": "@site/docs/00_Computer Fundamentals/Computer Network/Layers/OSI models.md",
+  "sourceDirName": "00_Computer Fundamentals/Computer Network/Layers",
+  "slug": "/Computer Fundamentals/Computer Network/Layers/OSI models",
+  "permalink": "/ecosys.documents/docs/Computer Fundamentals/Computer Network/Layers/OSI models",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Crypto",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/Computer Network/ZTA_AAA"
+  },
+  "next": {
+    "title": "cheatsheet_pluginNet",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/Computer Network/cheatsheet_pluginNet"
+  }
+}

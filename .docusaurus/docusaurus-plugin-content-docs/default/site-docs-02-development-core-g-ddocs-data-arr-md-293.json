@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/data/arr",
+  "title": "arr",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/data/arr.md",
+  "sourceDirName": "02_Development Core/GDdocs/data",
+  "slug": "/Development Core/GDdocs/data/arr",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/data/arr",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "crypto",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/crypto"
+  },
+  "next": {
+    "title": "str",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/data/str"
+  }
+}

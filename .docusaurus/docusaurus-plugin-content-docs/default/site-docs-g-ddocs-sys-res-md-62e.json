@@ -1,0 +1,23 @@
+{
+  "id": "GDdocs/sys/res",
+  "title": "res",
+  "description": "",
+  "source": "@site/docs/GDdocs/sys/res.md",
+  "sourceDirName": "GDdocs/sys",
+  "slug": "/GDdocs/sys/res",
+  "permalink": "/ecosys.documents/docs/GDdocs/sys/res",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "performance",
+    "permalink": "/ecosys.documents/docs/GDdocs/sys/performance"
+  },
+  "next": {
+    "title": "setting",
+    "permalink": "/ecosys.documents/docs/GDdocs/sys/setting"
+  }
+}

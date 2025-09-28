@@ -1,0 +1,23 @@
+{
+  "id": "GDdocs/input/inputevent",
+  "title": "inputevent",
+  "description": "",
+  "source": "@site/docs/GDdocs/input/inputevent.md",
+  "sourceDirName": "GDdocs/input",
+  "slug": "/GDdocs/input/inputevent",
+  "permalink": "/ecosys.documents/docs/GDdocs/input/inputevent",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "input",
+    "permalink": "/ecosys.documents/docs/GDdocs/input/"
+  },
+  "next": {
+    "title": "enet",
+    "permalink": "/ecosys.documents/docs/GDdocs/net/enet"
+  }
+}

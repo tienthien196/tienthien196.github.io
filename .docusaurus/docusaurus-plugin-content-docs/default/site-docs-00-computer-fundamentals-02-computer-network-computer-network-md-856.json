@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/Computer Network/ComputerNetwork",
+  "title": "Computer Network",
+  "description": "Map",
+  "source": "@site/docs/00_Computer Fundamentals/02_Computer Network/ComputerNetwork.md",
+  "sourceDirName": "00_Computer Fundamentals/02_Computer Network",
+  "slug": "/Computer Fundamentals/Computer Network/ComputerNetwork",
+  "permalink": "/ecosys.documents/docs/Computer Fundamentals/Computer Network/ComputerNetwork",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Computer Network",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Computer Network",
+    "permalink": "/ecosys.documents/docs/category/computer-network"
+  },
+  "next": {
+    "title": "Crypto",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/Computer Network/layers/ZTA_AAA"
+  }
+}

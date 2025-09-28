@@ -1,0 +1,27 @@
+{
+  "id": "Tutorials/tutorial-basics/computer-network",
+  "title": "Computer Network",
+  "description": "Map",
+  "source": "@site/docs/Tutorials/tutorial-basics/computer-network.mdx",
+  "sourceDirName": "Tutorials/tutorial-basics",
+  "slug": "/Tutorials/tutorial-basics/computer-network",
+  "permalink": "/docs/Tutorials/tutorial-basics/computer-network",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Computer Network",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Create a Page",
+    "permalink": "/docs/Tutorials/tutorial-basics/create-a-page"
+  },
+  "next": {
+    "title": "Create a Document",
+    "permalink": "/docs/Tutorials/tutorial-basics/create-a-document"
+  }
+}

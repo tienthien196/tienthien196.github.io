@@ -1,0 +1,23 @@
+{
+  "id": "GDdocs/net/enet",
+  "title": "enet",
+  "description": "",
+  "source": "@site/docs/GDdocs/net/enet.md",
+  "sourceDirName": "GDdocs/net",
+  "slug": "/GDdocs/net/enet",
+  "permalink": "/ecosys.documents/docs/GDdocs/net/enet",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "inputevent",
+    "permalink": "/ecosys.documents/docs/GDdocs/input/inputevent"
+  },
+  "next": {
+    "title": "ip",
+    "permalink": "/ecosys.documents/docs/GDdocs/net/ip"
+  }
+}

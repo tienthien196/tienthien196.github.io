@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/net/websk",
+  "title": "websk",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/net/websk.md",
+  "sourceDirName": "02_Development Core/GDdocs/net",
+  "slug": "/Development Core/GDdocs/net/websk",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/net/websk",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "tcp",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/net/tcp"
+  },
+  "next": {
+    "title": "dir",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/dir"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "function/Tập Giá Trị",
+  "title": "Tập Giá Trị",
+  "description": "📚 Toàn Bộ Dạng Bài Tập Giá Trị Của Hàm Số: Từ Base đến Advanced",
+  "source": "@site/docs/function/Tập Giá Trị.md",
+  "sourceDirName": "function",
+  "slug": "/function/Tập Giá Trị",
+  "permalink": "/docs/function/Tập Giá Trị",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "sidebar_label": "Tập Giá Trị"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "diagram",
+    "permalink": "/docs/diagram"
+  },
+  "next": {
+    "title": "📚 BỘ 100 BÀI TẬP TẬP GIÁ TRỊ HÀM SỐ – CÓ LỜI GIẢI CHI TIẾT",
+    "permalink": "/docs/function/bt"
+  }
+}

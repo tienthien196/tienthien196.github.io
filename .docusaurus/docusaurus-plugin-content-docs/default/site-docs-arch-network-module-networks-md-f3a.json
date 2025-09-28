@@ -1,0 +1,27 @@
+{
+  "id": "ArchNetwork/module/Networks",
+  "title": "Networks",
+  "description": "Các loại mạng",
+  "source": "@site/docs/ArchNetwork/module/Networks.md",
+  "sourceDirName": "ArchNetwork/module",
+  "slug": "/ArchNetwork/module/Networks",
+  "permalink": "/ecosys.documents/docs/ArchNetwork/module/Networks",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Networks",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "OSI",
+    "permalink": "/ecosys.documents/docs/ArchNetwork/module/OSImodel"
+  },
+  "next": {
+    "title": "DNS",
+    "permalink": "/ecosys.documents/docs/ArchNetwork/module/DNS"
+  }
+}

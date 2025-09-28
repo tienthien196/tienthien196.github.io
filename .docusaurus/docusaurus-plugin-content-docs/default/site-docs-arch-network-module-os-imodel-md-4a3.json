@@ -1,0 +1,24 @@
+{
+  "id": "archNetwork/module/OSImodel",
+  "title": "📘 OSI Model",
+  "description": "🔹 Mục Lục",
+  "source": "@site/docs/archNetwork/module/OSImodel.md",
+  "sourceDirName": "archNetwork/module",
+  "slug": "/archNetwork/module/OSImodel",
+  "permalink": "/docs/archNetwork/module/OSImodel",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/archNetwork/module/OSImodel.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Networks",
+    "permalink": "/docs/archNetwork/module/Networks"
+  },
+  "next": {
+    "title": "Physical",
+    "permalink": "/docs/archNetwork/module/Physical"
+  }
+}

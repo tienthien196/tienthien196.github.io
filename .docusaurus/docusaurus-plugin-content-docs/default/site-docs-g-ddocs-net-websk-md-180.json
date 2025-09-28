@@ -1,0 +1,23 @@
+{
+  "id": "GDdocs/net/websk",
+  "title": "websk",
+  "description": "",
+  "source": "@site/docs/GDdocs/net/websk.md",
+  "sourceDirName": "GDdocs/net",
+  "slug": "/GDdocs/net/websk",
+  "permalink": "/ecosys.documents/docs/GDdocs/net/websk",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "tcp",
+    "permalink": "/ecosys.documents/docs/GDdocs/net/tcp"
+  },
+  "next": {
+    "title": "dir",
+    "permalink": "/ecosys.documents/docs/GDdocs/sys/dir"
+  }
+}

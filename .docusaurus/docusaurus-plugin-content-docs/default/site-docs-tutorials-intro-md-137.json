@@ -1,0 +1,26 @@
+{
+  "id": "Tutorials/intro",
+  "title": "Tutorial Intro",
+  "description": "Let's discover Docusaurus in less than 5 minutes.",
+  "source": "@site/docs/Tutorials/intro.md",
+  "sourceDirName": "Tutorials",
+  "slug": "/Tutorials/intro",
+  "permalink": "/docs/Tutorials/intro",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "NoSql",
+    "permalink": "/docs/Development Core/SQL/NoSql"
+  },
+  "next": {
+    "title": "Computer Network",
+    "permalink": "/docs/category/computer-network"
+  }
+}

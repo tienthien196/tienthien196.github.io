@@ -1,0 +1,27 @@
+{
+  "id": "Computer Fundamentals/Computer Network/layers/ZTA_AAA",
+  "title": "Crypto",
+  "description": "Phiên bản: 2025-08-22",
+  "source": "@site/docs/00_Computer Fundamentals/Computer Network/layers/ZTA_AAA.md",
+  "sourceDirName": "00_Computer Fundamentals/Computer Network/layers",
+  "slug": "/Computer Fundamentals/Computer Network/layers/ZTA_AAA",
+  "permalink": "/ecosys.documents/docs/Computer Fundamentals/Computer Network/layers/ZTA_AAA",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "title": "Crypto",
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "OSI models",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/Computer Network/"
+  },
+  "next": {
+    "title": "Computer Architecture",
+    "permalink": "/ecosys.documents/docs/Computer Fundamentals/Computer Architecture/"
+  }
+}

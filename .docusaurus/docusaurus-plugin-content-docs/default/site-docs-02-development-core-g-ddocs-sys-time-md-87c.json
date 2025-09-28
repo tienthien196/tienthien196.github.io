@@ -1,0 +1,23 @@
+{
+  "id": "Development Core/GDdocs/sys/time",
+  "title": "time",
+  "description": "",
+  "source": "@site/docs/02_Development Core/GDdocs/sys/time.md",
+  "sourceDirName": "02_Development Core/GDdocs/sys",
+  "slug": "/Development Core/GDdocs/sys/time",
+  "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/time",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "setting",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/sys/setting"
+  },
+  "next": {
+    "title": "threads",
+    "permalink": "/ecosys.documents/docs/Development Core/GDdocs/threads"
+  }
+}

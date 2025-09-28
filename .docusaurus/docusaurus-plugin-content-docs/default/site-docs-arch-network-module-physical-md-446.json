@@ -1,0 +1,27 @@
+{
+  "id": "ArchNetwork/module/Physical",
+  "title": "Physical",
+  "description": "1. OSI Model Protocols",
+  "source": "@site/docs/ArchNetwork/module/Physical.md",
+  "sourceDirName": "ArchNetwork/module",
+  "slug": "/ArchNetwork/module/Physical",
+  "permalink": "/ecosys.documents/docs/ArchNetwork/module/Physical",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "Physical",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "DNS",
+    "permalink": "/ecosys.documents/docs/ArchNetwork/module/DNS"
+  },
+  "next": {
+    "title": "Ports important!",
+    "permalink": "/ecosys.documents/docs/ArchNetwork/module/Ports"
+  }
+}
