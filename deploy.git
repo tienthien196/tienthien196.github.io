@@ -1,0 +1,18 @@
+# Tạo và chuyển sang branch "source" để lưu code Docusaurus
+git checkout -b source
+git push -u origin source
+
+
+# Đảm bảo bạn đang ở branch source
+git checkout source
+
+# Build site
+yarn build
+
+# Tạo commit deploy vào branch main
+git checkout main
+git rm -rf .          # Xóa toàn bộ file cũ (giữ .git)
+cp -r build/* .       # Copy nội dung build vào root
+git add .
+git commit -m "Deploy website"
+git push origin main
